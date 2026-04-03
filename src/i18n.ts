@@ -62,10 +62,10 @@ i18n
               image: "images/dressup.png"
             },
             {
-              title: "Social Media App",
-              description: "Real-time social networking application with messaging, notifications, and user profiles.",
-              tech: ["React", "Firebase", "Tailwind"],
-              link: "#"
+              title: "Electronic Time-Tracking System",
+              description: "Development of a solution for work schedule and time bank management, focused on legal compliance (CLT/Portaria 671). The project integrates complex logic flows, auditable data modeling, and AI-powered support.",
+              tech: ["PHP", "MySQL", "HTML", "CSS", "JS", "APIs"],
+              link: "https://skinny-protest-638.notion.site/Sistema-de-Ponto-Eletr-nico-3373f2d9e43b80148ce6d1cb4740ea06?source=copy_link"
             }
           ],
           "achievements.title": "Achievements",
@@ -74,7 +74,7 @@ i18n
           "achievements.sw.event": "Startup Weekend São José 2025",
           "achievements.sw.date": "April 25-27, 2025",
           "achievements.sw.location": "São José, Santa Catarina, Brazil",
-          "achievements.sw.description": "Competed in a 54-hour hackathon focused on cybersecurity, developing VerifiCAR — a platform where buyers can verify if a vehicle ad link is authentic.",
+          "achievements.sw.description": "Competed in a 54-hour hackathon focused on cybersecurity, developing the MVP of VerifiCAR — a solution where buyers can verify if a vehicle ad link is authentic.",
           "achievements.sw.certificate": "Certificate",
           "achievements.sw.theme": "Cybersecurity",
           "achievements.sw.clickToOpen": "Click to view details",
@@ -83,6 +83,7 @@ i18n
           "achievements.sw.locationLabel": "Location",
           "achievements.sw.pitch": "Pitch Deck",
           "achievements.sw.graphs": "Validation Data",
+          "achievements.sw.frontend": "Front-end Code",
           "achievements.sw.viewDocs": "View Documents",
           "achievements.sw.backToInfo": "Back",
           "achievements.sw.selectDoc": "Select a document to view",
@@ -90,6 +91,7 @@ i18n
           "nav.experience": "Experience",
           "nav.techStack": "Tech Stack",
           "nav.projects": "Projects",
+          "nav.achievements": "Achievements",
           "nav.contact": "Contact",
           "exp.title": "IT Experience",
           "exp.sp.role": "Software Developer Intern",
@@ -177,10 +179,10 @@ i18n
               image: "images/dressup.png"
             },
             {
-              title: "Aplicativo Social",
-              description: "Rede social em tempo real com mensagens, notificações e perfis de usuário.",
-              tech: ["React", "Firebase", "Tailwind"],
-              link: "#"
+              title: "Sistema de Ponto Eletrônico",
+              description: "Desenvolvimento de uma solução para gestão de jornada e banco de horas, focada em conformidade legal (CLT/Portaria 671). O projeto integra fluxos lógicos complexos, modelagem de dados auditável e suporte via inteligência artificial.",
+              tech: ["PHP", "MySQL", "HTML", "CSS", "JS", "APIs"],
+              link: "https://skinny-protest-638.notion.site/Sistema-de-Ponto-Eletr-nico-3373f2d9e43b80148ce6d1cb4740ea06?source=copy_link"
             }
           ],
           "achievements.title": "Conquistas",
@@ -189,7 +191,7 @@ i18n
           "achievements.sw.event": "Startup Weekend São José 2025",
           "achievements.sw.date": "25 a 27 de abril de 2025",
           "achievements.sw.location": "São José, Santa Catarina, Brasil",
-          "achievements.sw.description": "Competição de 54 horas focada em cibersegurança, onde desenvolvemos o VerifiCAR — uma plataforma onde compradores podem verificar se o link de um anúncio de veículo é autêntico.",
+          "achievements.sw.description": "Competição de 54 horas focada em cibersegurança, onde desenvolvemos o MVP do VerifiCAR — uma solução onde compradores podem verificar se o link de um anúncio de veículo é autêntico.",
           "achievements.sw.certificate": "Certificado",
           "achievements.sw.theme": "Cibersegurança",
           "achievements.sw.clickToOpen": "Clique para ver detalhes",
@@ -198,6 +200,7 @@ i18n
           "achievements.sw.locationLabel": "Local",
           "achievements.sw.pitch": "Apresentação do Pitch",
           "achievements.sw.graphs": "Dados de Validação",
+          "achievements.sw.frontend": "Código Front-end",
           "achievements.sw.viewDocs": "Ver Documentos",
           "achievements.sw.backToInfo": "Voltar",
           "achievements.sw.selectDoc": "Selecione um documento para visualizar",
@@ -205,6 +208,7 @@ i18n
           "nav.experience": "Experiência",
           "nav.techStack": "Tecnologias",
           "nav.projects": "Projetos",
+          "nav.achievements": "Conquistas",
           "nav.contact": "Contato",
           "exp.title": "Experiência em TI",
           "exp.sp.role": "Estagiária de Desenvolvimento de Software",
@@ -292,10 +296,10 @@ i18n
               image: "images/dressup.png"
             },
             {
-              title: "Aplicación Social",
-              description: "Red social en tiempo real con mensajería, notificaciones y perfiles de usuario.",
-              tech: ["React", "Firebase", "Tailwind"],
-              link: "#"
+              title: "Sistema de Control de Asistencia",
+              description: "Desarrollo de una solución para gestión de jornada y banco de horas, enfocada en conformidad legal (CLT/Portaria 671). El proyecto integra flujos lógicos complejos, modelado de datos auditable y soporte con inteligencia artificial.",
+              tech: ["PHP", "MySQL", "HTML", "CSS", "JS", "APIs"],
+              link: "https://skinny-protest-638.notion.site/Sistema-de-Ponto-Eletr-nico-3373f2d9e43b80148ce6d1cb4740ea06?source=copy_link"
             }
           ],
           "achievements.title": "Logros",
@@ -304,7 +308,7 @@ i18n
           "achievements.sw.event": "Startup Weekend São José 2025",
           "achievements.sw.date": "25 al 27 de abril de 2025",
           "achievements.sw.location": "São José, Santa Catarina, Brasil",
-          "achievements.sw.description": "Competencia de 54 horas enfocada en ciberseguridad, donde desarrollamos VerifiCAR — una plataforma donde los compradores pueden verificar si el enlace de un anuncio de vehículo es auténtico.",
+          "achievements.sw.description": "Competencia de 54 horas enfocada en ciberseguridad, donde desarrollamos el MVP de VerifiCAR — una solución donde los compradores pueden verificar si el enlace de un anuncio de vehículo es auténtico.",
           "achievements.sw.certificate": "Certificado",
           "achievements.sw.theme": "Ciberseguridad",
           "achievements.sw.clickToOpen": "Haz clic para ver detalles",
@@ -313,6 +317,7 @@ i18n
           "achievements.sw.locationLabel": "Ubicación",
           "achievements.sw.pitch": "Presentación del Pitch",
           "achievements.sw.graphs": "Datos de Validación",
+          "achievements.sw.frontend": "Código Front-end",
           "achievements.sw.viewDocs": "Ver Documentos",
           "achievements.sw.backToInfo": "Volver",
           "achievements.sw.selectDoc": "Selecciona un documento para ver",
@@ -320,6 +325,7 @@ i18n
           "nav.experience": "Experiencia",
           "nav.techStack": "Tecnologías",
           "nav.projects": "Proyectos",
+          "nav.achievements": "Logros",
           "nav.contact": "Contacto",
           "exp.title": "Experiencia en TI",
           "exp.sp.role": "Pasante de Desarrollo de Software",
@@ -407,10 +413,10 @@ i18n
               image: "images/dressup.png"
             },
             {
-              title: "Social-Media-App",
-              description: "Echtzeit-soziales Netzwerk mit Nachrichten, Benachrichtigungen und Benutzerprofilen.",
-              tech: ["React", "Firebase", "Tailwind"],
-              link: "#"
+              title: "Elektronisches Zeiterfassungssystem",
+              description: "Entwicklung einer Lösung für Arbeitszeitverwaltung und Zeitkonto, mit Fokus auf gesetzliche Konformität (CLT/Portaria 671). Das Projekt integriert komplexe Logikabläufe, prüfbare Datenmodellierung und KI-gestützten Support.",
+              tech: ["PHP", "MySQL", "HTML", "CSS", "JS", "APIs"],
+              link: "https://skinny-protest-638.notion.site/Sistema-de-Ponto-Eletr-nico-3373f2d9e43b80148ce6d1cb4740ea06?source=copy_link"
             }
           ],
           "achievements.title": "Erfolge",
@@ -419,7 +425,7 @@ i18n
           "achievements.sw.event": "Startup Weekend São José 2025",
           "achievements.sw.date": "25. bis 27. April 2025",
           "achievements.sw.location": "São José, Santa Catarina, Brasilien",
-          "achievements.sw.description": "54-Stunden-Hackathon mit Schwerpunkt Cybersicherheit, bei dem wir VerifiCAR entwickelten — eine Plattform, auf der Käufer überprüfen können, ob der Link einer Fahrzeuganzeige authentisch ist.",
+          "achievements.sw.description": "54-Stunden-Hackathon mit Schwerpunkt Cybersicherheit, bei dem wir das MVP von VerifiCAR entwickelten — eine Lösung, mit der Käufer überprüfen können, ob der Link einer Fahrzeuganzeige authentisch ist.",
           "achievements.sw.certificate": "Zertifikat",
           "achievements.sw.theme": "Cybersicherheit",
           "achievements.sw.clickToOpen": "Klicken Sie für Details",
@@ -428,6 +434,7 @@ i18n
           "achievements.sw.locationLabel": "Ort",
           "achievements.sw.pitch": "Pitch-Präsentation",
           "achievements.sw.graphs": "Validierungsdaten",
+          "achievements.sw.frontend": "Front-end-Code",
           "achievements.sw.viewDocs": "Dokumente ansehen",
           "achievements.sw.backToInfo": "Zurück",
           "achievements.sw.selectDoc": "Wählen Sie ein Dokument aus",
@@ -435,6 +442,7 @@ i18n
           "nav.experience": "Erfahrung",
           "nav.techStack": "Tech-Stack",
           "nav.projects": "Projekte",
+          "nav.achievements": "Erfolge",
           "nav.contact": "Kontakt",
           "exp.title": "IT-Erfahrung",
           "exp.sp.role": "Software-Entwicklungspraktikantin",
@@ -522,10 +530,10 @@ i18n
               image: "images/dressup.png"
             },
             {
-              title: "Application Sociale",
-              description: "Réseau social en temps réel avec messagerie, notifications et profils d'utilisateurs.",
-              tech: ["React", "Firebase", "Tailwind"],
-              link: "#"
+              title: "Système de Pointage Électronique",
+              description: "Développement d'une solution de gestion des horaires et de banque d'heures, axée sur la conformité légale (CLT/Portaria 671). Le projet intègre des flux logiques complexes, une modélisation de données auditable et un support par intelligence artificielle.",
+              tech: ["PHP", "MySQL", "HTML", "CSS", "JS", "APIs"],
+              link: "https://skinny-protest-638.notion.site/Sistema-de-Ponto-Eletr-nico-3373f2d9e43b80148ce6d1cb4740ea06?source=copy_link"
             }
           ],
           "achievements.title": "Réalisations",
@@ -534,7 +542,7 @@ i18n
           "achievements.sw.event": "Startup Weekend São José 2025",
           "achievements.sw.date": "25 au 27 avril 2025",
           "achievements.sw.location": "São José, Santa Catarina, Brésil",
-          "achievements.sw.description": "Compétition de 54 heures axée sur la cybersécurité, où nous avons développé VerifiCAR — une plateforme permettant aux acheteurs de vérifier si le lien d'une annonce de véhicule est authentique.",
+          "achievements.sw.description": "Compétition de 54 heures axée sur la cybersécurité, où nous avons développé le MVP de VerifiCAR — une solution permettant aux acheteurs de vérifier si le lien d'une annonce de véhicule est authentique.",
           "achievements.sw.certificate": "Certificat",
           "achievements.sw.theme": "Cybersécurité",
           "achievements.sw.clickToOpen": "Cliquez pour voir les détails",
@@ -543,6 +551,7 @@ i18n
           "achievements.sw.locationLabel": "Lieu",
           "achievements.sw.pitch": "Présentation du Pitch",
           "achievements.sw.graphs": "Données de Validation",
+          "achievements.sw.frontend": "Code Front-end",
           "achievements.sw.viewDocs": "Voir les Documents",
           "achievements.sw.backToInfo": "Retour",
           "achievements.sw.selectDoc": "Sélectionnez un document à afficher",
@@ -550,6 +559,7 @@ i18n
           "nav.experience": "Expérience",
           "nav.techStack": "Technologies",
           "nav.projects": "Projets",
+          "nav.achievements": "Réalisations",
           "nav.contact": "Contact",
           "exp.title": "Expérience en TI",
           "exp.sp.role": "Stagiaire en Développement Logiciel",

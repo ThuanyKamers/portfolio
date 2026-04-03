@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { FiChevronDown } from "react-icons/fi";
 import { MdTranslate } from "react-icons/md";
 import { useTranslation } from 'react-i18next';
@@ -15,15 +15,6 @@ const langNames: { [key: string]: string } = {
 const LanguageDropdown = () => {
   const { i18n } = useTranslation();
   const [open, setOpen] = useState(false);
-  const [isDark, setIsDark] = useState(true);
-
-  useEffect(() => {
-    const check = () => setIsDark(document.documentElement.classList.contains('dark'));
-    check();
-    const observer = new MutationObserver(check);
-    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
-    return () => observer.disconnect();
-  }, []);
 
   const initialLang = i18n.language.toUpperCase() || "PT";
   const [currentLang, setCurrentLang] = useState(langNames[initialLang] || "Português");
@@ -38,15 +29,11 @@ const LanguageDropdown = () => {
     <div className="flex items-center justify-center font-mono">
       <motion.div animate={open ? "open" : "closed"} className="relative">
 
-        {/* BOTÃO PRINCIPAL */}
         <motion.button
           onClick={() => setOpen((pv) => !pv)}
           whileTap={{ scale: 0.95 }}
           style={{ padding: '10px 18px', borderRadius: '12px', gap: '8px' }}
-          className={`flex items-center font-semibold transition-all cursor-pointer
-            ${isDark
-              ? 'text-slate-200 hover:text-white'
-              : 'text-slate-700 hover:text-slate-900'}`}
+          className="flex items-center font-semibold transition-all cursor-pointer text-slate-200 hover:text-white"
         >
           <MdTranslate style={{ fontSize: '22px' }} />
           <motion.span variants={iconVariants} style={{ fontSize: '16px', display: 'flex' }}>
@@ -54,18 +41,14 @@ const LanguageDropdown = () => {
           </motion.span>
         </motion.button>
 
-        {/* OPÇÕES DO DROPDOWN */}
         <motion.ul
           initial={wrapperVariants.closed}
           variants={wrapperVariants}
           style={{ originY: "top", translateX: "-50%", padding: '10px', gap: '4px', borderRadius: '14px' }}
-          className={`flex flex-col shadow-2xl absolute top-[120%] left-[50%] w-auto overflow-hidden z-50 whitespace-nowrap
-            ${isDark
-              ? 'bg-slate-800 border border-slate-700'
-              : 'bg-white border border-slate-200 shadow-lg'}`}
+          className="flex flex-col shadow-2xl absolute top-[120%] left-[50%] w-auto overflow-hidden z-50 whitespace-nowrap bg-slate-800 border border-slate-700"
         >
           {Object.entries(langNames).map(([code, name]) => (
-            <Option key={code} text={name} langCode={code} handleSelect={handleSelectLang} currentLang={currentLang} isDark={isDark} />
+            <Option key={code} text={name} langCode={code} handleSelect={handleSelectLang} currentLang={currentLang} />
           ))}
         </motion.ul>
       </motion.div>
@@ -73,7 +56,7 @@ const LanguageDropdown = () => {
   );
 };
 
-const Option = ({ text, langCode, handleSelect, currentLang, isDark }: any) => {
+const Option = ({ text, langCode, handleSelect, currentLang }: any) => {
   const isSelected = currentLang === text;
 
   return (
@@ -83,10 +66,8 @@ const Option = ({ text, langCode, handleSelect, currentLang, isDark }: any) => {
       style={{ padding: '10px 20px', borderRadius: '10px', fontSize: '15px' }}
       className={`flex items-center w-full font-semibold cursor-pointer transition-all
         ${isSelected
-          ? isDark ? 'bg-slate-700 text-white' : 'bg-slate-100 text-slate-900 font-bold'
-          : isDark
-            ? 'text-slate-300 hover:bg-slate-700/60 hover:text-white'
-            : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900'}`}
+          ? 'bg-slate-700 text-white'
+          : 'text-slate-300 hover:bg-slate-700/60 hover:text-white'}`}
     >
       {text}
     </motion.li>

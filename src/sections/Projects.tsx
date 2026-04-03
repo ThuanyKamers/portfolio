@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 import ProjectCard from '../components/ProjectCard';
 import MarqueeRow from '../components/ui/MarqueeRow';
@@ -6,15 +6,6 @@ import { asset } from '../utils/asset';
 
 const Projects: React.FC = () => {
   const { t } = useTranslation();
-  const [isDark, setIsDark] = useState(true);
-
-  useEffect(() => {
-    const check = () => setIsDark(document.documentElement.classList.contains('dark'));
-    check();
-    const observer = new MutationObserver(check);
-    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
-    return () => observer.disconnect();
-  }, []);
 
   const projects = t('projects.list', { returnObjects: true }) as Array<{
     title: string;
@@ -48,7 +39,6 @@ const Projects: React.FC = () => {
                   tech={p.tech}
                   link={p.link}
                   image={p.image ? asset(p.image) : undefined}
-                  isDark={isDark}
                 />
               </div>
             ))}

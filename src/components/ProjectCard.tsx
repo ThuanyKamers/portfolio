@@ -1,18 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
 
-// Tamanho dos cards: 300px de largura por 280px de altura
-
 interface ProjectCardProps {
   title: string;
   description: string;
   tech: string[];
   link: string;
   image?: string;
-  isDark: boolean;
 }
 
-const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, tech, image, link, isDark }) => {
+const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, tech, image, link }) => {
   const handleClick = () => {
     if (link && link !== '#') {
       window.open(link, '_blank', 'noopener,noreferrer');
@@ -20,7 +17,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, tech, ima
   };
 
   return (
-    <StyledWrapper $isDark={isDark}>
+    <StyledWrapper>
       <div className="card" onClick={handleClick}>
         <div className="content">
           <div className="back">
@@ -66,7 +63,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, tech, ima
   );
 };
 
-const StyledWrapper = styled.div<{ $isDark: boolean }>`
+const StyledWrapper = styled.div`
   width: 100%;
   perspective: 1000px;
 
@@ -127,9 +124,9 @@ const StyledWrapper = styled.div<{ $isDark: boolean }>`
     position: absolute;
     width: 99%;
     height: 99%;
-    background-color: ${(props) => props.$isDark ? '#0f172a' : '#CEC3CE'};
+    background-color: #0f172a;
     border-radius: 12px;
-    color: ${(props) => props.$isDark ? 'white' : '#2d2d2d'};
+    color: white;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -143,14 +140,14 @@ const StyledWrapper = styled.div<{ $isDark: boolean }>`
     font-size: 18px;
     font-weight: 700;
     text-align: center;
-    color: ${(props) => props.$isDark ? '#e2e8f0' : '#2d2d2d'};
+    color: #e2e8f0;
   }
 
   .back-description {
     font-size: 13px;
     line-height: 1.5;
     text-align: center;
-    color: ${(props) => props.$isDark ? '#94a3b8' : '#606060'};
+    color: #94a3b8;
   }
 
   .front {
