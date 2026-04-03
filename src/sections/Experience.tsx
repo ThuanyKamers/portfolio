@@ -1,6 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { Timeline } from "../components/ui/timeline";
+import { asset } from "../utils/asset";
 import { PolaroidStack } from "../components/ui/polaroid-stack";
 
 const Experience: React.FC = () => {
@@ -33,9 +34,9 @@ const Experience: React.FC = () => {
           <div className="flex justify-center" style={{ marginTop: '30px' }}>
             <PolaroidStack
               images={[
-                { src: "images/sp.png", alt: "Preview 1", caption: Array.isArray(spCaptions) ? spCaptions[0] : "" },
-                { src: "images/sp2.png", alt: "Preview 2", caption: Array.isArray(spCaptions) ? spCaptions[1] : "" },
-                { src: "images/sp3.png", alt: "Preview 3", caption: Array.isArray(spCaptions) ? spCaptions[2] : "" },
+                { src: asset("images/sp.png"), alt: "Preview 1", caption: Array.isArray(spCaptions) ? spCaptions[0] : "" },
+                { src: asset("images/sp2.png"), alt: "Preview 2", caption: Array.isArray(spCaptions) ? spCaptions[1] : "" },
+                { src: asset("images/sp3.png"), alt: "Preview 3", caption: Array.isArray(spCaptions) ? spCaptions[2] : "" },
               ]}
             />
           </div>
@@ -61,13 +62,13 @@ const Experience: React.FC = () => {
           <div className="flex justify-center" style={{ marginTop: '30px' }}>
             <PolaroidStack
               images={[
-                { src: "images/nsc.png", alt: "Office entrance", caption: Array.isArray(nscCaptions) ? nscCaptions[0] : "" },
-                { src: "images/nsc1.png", alt: "My first day", caption: Array.isArray(nscCaptions) ? nscCaptions[1] : "" },
-                { src: "images/nsc2.png", alt: "Selfie photo in office", caption: Array.isArray(nscCaptions) ? nscCaptions[2] : "" },
-                { src: "images/nsc3.png", alt: "Women's day", caption: Array.isArray(nscCaptions) ? nscCaptions[3] : "" },
-                { src: "images/nsc4.png", alt: "Carnaval", caption: Array.isArray(nscCaptions) ? nscCaptions[4] : "" },
-                { src: "images/nsc5.png", alt: "Meeting with interns", caption: Array.isArray(nscCaptions) ? nscCaptions[5] : "" },
-                { src: "images/nsc6.PNG", alt: "Another meeting with interns", caption: Array.isArray(nscCaptions) ? nscCaptions[6] : "" },
+                { src: asset("images/nsc.png"), alt: "Office entrance", caption: Array.isArray(nscCaptions) ? nscCaptions[0] : "" },
+                { src: asset("images/nsc1.png"), alt: "My first day", caption: Array.isArray(nscCaptions) ? nscCaptions[1] : "" },
+                { src: asset("images/nsc2.png"), alt: "Selfie photo in office", caption: Array.isArray(nscCaptions) ? nscCaptions[2] : "" },
+                { src: asset("images/nsc3.png"), alt: "Women's day", caption: Array.isArray(nscCaptions) ? nscCaptions[3] : "" },
+                { src: asset("images/nsc4.png"), alt: "Carnaval", caption: Array.isArray(nscCaptions) ? nscCaptions[4] : "" },
+                { src: asset("images/nsc5.png"), alt: "Meeting with interns", caption: Array.isArray(nscCaptions) ? nscCaptions[5] : "" },
+                { src: asset("images/nsc6.PNG"), alt: "Another meeting with interns", caption: Array.isArray(nscCaptions) ? nscCaptions[6] : "" },
               ]}
             />
           </div>
@@ -93,9 +94,9 @@ const Experience: React.FC = () => {
           <div className="flex justify-center" style={{ marginTop: '30px' }}>
             <PolaroidStack
               images={[
-                { src: "images/flex.png", alt: "Office entrance", caption: Array.isArray(flexCaptions) ? flexCaptions[0] : "" },
-                { src: "images/flex2.png", alt: "Last day of training", caption: Array.isArray(flexCaptions) ? flexCaptions[1] : "" },
-                { src: "images/flex3.png", alt: "Christmas in office", caption: Array.isArray(flexCaptions) ? flexCaptions[2] : "", rotation: -80 },
+                { src: asset("images/flex.png"), alt: "Office entrance", caption: Array.isArray(flexCaptions) ? flexCaptions[0] : "" },
+                { src: asset("images/flex2.png"), alt: "Last day of training", caption: Array.isArray(flexCaptions) ? flexCaptions[1] : "" },
+                { src: asset("images/flex3.png"), alt: "Christmas in office", caption: Array.isArray(flexCaptions) ? flexCaptions[2] : "", rotation: -80 },
               ]}
             />
           </div>

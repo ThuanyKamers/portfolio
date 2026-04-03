@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import ProjectCard from '../components/ProjectCard';
 import MarqueeRow from '../components/ui/MarqueeRow';
+import { asset } from '../utils/asset';
 
 const Projects: React.FC = () => {
   const { t } = useTranslation();
@@ -46,7 +47,7 @@ const Projects: React.FC = () => {
                   description={p.description}
                   tech={p.tech}
                   link={p.link}
-                  image={p.image}
+                  image={p.image ? asset(p.image) : undefined}
                   isDark={isDark}
                 />
               </div>

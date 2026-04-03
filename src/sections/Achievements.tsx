@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
 import { useTranslation } from "react-i18next";
 import MarqueeRow from "../components/ui/MarqueeRow";
+import { asset } from "../utils/asset";
 
 interface AchievementDoc {
   label: string;
@@ -41,17 +42,17 @@ const Achievements: React.FC = () => {
       id: "sw",
       cardTitle: "Startup Weekend SJ",
       cardSubtitle: t("achievements.sw.theme"),
-      backgroundImage: "images/CertificadoSW.png",
+      backgroundImage: asset("images/CertificadoSW.png"),
       images: [
-        "images/CertificadoSW.png",
-        "images/sw.png",
-        "images/sw1.png",
-        "images/sw2.png",
-        "images/sw3.png",
-        "images/sw4.png",
-        "images/sw5.png",
-        "images/sw6.png",
-        "images/sw7.png",
+        asset("images/CertificadoSW.png"),
+        asset("images/sw.png"),
+        asset("images/sw1.png"),
+        asset("images/sw2.png"),
+        asset("images/sw3.png"),
+        asset("images/sw4.png"),
+        asset("images/sw5.png"),
+        asset("images/sw6.png"),
+        asset("images/sw7.png"),
       ],
       details: [
         { label: t("achievements.sw.placement"), value: t("achievements.sw.badge") },
