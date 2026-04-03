@@ -25,15 +25,11 @@ const MarqueeRow: React.FC<MarqueeRowProps> = ({
   const animName = direction === "left" ? "mq-left" : "mq-right";
   const reps = 10;
 
-  const buildHalf = (prefix: string) => (
-    <div className="flex shrink-0" style={{ gap: `${gap}px` }}>
-      {Array.from({ length: reps }, (_, rep) =>
-        children.map((child, i) => (
-          <div key={`${prefix}-${rep}-${i}`} className="shrink-0">{child}</div>
-        ))
-      ).flat()}
-    </div>
-  );
+  const items = Array.from({ length: reps }, (_, rep) =>
+    children.map((child, i) => (
+      <div key={`${rep}-${i}`} className="shrink-0" style={{ marginRight: `${gap}px` }}>{child}</div>
+    ))
+  ).flat();
 
   return (
     <div
@@ -45,13 +41,12 @@ const MarqueeRow: React.FC<MarqueeRowProps> = ({
         ref={trackRef}
         className="flex"
         style={{
-          gap: `${gap}px`,
           width: "max-content",
           animation: `${animName} ${speed}s linear infinite`,
         }}
       >
-        {buildHalf("a")}
-        {buildHalf("b")}
+        {items}
+        {items}
       </div>
 
       <style>{`

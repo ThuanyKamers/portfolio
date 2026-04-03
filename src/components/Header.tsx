@@ -1,8 +1,16 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import ThemeToggle from './ThemeToggle';
 import { LanguageSwitcher } from './ui/LanguageSwitcher';
 
 const Header: React.FC = () => {
+  const { t } = useTranslation();
+  const navItems = [
+    { id: 'experience', label: t('nav.experience') },
+    { id: 'tech-stack', label: t('nav.techStack') },
+    { id: 'projects', label: t('nav.projects') },
+    { id: 'contact', label: t('nav.contact') },
+  ];
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -45,17 +53,14 @@ const Header: React.FC = () => {
 
           {/* CENTRO: Menu com a Animação Estilo Uiverse */}
           <nav className="hidden md:flex items-center" style={{ gap: '2.5rem' }}>
-            {['experience', 'tech-stack', 'projects', 'contact'].map((item) => (
+            {navItems.map((item) => (
               <button
-                key={item}
-                onClick={() => scrollToSection(item)}
-                /* group: permite controlar o span interno no hover
-                   uppercase + font-bold: traz o estilo do código que você enviou
-                */
+                key={item.id}
+                onClick={() => scrollToSection(item.id)}
                 className="group relative text-xs font-extrabold uppercase tracking-widest transition-colors duration-400 ease-[cubic-bezier(0.25,0.8,0.25,1)] hover:text-(--foreground) whitespace-nowrap"
                 style={{ color: 'var(--text-muted)' }}
               >
-                {item.replace('-', ' ')}
+                {item.label}
                 
                 {/* A LINHA (Pseudo-elemento after) */}
                 <span 

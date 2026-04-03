@@ -3,10 +3,6 @@ import { createPortal } from "react-dom";
 import { useTranslation } from "react-i18next";
 import MarqueeRow from "../components/ui/MarqueeRow";
 
-type ModalView = "info" | "pdf";
-
-const isMobile = () => window.innerWidth < 768;
-
 interface AchievementDoc {
   label: string;
   url: string;
@@ -26,8 +22,6 @@ interface AchievementData {
 const Achievements: React.FC = () => {
   const { t } = useTranslation();
   const [activeCard, setActiveCard] = useState<AchievementData | null>(null);
-  const [view, setView] = useState<ModalView>("info");
-  const [activePdf, setActivePdf] = useState("");
   const [slideIndex, setSlideIndex] = useState(0);
 
   /*
@@ -67,8 +61,8 @@ const Achievements: React.FC = () => {
       ],
       description: t("achievements.sw.description"),
       docs: [
-        { label: t("achievements.sw.pitch"), url: "/images/swpowp.pdf" },
-        { label: t("achievements.sw.graphs"), url: "/images/swpowgraphs.pdf" },
+        { label: t("achievements.sw.pitch"), url: "https://drive.google.com/file/d/1BuEUpegRA1SCEJ9fwQdKufRhmCrRLM1j/view?usp=sharing" },
+        { label: t("achievements.sw.graphs"), url: "https://drive.google.com/file/d/1hebzriee5VOueX5Mhml786cu-aLsCbbo/view?usp=sharing" },
       ],
     },
     // ========================================
@@ -138,30 +132,23 @@ const Achievements: React.FC = () => {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "";
-      setView("info");
-      setActivePdf("");
       setSlideIndex(0);
     }
     return () => { document.body.style.overflow = ""; };
   }, [activeCard]);
 
   useEffect(() => {
-    if (!activeCard || view !== "info") return;
+    if (!activeCard) return;
     const images = activeCard.images;
     if (images.length <= 1) return;
     const interval = setInterval(() => {
       setSlideIndex((prev) => (prev + 1) % images.length);
     }, 3000);
     return () => clearInterval(interval);
-  }, [activeCard, view]);
+  }, [activeCard]);
 
-  const openPdf = (url: string) => {
-    if (isMobile()) {
-      window.open(url, "_blank", "noopener,noreferrer");
-    } else {
-      setActivePdf(url);
-      setView("pdf");
-    }
+  const openDoc = (url: string) => {
+    window.open(url, "_blank", "noopener,noreferrer");
   };
 
   return (
@@ -259,9 +246,8 @@ const Achievements: React.FC = () => {
               ✕
             </button>
 
-            {view === "info" ? (
-              <>
-                {/* Esquerda: Slideshow */}
+            <>
+              {/* Esquerda: Slideshow */}
                 <div className="flex-1 relative overflow-hidden" style={{ backgroundColor: "#0a0a0a" }}>
                   {activeCard.images.map((src, i) => (
                     <img
@@ -302,60 +288,21 @@ const Achievements: React.FC = () => {
                   </div>
 
                   {activeCard.docs.length > 0 && (
-                    <button
-                      onClick={() => setView("pdf")}
-                      className="mt-auto w-full px-4 py-3 rounded-lg text-sm font-semibold transition-all hover:scale-105 cursor-pointer text-center"
-                      style={{ backgroundColor: "rgba(255,255,255,0.06)", color: "rgba(255,255,255,0.7)", border: "1px solid rgba(255,255,255,0.1)" }}
-                    >
-                      {t("achievements.sw.viewDocs")}
-                    </button>
+                    <div className="flex flex-col gap-2 mt-auto">
+                      {activeCard.docs.map((doc) => (
+                        <button
+                          key={doc.url}
+                          onClick={() => openDoc(doc.url)}
+                          className="w-full px-4 py-3 rounded-lg text-sm font-semibold transition-all hover:scale-105 cursor-pointer text-center"
+                          style={{ backgroundColor: "rgba(255,255,255,0.06)", color: "rgba(255,255,255,0.7)", border: "1px solid rgba(255,255,255,0.1)" }}
+                        >
+                          {doc.label}
+                        </button>
+                      ))}
+                    </div>
                   )}
                 </div>
-              </>
-            ) : (
-              <div className="flex flex-col w-full h-full">
-                <div className="flex items-center gap-4 p-5" style={{ borderBottom: "1px solid rgba(255,255,255,0.06)" }}>
-                  <button
-                    onClick={() => { setView("info"); setActivePdf(""); }}
-                    className="text-white/50 hover:text-white text-sm cursor-pointer transition-colors flex items-center gap-2"
-                  >
-                    ← {t("achievements.sw.backToInfo")}
-                  </button>
-                </div>
-
-                <div className="flex flex-col md:flex-row flex-1 min-h-0">
-                  <div className="md:w-55 p-5 flex flex-col gap-2" style={{ borderRight: "1px solid rgba(255,255,255,0.06)" }}>
-                    {activeCard.docs.map((doc) => (
-                      <button
-                        key={doc.url}
-                        onClick={() => openPdf(doc.url)}
-                        className="w-full text-left px-4 py-3 rounded-lg text-sm font-medium transition-all cursor-pointer"
-                        style={{
-                          backgroundColor: activePdf === doc.url ? "rgba(59,130,246,0.15)" : "transparent",
-                          color: activePdf === doc.url ? "#60a5fa" : "rgba(255,255,255,0.6)",
-                          border: activePdf === doc.url ? "1px solid rgba(59,130,246,0.3)" : "1px solid transparent",
-                        }}
-                      >
-                        {doc.label}
-                      </button>
-                    ))}
-                  </div>
-
-                  <div className="flex-1 flex items-center justify-center p-4 min-h-0">
-                    {activePdf ? (
-                      <iframe
-                        src={activePdf}
-                        className="w-full rounded-lg"
-                        style={{ height: "65vh", border: "none" }}
-                        title="PDF Viewer"
-                      />
-                    ) : (
-                      <p className="text-white/30 text-sm">{t("achievements.sw.selectDoc")}</p>
-                    )}
-                  </div>
-                </div>
-              </div>
-            )}
+            </>
           </div>
         </div>,
         document.body

@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -10,6 +11,7 @@ interface TimelineEntry {
 }
 
 export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
+  const { t } = useTranslation();
   const ref = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const lineRef = useRef<HTMLDivElement>(null);
@@ -69,7 +71,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
           className="text-3xl md:text-4xl font-bold"
           style={{ color: 'var(--foreground)' }}
         >
-          Experience
+          {t("exp.title")}
         </h2>
       </div>
 
