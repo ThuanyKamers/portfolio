@@ -14,7 +14,7 @@ const Contact: React.FC = () => {
   const [codeError, setCodeError] = useState(false);
   const [verificationCode, setVerificationCode] = useState('');
   const [sendingCode, setSendingCode] = useState(false);
-  const [sendError, setSendError] = useState('');
+  const [, setSendError] = useState('');
   const [codeSendError, setCodeSendError] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
 
