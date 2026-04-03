@@ -52,14 +52,14 @@ i18n
               description: "Youth Protagonism in the Digital Era",
               tech: ["Teaching", "Informatics", "Community"],
               link: "https://drive.google.com/file/d/1LUM4euMbWL19hjXX-KYLRIWYS_AZ1day/view?usp=sharing",
-              image: "/images/extensionproj.png"
+              image: "images/extensionproj.png"
             },
             {
               title: "E-commerce Platform",
               description: "Full-stack e-commerce application with payment integration, product catalog, and user authentication.",
               tech: ["HTML", "CSS", "JavaScript"],
               link: "https://thuanykamers.github.io/DressUP/",
-              image: "/images/dressup.png"
+              image: "images/dressup.png"
             },
             {
               title: "Social Media App",
@@ -167,14 +167,14 @@ i18n
               description: "Protagonismo Juvenil na Era Digital",
               tech: ["Ensino", "Informática", "Comunidade"],
               link: "https://drive.google.com/file/d/1LUM4euMbWL19hjXX-KYLRIWYS_AZ1day/view?usp=sharing",
-              image: "/images/extensionproj.png"
+              image: "images/extensionproj.png"
             },
             {
               title: "Plataforma E-commerce",
               description: "Aplicação e-commerce completa com integração de pagamento, catálogo de produtos e autenticação.",
               tech: ["HTML", "CSS", "JavaScript"],
               link: "https://thuanykamers.github.io/DressUP/",
-              image: "/images/dressup.png"
+              image: "images/dressup.png"
             },
             {
               title: "Aplicativo Social",
@@ -282,14 +282,14 @@ i18n
               description: "Protagonismo Juvenil en la Era Digital",
               tech: ["Enseñanza", "Informática", "Comunidad"],
               link: "https://drive.google.com/file/d/1LUM4euMbWL19hjXX-KYLRIWYS_AZ1day/view?usp=sharing",
-              image: "/images/extensionproj.png"
+              image: "images/extensionproj.png"
             },
             {
               title: "Plataforma E-commerce",
               description: "Aplicación de comercio electrónico completa con integración de pagos, catálogo de productos y autenticación.",
               tech: ["HTML", "CSS", "JavaScript"],
               link: "https://thuanykamers.github.io/DressUP/",
-              image: "/images/dressup.png"
+              image: "images/dressup.png"
             },
             {
               title: "Aplicación Social",
@@ -397,14 +397,14 @@ i18n
               description: "Jugendlicher Protagonismus im digitalen Zeitalter",
               tech: ["Unterricht", "Informatik", "Gemeinschaft"],
               link: "https://drive.google.com/file/d/1LUM4euMbWL19hjXX-KYLRIWYS_AZ1day/view?usp=sharing",
-              image: "/images/extensionproj.png"
+              image: "images/extensionproj.png"
             },
             {
               title: "E-Commerce-Plattform",
               description: "Vollständige E-Commerce-Anwendung mit Zahlungsintegration, Produktkatalog und Benutzerauthentifizierung.",
               tech: ["HTML", "CSS", "JavaScript"],
               link: "https://thuanykamers.github.io/DressUP/",
-              image: "/images/dressup.png"
+              image: "images/dressup.png"
             },
             {
               title: "Social-Media-App",
@@ -512,14 +512,14 @@ i18n
               description: "Protagonisme Juvénile à l'Ère Numérique",
               tech: ["Enseignement", "Informatique", "Communauté"],
               link: "https://drive.google.com/file/d/1LUM4euMbWL19hjXX-KYLRIWYS_AZ1day/view?usp=sharing",
-              image: "/images/extensionproj.png"
+              image: "images/extensionproj.png"
             },
             {
               title: "Plateforme E-commerce",
               description: "Application e-commerce complète avec intégration de paiement, catalogue de produits et authentification.",
               tech: ["HTML", "CSS", "JavaScript"],
               link: "https://thuanykamers.github.io/DressUP/",
-              image: "/images/dressup.png"
+              image: "images/dressup.png"
             },
             {
               title: "Application Sociale",

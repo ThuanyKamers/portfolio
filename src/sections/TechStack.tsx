@@ -62,22 +62,22 @@ const TechStack: React.FC = () => {
   const { t } = useTranslation(); // Ativando a tradução
 
   const techs = [
-    { name: "HTML", color: "#A855F7", iconUrl: "/images/html.png" },
-    { name: "CSS", color: "#A855F7", iconUrl: "/images/css.png" },
-    { name: "JavaScript", color: "#A855F7", iconUrl: "/images/javascript.png" },
-    { name: "TypeScript", color: "#3178C6", iconUrl: "/images/typescript.png" },
-    { name: "Python", color: "#3776AB", iconUrl: "/images/python.png" },
-    { name: "PHP", color: "#777BB4", iconUrl: "/images/php.png" },
-    { name: "Lua", color: "#646CFF", iconUrl: "/images/lua.png" },
-    { name: "React", color: "#61DAFB", iconUrl: "/images/react.png" },
-    { name: "Tailwind CSS", color: "#38BDF8", iconUrl: "/images/tailwind.png" },
-    { name: "Node.js", color: "#339933", iconUrl: "/images/node.png" },
-    { name: "Vite", color: "#646CFF", iconUrl: "/images/vite.png" },
-    { name: "MySQL", color: "#A855F7", iconUrl: "/images/mysql.png" },
-    { name: "Git & GitHub", color: "#F05032", iconUrl: "/images/git.png" },
-    { name: "GSAP", color: "#88CE02", iconUrl: "/images/gsap.png" },
-    { name: "Windows", color: "#0078D6", iconUrl: "/images/windows.png" },
-    { name: "Linux", color: "#FCC624", iconUrl: "/images/linux.png" },
+    { name: "HTML", color: "#A855F7", iconUrl: "images/html.png" },
+    { name: "CSS", color: "#A855F7", iconUrl: "images/css.png" },
+    { name: "JavaScript", color: "#A855F7", iconUrl: "images/javascript.png" },
+    { name: "TypeScript", color: "#3178C6", iconUrl: "images/typescript.png" },
+    { name: "Python", color: "#3776AB", iconUrl: "images/python.png" },
+    { name: "PHP", color: "#777BB4", iconUrl: "images/php.png" },
+    { name: "Lua", color: "#646CFF", iconUrl: "images/lua.png" },
+    { name: "React", color: "#61DAFB", iconUrl: "images/react.png" },
+    { name: "Tailwind CSS", color: "#38BDF8", iconUrl: "images/tailwind.png" },
+    { name: "Node.js", color: "#339933", iconUrl: "images/node.png" },
+    { name: "Vite", color: "#646CFF", iconUrl: "images/vite.png" },
+    { name: "MySQL", color: "#A855F7", iconUrl: "images/mysql.png" },
+    { name: "Git & GitHub", color: "#F05032", iconUrl: "images/git.png" },
+    { name: "GSAP", color: "#88CE02", iconUrl: "images/gsap.png" },
+    { name: "Windows", color: "#0078D6", iconUrl: "images/windows.png" },
+    { name: "Linux", color: "#FCC624", iconUrl: "images/linux.png" },
   ];
 
   return (
