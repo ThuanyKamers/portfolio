@@ -64,6 +64,7 @@ const Achievements: React.FC = () => {
       docs: [
         { label: t("achievements.sw.pitch"), url: "https://drive.google.com/file/d/1BuEUpegRA1SCEJ9fwQdKufRhmCrRLM1j/view?usp=sharing" },
         { label: t("achievements.sw.graphs"), url: "https://drive.google.com/file/d/1hebzriee5VOueX5Mhml786cu-aLsCbbo/view?usp=sharing" },
+        { label: t("achievements.sw.frontend"), url: "https://docs.google.com/document/d/1Z-SjtJI0lCFRD61zH8EE1tA0SMwPSPi8EISzvDNx5qw/edit?usp=sharing" },
       ],
     },
     // ========================================
@@ -236,8 +237,8 @@ const Achievements: React.FC = () => {
           onClick={() => setActiveCard(null)}
         >
           <div
-            className="relative flex flex-col md:flex-row rounded-2xl overflow-hidden w-full max-h-[85vh]"
-            style={{ backgroundColor: "#0d1117", maxWidth: "1200px" }}
+            className="relative flex flex-col md:flex-row rounded-2xl overflow-hidden w-full"
+            style={{ backgroundColor: "#0d1117", maxWidth: "1300px", height: "90vh", maxHeight: "900px" }}
             onClick={(e) => e.stopPropagation()}
           >
             <button
@@ -265,20 +266,20 @@ const Achievements: React.FC = () => {
                 </div>
 
                 {/* Direita: Detalhes */}
-                <div className="shrink-0 flex flex-col justify-between overflow-y-auto no-scrollbar" style={{ borderLeft: "1px solid rgba(255,255,255,0.06)", width: "420px", padding: "48px 48px 48px 56px" }}>
-                  <div>
-                    <h3 className="text-xl font-bold text-white mb-2 leading-tight">
+                <div className="shrink-0 flex flex-col justify-between overflow-y-auto no-scrollbar" style={{ borderLeft: "1px solid rgba(255,255,255,0.06)", width: "440px", padding: "56px 48px 56px 56px" }}>
+                  <div className="mb-4">
+                    <h3 className="text-xl font-bold text-white mb-1 leading-tight">
                       {activeCard.cardTitle}
                     </h3>
-                    <p className="text-white/40 text-sm">
+                    <p className="text-blue-400 text-sm font-medium">
                       {activeCard.cardSubtitle}
                     </p>
                   </div>
 
                   {activeCard.details.map((detail, i) => (
                     <div key={i}>
-                      <p className="text-white/30 text-xs uppercase tracking-widest mb-1.5">{detail.label}</p>
-                      <p className="text-white font-bold">{detail.value}</p>
+                      <p className="text-white/25 text-[10px] uppercase tracking-widest mb-1">{detail.label}</p>
+                      <p className="text-white font-bold text-sm">{detail.value}</p>
                     </div>
                   ))}
 

@@ -1,6 +1,5 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import ThemeToggle from './ThemeToggle';
 import { LanguageSwitcher } from './ui/LanguageSwitcher';
 
 const Header: React.FC = () => {
@@ -9,6 +8,7 @@ const Header: React.FC = () => {
     { id: 'experience', label: t('nav.experience') },
     { id: 'tech-stack', label: t('nav.techStack') },
     { id: 'projects', label: t('nav.projects') },
+    { id: 'achievements', label: t('nav.achievements') },
     { id: 'contact', label: t('nav.contact') },
   ];
   const scrollToSection = (sectionId: string) => {
@@ -42,7 +42,7 @@ const Header: React.FC = () => {
         }}>
           
           {/* ESQUERDA: Logo */}
-          <div style={{ display: 'flex', justifyContent: 'flex-start', marginLeft: '40px' }}>
+          <div style={{ display: 'flex', justifyContent: 'flex-start', marginLeft: '60px' }}>
             <div 
               className="font-bold text-2xl tracking-tighter"
               style={{ color: 'var(--foreground)' }}
@@ -71,15 +71,13 @@ const Header: React.FC = () => {
             ))}
           </nav>
 
-          {/* DIREITA: Language + Toggle */}
-          <div style={{ 
-            display: 'flex', 
-            justifyContent: 'flex-end', 
-            alignItems: 'center', 
-            gap: '5rem', 
-            marginRight: '80px' }}>
+          {/* DIREITA: Language */}
+          <div style={{
+            display: 'flex',
+            justifyContent: 'flex-end',
+            alignItems: 'center',
+            marginRight: '60px' }}>
 
-            <ThemeToggle />
             <LanguageSwitcher />
 
           </div>

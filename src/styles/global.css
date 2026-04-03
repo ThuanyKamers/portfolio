@@ -1,15 +1,6 @@
 @import "tailwindcss";
 
-/* MODO CLARO - Padrão quando NÃO tem classe .dark */
 :root {
-  --background: transparent;
-  --foreground: #0f172a;
-  --card-bg: #f8fafc;
-  --text-muted: #475569;
-}
-
-/* MODO ESCURO - Quando TEM classe .dark */
-.dark {
   --background: transparent;
   --foreground: #f8fafc;
   --card-bg: rgba(17, 34, 64, 0.7);
@@ -28,7 +19,6 @@ body,
 #root {
   min-height: 100vh;
   color: var(--foreground) !important;
-  transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 body {
