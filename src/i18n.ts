@@ -11,7 +11,7 @@ i18n
         translation: {
           "hero.greeting": "Hi, my name is",
           "hero.role": "Full Stack Developer",
-          "hero.description": "I am an Information Systems student in the last semester of the course.",
+          "hero.description": "Bachelor's in Information Systems",
           "tech.title": "Tech",
           "tech.subtitle": "Stack",
           "contact.title": "Contact Me",
@@ -21,7 +21,6 @@ i18n
           "contact.fields.name": "name",
           "contact.fields.company": "company",
           "contact.fields.description": "description",
-          // ADICIONE ESTAS LINHAS ABAIXO:
           "contact.invalidEmail": "Please enter a valid email",
           "contact.codeSendError": "Failed to send verification code. Please check your email and try again.",
           "contact.invalidCode": "Invalid code. Please try again.",
@@ -87,14 +86,47 @@ i18n
           "achievements.sw.viewDocs": "View Documents",
           "achievements.sw.backToInfo": "Back",
           "achievements.sw.selectDoc": "Select a document to view",
-          "achievements.comingSoon": "Coming Soon"
+          "achievements.comingSoon": "Coming Soon",
+          "nav.experience": "Experience",
+          "nav.techStack": "Tech Stack",
+          "nav.projects": "Projects",
+          "nav.contact": "Contact",
+          "exp.title": "IT Experience",
+          "exp.sp.role": "Software Developer Intern",
+          "exp.sp.period": "May 2025 - July 2025",
+          "exp.sp.tasks": [
+            "Led the back-end development of an electronic time-tracking system using PHP, MySQL, HTML, CSS and JavaScript.",
+            "Integration of the Meta API for secure delivery of password recovery links/codes.",
+            "Developed systemic automation via the OpenAI/GPT API for natural language database queries.",
+            "Designed and implemented complex business logic for automatic record recalculation.",
+            "Managed version control and source code using Git and GitHub."
+          ],
+          "exp.sp.captions": ["Home Office Day", "Prototype System", "The Corporate Office"],
+          "exp.nsc.role": "IT Intern",
+          "exp.nsc.period": "Sept 2024 - May 2025",
+          "exp.nsc.tasks": [
+            "Provided support to employees using the JD Edwards system.",
+            "Managed user access and permissions through Active Directory.",
+            "Handled support tickets via ServiceNow.",
+            "Updated and created system documentation, publishing it on SharePoint and Confluence."
+          ],
+          "exp.nsc.captions": ["Main Entrance", "First Day in Office", "Selfie in Office", "Women's Day", "Carnaval", "Interns Meeting", "Interns Meeting 2"],
+          "exp.flex.role": "Customer Service Representative",
+          "exp.flex.period": "Jun 2020 - July 2022",
+          "exp.flex.tasks": [
+            "Answer phone calls about credit card issues and help the customer to solve problems with the app.",
+            "Help colleagues solve complex problems.",
+            "Provide customer support via chat.",
+            "Utilize Salesforce to verify customer data and provide accurate guidance and instructions."
+          ],
+          "exp.flex.captions": ["Main Entrance", "End of Salesforce Training", "Christmas"]
         }
       },
       PT: {
         translation: {
           "hero.greeting": "Olá, meu nome é",
           "hero.role": "Desenvolvedora Full Stack",
-          "hero.description": "Sou estudante de Sistemas de Informação no último semestre do curso.",
+          "hero.description": "Bacharel em Sistemas de Informação",
           "tech.title": "Stack",
           "tech.subtitle": "Tecnológica",
           "contact.title": "Contate-me",
@@ -104,7 +136,6 @@ i18n
           "contact.fields.name": "nome",
           "contact.fields.company": "empresa",
           "contact.fields.description": "mensagem",
-          // ADICIONE ESTAS LINHAS ABAIXO:
           "contact.invalidEmail": "Por favor, digite um email válido",
           "contact.codeSendError": "Falha ao enviar código de verificação. Verifique seu email e tente novamente.",
           "contact.invalidCode": "Código inválido. Tente novamente.",
@@ -170,14 +201,47 @@ i18n
           "achievements.sw.viewDocs": "Ver Documentos",
           "achievements.sw.backToInfo": "Voltar",
           "achievements.sw.selectDoc": "Selecione um documento para visualizar",
-          "achievements.comingSoon": "Em Breve"
+          "achievements.comingSoon": "Em Breve",
+          "nav.experience": "Experiência",
+          "nav.techStack": "Tecnologias",
+          "nav.projects": "Projetos",
+          "nav.contact": "Contato",
+          "exp.title": "Experiência em TI",
+          "exp.sp.role": "Estagiária de Desenvolvimento de Software",
+          "exp.sp.period": "Mai 2025 - Jul 2025",
+          "exp.sp.tasks": [
+            "Liderou o desenvolvimento back-end de um sistema eletrônico de controle de ponto usando PHP, MySQL, HTML, CSS e JavaScript.",
+            "Integração da API da Meta para envio seguro de links/códigos de recuperação de senha.",
+            "Desenvolveu automação sistêmica via API OpenAI/GPT para consultas em linguagem natural ao banco de dados.",
+            "Projetou e implementou lógica de negócios complexa para recálculo automático de registros.",
+            "Gerenciou controle de versão e código-fonte usando Git e GitHub."
+          ],
+          "exp.sp.captions": ["Dia de Home Office", "Sistema Protótipo", "O Escritório"],
+          "exp.nsc.role": "Estagiária de TI",
+          "exp.nsc.period": "Set 2024 - Mai 2025",
+          "exp.nsc.tasks": [
+            "Suporte aos colaboradores utilizando o sistema JD Edwards.",
+            "Gerenciamento de acessos e permissões através do Active Directory.",
+            "Atendimento de chamados via ServiceNow.",
+            "Atualização e criação de documentação de sistemas, publicando no SharePoint e Confluence."
+          ],
+          "exp.nsc.captions": ["Entrada Principal", "Primeiro Dia no Escritório", "Selfie no Escritório", "Dia da Mulher", "Carnaval", "Reunião de Estagiários", "Reunião de Estagiários 2"],
+          "exp.flex.role": "Atendente de SAC",
+          "exp.flex.period": "Jun 2020 - Jul 2022",
+          "exp.flex.tasks": [
+            "Atendimento telefônico sobre problemas com cartão de crédito e auxílio ao cliente na resolução de problemas com o aplicativo.",
+            "Auxílio a colegas na resolução de problemas complexos.",
+            "Atendimento ao cliente via chat.",
+            "Utilização do Salesforce para verificar dados de clientes e fornecer orientações precisas."
+          ],
+          "exp.flex.captions": ["Entrada Principal", "Fim do Treinamento Salesforce", "Natal"]
         }
       },
       ES: {
         translation: {
           "hero.greeting": "Hola, mi nombre es",
           "hero.role": "Desarrolladora Full Stack",
-          "hero.description": "Soy estudiante de Sistemas de Información en el último semestre de la carrera.",
+          "hero.description": "Licenciatura en Sistemas de Información",
           "tech.title": "Mis",
           "tech.subtitle": "Tecnologías",
           "contact.title": "Contáctame",
@@ -187,7 +251,6 @@ i18n
           "contact.fields.name": "nombre",
           "contact.fields.company": "empresa",
           "contact.fields.description": "descripción",
-          // ADICIONE ESTAS LINHAS ABAIXO:
           "contact.invalidEmail": "Por favor, ingresa un correo válido",
           "contact.codeSendError": "Error al enviar el código de verificación. Verifica tu correo e intenta de nuevo.",
           "contact.invalidCode": "Código inválido. Intenta de nuevo.",
@@ -253,14 +316,47 @@ i18n
           "achievements.sw.viewDocs": "Ver Documentos",
           "achievements.sw.backToInfo": "Volver",
           "achievements.sw.selectDoc": "Selecciona un documento para ver",
-          "achievements.comingSoon": "Próximamente"
+          "achievements.comingSoon": "Próximamente",
+          "nav.experience": "Experiencia",
+          "nav.techStack": "Tecnologías",
+          "nav.projects": "Proyectos",
+          "nav.contact": "Contacto",
+          "exp.title": "Experiencia en TI",
+          "exp.sp.role": "Pasante de Desarrollo de Software",
+          "exp.sp.period": "May 2025 - Jul 2025",
+          "exp.sp.tasks": [
+            "Lideró el desarrollo back-end de un sistema electrónico de control de asistencia usando PHP, MySQL, HTML, CSS y JavaScript.",
+            "Integración de la API de Meta para el envío seguro de enlaces/códigos de recuperación de contraseña.",
+            "Desarrolló automatización sistémica vía API OpenAI/GPT para consultas en lenguaje natural a la base de datos.",
+            "Diseñó e implementó lógica de negocio compleja para el recálculo automático de registros.",
+            "Gestionó el control de versiones y código fuente usando Git y GitHub."
+          ],
+          "exp.sp.captions": ["Día de Home Office", "Sistema Prototipo", "La Oficina"],
+          "exp.nsc.role": "Pasante de TI",
+          "exp.nsc.period": "Sep 2024 - May 2025",
+          "exp.nsc.tasks": [
+            "Soporte a empleados utilizando el sistema JD Edwards.",
+            "Gestión de accesos y permisos a través de Active Directory.",
+            "Atención de tickets vía ServiceNow.",
+            "Actualización y creación de documentación de sistemas, publicando en SharePoint y Confluence."
+          ],
+          "exp.nsc.captions": ["Entrada Principal", "Primer Día en la Oficina", "Selfie en la Oficina", "Día de la Mujer", "Carnaval", "Reunión de Pasantes", "Reunión de Pasantes 2"],
+          "exp.flex.role": "Representante de Atención al Cliente",
+          "exp.flex.period": "Jun 2020 - Jul 2022",
+          "exp.flex.tasks": [
+            "Atención telefónica sobre problemas con tarjetas de crédito y ayuda al cliente en la resolución de problemas con la aplicación.",
+            "Ayuda a colegas en la resolución de problemas complejos.",
+            "Atención al cliente vía chat.",
+            "Utilización de Salesforce para verificar datos de clientes y proporcionar orientación precisa."
+          ],
+          "exp.flex.captions": ["Entrada Principal", "Fin del Entrenamiento Salesforce", "Navidad"]
         }
       },
       DE: {
         translation: {
           "hero.greeting": "Hallo, mein Name ist",
           "hero.role": "Full-Stack-Entwicklerin",
-          "hero.description": "Ich studiere Informationssysteme im letzten Semester meines Studiums.",
+          "hero.description": "Bachelor in Informationssystemen",
           "tech.title": "Mein",
           "tech.subtitle": "Tech-Stack",
           "contact.title": "Kontakt",
@@ -335,14 +431,47 @@ i18n
           "achievements.sw.viewDocs": "Dokumente ansehen",
           "achievements.sw.backToInfo": "Zurück",
           "achievements.sw.selectDoc": "Wählen Sie ein Dokument aus",
-          "achievements.comingSoon": "Demnächst"
+          "achievements.comingSoon": "Demnächst",
+          "nav.experience": "Erfahrung",
+          "nav.techStack": "Tech-Stack",
+          "nav.projects": "Projekte",
+          "nav.contact": "Kontakt",
+          "exp.title": "IT-Erfahrung",
+          "exp.sp.role": "Software-Entwicklungspraktikantin",
+          "exp.sp.period": "Mai 2025 - Jul 2025",
+          "exp.sp.tasks": [
+            "Leitete die Back-End-Entwicklung eines elektronischen Zeiterfassungssystems mit PHP, MySQL, HTML, CSS und JavaScript.",
+            "Integration der Meta-API für die sichere Zustellung von Passwort-Wiederherstellungslinks/-codes.",
+            "Entwickelte systemische Automatisierung über die OpenAI/GPT-API für natürlichsprachliche Datenbankabfragen.",
+            "Entwarf und implementierte komplexe Geschäftslogik für automatische Neuberechnung von Datensätzen.",
+            "Verwaltete Versionskontrolle und Quellcode mit Git und GitHub."
+          ],
+          "exp.sp.captions": ["Home-Office-Tag", "Prototyp-System", "Das Büro"],
+          "exp.nsc.role": "IT-Praktikantin",
+          "exp.nsc.period": "Sep 2024 - Mai 2025",
+          "exp.nsc.tasks": [
+            "Unterstützung der Mitarbeiter bei der Nutzung des JD-Edwards-Systems.",
+            "Verwaltung von Benutzerzugriffen und Berechtigungen über Active Directory.",
+            "Bearbeitung von Support-Tickets über ServiceNow.",
+            "Aktualisierung und Erstellung von Systemdokumentation, Veröffentlichung auf SharePoint und Confluence."
+          ],
+          "exp.nsc.captions": ["Haupteingang", "Erster Tag im Büro", "Selfie im Büro", "Frauentag", "Karneval", "Praktikantentreffen", "Praktikantentreffen 2"],
+          "exp.flex.role": "Kundendienstmitarbeiterin",
+          "exp.flex.period": "Jun 2020 - Jul 2022",
+          "exp.flex.tasks": [
+            "Telefonische Betreuung bei Kreditkartenproblemen und Hilfe bei der Lösung von App-Problemen.",
+            "Unterstützung von Kollegen bei komplexen Problemen.",
+            "Kundenbetreuung per Chat.",
+            "Nutzung von Salesforce zur Überprüfung von Kundendaten und Bereitstellung präziser Anleitungen."
+          ],
+          "exp.flex.captions": ["Haupteingang", "Ende des Salesforce-Trainings", "Weihnachten"]
         }
       },
       FR: {
         translation: {
           "hero.greeting": "Bonjour, je m'appelle",
           "hero.role": "Développeuse Full Stack",
-          "hero.description": "Je suis étudiante en Systèmes d'Information en dernière année de licence.",
+          "hero.description": "Licence en Systèmes d'Information",
           "tech.title": "Ma",
           "tech.subtitle": "Stack Tech",
           "contact.title": "Me Contacter",
@@ -417,7 +546,40 @@ i18n
           "achievements.sw.viewDocs": "Voir les Documents",
           "achievements.sw.backToInfo": "Retour",
           "achievements.sw.selectDoc": "Sélectionnez un document à afficher",
-          "achievements.comingSoon": "Bientôt"
+          "achievements.comingSoon": "Bientôt",
+          "nav.experience": "Expérience",
+          "nav.techStack": "Technologies",
+          "nav.projects": "Projets",
+          "nav.contact": "Contact",
+          "exp.title": "Expérience en TI",
+          "exp.sp.role": "Stagiaire en Développement Logiciel",
+          "exp.sp.period": "Mai 2025 - Jul 2025",
+          "exp.sp.tasks": [
+            "Direction du développement back-end d'un système électronique de suivi du temps avec PHP, MySQL, HTML, CSS et JavaScript.",
+            "Intégration de l'API Meta pour l'envoi sécurisé de liens/codes de récupération de mot de passe.",
+            "Développement d'automatisation systémique via l'API OpenAI/GPT pour des requêtes en langage naturel vers la base de données.",
+            "Conception et implémentation de logique métier complexe pour le recalcul automatique des enregistrements.",
+            "Gestion du contrôle de version et du code source avec Git et GitHub."
+          ],
+          "exp.sp.captions": ["Jour de Télétravail", "Système Prototype", "Le Bureau"],
+          "exp.nsc.role": "Stagiaire en Informatique",
+          "exp.nsc.period": "Sep 2024 - Mai 2025",
+          "exp.nsc.tasks": [
+            "Support aux employés utilisant le système JD Edwards.",
+            "Gestion des accès et permissions via Active Directory.",
+            "Traitement des tickets de support via ServiceNow.",
+            "Mise à jour et création de documentation système, publication sur SharePoint et Confluence."
+          ],
+          "exp.nsc.captions": ["Entrée Principale", "Premier Jour au Bureau", "Selfie au Bureau", "Journée de la Femme", "Carnaval", "Réunion des Stagiaires", "Réunion des Stagiaires 2"],
+          "exp.flex.role": "Représentante du Service Client",
+          "exp.flex.period": "Jun 2020 - Jul 2022",
+          "exp.flex.tasks": [
+            "Répondre aux appels téléphoniques concernant les problèmes de carte de crédit et aider les clients à résoudre les problèmes avec l'application.",
+            "Aider les collègues à résoudre des problèmes complexes.",
+            "Support client par chat.",
+            "Utilisation de Salesforce pour vérifier les données clients et fournir des instructions précises."
+          ],
+          "exp.flex.captions": ["Entrée Principale", "Fin de la Formation Salesforce", "Noël"]
         }
       }
     },
