@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { asset } from '../utils/asset';
 
 // Componente Interno para a Pilha Animada
 const SkillStack = ({ name, color, index, iconUrl }: { name: string; color: string; index: number; iconUrl: string }) => {
@@ -98,7 +99,7 @@ const TechStack: React.FC = () => {
               name={tech.name} 
               color={tech.color} 
               index={index} 
-              iconUrl={tech.iconUrl}
+              iconUrl={asset(tech.iconUrl)}
             />
           ))}
         </div>
