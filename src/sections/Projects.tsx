@@ -1,0 +1,61 @@
+import React, { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import ProjectCard from '../components/ProjectCard';
+import MarqueeRow from '../components/ui/MarqueeRow';
+
+const Projects: React.FC = () => {
+  const { t } = useTranslation();
+  const [isDark, setIsDark] = useState(true);
+
+  useEffect(() => {
+    const check = () => setIsDark(document.documentElement.classList.contains('dark'));
+    check();
+    const observer = new MutationObserver(check);
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+    return () => observer.disconnect();
+  }, []);
+
+  const projects = t('projects.list', { returnObjects: true }) as Array<{
+    title: string;
+    description: string;
+    tech: string[];
+    link: string;
+    image?: string;
+  }>;
+
+  return (
+    <section
+      id="projects"
+      className="py-32 flex flex-col items-center transition-colors duration-300"
+      style={{ backgroundColor: 'var(--background)' }}
+    >
+      <div className="w-full">
+        <h2
+          className="text-3xl font-bold text-center px-8"
+          style={{ color: 'var(--foreground)', marginBottom: '40px' }}
+        >
+          {t('projects.title')}
+        </h2>
+
+        {Array.isArray(projects) && (
+          <MarqueeRow direction="left" speed={200} gap={24}>
+            {projects.map((p, i) => (
+              <div key={i} style={{ width: '300px' }}>
+                <ProjectCard
+                  title={p.title}
+                  description={p.description}
+                  tech={p.tech}
+                  link={p.link}
+                  image={p.image}
+                  isDark={isDark}
+                />
+              </div>
+            ))}
+          </MarqueeRow>
+        )}
+      </div>
+    </section>
+  );
+};
+
+export default Projects;

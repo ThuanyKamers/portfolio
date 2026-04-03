@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+/* MODO CLARO - Padrão quando NÃO tem classe .dark */
+:root {
+  --background: transparent;
+  --foreground: #0f172a;
+  --card-bg: #f8fafc;
+  --text-muted: #475569;
+}
+
+/* MODO ESCURO - Quando TEM classe .dark */
+.dark {
+  --background: transparent;
+  --foreground: #f8fafc;
+  --card-bg: rgba(17, 34, 64, 0.7);
+  --text-muted: #94a3b8;
+}
+
+/* APLICAÇÃO GLOBAL */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100vh;
+  color: var(--foreground) !important;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+body {
+  overscroll-behavior: none;
+}
+
+#smooth-wrapper {
+  overflow: hidden;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+#smooth-content {
+  overflow: visible;
+  width: 100%;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
