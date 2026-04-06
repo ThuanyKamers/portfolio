@@ -9,6 +9,7 @@ import Experience from './sections/Experience';
 import Projects from './sections/Projects';
 import TechStack from './sections/TechStack';
 import Achievements from './sections/Achievements';
+import InternationalExperience from './sections/InternationalExperience';
 import Footer from './components/Footer';
 import SnowBackground from './components/SnowBackground';
 
@@ -19,7 +20,8 @@ function App() {
     const smoother = ScrollSmoother.create({
       smooth: 1.5,
       effects: true,
-      smoothTouch: 0.1,
+      smoothTouch: false,
+      normalizeScroll: false,
     });
 
     (window as any).__smoother = smoother;
@@ -46,7 +48,12 @@ function App() {
 
             <Experience />
 
-            {/* Espaçador entre Experience e TechStack */}
+            {/* Espaçador entre Experience e InternationalExperience */}
+            <div className="h-20 md:h-32" />
+
+            <InternationalExperience />
+
+            {/* Espaçador entre InternationalExperience e TechStack */}
             <div className="h-20 md:h-32" />
 
             <TechStack />

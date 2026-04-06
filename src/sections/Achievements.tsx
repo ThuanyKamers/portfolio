@@ -42,17 +42,17 @@ const Achievements: React.FC = () => {
       id: "sw",
       cardTitle: "Startup Weekend SJ",
       cardSubtitle: t("achievements.sw.theme"),
-      backgroundImage: asset("images/CertificadoSW.png"),
+      backgroundImage: asset("images/achievements/CertificadoSW.png"),
       images: [
-        asset("images/CertificadoSW.png"),
-        asset("images/sw.png"),
-        asset("images/sw1.png"),
-        asset("images/sw2.png"),
-        asset("images/sw3.png"),
-        asset("images/sw4.png"),
-        asset("images/sw5.png"),
-        asset("images/sw6.png"),
-        asset("images/sw7.png"),
+        asset("images/achievements/CertificadoSW.png"),
+        asset("images/achievements/sw.png"),
+        asset("images/achievements/sw1.png"),
+        asset("images/achievements/sw2.png"),
+        asset("images/achievements/sw3.png"),
+        asset("images/achievements/sw4.png"),
+        asset("images/achievements/sw5.png"),
+        asset("images/achievements/sw6.png"),
+        asset("images/achievements/sw7.png"),
       ],
       details: [
         { label: t("achievements.sw.placement"), value: t("achievements.sw.badge") },
@@ -67,62 +67,6 @@ const Achievements: React.FC = () => {
         { label: t("achievements.sw.frontend"), url: "https://docs.google.com/document/d/1Z-SjtJI0lCFRD61zH8EE1tA0SMwPSPi8EISzvDNx5qw/edit?usp=sharing" },
       ],
     },
-    // ========================================
-    // CARD 2 — Preencha suas informações
-    // ========================================
-    // {
-    //   id: "card2",
-    //   cardTitle: "Título do Card",
-    //   cardSubtitle: t("achievements.card2.theme"),
-    //   backgroundImage: "images/seu-certificado.png",
-    //   images: [
-    //     "images/seu-certificado.png",
-    //     "images/foto1.png",
-    //     "images/foto2.png",
-    //   ],
-    //   details: [
-    //     { label: t("achievements.card2.placement"), value: t("achievements.card2.badge") },
-    //     { label: "PROJETO", value: "Nome do Projeto" },
-    //     { label: t("achievements.card2.dateLabel"), value: t("achievements.card2.date") },
-    //     { label: t("achievements.card2.locationLabel"), value: t("achievements.card2.location") },
-    //   ],
-    //   description: t("achievements.card2.description"),
-    //   docs: [
-    //     { label: "Documento 1", url: "images/doc1.pdf" },
-    //   ],
-    // },
-
-    // ========================================
-    // CARD 3 — Preencha suas informações
-    // ========================================
-    // {
-    //   id: "card3",
-    //   cardTitle: "Título do Card",
-    //   cardSubtitle: t("achievements.card3.theme"),
-    //   backgroundImage: "images/seu-certificado.png",
-    //   images: ["images/seu-certificado.png"],
-    //   details: [
-    //     { label: "TIPO", value: "Valor" },
-    //   ],
-    //   description: t("achievements.card3.description"),
-    //   docs: [],
-    // },
-
-    // ========================================
-    // CARD 4 — Preencha suas informações
-    // ========================================
-    // {
-    //   id: "card4",
-    //   cardTitle: "Título do Card",
-    //   cardSubtitle: t("achievements.card4.theme"),
-    //   backgroundImage: "images/seu-certificado.png",
-    //   images: ["images/seu-certificado.png"],
-    //   details: [
-    //     { label: "TIPO", value: "Valor" },
-    //   ],
-    //   description: t("achievements.card4.description"),
-    //   docs: [],
-    // },
   ];
 
   // Preenche até 4 cards (os vazios ficam como "Em Breve")

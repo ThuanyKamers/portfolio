@@ -52,14 +52,14 @@ i18n
               description: "Youth Protagonism in the Digital Era",
               tech: ["Teaching", "Informatics", "Community"],
               link: "https://drive.google.com/file/d/1LUM4euMbWL19hjXX-KYLRIWYS_AZ1day/view?usp=sharing",
-              image: "images/extensionproj.png"
+              image: "images/projects/extensionproj.png"
             },
             {
               title: "E-commerce Platform",
               description: "Full-stack e-commerce application with payment integration, product catalog, and user authentication.",
               tech: ["HTML", "CSS", "JavaScript"],
               link: "https://thuanykamers.github.io/DressUP/",
-              image: "images/dressup.png"
+              image: "images/projects/dressup.png"
             },
             {
               title: "Electronic Time-Tracking System",
@@ -70,23 +70,16 @@ i18n
           ],
           "achievements.title": "Achievements",
           "achievements.sw.badge": "3rd Place",
-          "achievements.sw.title": "Startup Weekend SJ - Cybersecurity",
-          "achievements.sw.event": "Startup Weekend São José 2025",
           "achievements.sw.date": "April 25-27, 2025",
           "achievements.sw.location": "São José, Santa Catarina, Brazil",
           "achievements.sw.description": "Competed in a 54-hour hackathon focused on cybersecurity, developing the MVP of VerifiCAR — a solution where buyers can verify if a vehicle ad link is authentic.",
-          "achievements.sw.certificate": "Certificate",
           "achievements.sw.theme": "Cybersecurity",
-          "achievements.sw.clickToOpen": "Click to view details",
           "achievements.sw.placement": "Placement",
           "achievements.sw.dateLabel": "Date",
           "achievements.sw.locationLabel": "Location",
           "achievements.sw.pitch": "Pitch Deck",
           "achievements.sw.graphs": "Validation Data",
           "achievements.sw.frontend": "Front-end Code",
-          "achievements.sw.viewDocs": "View Documents",
-          "achievements.sw.backToInfo": "Back",
-          "achievements.sw.selectDoc": "Select a document to view",
           "achievements.comingSoon": "Coming Soon",
           "nav.experience": "Experience",
           "nav.techStack": "Tech Stack",
@@ -121,7 +114,26 @@ i18n
             "Provide customer support via chat.",
             "Utilize Salesforce to verify customer data and provide accurate guidance and instructions."
           ],
-          "exp.flex.captions": ["Main Entrance", "End of Salesforce Training", "Christmas"]
+          "exp.flex.captions": ["Main Entrance", "End of Salesforce Training", "Christmas"],
+          "intl.title": "International Experience",
+          "intl.brazil": "Brazil",
+          "intl.brazil.city": "São José, SC",
+          "intl.brazil.jobs": [
+            { "period": "2018", "role": "English Teacher", "company": "CAIC Prof. Fevrônio Tancredo de Oliveira", "description": "Taught ESL to middle school students (6th–9th grade). Created tests and assignments to assess proficiency. Developed interactive games and activities to boost engagement and participation." },
+            { "period": "2022", "role": "Store Manager", "company": "Cacau Show — Shopping Continente", "description": "Managed daily store operations in a mall environment. Led customer service and sales. Handled inventory control, store layout, and stockroom logistics. Trained and supervised new staff. Managed documents and reports using Master Retail PDV." }
+          ],
+          "intl.portugal": "Portugal",
+          "intl.portugal.city": "Lisboa / Palmela, Setúbal",
+          "intl.portugal.jobs": [
+            { "period": "2023-24", "role": "Waitress at 5-Star Hotel", "company": "Talenter — Lisboa", "description": "Premium service at a 5-star hotel and casino, covering breakfast, dinner, and coffee breaks. Worked large-scale events at the hotel and casino. Wine service and international guest relations, requiring polished etiquette and multilingual fluency. Managed multiple tables simultaneously during peak hours while maintaining quality and guest satisfaction." },
+            { "period": "2023", "role": "Line Operator", "company": "Hit & Fit Holding", "description": "Operated on a tomato product manufacturing line (sauces and concentrates), ensuring smooth filling and packaging processes. Strictly applied food hygiene and safety standards (HACCP) to guarantee product integrity. Performed visual and technical inspection of the production line to identify and remove non-conforming products." },
+            { "period": "2023-24", "role": "Line Operator", "company": "Hanon Systems — Palmela, Setúbal", "description": "Worked on the production line of automotive components for AutoEuropa (Volkswagen Group), following strict quality and cycle-time standards. Performed technical part inspections to ensure compliance with automotive industry norms, preventing defects on the final assembly line. Collaborated in a high-pace industrial environment, maintaining productivity and operational safety." }
+          ],
+          "intl.germany": "Germany",
+          "intl.germany.city": "Aachen",
+          "intl.germany.jobs": [
+            { "period": "2025-26", "role": "Sortation Associate", "company": "Amazon", "description": "Worked in a high-volume logistics center focused on Problem Solve and Quality Control. Executed Induct (package intake) and Stow (storage) tasks, ensuring inventory accuracy. Operated entirely in English with some German, requiring clear and fast communication in a dynamic environment. Fully committed to productivity targets and operational safety standards." }
+          ]
         }
       },
       PT: {
@@ -169,14 +181,14 @@ i18n
               description: "Protagonismo Juvenil na Era Digital",
               tech: ["Ensino", "Informática", "Comunidade"],
               link: "https://drive.google.com/file/d/1LUM4euMbWL19hjXX-KYLRIWYS_AZ1day/view?usp=sharing",
-              image: "images/extensionproj.png"
+              image: "images/projects/extensionproj.png"
             },
             {
               title: "Plataforma E-commerce",
               description: "Aplicação e-commerce completa com integração de pagamento, catálogo de produtos e autenticação.",
               tech: ["HTML", "CSS", "JavaScript"],
               link: "https://thuanykamers.github.io/DressUP/",
-              image: "images/dressup.png"
+              image: "images/projects/dressup.png"
             },
             {
               title: "Sistema de Ponto Eletrônico",
@@ -187,23 +199,16 @@ i18n
           ],
           "achievements.title": "Conquistas",
           "achievements.sw.badge": "3º Lugar",
-          "achievements.sw.title": "Startup Weekend SJ - Cibersegurança",
-          "achievements.sw.event": "Startup Weekend São José 2025",
           "achievements.sw.date": "25 a 27 de abril de 2025",
           "achievements.sw.location": "São José, Santa Catarina, Brasil",
           "achievements.sw.description": "Competição de 54 horas focada em cibersegurança, onde desenvolvemos o MVP do VerifiCAR — uma solução onde compradores podem verificar se o link de um anúncio de veículo é autêntico.",
-          "achievements.sw.certificate": "Certificado",
           "achievements.sw.theme": "Cibersegurança",
-          "achievements.sw.clickToOpen": "Clique para ver detalhes",
           "achievements.sw.placement": "Colocação",
           "achievements.sw.dateLabel": "Data",
           "achievements.sw.locationLabel": "Local",
           "achievements.sw.pitch": "Apresentação do Pitch",
           "achievements.sw.graphs": "Dados de Validação",
           "achievements.sw.frontend": "Código Front-end",
-          "achievements.sw.viewDocs": "Ver Documentos",
-          "achievements.sw.backToInfo": "Voltar",
-          "achievements.sw.selectDoc": "Selecione um documento para visualizar",
           "achievements.comingSoon": "Em Breve",
           "nav.experience": "Experiência",
           "nav.techStack": "Tecnologias",
@@ -238,7 +243,26 @@ i18n
             "Atendimento ao cliente via chat.",
             "Utilização do Salesforce para verificar dados de clientes e fornecer orientações precisas."
           ],
-          "exp.flex.captions": ["Entrada Principal", "Fim do Treinamento Salesforce", "Natal"]
+          "exp.flex.captions": ["Entrada Principal", "Fim do Treinamento Salesforce", "Natal"],
+          "intl.title": "Experiência Internacional",
+          "intl.brazil": "Brasil",
+          "intl.brazil.city": "São José, SC",
+          "intl.brazil.jobs": [
+            { "period": "2018", "role": "Professora de Inglês", "company": "CAIC Prof. Fevrônio Tancredo de Oliveira", "description": "Lecionou inglês para alunos do ensino fundamental (6º ao 9º ano). Elaborou provas e atividades para avaliar o progresso dos alunos. Criou jogos interativos e atividades criativas para aumentar o engajamento e participação." },
+            { "period": "2022", "role": "Gerente de Loja", "company": "Cacau Show — Shopping Continente", "description": "Gerenciou operações diárias da loja em ambiente de shopping. Liderou atendimento ao cliente e vendas. Controlou estoque, layout da loja e logística do depósito. Treinou e supervisionou novos funcionários. Gerenciou documentos e relatórios usando o sistema Master Retail PDV." }
+          ],
+          "intl.portugal": "Portugal",
+          "intl.portugal.city": "Lisboa / Palmela, Setúbal",
+          "intl.portugal.jobs": [
+            { "period": "2023-24", "role": "Garçonete em Hotel 5 Estrelas", "company": "Talenter — Lisboa", "description": "Serviço de alto padrão em hotel 5 estrelas e cassino, atendendo café da manhã, jantar e coffee breaks. Atuação em grandes eventos no hotel e cassino. Serviço de vinhos e atendimento a clientes internacionais, exigindo postura polida e fluência em idiomas. Gestão de múltiplas mesas simultaneamente em horários de pico, mantendo qualidade e satisfação do cliente." },
+            { "period": "2023", "role": "Operadora de Linha", "company": "Hit & Fit Holding", "description": "Operação em linha de produção de derivados de tomate (molhos e concentrados), garantindo a fluidez do envase e embalagem. Aplicação rigorosa das normas de higiene e segurança alimentar (HACCP) para garantir a integridade do produto. Inspeção visual e técnica da esteira para identificação e remoção de produtos fora do padrão." },
+            { "period": "2023-24", "role": "Operadora de Linha", "company": "Hanon Systems — Palmela, Setúbal", "description": "Atuação na linha de produção de componentes automotivos para a AutoEuropa (Grupo Volkswagen), seguindo padrões rigorosos de qualidade e tempo de ciclo. Inspeção técnica de peças para garantir conformidade com normas da indústria automotiva, evitando falhas na montagem final. Colaboração em ambiente industrial de alta cadência, mantendo produtividade e segurança operacional." }
+          ],
+          "intl.germany": "Alemanha",
+          "intl.germany.city": "Aachen",
+          "intl.germany.jobs": [
+            { "period": "2025-26", "role": "Sortation Associate", "company": "Amazon", "description": "Atuação em centro logístico de alto volume, focando em Problem Solve e Quality Control. Execução de tarefas de Induct (entrada de pacotes) e Stow (armazenamento), garantindo precisão do inventário. Trabalho realizado em inglês com interações em alemão, exigindo comunicação clara e rápida em ambiente dinâmico. Foco total em metas de produtividade e segurança operacional." }
+          ]
         }
       },
       ES: {
@@ -286,14 +310,14 @@ i18n
               description: "Protagonismo Juvenil en la Era Digital",
               tech: ["Enseñanza", "Informática", "Comunidad"],
               link: "https://drive.google.com/file/d/1LUM4euMbWL19hjXX-KYLRIWYS_AZ1day/view?usp=sharing",
-              image: "images/extensionproj.png"
+              image: "images/projects/extensionproj.png"
             },
             {
               title: "Plataforma E-commerce",
               description: "Aplicación de comercio electrónico completa con integración de pagos, catálogo de productos y autenticación.",
               tech: ["HTML", "CSS", "JavaScript"],
               link: "https://thuanykamers.github.io/DressUP/",
-              image: "images/dressup.png"
+              image: "images/projects/dressup.png"
             },
             {
               title: "Sistema de Control de Asistencia",
@@ -304,23 +328,16 @@ i18n
           ],
           "achievements.title": "Logros",
           "achievements.sw.badge": "3er Lugar",
-          "achievements.sw.title": "Startup Weekend SJ - Ciberseguridad",
-          "achievements.sw.event": "Startup Weekend São José 2025",
           "achievements.sw.date": "25 al 27 de abril de 2025",
           "achievements.sw.location": "São José, Santa Catarina, Brasil",
           "achievements.sw.description": "Competencia de 54 horas enfocada en ciberseguridad, donde desarrollamos el MVP de VerifiCAR — una solución donde los compradores pueden verificar si el enlace de un anuncio de vehículo es auténtico.",
-          "achievements.sw.certificate": "Certificado",
           "achievements.sw.theme": "Ciberseguridad",
-          "achievements.sw.clickToOpen": "Haz clic para ver detalles",
           "achievements.sw.placement": "Posición",
           "achievements.sw.dateLabel": "Fecha",
           "achievements.sw.locationLabel": "Ubicación",
           "achievements.sw.pitch": "Presentación del Pitch",
           "achievements.sw.graphs": "Datos de Validación",
           "achievements.sw.frontend": "Código Front-end",
-          "achievements.sw.viewDocs": "Ver Documentos",
-          "achievements.sw.backToInfo": "Volver",
-          "achievements.sw.selectDoc": "Selecciona un documento para ver",
           "achievements.comingSoon": "Próximamente",
           "nav.experience": "Experiencia",
           "nav.techStack": "Tecnologías",
@@ -355,7 +372,26 @@ i18n
             "Atención al cliente vía chat.",
             "Utilización de Salesforce para verificar datos de clientes y proporcionar orientación precisa."
           ],
-          "exp.flex.captions": ["Entrada Principal", "Fin del Entrenamiento Salesforce", "Navidad"]
+          "exp.flex.captions": ["Entrada Principal", "Fin del Entrenamiento Salesforce", "Navidad"],
+          "intl.title": "Experiencia Internacional",
+          "intl.brazil": "Brasil",
+          "intl.brazil.city": "São José, SC",
+          "intl.brazil.jobs": [
+            { "period": "2018", "role": "Profesora de Inglés", "company": "CAIC Prof. Fevrônio Tancredo de Oliveira", "description": "Enseñó inglés a alumnos de secundaria (6º a 9º grado). Elaboró exámenes y actividades para evaluar el progreso. Creó juegos interactivos y actividades creativas para aumentar la participación." },
+            { "period": "2022", "role": "Gerente de Tienda", "company": "Cacau Show — Shopping Continente", "description": "Gestionó operaciones diarias de la tienda en centro comercial. Lideró atención al cliente y ventas. Controló inventario, disposición de la tienda y logística. Capacitó y supervisó nuevos empleados. Gestionó documentos y reportes con Master Retail PDV." }
+          ],
+          "intl.portugal": "Portugal",
+          "intl.portugal.city": "Lisboa / Palmela, Setúbal",
+          "intl.portugal.jobs": [
+            { "period": "2023-24", "role": "Camarera en Hotel 5 Estrellas", "company": "Talenter — Lisboa", "description": "Servicio de alto nivel en hotel 5 estrellas y casino, cubriendo desayuno, cena y coffee breaks. Participación en grandes eventos del hotel y casino. Servicio de vinos y atención a clientes internacionales, con etiqueta refinada y fluidez en idiomas. Gestión de múltiples mesas simultáneamente en horarios pico, manteniendo calidad y satisfacción del cliente." },
+            { "period": "2023", "role": "Operadora de Línea", "company": "Hit & Fit Holding", "description": "Operación en línea de producción de derivados de tomate (salsas y concentrados), asegurando la fluidez del envasado y embalaje. Aplicación rigurosa de normas de higiene y seguridad alimentaria (HACCP). Inspección visual y técnica de la cinta para identificar y retirar productos fuera de estándar." },
+            { "period": "2023-24", "role": "Operadora de Línea", "company": "Hanon Systems — Palmela, Setúbal", "description": "Trabajo en línea de producción de componentes automotrices para AutoEuropa (Grupo Volkswagen), siguiendo estándares rigurosos de calidad y tiempo de ciclo. Inspección técnica de piezas para garantizar conformidad con normas de la industria automotriz. Colaboración en ambiente industrial de alta cadencia, manteniendo productividad y seguridad operacional." }
+          ],
+          "intl.germany": "Alemania",
+          "intl.germany.city": "Aachen",
+          "intl.germany.jobs": [
+            { "period": "2025-26", "role": "Sortation Associate", "company": "Amazon", "description": "Trabajo en centro logístico de alto volumen, enfocado en Problem Solve y Quality Control. Ejecución de tareas de Induct (entrada de paquetes) y Stow (almacenamiento), garantizando precisión del inventario. Trabajo realizado en inglés con interacciones en alemán, requiriendo comunicación clara y rápida. Enfoque total en metas de productividad y seguridad operacional." }
+          ]
         }
       },
       DE: {
@@ -403,14 +439,14 @@ i18n
               description: "Jugendlicher Protagonismus im digitalen Zeitalter",
               tech: ["Unterricht", "Informatik", "Gemeinschaft"],
               link: "https://drive.google.com/file/d/1LUM4euMbWL19hjXX-KYLRIWYS_AZ1day/view?usp=sharing",
-              image: "images/extensionproj.png"
+              image: "images/projects/extensionproj.png"
             },
             {
               title: "E-Commerce-Plattform",
               description: "Vollständige E-Commerce-Anwendung mit Zahlungsintegration, Produktkatalog und Benutzerauthentifizierung.",
               tech: ["HTML", "CSS", "JavaScript"],
               link: "https://thuanykamers.github.io/DressUP/",
-              image: "images/dressup.png"
+              image: "images/projects/dressup.png"
             },
             {
               title: "Elektronisches Zeiterfassungssystem",
@@ -421,23 +457,16 @@ i18n
           ],
           "achievements.title": "Erfolge",
           "achievements.sw.badge": "3. Platz",
-          "achievements.sw.title": "Startup Weekend SJ - Cybersicherheit",
-          "achievements.sw.event": "Startup Weekend São José 2025",
           "achievements.sw.date": "25. bis 27. April 2025",
           "achievements.sw.location": "São José, Santa Catarina, Brasilien",
           "achievements.sw.description": "54-Stunden-Hackathon mit Schwerpunkt Cybersicherheit, bei dem wir das MVP von VerifiCAR entwickelten — eine Lösung, mit der Käufer überprüfen können, ob der Link einer Fahrzeuganzeige authentisch ist.",
-          "achievements.sw.certificate": "Zertifikat",
           "achievements.sw.theme": "Cybersicherheit",
-          "achievements.sw.clickToOpen": "Klicken Sie für Details",
           "achievements.sw.placement": "Platzierung",
           "achievements.sw.dateLabel": "Datum",
           "achievements.sw.locationLabel": "Ort",
           "achievements.sw.pitch": "Pitch-Präsentation",
           "achievements.sw.graphs": "Validierungsdaten",
           "achievements.sw.frontend": "Front-end-Code",
-          "achievements.sw.viewDocs": "Dokumente ansehen",
-          "achievements.sw.backToInfo": "Zurück",
-          "achievements.sw.selectDoc": "Wählen Sie ein Dokument aus",
           "achievements.comingSoon": "Demnächst",
           "nav.experience": "Erfahrung",
           "nav.techStack": "Tech-Stack",
@@ -472,7 +501,26 @@ i18n
             "Kundenbetreuung per Chat.",
             "Nutzung von Salesforce zur Überprüfung von Kundendaten und Bereitstellung präziser Anleitungen."
           ],
-          "exp.flex.captions": ["Haupteingang", "Ende des Salesforce-Trainings", "Weihnachten"]
+          "exp.flex.captions": ["Haupteingang", "Ende des Salesforce-Trainings", "Weihnachten"],
+          "intl.title": "Internationale Erfahrung",
+          "intl.brazil": "Brasilien",
+          "intl.brazil.city": "São José, SC",
+          "intl.brazil.jobs": [
+            { "period": "2018", "role": "Englischlehrerin", "company": "CAIC Prof. Fevrônio Tancredo de Oliveira", "description": "Unterrichtete Englisch für Schüler der Sekundarstufe (6.–9. Klasse). Erstellte Prüfungen und Aufgaben zur Leistungsbewertung. Entwickelte interaktive Spiele und kreative Aktivitäten zur Steigerung der Beteiligung." },
+            { "period": "2022", "role": "Filialleiterin", "company": "Cacau Show — Shopping Continente", "description": "Leitete den täglichen Filialbetrieb im Einkaufszentrum. Führte Kundenservice und Verkauf. Kontrollierte Lagerbestand, Ladenlayout und Logistik. Schulte und beaufsichtigte neue Mitarbeiter. Verwaltete Dokumente und Berichte mit Master Retail PDV." }
+          ],
+          "intl.portugal": "Portugal",
+          "intl.portugal.city": "Lissabon / Palmela, Setúbal",
+          "intl.portugal.jobs": [
+            { "period": "2023-24", "role": "Kellnerin im 5-Sterne-Hotel", "company": "Talenter — Lissabon", "description": "Erstklassiger Service in einem 5-Sterne-Hotel und Casino bei Frühstück, Abendessen und Kaffeepausen. Einsatz bei Großveranstaltungen im Hotel und Casino. Weinservice und internationale Gästebetreuung mit gepflegtem Auftreten und Sprachgewandtheit. Gleichzeitige Betreuung mehrerer Tische in Stoßzeiten bei Wahrung von Qualität und Gästezufriedenheit." },
+            { "period": "2023", "role": "Linienoperatorin", "company": "Hit & Fit Holding", "description": "Arbeit an der Produktionslinie für Tomatenprodukte (Soßen und Konzentrate) mit Sicherstellung reibungsloser Abfüll- und Verpackungsprozesse. Strikte Anwendung von Hygiene- und Lebensmittelsicherheitsstandards (HACCP). Visuelle und technische Kontrolle des Förderbands zur Identifizierung und Entfernung nicht konformer Produkte." },
+            { "period": "2023-24", "role": "Linienoperatorin", "company": "Hanon Systems — Palmela, Setúbal", "description": "Arbeit an der Produktionslinie für Automobilkomponenten für AutoEuropa (Volkswagen-Konzern) unter strikten Qualitäts- und Taktzeitstandards. Technische Teileinspektion zur Sicherstellung der Konformität mit Automobilindustrienormen. Zusammenarbeit in einem hochfrequenten Industrieumfeld bei Aufrechterhaltung von Produktivität und Arbeitssicherheit." }
+          ],
+          "intl.germany": "Deutschland",
+          "intl.germany.city": "Aachen",
+          "intl.germany.jobs": [
+            { "period": "2025-26", "role": "Sortation Associate", "company": "Amazon", "description": "Einsatz in einem Hochvolumen-Logistikzentrum mit Fokus auf Problem Solve und Quality Control. Durchführung von Induct- (Paketeingang) und Stow-Aufgaben (Einlagerung) zur Sicherstellung der Bestandsgenauigkeit. Arbeit auf Englisch mit deutschen Interaktionen, erforderte klare und schnelle Kommunikation. Voller Fokus auf Produktivitätsziele und Arbeitssicherheit." }
+          ]
         }
       },
       FR: {
@@ -520,14 +568,14 @@ i18n
               description: "Protagonisme Juvénile à l'Ère Numérique",
               tech: ["Enseignement", "Informatique", "Communauté"],
               link: "https://drive.google.com/file/d/1LUM4euMbWL19hjXX-KYLRIWYS_AZ1day/view?usp=sharing",
-              image: "images/extensionproj.png"
+              image: "images/projects/extensionproj.png"
             },
             {
               title: "Plateforme E-commerce",
               description: "Application e-commerce complète avec intégration de paiement, catalogue de produits et authentification.",
               tech: ["HTML", "CSS", "JavaScript"],
               link: "https://thuanykamers.github.io/DressUP/",
-              image: "images/dressup.png"
+              image: "images/projects/dressup.png"
             },
             {
               title: "Système de Pointage Électronique",
@@ -538,23 +586,16 @@ i18n
           ],
           "achievements.title": "Réalisations",
           "achievements.sw.badge": "3ème Place",
-          "achievements.sw.title": "Startup Weekend SJ - Cybersécurité",
-          "achievements.sw.event": "Startup Weekend São José 2025",
           "achievements.sw.date": "25 au 27 avril 2025",
           "achievements.sw.location": "São José, Santa Catarina, Brésil",
           "achievements.sw.description": "Compétition de 54 heures axée sur la cybersécurité, où nous avons développé le MVP de VerifiCAR — une solution permettant aux acheteurs de vérifier si le lien d'une annonce de véhicule est authentique.",
-          "achievements.sw.certificate": "Certificat",
           "achievements.sw.theme": "Cybersécurité",
-          "achievements.sw.clickToOpen": "Cliquez pour voir les détails",
           "achievements.sw.placement": "Classement",
           "achievements.sw.dateLabel": "Date",
           "achievements.sw.locationLabel": "Lieu",
           "achievements.sw.pitch": "Présentation du Pitch",
           "achievements.sw.graphs": "Données de Validation",
           "achievements.sw.frontend": "Code Front-end",
-          "achievements.sw.viewDocs": "Voir les Documents",
-          "achievements.sw.backToInfo": "Retour",
-          "achievements.sw.selectDoc": "Sélectionnez un document à afficher",
           "achievements.comingSoon": "Bientôt",
           "nav.experience": "Expérience",
           "nav.techStack": "Technologies",
@@ -589,7 +630,26 @@ i18n
             "Support client par chat.",
             "Utilisation de Salesforce pour vérifier les données clients et fournir des instructions précises."
           ],
-          "exp.flex.captions": ["Entrée Principale", "Fin de la Formation Salesforce", "Noël"]
+          "exp.flex.captions": ["Entrée Principale", "Fin de la Formation Salesforce", "Noël"],
+          "intl.title": "Expérience Internationale",
+          "intl.brazil": "Brésil",
+          "intl.brazil.city": "São José, SC",
+          "intl.brazil.jobs": [
+            { "period": "2018", "role": "Professeure d'Anglais", "company": "CAIC Prof. Fevrônio Tancredo de Oliveira", "description": "Enseigné l'anglais à des collégiens (6e à 9e année). Conçu des examens et activités pour évaluer les progrès. Créé des jeux interactifs et activités créatives pour stimuler la participation." },
+            { "period": "2022", "role": "Responsable de Magasin", "company": "Cacau Show — Shopping Continente", "description": "Géré les opérations quotidiennes du magasin en centre commercial. Dirigé le service client et les ventes. Contrôlé les stocks, l'agencement et la logistique. Formé et supervisé les nouveaux employés. Géré les documents et rapports avec Master Retail PDV." }
+          ],
+          "intl.portugal": "Portugal",
+          "intl.portugal.city": "Lisbonne / Palmela, Setúbal",
+          "intl.portugal.jobs": [
+            { "period": "2023-24", "role": "Serveuse dans un Hôtel 5 Étoiles", "company": "Talenter — Lisbonne", "description": "Service haut de gamme dans un hôtel 5 étoiles et casino, couvrant petit-déjeuner, dîner et pauses café. Participation à de grands événements de l'hôtel et du casino. Service de vins et relations avec une clientèle internationale, exigeant une étiquette soignée et une maîtrise des langues. Gestion de plusieurs tables simultanément aux heures de pointe, maintenant qualité et satisfaction client." },
+            { "period": "2023", "role": "Opératrice de Ligne", "company": "Hit & Fit Holding", "description": "Travail sur une ligne de production de dérivés de tomate (sauces et concentrés), assurant la fluidité du conditionnement et de l'emballage. Application rigoureuse des normes d'hygiène et de sécurité alimentaire (HACCP). Inspection visuelle et technique du convoyeur pour identifier et retirer les produits non conformes." },
+            { "period": "2023-24", "role": "Opératrice de Ligne", "company": "Hanon Systems — Palmela, Setúbal", "description": "Travail sur la ligne de production de composants automobiles pour AutoEuropa (Groupe Volkswagen), suivant des normes strictes de qualité et de temps de cycle. Inspection technique des pièces pour assurer la conformité aux normes de l'industrie automobile. Collaboration dans un environnement industriel à haute cadence, maintenant productivité et sécurité opérationnelle." }
+          ],
+          "intl.germany": "Allemagne",
+          "intl.germany.city": "Aix-la-Chapelle",
+          "intl.germany.jobs": [
+            { "period": "2025-26", "role": "Sortation Associate", "company": "Amazon", "description": "Travail dans un centre logistique à haut volume, axé sur le Problem Solve et le Quality Control. Exécution de tâches d'Induct (réception de colis) et de Stow (stockage), garantissant la précision de l'inventaire. Travail en anglais avec des interactions en allemand, exigeant une communication claire et rapide. Engagement total envers les objectifs de productivité et de sécurité opérationnelle." }
+          ]
         }
       }
     },
