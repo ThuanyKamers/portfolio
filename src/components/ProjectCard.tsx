@@ -7,9 +7,10 @@ interface ProjectCardProps {
   tech: string[];
   link: string;
   image?: string;
+  cover?: string;
 }
 
-const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, tech, image, link }) => {
+const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, tech, image, cover, link }) => {
   const handleClick = () => {
     if (link && link !== '#') {
       window.open(link, '_blank', 'noopener,noreferrer');
@@ -22,40 +23,27 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, tech, ima
         <div className="content">
           <div className="back">
             <div className="back-content">
-              <div className="back-title">{title}</div>
-              <div className="back-description">{description}</div>
+              <div className="back-glow" />
+              <div className="back-text-overlay">
+                <div className="back-title">{title}</div>
+                <div className="back-description">{description}</div>
+                <p className="back-tech">{tech.join(' · ')}</p>
+              </div>
             </div>
           </div>
           <div className="front">
-            {image ? (
-              <>
-                <img src={image} alt={title} className="front-image" />
-                <div className="front-overlay">
-                  <div className="front-info">
-                    <div className="front-title">
-                      <p><strong>{title}</strong></p>
-                    </div>
-                    <p className="front-tech">{tech.join(' | ')}</p>
-                  </div>
+            <div
+              className="front-cover"
+              style={(cover || image) ? { backgroundImage: `url(${cover || image})`, backgroundSize: 'cover', backgroundPosition: 'center' } : {}}
+            />
+            <div className="front-overlay">
+              <div className="front-info">
+                <div className="front-title">
+                  <p><strong>{title}</strong></p>
                 </div>
-              </>
-            ) : (
-              <>
-                <div className="front-bg-circles">
-                  <div className="circle" />
-                  <div className="circle circle-right" />
-                  <div className="circle circle-bottom" />
-                </div>
-                <div className="front-overlay">
-                  <div className="front-info">
-                    <div className="front-title">
-                      <p><strong>{title}</strong></p>
-                    </div>
-                    <p className="front-tech">{tech.join(' | ')}</p>
-                  </div>
-                </div>
-              </>
-            )}
+                <p className="front-tech">{tech.join(' | ')}</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -126,14 +114,29 @@ const StyledWrapper = styled.div`
     height: 99%;
     background-color: #0f172a;
     border-radius: 12px;
-    color: white;
+    overflow: hidden;
+    z-index: 2;
+  }
+
+  .back-glow {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 30% 40%, rgba(59, 130, 246, 0.08) 0%, transparent 60%),
+                radial-gradient(circle at 70% 80%, rgba(96, 165, 250, 0.06) 0%, transparent 50%);
+  }
+
+  .back-text-overlay {
+    position: relative;
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 8px;
     padding: 28px;
-    z-index: 2;
+    color: white;
+    z-index: 1;
   }
 
   .back-title {
@@ -150,52 +153,24 @@ const StyledWrapper = styled.div`
     color: #94a3b8;
   }
 
+  .back-tech {
+    font-size: 10px;
+    color: #3b82f6;
+    margin-top: 4px;
+    letter-spacing: 0.5px;
+  }
+
   .front {
     transform: rotateY(180deg);
     color: white;
     position: relative;
   }
 
-  .front-image {
+  .front-cover {
     width: 100%;
     height: 100%;
-    object-fit: cover;
     border-radius: 12px;
-  }
-
-  .front-bg-circles {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-  }
-
-  .circle {
-    width: 90px;
-    height: 90px;
-    border-radius: 50%;
-    background-color: #3b82f6;
-    position: relative;
-    filter: blur(15px);
-    animation: floating 2600ms infinite linear;
-    will-change: transform;
-  }
-
-  .circle-right {
-    background-color: #60a5fa;
-    left: 140px;
-    top: -60px;
-    width: 30px;
-    height: 30px;
-    animation-delay: -1800ms;
-  }
-
-  .circle-bottom {
-    background-color: #1e40af;
-    left: 50px;
-    top: 0px;
-    width: 120px;
-    height: 120px;
-    animation-delay: -800ms;
+    background-color: #0f172a;
   }
 
   .front-overlay {
@@ -238,12 +213,6 @@ const StyledWrapper = styled.div`
   @keyframes rotation_481 {
     0% { transform: rotateZ(0deg); }
     100% { transform: rotateZ(360deg); }
-  }
-
-  @keyframes floating {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(10px); }
-    100% { transform: translateY(0px); }
   }
 
   @media (max-width: 1024px) { width: 48%; }

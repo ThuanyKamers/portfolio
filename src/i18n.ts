@@ -45,14 +45,17 @@ i18n
               title: "My Portfolio",
               description: "This website you are browsing, built with React, TypeScript and Tailwind CSS, focused on performance and design responsivity.",
               tech: ["React", "TypeScript", "Tailwind"],
-              link: "#"
+              link: "#",
+              image: "images/projects/capaPortfolio.png",
+              cover: "images/projects/capaPortfolio.png"
             },
             {
               title: "Extension Project",
               description: "Youth Protagonism in the Digital Era",
               tech: ["Teaching", "Informatics", "Community"],
               link: "https://drive.google.com/file/d/1LUM4euMbWL19hjXX-KYLRIWYS_AZ1day/view?usp=sharing",
-              image: "images/projects/extensionproj.png"
+              image: "images/projects/capaExtensao.png",
+              cover: "images/projects/capaExtensao.png"
             },
             {
               title: "E-commerce Platform",
@@ -65,7 +68,9 @@ i18n
               title: "Electronic Time-Tracking System",
               description: "Development of a solution for work schedule and time bank management, focused on legal compliance (CLT/Portaria 671). The project integrates complex logic flows, auditable data modeling, and AI-powered support.",
               tech: ["PHP", "MySQL", "HTML", "CSS", "JS", "APIs"],
-              link: "https://skinny-protest-638.notion.site/Sistema-de-Ponto-Eletr-nico-3373f2d9e43b80148ce6d1cb4740ea06?source=copy_link"
+              link: "https://skinny-protest-638.notion.site/Sistema-de-Ponto-Eletr-nico-3373f2d9e43b80148ce6d1cb4740ea06?source=copy_link",
+              image: "images/projects/capatimeproject.png",
+              cover: "images/projects/capatimeproject.png"
             }
           ],
           "achievements.title": "Achievements",
@@ -82,6 +87,7 @@ i18n
           "achievements.sw.frontend": "Front-end Code",
           "achievements.comingSoon": "Coming Soon",
           "nav.experience": "Experience",
+          "nav.international": "International",
           "nav.techStack": "Tech Stack",
           "nav.projects": "Projects",
           "nav.achievements": "Achievements",
@@ -119,7 +125,7 @@ i18n
           "intl.brazil": "Brazil",
           "intl.brazil.city": "São José, SC",
           "intl.brazil.jobs": [
-            { "period": "2018", "role": "English Teacher", "company": "CAIC Prof. Fevrônio Tancredo de Oliveira", "description": "Taught ESL to middle school students (6th–9th grade). Created tests and assignments to assess proficiency. Developed interactive games and activities to boost engagement and participation." },
+            { "period": "2018", "role": "English Teacher", "company": "CAIC Prof. Febrônio Tancredo de Oliveira", "description": "Taught ESL to middle school students (6th–9th grade). Created tests and assignments to assess proficiency. Developed interactive games and activities to boost engagement and participation." },
             { "period": "2022", "role": "Store Manager", "company": "Cacau Show — Shopping Continente", "description": "Managed daily store operations in a mall environment. Led customer service and sales. Handled inventory control, store layout, and stockroom logistics. Trained and supervised new staff. Managed documents and reports using Master Retail PDV." }
           ],
           "intl.portugal": "Portugal",
@@ -174,14 +180,17 @@ i18n
               title: "Meu Portfólio",
               description: "Este site que você está navegando, feito com React, TypeScript e Tailwind CSS, focado em performance e design responsivo.",
               tech: ["React", "TypeScript", "Tailwind"],
-              link: "#"
+              link: "#",
+              image: "images/projects/capaPortfolio.png",
+              cover: "images/projects/capaPortfolio.png"
             },
             {
               title: "Projeto de Extensão",
               description: "Protagonismo Juvenil na Era Digital",
               tech: ["Ensino", "Informática", "Comunidade"],
               link: "https://drive.google.com/file/d/1LUM4euMbWL19hjXX-KYLRIWYS_AZ1day/view?usp=sharing",
-              image: "images/projects/extensionproj.png"
+              image: "images/projects/capaExtensao.png",
+              cover: "images/projects/capaExtensao.png"
             },
             {
               title: "Plataforma E-commerce",
@@ -194,7 +203,9 @@ i18n
               title: "Sistema de Ponto Eletrônico",
               description: "Desenvolvimento de uma solução para gestão de jornada e banco de horas, focada em conformidade legal (CLT/Portaria 671). O projeto integra fluxos lógicos complexos, modelagem de dados auditável e suporte via inteligência artificial.",
               tech: ["PHP", "MySQL", "HTML", "CSS", "JS", "APIs"],
-              link: "https://skinny-protest-638.notion.site/Sistema-de-Ponto-Eletr-nico-3373f2d9e43b80148ce6d1cb4740ea06?source=copy_link"
+              link: "https://skinny-protest-638.notion.site/Sistema-de-Ponto-Eletr-nico-3373f2d9e43b80148ce6d1cb4740ea06?source=copy_link",
+              image: "images/projects/capatimeproject.png",
+              cover: "images/projects/capatimeproject.png"
             }
           ],
           "achievements.title": "Conquistas",
@@ -211,6 +222,7 @@ i18n
           "achievements.sw.frontend": "Código Front-end",
           "achievements.comingSoon": "Em Breve",
           "nav.experience": "Experiência",
+          "nav.international": "Internacional",
           "nav.techStack": "Tecnologias",
           "nav.projects": "Projetos",
           "nav.achievements": "Conquistas",
@@ -219,49 +231,49 @@ i18n
           "exp.sp.role": "Estagiária de Desenvolvimento de Software",
           "exp.sp.period": "Mai 2025 - Jul 2025",
           "exp.sp.tasks": [
-            "Liderou o desenvolvimento back-end de um sistema eletrônico de controle de ponto usando PHP, MySQL, HTML, CSS e JavaScript.",
+            "Desenvolver o back-end de um sistema eletrônico de controle de ponto com PHP, MySQL, HTML, CSS e JavaScript.",
             "Integração da API da Meta para envio seguro de links/códigos de recuperação de senha.",
-            "Desenvolveu automação sistêmica via API OpenAI/GPT para consultas em linguagem natural ao banco de dados.",
-            "Projetou e implementou lógica de negócios complexa para recálculo automático de registros.",
-            "Gerenciou controle de versão e código-fonte usando Git e GitHub."
+            "Desenvolver automação sistêmica via API OpenAI/GPT para consultas em linguagem natural ao banco de dados.",
+            "Projetar e implementar lógica de negócios complexa para recálculo automático de registros.",
+            "Gerenciar controle de versão e código-fonte com Git e GitHub."
           ],
           "exp.sp.captions": ["Dia de Home Office", "Sistema Protótipo", "O Escritório"],
           "exp.nsc.role": "Estagiária de TI",
           "exp.nsc.period": "Set 2024 - Mai 2025",
           "exp.nsc.tasks": [
-            "Suporte aos colaboradores utilizando o sistema JD Edwards.",
-            "Gerenciamento de acessos e permissões através do Active Directory.",
-            "Atendimento de chamados via ServiceNow.",
-            "Atualização e criação de documentação de sistemas, publicando no SharePoint e Confluence."
+            "Dar suporte aos colaboradores com o sistema JD Edwards.",
+            "Gerenciar acessos e permissões através do Active Directory.",
+            "Atender chamados via ServiceNow.",
+            "Atualizar e criar documentação de sistemas e publicar no SharePoint e Confluence."
           ],
           "exp.nsc.captions": ["Entrada Principal", "Primeiro Dia no Escritório", "Selfie no Escritório", "Dia da Mulher", "Carnaval", "Reunião de Estagiários", "Reunião de Estagiários 2"],
           "exp.flex.role": "Atendente de SAC",
           "exp.flex.period": "Jun 2020 - Jul 2022",
           "exp.flex.tasks": [
-            "Atendimento telefônico sobre problemas com cartão de crédito e auxílio ao cliente na resolução de problemas com o aplicativo.",
-            "Auxílio a colegas na resolução de problemas complexos.",
-            "Atendimento ao cliente via chat.",
-            "Utilização do Salesforce para verificar dados de clientes e fornecer orientações precisas."
+            "Atender por telefone sobre problemas com cartão de crédito e auxiliar o cliente na resolução de problemas com o aplicativo.",
+            "Auxiliar colegas na resolução de problemas complexos.",
+            "Atender o cliente via chat.",
+            "Utilizar o Salesforce para verificar dados de clientes e fornecer orientações precisas."
           ],
           "exp.flex.captions": ["Entrada Principal", "Fim do Treinamento Salesforce", "Natal"],
           "intl.title": "Experiência Internacional",
           "intl.brazil": "Brasil",
           "intl.brazil.city": "São José, SC",
           "intl.brazil.jobs": [
-            { "period": "2018", "role": "Professora de Inglês", "company": "CAIC Prof. Fevrônio Tancredo de Oliveira", "description": "Lecionou inglês para alunos do ensino fundamental (6º ao 9º ano). Elaborou provas e atividades para avaliar o progresso dos alunos. Criou jogos interativos e atividades criativas para aumentar o engajamento e participação." },
-            { "period": "2022", "role": "Gerente de Loja", "company": "Cacau Show — Shopping Continente", "description": "Gerenciou operações diárias da loja em ambiente de shopping. Liderou atendimento ao cliente e vendas. Controlou estoque, layout da loja e logística do depósito. Treinou e supervisionou novos funcionários. Gerenciou documentos e relatórios usando o sistema Master Retail PDV." }
+            { "period": "2018", "role": "Professora de Inglês", "company": "CAIC Prof. Febrônio Tancredo de Oliveira", "description": "Lecionar inglês para alunos do ensino fundamental (6º ao 9º ano). Elaborar provas e atividades para avaliar o progresso dos alunos. Criar jogos interativos e atividades criativas para engajar os alunos e aumentar a participação." },
+            { "period": "2022", "role": "Gerente de Loja", "company": "Cacau Show — Shopping Continente", "description": "Gerenciar operações diárias da loja em ambiente de shopping. Liderar vendas e atender clientes. Controlar estoque, layout da loja e logística do depósito. Treinar e supervisionar novos funcionários. Gerenciar documentos e relatórios com o sistema Master Retail PDV." }
           ],
           "intl.portugal": "Portugal",
           "intl.portugal.city": "Lisboa / Palmela, Setúbal",
           "intl.portugal.jobs": [
-            { "period": "2023-24", "role": "Garçonete em Hotel 5 Estrelas", "company": "Talenter — Lisboa", "description": "Serviço de alto padrão em hotel 5 estrelas e cassino, atendendo café da manhã, jantar e coffee breaks. Atuação em grandes eventos no hotel e cassino. Serviço de vinhos e atendimento a clientes internacionais, exigindo postura polida e fluência em idiomas. Gestão de múltiplas mesas simultaneamente em horários de pico, mantendo qualidade e satisfação do cliente." },
-            { "period": "2023", "role": "Operadora de Linha", "company": "Hit & Fit Holding", "description": "Operação em linha de produção de derivados de tomate (molhos e concentrados), garantindo a fluidez do envase e embalagem. Aplicação rigorosa das normas de higiene e segurança alimentar (HACCP) para garantir a integridade do produto. Inspeção visual e técnica da esteira para identificação e remoção de produtos fora do padrão." },
-            { "period": "2023-24", "role": "Operadora de Linha", "company": "Hanon Systems — Palmela, Setúbal", "description": "Atuação na linha de produção de componentes automotivos para a AutoEuropa (Grupo Volkswagen), seguindo padrões rigorosos de qualidade e tempo de ciclo. Inspeção técnica de peças para garantir conformidade com normas da indústria automotiva, evitando falhas na montagem final. Colaboração em ambiente industrial de alta cadência, mantendo produtividade e segurança operacional." }
+            { "period": "2023-24", "role": "Garçonete em Hotel 5 Estrelas", "company": "Talenter — Lisboa", "description": "Atender com alto padrão em hotel 5 estrelas e cassino no café da manhã, jantar e coffee breaks. Participar de grandes eventos no hotel e cassino. Servir vinhos e atender clientes internacionais, com postura polida e fluência em idiomas. Gerenciar múltiplas mesas simultaneamente em horários de pico e manter qualidade e satisfação do cliente." },
+            { "period": "2023", "role": "Operadora de Linha", "company": "Hit & Fit Holding", "description": "Operar em linha de produção de derivados de tomate (molhos e concentrados) e garantir a fluidez do envase e embalagem. Aplicar rigorosamente as normas de higiene e segurança alimentar (HACCP) para garantir a integridade do produto. Inspecionar visual e tecnicamente a esteira para identificar e remover produtos fora do padrão." },
+            { "period": "2023-24", "role": "Operadora de Linha", "company": "Hanon Systems — Palmela, Setúbal", "description": "Operar na linha de produção de componentes automotivos para a AutoEuropa (Grupo Volkswagen) e seguir padrões rigorosos de qualidade e tempo de ciclo. Inspecionar tecnicamente peças para garantir conformidade com normas da indústria automotiva. Colaborar em ambiente industrial de alta cadência e manter produtividade e segurança operacional." }
           ],
           "intl.germany": "Alemanha",
           "intl.germany.city": "Aachen",
           "intl.germany.jobs": [
-            { "period": "2025-26", "role": "Sortation Associate", "company": "Amazon", "description": "Atuação em centro logístico de alto volume, focando em Problem Solve e Quality Control. Execução de tarefas de Induct (entrada de pacotes) e Stow (armazenamento), garantindo precisão do inventário. Trabalho realizado em inglês com interações em alemão, exigindo comunicação clara e rápida em ambiente dinâmico. Foco total em metas de produtividade e segurança operacional." }
+            { "period": "2025-26", "role": "Sortation Associate", "company": "Amazon", "description": "Operar em centro logístico de alto volume, com foco em Problem Solve e Quality Control. Executar tarefas de Induct (entrada de pacotes) e Stow (armazenamento) e garantir precisão do inventário. Comunicar em inglês e alemão em ambiente dinâmico. Focar em metas de produtividade e segurança operacional." }
           ]
         }
       },
@@ -303,14 +315,17 @@ i18n
               title: "Mi Portafolio",
               description: "Este sitio que estás navegando, hecho con React, TypeScript y Tailwind CSS, enfocado en el rendimiento y diseño responsivo.",
               tech: ["React", "TypeScript", "Tailwind"],
-              link: "#"
+              link: "#",
+              image: "images/projects/capaPortfolio.png",
+              cover: "images/projects/capaPortfolio.png"
             },
             {
               title: "Proyecto de Extensión",
               description: "Protagonismo Juvenil en la Era Digital",
               tech: ["Enseñanza", "Informática", "Comunidad"],
               link: "https://drive.google.com/file/d/1LUM4euMbWL19hjXX-KYLRIWYS_AZ1day/view?usp=sharing",
-              image: "images/projects/extensionproj.png"
+              image: "images/projects/capaExtensao.png",
+              cover: "images/projects/capaExtensao.png"
             },
             {
               title: "Plataforma E-commerce",
@@ -323,7 +338,9 @@ i18n
               title: "Sistema de Control de Asistencia",
               description: "Desarrollo de una solución para gestión de jornada y banco de horas, enfocada en conformidad legal (CLT/Portaria 671). El proyecto integra flujos lógicos complejos, modelado de datos auditable y soporte con inteligencia artificial.",
               tech: ["PHP", "MySQL", "HTML", "CSS", "JS", "APIs"],
-              link: "https://skinny-protest-638.notion.site/Sistema-de-Ponto-Eletr-nico-3373f2d9e43b80148ce6d1cb4740ea06?source=copy_link"
+              link: "https://skinny-protest-638.notion.site/Sistema-de-Ponto-Eletr-nico-3373f2d9e43b80148ce6d1cb4740ea06?source=copy_link",
+              image: "images/projects/capatimeproject.png",
+              cover: "images/projects/capatimeproject.png"
             }
           ],
           "achievements.title": "Logros",
@@ -340,6 +357,7 @@ i18n
           "achievements.sw.frontend": "Código Front-end",
           "achievements.comingSoon": "Próximamente",
           "nav.experience": "Experiencia",
+          "nav.international": "Internacional",
           "nav.techStack": "Tecnologías",
           "nav.projects": "Proyectos",
           "nav.achievements": "Logros",
@@ -377,7 +395,7 @@ i18n
           "intl.brazil": "Brasil",
           "intl.brazil.city": "São José, SC",
           "intl.brazil.jobs": [
-            { "period": "2018", "role": "Profesora de Inglés", "company": "CAIC Prof. Fevrônio Tancredo de Oliveira", "description": "Enseñó inglés a alumnos de secundaria (6º a 9º grado). Elaboró exámenes y actividades para evaluar el progreso. Creó juegos interactivos y actividades creativas para aumentar la participación." },
+            { "period": "2018", "role": "Profesora de Inglés", "company": "CAIC Prof. Febrônio Tancredo de Oliveira", "description": "Enseñó inglés a alumnos de secundaria (6º a 9º grado). Elaboró exámenes y actividades para evaluar el progreso. Creó juegos interactivos y actividades creativas para aumentar la participación." },
             { "period": "2022", "role": "Gerente de Tienda", "company": "Cacau Show — Shopping Continente", "description": "Gestionó operaciones diarias de la tienda en centro comercial. Lideró atención al cliente y ventas. Controló inventario, disposición de la tienda y logística. Capacitó y supervisó nuevos empleados. Gestionó documentos y reportes con Master Retail PDV." }
           ],
           "intl.portugal": "Portugal",
@@ -432,14 +450,17 @@ i18n
               title: "Mein Portfolio",
               description: "Diese Website, die du gerade besuchst, erstellt mit React, TypeScript und Tailwind CSS, mit Fokus auf Performance und responsives Design.",
               tech: ["React", "TypeScript", "Tailwind"],
-              link: "#"
+              link: "#",
+              image: "images/projects/capaPortfolio.png",
+              cover: "images/projects/capaPortfolio.png"
             },
             {
               title: "Erweiterungsprojekt",
               description: "Jugendlicher Protagonismus im digitalen Zeitalter",
               tech: ["Unterricht", "Informatik", "Gemeinschaft"],
               link: "https://drive.google.com/file/d/1LUM4euMbWL19hjXX-KYLRIWYS_AZ1day/view?usp=sharing",
-              image: "images/projects/extensionproj.png"
+              image: "images/projects/capaExtensao.png",
+              cover: "images/projects/capaExtensao.png"
             },
             {
               title: "E-Commerce-Plattform",
@@ -452,7 +473,9 @@ i18n
               title: "Elektronisches Zeiterfassungssystem",
               description: "Entwicklung einer Lösung für Arbeitszeitverwaltung und Zeitkonto, mit Fokus auf gesetzliche Konformität (CLT/Portaria 671). Das Projekt integriert komplexe Logikabläufe, prüfbare Datenmodellierung und KI-gestützten Support.",
               tech: ["PHP", "MySQL", "HTML", "CSS", "JS", "APIs"],
-              link: "https://skinny-protest-638.notion.site/Sistema-de-Ponto-Eletr-nico-3373f2d9e43b80148ce6d1cb4740ea06?source=copy_link"
+              link: "https://skinny-protest-638.notion.site/Sistema-de-Ponto-Eletr-nico-3373f2d9e43b80148ce6d1cb4740ea06?source=copy_link",
+              image: "images/projects/capatimeproject.png",
+              cover: "images/projects/capatimeproject.png"
             }
           ],
           "achievements.title": "Erfolge",
@@ -469,6 +492,7 @@ i18n
           "achievements.sw.frontend": "Front-end-Code",
           "achievements.comingSoon": "Demnächst",
           "nav.experience": "Erfahrung",
+          "nav.international": "International",
           "nav.techStack": "Tech-Stack",
           "nav.projects": "Projekte",
           "nav.achievements": "Erfolge",
@@ -506,7 +530,7 @@ i18n
           "intl.brazil": "Brasilien",
           "intl.brazil.city": "São José, SC",
           "intl.brazil.jobs": [
-            { "period": "2018", "role": "Englischlehrerin", "company": "CAIC Prof. Fevrônio Tancredo de Oliveira", "description": "Unterrichtete Englisch für Schüler der Sekundarstufe (6.–9. Klasse). Erstellte Prüfungen und Aufgaben zur Leistungsbewertung. Entwickelte interaktive Spiele und kreative Aktivitäten zur Steigerung der Beteiligung." },
+            { "period": "2018", "role": "Englischlehrerin", "company": "CAIC Prof. Febrônio Tancredo de Oliveira", "description": "Unterrichtete Englisch für Schüler der Sekundarstufe (6.–9. Klasse). Erstellte Prüfungen und Aufgaben zur Leistungsbewertung. Entwickelte interaktive Spiele und kreative Aktivitäten zur Steigerung der Beteiligung." },
             { "period": "2022", "role": "Filialleiterin", "company": "Cacau Show — Shopping Continente", "description": "Leitete den täglichen Filialbetrieb im Einkaufszentrum. Führte Kundenservice und Verkauf. Kontrollierte Lagerbestand, Ladenlayout und Logistik. Schulte und beaufsichtigte neue Mitarbeiter. Verwaltete Dokumente und Berichte mit Master Retail PDV." }
           ],
           "intl.portugal": "Portugal",
@@ -561,14 +585,17 @@ i18n
               title: "Mon Portfolio",
               description: "Ce site que vous parcourez, créé avec React, TypeScript et Tailwind CSS, axé sur la performance et le design responsive.",
               tech: ["React", "TypeScript", "Tailwind"],
-              link: "#"
+              link: "#",
+              image: "images/projects/capaPortfolio.png",
+              cover: "images/projects/capaPortfolio.png"
             },
             {
               title: "Projet d'Extension",
               description: "Protagonisme Juvénile à l'Ère Numérique",
               tech: ["Enseignement", "Informatique", "Communauté"],
               link: "https://drive.google.com/file/d/1LUM4euMbWL19hjXX-KYLRIWYS_AZ1day/view?usp=sharing",
-              image: "images/projects/extensionproj.png"
+              image: "images/projects/capaExtensao.png",
+              cover: "images/projects/capaExtensao.png"
             },
             {
               title: "Plateforme E-commerce",
@@ -581,7 +608,9 @@ i18n
               title: "Système de Pointage Électronique",
               description: "Développement d'une solution de gestion des horaires et de banque d'heures, axée sur la conformité légale (CLT/Portaria 671). Le projet intègre des flux logiques complexes, une modélisation de données auditable et un support par intelligence artificielle.",
               tech: ["PHP", "MySQL", "HTML", "CSS", "JS", "APIs"],
-              link: "https://skinny-protest-638.notion.site/Sistema-de-Ponto-Eletr-nico-3373f2d9e43b80148ce6d1cb4740ea06?source=copy_link"
+              link: "https://skinny-protest-638.notion.site/Sistema-de-Ponto-Eletr-nico-3373f2d9e43b80148ce6d1cb4740ea06?source=copy_link",
+              image: "images/projects/capatimeproject.png",
+              cover: "images/projects/capatimeproject.png"
             }
           ],
           "achievements.title": "Réalisations",
@@ -598,6 +627,7 @@ i18n
           "achievements.sw.frontend": "Code Front-end",
           "achievements.comingSoon": "Bientôt",
           "nav.experience": "Expérience",
+          "nav.international": "International",
           "nav.techStack": "Technologies",
           "nav.projects": "Projets",
           "nav.achievements": "Réalisations",
@@ -635,7 +665,7 @@ i18n
           "intl.brazil": "Brésil",
           "intl.brazil.city": "São José, SC",
           "intl.brazil.jobs": [
-            { "period": "2018", "role": "Professeure d'Anglais", "company": "CAIC Prof. Fevrônio Tancredo de Oliveira", "description": "Enseigné l'anglais à des collégiens (6e à 9e année). Conçu des examens et activités pour évaluer les progrès. Créé des jeux interactifs et activités créatives pour stimuler la participation." },
+            { "period": "2018", "role": "Professeure d'Anglais", "company": "CAIC Prof. Febrônio Tancredo de Oliveira", "description": "Enseigné l'anglais à des collégiens (6e à 9e année). Conçu des examens et activités pour évaluer les progrès. Créé des jeux interactifs et activités créatives pour stimuler la participation." },
             { "period": "2022", "role": "Responsable de Magasin", "company": "Cacau Show — Shopping Continente", "description": "Géré les opérations quotidiennes du magasin en centre commercial. Dirigé le service client et les ventes. Contrôlé les stocks, l'agencement et la logistique. Formé et supervisé les nouveaux employés. Géré les documents et rapports avec Master Retail PDV." }
           ],
           "intl.portugal": "Portugal",

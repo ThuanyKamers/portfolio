@@ -6,6 +6,7 @@ const Header: React.FC = () => {
   const { t } = useTranslation();
   const navItems = [
     { id: 'experience', label: t('nav.experience') },
+    { id: 'international', label: t('nav.international') },
     { id: 'tech-stack', label: t('nav.techStack') },
     { id: 'projects', label: t('nav.projects') },
     { id: 'achievements', label: t('nav.achievements') },
@@ -14,12 +15,8 @@ const Header: React.FC = () => {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      const smoother = (window as any).__smoother;
-      if (smoother) {
-        smoother.scrollTo(element, true, 'top top+=80');
-      } else {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
+      const top = element.getBoundingClientRect().top + window.scrollY - 80;
+      window.scrollTo({ top, behavior: 'smooth' });
     }
   };
 

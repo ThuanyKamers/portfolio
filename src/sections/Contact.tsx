@@ -242,7 +242,6 @@ const Contact: React.FC = () => {
                     {t('contact.input_label')} {getInputLabel()}:
                   </span>
                   <input
-                    autoFocus
                     className="bg-transparent border-none outline-none flex-1 text-white border-b border-transparent focus:border-blue-500/50 transition-all"
                     value={inputValue}
                     onChange={(e) => setInputValue(e.target.value)}

@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx vite:*)",
+      "Bash(curl -s http://localhost:5173/portfolio/)",
+      "Bash(kill %1)",
+      "Bash(curl -s http://localhost:5173/)",
+      "Bash(npm ls:*)",
+      "Bash(mv CertificadoSW.png sw.png sw1.png sw2.png sw3.png sw4.png sw5.png sw6.png sw7.png achievements/)",
+      "Bash(mv flex.png flex2.png flex3.png nsc.png nsc1.png nsc2.png nsc3.png nsc4.png nsc5.png nsc6.PNG sp.png sp2.png sp3.png experience/)",
+      "Bash(mv extensionproj.png dressup.png projects/)",
+      "Bash(mv css.png html.png javascript.png typescript.png python.png php.png react.png node.png tailwind.png vite.png gsap.png mysql.png git.png lua.png linux.png windows.png tech/)",
+      "Bash(mv github.png github2.png linkedin.png social/)",
+      "Bash(ls c:/Users/thuan/Desktop/portfolio/public/images/*/)",
+      "Bash(grep -rn \"^\\\\s*//.*{\" /c/Users/thuan/Desktop/portfolio/src --include=\"*.tsx\" --include=\"*.ts\")"
+    ]
+  }
+}
