@@ -13,6 +13,7 @@ const Projects: React.FC = () => {
     tech: string[];
     link: string;
     image?: string;
+    cover?: string;
   }>;
 
   return (
@@ -30,7 +31,7 @@ const Projects: React.FC = () => {
         </h2>
 
         {Array.isArray(projects) && (
-          <MarqueeRow direction="left" speed={200} gap={24}>
+          <MarqueeRow direction="left" speed={120} gap={24}>
             {projects.map((p, i) => (
               <div key={i} style={{ width: '300px' }}>
                 <ProjectCard
@@ -39,6 +40,7 @@ const Projects: React.FC = () => {
                   tech={p.tech}
                   link={p.link}
                   image={p.image ? asset(p.image) : undefined}
+                  cover={p.cover ? asset(p.cover) : undefined}
                 />
               </div>
             ))}
