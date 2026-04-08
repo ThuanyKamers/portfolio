@@ -99,9 +99,9 @@ const InternationalExperience: React.FC = () => {
         {t("intl.title")}
       </h2>
 
-      <div className="flex justify-center">
+      <div className="flex justify-center px-4">
         <Globe
-          size={600}
+          size={typeof window !== 'undefined' && window.innerWidth < 640 ? 320 : 600}
           onMarkerClick={(id) => { setActiveCountry(id); setSlideIndex(0); }}
         />
       </div>
@@ -125,8 +125,8 @@ const InternationalExperience: React.FC = () => {
               ✕
             </button>
 
-            {/* Left: Slideshow */}
-            <div className="flex-1 relative overflow-hidden flex items-center justify-center" style={{ backgroundColor: "#0a0a0a" }}>
+            {/* Left: Slideshow (hidden on mobile) */}
+            <div className="hidden md:flex flex-1 relative overflow-hidden items-center justify-center" style={{ backgroundColor: "#0a0a0a" }}>
               {active.images.map((src, i) => (
                 <img
                   key={src}
@@ -144,7 +144,7 @@ const InternationalExperience: React.FC = () => {
             </div>
 
             {/* Right: Details */}
-            <div className="shrink-0 flex flex-col overflow-y-auto no-scrollbar" style={{ borderLeft: "1px solid rgba(255,255,255,0.06)", width: "440px", padding: "56px 48px 56px 56px" }}>
+            <div className="shrink-0 flex flex-col overflow-y-auto no-scrollbar w-full md:w-110" style={{ borderLeft: "1px solid rgba(255,255,255,0.06)", padding: "56px 48px 56px 56px" }}>
               <div style={{ marginBottom: 20 }}>
                 <h3 className="text-xl font-bold text-white leading-tight uppercase tracking-widest">
                   {t(active.countryKey)}

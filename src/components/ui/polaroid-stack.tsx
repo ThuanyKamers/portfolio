@@ -73,17 +73,24 @@ export const PolaroidStack: React.FC<PolaroidStackProps> = ({ images, autoRotate
 const StyledWrapper = styled.div`
   .polaroid-stack {
     position: relative;
-    width: 240px;
-    height: 290px;
+    width: 200px;
+    height: 250px;
     cursor: pointer;
     user-select: none;
+  }
+
+  @media (min-width: 640px) {
+    .polaroid-stack {
+      width: 240px;
+      height: 290px;
+    }
   }
 
   .polaroid {
     position: absolute;
     top: 0;
     left: 0;
-    width: 220px;
+    width: 180px;
     padding: 10px 10px 20px 10px;
     background: #fff;
     box-shadow:
@@ -104,12 +111,24 @@ const StyledWrapper = styled.div`
       0 16px 16px rgba(0, 0, 0, 0.15);
   }
 
+  @media (min-width: 640px) {
+    .polaroid {
+      width: 220px;
+    }
+  }
+
   .photo {
     width: 100%;
-    height: 200px;
+    height: 160px;
     background: #87ceeb;
     position: relative;
     overflow: hidden;
+  }
+
+  @media (min-width: 640px) {
+    .photo {
+      height: 200px;
+    }
   }
 
   .photo img {
