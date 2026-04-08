@@ -3,18 +3,50 @@ import { useTranslation } from 'react-i18next';
 import { asset } from '../utils/asset';
 
 // Componente Interno para a Pilha Animada
+const useIsMobile = () => {
+  const [isMobile, setIsMobile] = useState(false);
+  React.useEffect(() => {
+    const check = () => setIsMobile(window.matchMedia('(hover: none)').matches);
+    check();
+    window.addEventListener('resize', check);
+    return () => window.removeEventListener('resize', check);
+  }, []);
+  return isMobile;
+};
+
 const SkillStack = ({ name, color, index, iconUrl }: { name: string; color: string; index: number; iconUrl: string }) => {
   const [isHovered, setIsHovered] = useState(false);
+  const isMobile = useIsMobile();
+
+  if (isMobile) {
+    return (
+      <div
+        className="flex flex-col items-center justify-center py-4"
+        style={{
+          animationDelay: `${index * 100}ms`,
+          animation: 'fadeInUp 0.6s ease-out forwards',
+          opacity: 0,
+        }}
+      >
+        <div className="w-12 h-12 rounded-lg bg-black/40 border flex items-center justify-center" style={{ borderColor: color }}>
+          <img src={iconUrl} alt={name} className="w-7 h-7 object-contain" />
+        </div>
+        <div className="mt-2 font-mono text-xs opacity-80" style={{ color: 'var(--foreground)' }}>
+          {name}
+        </div>
+      </div>
+    );
+  }
 
   return (
-    <div 
+    <div
       className="relative flex flex-col items-center justify-center h-40 group"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      style={{ 
+      style={{
         animationDelay: `${index * 100}ms`,
         animation: 'fadeInUp 0.6s ease-out forwards',
-        opacity: 0 
+        opacity: 0
       }}
     >
       <div className={`relative w-15 h-15 transition-all duration-500 ${isHovered ? 'rotate-[-35deg] skew-y-20 -translate-y-4' : ''}`}>
@@ -33,23 +65,23 @@ const SkillStack = ({ name, color, index, iconUrl }: { name: string; color: stri
         ))}
 
         {/* Camada Superior */}
-        <span 
+        <span
           className={`absolute inset-0 rounded-lg bg-black/40 backdrop-blur-sm border flex items-center justify-center transition-all duration-500 ${isHovered ? 'translate-x-5 -translate-y-5' : ''}`}
           style={{ borderColor: color }}
         >
-          <img 
-            src={iconUrl} 
-            alt={name} 
-            className="w-8 h-8 object-contain" 
-            style={{ 
-              filter: isHovered ? `drop-shadow(0 0 5px ${color})` : 'none' 
+          <img
+            src={iconUrl}
+            alt={name}
+            className="w-8 h-8 object-contain"
+            style={{
+              filter: isHovered ? `drop-shadow(0 0 5px ${color})` : 'none'
             }}
           />
         </span>
       </div>
 
       {/* Nome da Tecnologia */}
-      <div 
+      <div
         className={`mt-4 font-mono text-sm transition-all duration-300 ${isHovered ? 'opacity-100 translate-y-2' : 'opacity-60'}`}
         style={{ color: isHovered ? color : 'var(--foreground)' }}
       >
