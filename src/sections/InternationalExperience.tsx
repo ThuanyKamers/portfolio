@@ -114,29 +114,27 @@ const InternationalExperience: React.FC = () => {
           onClick={() => setActiveCountry(null)}
         >
           <div
-            className="relative flex flex-col md:flex-row rounded-2xl overflow-hidden w-full"
+            className="relative flex flex-col md:flex-row rounded-2xl overflow-y-auto md:overflow-hidden w-full"
             style={{ backgroundColor: "#0d1117", maxWidth: "1300px", height: "90vh", maxHeight: "900px" }}
             onClick={(e) => e.stopPropagation()}
           >
             <button
               onClick={() => setActiveCountry(null)}
-              className="absolute top-5 right-5 z-10 w-9 h-9 flex items-center justify-center rounded-full text-white/50 hover:text-white hover:bg-white/10 text-lg cursor-pointer transition-all"
+              className="absolute top-3 right-3 md:top-5 md:right-5 z-10 w-9 h-9 flex items-center justify-center rounded-full text-white/50 hover:text-white hover:bg-white/10 text-lg cursor-pointer transition-all"
             >
               ✕
             </button>
 
             {/* Left: Slideshow */}
-            <div className="flex flex-1 relative overflow-hidden items-center justify-center min-h-48 md:min-h-0" style={{ backgroundColor: "#0a0a0a" }}>
+            <div className="relative overflow-hidden items-center justify-center h-52 shrink-0 md:h-auto md:flex md:flex-1" style={{ backgroundColor: "#0a0a0a" }}>
               {active.images.map((src, i) => (
                 <img
                   key={src}
                   src={src}
                   alt={`Slide ${i + 1}`}
-                  className="absolute transition-opacity duration-700"
+                  className="absolute inset-0 w-full h-full transition-opacity duration-700"
                   style={{
                     objectFit: "contain",
-                    maxWidth: "100%",
-                    maxHeight: "100%",
                     opacity: i === slideIndex ? 1 : 0,
                   }}
                 />
@@ -144,7 +142,7 @@ const InternationalExperience: React.FC = () => {
             </div>
 
             {/* Right: Details */}
-            <div className="shrink-0 flex flex-col overflow-y-auto no-scrollbar w-full md:w-110" style={{ borderLeft: "1px solid rgba(255,255,255,0.06)", padding: "32px 24px" }}>
+            <div className="flex flex-col md:overflow-y-auto no-scrollbar w-full md:w-110 md:shrink-0" style={{ borderLeft: "1px solid rgba(255,255,255,0.06)", padding: "32px 24px" }}>
               <div style={{ marginBottom: 20 }}>
                 <h3 className="text-xl font-bold text-white leading-tight uppercase tracking-widest">
                   {t(active.countryKey)}
