@@ -19,10 +19,10 @@ body,
 #root {
   min-height: 100vh;
   color: var(--foreground) !important;
-  overflow-x: hidden;
 }
 
 body {
+  overflow-x: hidden;
   overscroll-behavior: none;
 }
 
