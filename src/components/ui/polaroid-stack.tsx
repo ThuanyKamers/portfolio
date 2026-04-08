@@ -56,6 +56,7 @@ export const PolaroidStack: React.FC<PolaroidStackProps> = ({ images, autoRotate
                 <img
                   src={img.src}
                   alt={img.alt}
+                  loading="eager"
                   style={{ transform: img.rotation ? `rotate(${img.rotation}deg) scale(1.8)` : 'none' }}
                 />
                 <div className="dust" />
