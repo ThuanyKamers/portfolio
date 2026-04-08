@@ -193,8 +193,8 @@ const Achievements: React.FC = () => {
             </button>
 
             <>
-              {/* Esquerda: Slideshow (hidden on mobile) */}
-                <div className="hidden md:block flex-1 relative overflow-hidden" style={{ backgroundColor: "#0a0a0a" }}>
+              {/* Esquerda: Slideshow */}
+                <div className="flex-1 relative overflow-hidden min-h-48 md:min-h-0" style={{ backgroundColor: "#0a0a0a" }}>
                   {activeCard.images.map((src, i) => (
                     <img
                       key={src}
@@ -210,7 +210,7 @@ const Achievements: React.FC = () => {
                 </div>
 
                 {/* Direita: Detalhes */}
-                <div className="shrink-0 flex flex-col justify-between overflow-y-auto no-scrollbar w-full md:w-110" style={{ borderLeft: "1px solid rgba(255,255,255,0.06)", padding: "56px 48px 56px 56px" }}>
+                <div className="shrink-0 flex flex-col justify-between overflow-y-auto no-scrollbar w-full md:w-110" style={{ borderLeft: "1px solid rgba(255,255,255,0.06)", padding: "32px 24px" }}>
                   <div className="mb-4">
                     <h3 className="text-xl font-bold text-white mb-1 leading-tight">
                       {activeCard.cardTitle}

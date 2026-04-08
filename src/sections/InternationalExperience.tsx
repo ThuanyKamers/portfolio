@@ -125,8 +125,8 @@ const InternationalExperience: React.FC = () => {
               ✕
             </button>
 
-            {/* Left: Slideshow (hidden on mobile) */}
-            <div className="hidden md:flex flex-1 relative overflow-hidden items-center justify-center" style={{ backgroundColor: "#0a0a0a" }}>
+            {/* Left: Slideshow */}
+            <div className="flex flex-1 relative overflow-hidden items-center justify-center min-h-48 md:min-h-0" style={{ backgroundColor: "#0a0a0a" }}>
               {active.images.map((src, i) => (
                 <img
                   key={src}
@@ -144,7 +144,7 @@ const InternationalExperience: React.FC = () => {
             </div>
 
             {/* Right: Details */}
-            <div className="shrink-0 flex flex-col overflow-y-auto no-scrollbar w-full md:w-110" style={{ borderLeft: "1px solid rgba(255,255,255,0.06)", padding: "56px 48px 56px 56px" }}>
+            <div className="shrink-0 flex flex-col overflow-y-auto no-scrollbar w-full md:w-110" style={{ borderLeft: "1px solid rgba(255,255,255,0.06)", padding: "32px 24px" }}>
               <div style={{ marginBottom: 20 }}>
                 <h3 className="text-xl font-bold text-white leading-tight uppercase tracking-widest">
                   {t(active.countryKey)}
