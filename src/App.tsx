@@ -11,7 +11,7 @@ import SnowBackground from './components/SnowBackground';
 
 function App() {
   return (
-    <>
+    <div className="w-full overflow-x-hidden">
       <SnowBackground />
       <Header />
 
@@ -31,7 +31,7 @@ function App() {
         <Contact />
       </main>
       <Footer />
-    </>
+    </div>
   );
 }
 

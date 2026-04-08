@@ -14,10 +14,6 @@
   box-sizing: border-box;
 }
 
-html {
-  overflow-x: hidden;
-}
-
 html,
 body,
 #root {
@@ -26,9 +22,9 @@ body,
 }
 
 body {
-  overflow-x: hidden;
   overscroll-behavior: none;
-  width: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .no-scrollbar {
