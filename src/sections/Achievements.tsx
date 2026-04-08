@@ -181,7 +181,7 @@ const Achievements: React.FC = () => {
           onClick={() => setActiveCard(null)}
         >
           <div
-            className="relative flex flex-col md:flex-row rounded-2xl overflow-hidden w-full"
+            className="relative flex flex-col md:flex-row rounded-2xl overflow-y-auto md:overflow-hidden w-full"
             style={{ backgroundColor: "#0d1117", maxWidth: "1300px", height: "90vh", maxHeight: "900px" }}
             onClick={(e) => e.stopPropagation()}
           >
@@ -194,7 +194,7 @@ const Achievements: React.FC = () => {
 
             <>
               {/* Esquerda: Slideshow */}
-                <div className="flex-1 relative overflow-hidden min-h-48 md:min-h-0" style={{ backgroundColor: "#0a0a0a" }}>
+                <div className="relative overflow-hidden h-52 shrink-0 md:h-auto md:flex-1" style={{ backgroundColor: "#0a0a0a" }}>
                   {activeCard.images.map((src, i) => (
                     <img
                       key={src}
@@ -210,7 +210,7 @@ const Achievements: React.FC = () => {
                 </div>
 
                 {/* Direita: Detalhes */}
-                <div className="shrink-0 flex flex-col justify-between overflow-y-auto no-scrollbar w-full md:w-110" style={{ borderLeft: "1px solid rgba(255,255,255,0.06)", padding: "32px 24px" }}>
+                <div className="flex flex-col justify-between md:overflow-y-auto no-scrollbar w-full md:w-110 md:shrink-0" style={{ borderLeft: "1px solid rgba(255,255,255,0.06)", padding: "32px 24px" }}>
                   <div className="mb-4">
                     <h3 className="text-xl font-bold text-white mb-1 leading-tight">
                       {activeCard.cardTitle}
