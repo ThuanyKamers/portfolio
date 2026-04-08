@@ -53,7 +53,7 @@ i18n
               title: "Extension Project",
               description: "Youth Protagonism in the Digital Era",
               tech: ["Teaching", "Informatics", "Community"],
-              link: "https://drive.google.com/file/d/1LUM4euMbWL19hjXX-KYLRIWYS_AZ1day/view?usp=sharing",
+              link: "https://drive.google.com/file/d/10A321xLVbRhlm59tUFt54iqQoVAycy3P/view?usp=drive_link",
               image: "images/projects/capaExtensao.png",
               cover: "images/projects/capaExtensao.png"
             },
@@ -188,7 +188,7 @@ i18n
               title: "Projeto de Extensão",
               description: "Protagonismo Juvenil na Era Digital",
               tech: ["Ensino", "Informática", "Comunidade"],
-              link: "https://drive.google.com/file/d/1LUM4euMbWL19hjXX-KYLRIWYS_AZ1day/view?usp=sharing",
+              link: "https://drive.google.com/file/d/10A321xLVbRhlm59tUFt54iqQoVAycy3P/view?usp=drive_link",
               image: "images/projects/capaExtensao.png",
               cover: "images/projects/capaExtensao.png"
             },
@@ -323,7 +323,7 @@ i18n
               title: "Proyecto de Extensión",
               description: "Protagonismo Juvenil en la Era Digital",
               tech: ["Enseñanza", "Informática", "Comunidad"],
-              link: "https://drive.google.com/file/d/1LUM4euMbWL19hjXX-KYLRIWYS_AZ1day/view?usp=sharing",
+              link: "https://drive.google.com/file/d/10A321xLVbRhlm59tUFt54iqQoVAycy3P/view?usp=drive_link",
               image: "images/projects/capaExtensao.png",
               cover: "images/projects/capaExtensao.png"
             },
@@ -458,7 +458,7 @@ i18n
               title: "Erweiterungsprojekt",
               description: "Jugendlicher Protagonismus im digitalen Zeitalter",
               tech: ["Unterricht", "Informatik", "Gemeinschaft"],
-              link: "https://drive.google.com/file/d/1LUM4euMbWL19hjXX-KYLRIWYS_AZ1day/view?usp=sharing",
+              link: "https://drive.google.com/file/d/10A321xLVbRhlm59tUFt54iqQoVAycy3P/view?usp=drive_link",
               image: "images/projects/capaExtensao.png",
               cover: "images/projects/capaExtensao.png"
             },
@@ -593,7 +593,7 @@ i18n
               title: "Projet d'Extension",
               description: "Protagonisme Juvénile à l'Ère Numérique",
               tech: ["Enseignement", "Informatique", "Communauté"],
-              link: "https://drive.google.com/file/d/1LUM4euMbWL19hjXX-KYLRIWYS_AZ1day/view?usp=sharing",
+              link: "https://drive.google.com/file/d/10A321xLVbRhlm59tUFt54iqQoVAycy3P/view?usp=drive_link",
               image: "images/projects/capaExtensao.png",
               cover: "images/projects/capaExtensao.png"
             },
