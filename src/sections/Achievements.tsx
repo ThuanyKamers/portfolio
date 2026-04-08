@@ -136,7 +136,7 @@ const Achievements: React.FC = () => {
                         hover:duration-500
                         after:absolute after:bg-sky-700 after:rounded-full after:blur-xl after:bottom-32 after:right-16 after:w-12 after:h-12
                         before:absolute before:bg-sky-400 before:rounded-full before:blur-xl before:top-20 before:right-16 before:w-12 before:h-12
-                        hover:rotate-12 flex justify-center items-center h-44 w-56 origin-bottom-right bg-neutral-900 rounded-2xl outline outline-slate-400 -outline-offset-8"
+                        hover:rotate-12 flex justify-center items-center h-36 w-44 sm:h-44 sm:w-56 origin-bottom-right bg-neutral-900 rounded-2xl outline outline-slate-400 -outline-offset-8"
                     >
                       <div className="z-10 flex flex-col items-center gap-2 px-5">
                         <span className="text-slate-400 text-xl font-bold tracking-tight text-center leading-tight">
@@ -159,7 +159,7 @@ const Achievements: React.FC = () => {
                     hover:duration-500
                     after:absolute after:bg-slate-700 after:rounded-full after:blur-xl after:bottom-32 after:right-16 after:w-12 after:h-12
                     before:absolute before:bg-slate-500 before:rounded-full before:blur-xl before:top-20 before:right-16 before:w-12 before:h-12
-                    hover:rotate-12 flex justify-center items-center h-44 w-56 origin-bottom-right bg-neutral-900 rounded-2xl outline outline-slate-600 -outline-offset-8"
+                    hover:rotate-12 flex justify-center items-center h-36 w-44 sm:h-44 sm:w-56 origin-bottom-right bg-neutral-900 rounded-2xl outline outline-slate-600 -outline-offset-8"
                 >
                   <div className="z-10 flex flex-col items-center gap-2">
                     <span className="text-slate-600 text-2xl font-bold tracking-tight text-center">
@@ -193,8 +193,8 @@ const Achievements: React.FC = () => {
             </button>
 
             <>
-              {/* Esquerda: Slideshow */}
-                <div className="flex-1 relative overflow-hidden" style={{ backgroundColor: "#0a0a0a" }}>
+              {/* Esquerda: Slideshow (hidden on mobile) */}
+                <div className="hidden md:block flex-1 relative overflow-hidden" style={{ backgroundColor: "#0a0a0a" }}>
                   {activeCard.images.map((src, i) => (
                     <img
                       key={src}
@@ -210,7 +210,7 @@ const Achievements: React.FC = () => {
                 </div>
 
                 {/* Direita: Detalhes */}
-                <div className="shrink-0 flex flex-col justify-between overflow-y-auto no-scrollbar" style={{ borderLeft: "1px solid rgba(255,255,255,0.06)", width: "440px", padding: "56px 48px 56px 56px" }}>
+                <div className="shrink-0 flex flex-col justify-between overflow-y-auto no-scrollbar w-full md:w-110" style={{ borderLeft: "1px solid rgba(255,255,255,0.06)", padding: "56px 48px 56px 56px" }}>
                   <div className="mb-4">
                     <h3 className="text-xl font-bold text-white mb-1 leading-tight">
                       {activeCard.cardTitle}

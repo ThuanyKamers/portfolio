@@ -84,7 +84,7 @@ const TechStack: React.FC = () => {
   return (
     <section id="tech-stack" className="w-full py-32 flex flex-col items-center bg-transparent relative overflow-hidden">
       
-      <div className="w-full max-w-5xl px-8 relative z-10">
+      <div className="w-full max-w-5xl px-4 sm:px-8 relative z-10">
         <div className="mb-20 text-center">
           <h2 className="text-4xl font-bold tracking-tighter" style={{ color: 'var(--foreground)' }}>
             {/* Traduzindo o título principal */}
@@ -92,7 +92,7 @@ const TechStack: React.FC = () => {
           </h2>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-x-8 gap-y-3">
+        <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-x-4 sm:gap-x-8 gap-y-3">
           {techs.map((tech, index) => (
             <SkillStack 
               key={tech.name} 

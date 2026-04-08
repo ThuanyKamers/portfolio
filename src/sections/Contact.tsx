@@ -138,8 +138,8 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="w-full py-48 flex flex-col items-center bg-(--background)" style={{ backgroundColor: 'var(--background)' }}>
-      <div className="w-full max-w-5xl px-16">
+    <section id="contact" className="w-full py-20 md:py-48 flex flex-col items-center bg-(--background)" style={{ backgroundColor: 'var(--background)' }}>
+      <div className="w-full max-w-5xl px-4 md:px-16">
         <h2 className="text-3xl font-bold text-blue-400 text-left" style={{ marginBottom: '10px' }}>
           {t('contact.title')}
         </h2>
@@ -153,7 +153,7 @@ const Contact: React.FC = () => {
             </div>
           </div>
 
-          <div ref={scrollRef} className="h-125 overflow-y-auto space-y-6 text-white/90 no-scrollbar" style={{ padding: '16px 28px 32px 28px' }}>
+          <div ref={scrollRef} className="h-80 md:h-125 overflow-y-auto space-y-6 text-white/90 no-scrollbar" style={{ padding: '16px 28px 32px 28px' }}>
             {/* Sucesso */}
             {isSent ? (
               <div className="flex flex-col items-center justify-center text-center space-y-4 h-full">
@@ -216,11 +216,11 @@ const Contact: React.FC = () => {
                   <p className="col-span-full"><span className="text-blue-400 opacity-60">description:</span> {formData.description}</p>
                 </div>
                 <p className="mt-4 animate-pulse">{t('contact.summary.confirm')}</p>
-                <div className="flex gap-4 pt-2">
-                  <button onClick={restart} className="px-10 py-3 bg-white text-black rounded-lg cursor-pointer hover:bg-gray-200 transition-all font-bold text-xs uppercase tracking-widest min-w-35">
+                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2">
+                  <button onClick={restart} className="px-6 sm:px-10 py-3 bg-white text-black rounded-lg cursor-pointer hover:bg-gray-200 transition-all font-bold text-xs uppercase tracking-widest">
                     {t('contact.buttons.restart')}
                   </button>
-                  <Button onClick={sendEmail} className="px-10 py-3 bg-blue-600 hover:bg-blue-700 text-white shadow-lg shadow-blue-500/20 font-bold text-xs uppercase tracking-widest cursor-pointer min-w-35">
+                  <Button onClick={sendEmail} className="px-6 sm:px-10 py-3 bg-blue-600 hover:bg-blue-700 text-white shadow-lg shadow-blue-500/20 font-bold text-xs uppercase tracking-widest cursor-pointer">
                     {t('contact.buttons.send')}
                   </Button>
                 </div>
@@ -235,7 +235,7 @@ const Contact: React.FC = () => {
             {/* Input Ativo */}
             {!sendingCode && step < 5 && (
               <div className="space-y-2">
-                <div className="flex items-center gap-3 pt-2">
+                <div className="flex flex-wrap items-center gap-2 md:gap-3 pt-2">
                   <span className="text-emerald-400 font-bold animate-pulse">→</span>
                   <span className="text-blue-400">~</span>
                   <span className="opacity-40 text-xs uppercase">

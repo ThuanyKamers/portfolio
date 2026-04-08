@@ -111,7 +111,7 @@ const Experience: React.FC = () => {
       className="py-32 flex flex-col items-center transition-colors duration-300"
       style={{ backgroundColor: 'var(--background)' }}
     >
-      <div className="w-full max-w-4xl">
+      <div className="w-full max-w-4xl px-4 md:px-0">
         <Timeline data={data} />
       </div>
     </section>
