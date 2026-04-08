@@ -59,11 +59,11 @@ const StyledWrapper = styled.div`
     overflow: visible;
     width: 100%;
     height: 280px;
-    cursor: default;
+    cursor: pointer;
   }
 
   .card * {
-    cursor: default;
+    cursor: pointer;
     user-select: none;
   }
 
@@ -206,8 +206,10 @@ const StyledWrapper = styled.div`
   .front-title p { margin: 0; }
   .front-tech { color: #ffffff88; margin-top: 6px; font-size: 10px; }
 
-  .card:hover .content {
-    transform: rotateY(180deg);
+  @media (hover: hover) {
+    .card:hover .content {
+      transform: rotateY(180deg);
+    }
   }
 
   @keyframes rotation_481 {
