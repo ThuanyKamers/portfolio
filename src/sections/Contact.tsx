@@ -16,6 +16,11 @@ const Contact: React.FC = () => {
   const [sendingCode, setSendingCode] = useState(false);
   const [codeSendError, setCodeSendError] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  const focusInput = () => {
+    inputRef.current?.focus();
+  };
 
   // Initialize EmailJS
   useEffect(() => {
@@ -143,7 +148,7 @@ const Contact: React.FC = () => {
           </h2>
         </div>
 
-        <div className="w-full backdrop-blur-md rounded-xl overflow-hidden shadow-2xl flex flex-col mt-16 mb-32" style={{ marginBottom: '80px', background: 'linear-gradient(135deg, rgba(13,17,23,0.65) 0%, rgba(22,27,34,0.65) 100%)', border: '1px solid rgba(255,255,255,0.08)' }}>
+        <div onClick={focusInput} className="w-full backdrop-blur-md rounded-xl overflow-hidden shadow-2xl flex flex-col mt-16 mb-32 cursor-text" style={{ marginBottom: '80px', background: 'linear-gradient(135deg, rgba(13,17,23,0.65) 0%, rgba(22,27,34,0.65) 100%)', border: '1px solid rgba(255,255,255,0.08)' }}>
           <div style={{ padding: '20px 28px' }}>
             <div style={{ display: 'flex', gap: '8px' }}>
               <div style={{ width: '14px', height: '14px', borderRadius: '50%', backgroundColor: '#ff5f56' }}></div>
@@ -241,6 +246,8 @@ const Contact: React.FC = () => {
                     {t('contact.input_label')} {getInputLabel()}:
                   </span>
                   <input
+                    ref={inputRef}
+                    autoFocus
                     className="bg-transparent border-none outline-none flex-1 text-white border-b border-transparent focus:border-blue-500/50 transition-all"
                     value={inputValue}
                     onChange={(e) => setInputValue(e.target.value)}
