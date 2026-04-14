@@ -1,5 +1,4 @@
 import React from 'react';
-import styled from 'styled-components';
 
 interface ProjectCardProps {
   title: string;
@@ -11,217 +10,66 @@ interface ProjectCardProps {
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, tech, image, cover, link }) => {
-  const handleClick = () => {
+  const openLink = () => {
     if (link && link !== '#') {
       window.open(link, '_blank', 'noopener,noreferrer');
     }
   };
 
+  const preview = cover || image;
+
   return (
-    <StyledWrapper>
-      <div className="card" onClick={handleClick}>
-        <div className="content">
-          <div className="back">
-            <div className="back-content">
-              <div className="back-glow" />
-              <div className="back-text-overlay">
-                <div className="back-title">{title}</div>
-                <div className="back-description">{description}</div>
-                <p className="back-tech">{tech.join(' · ')}</p>
-              </div>
-            </div>
-          </div>
-          <div className="front">
-            <div
-              className="front-cover"
-              style={(cover || image) ? { backgroundImage: `url(${cover || image})`, backgroundSize: 'cover', backgroundPosition: 'center' } : {}}
-            />
-            <div className="front-overlay">
-              <div className="front-info">
-                <div className="front-title">
-                  <p><strong>{title}</strong></p>
-                </div>
-                <p className="front-tech">{tech.join(' | ')}</p>
-              </div>
-            </div>
-          </div>
-        </div>
+    <div className="flex flex-col w-full">
+      {/* Preview area */}
+      <div
+        className="rounded-lg overflow-hidden cursor-pointer transition-transform duration-300 hover:scale-[1.01]"
+        style={{
+          backgroundColor: 'rgba(255,255,255,0.04)',
+          border: '1px solid rgba(255,255,255,0.06)',
+          aspectRatio: '16 / 10',
+        }}
+        onClick={openLink}
+      >
+        {preview ? (
+          <img
+            src={preview}
+            alt={title}
+            className="w-full h-full object-cover"
+            loading="eager"
+          />
+        ) : (
+          <div className="w-full h-full flex items-center justify-center text-white/30 text-sm">No preview</div>
+        )}
       </div>
-    </StyledWrapper>
+
+      {/* Title row with inline separator */}
+      <div className="flex items-center gap-4" style={{ marginTop: '20px' }}>
+        <h3 className="text-white font-bold text-lg md:text-xl shrink-0">{title}</h3>
+        <div className="flex-1 h-px" style={{ backgroundColor: 'rgba(255,255,255,0.12)' }} />
+        <button
+          onClick={openLink}
+          aria-label={`Open ${title}`}
+          className="shrink-0 cursor-pointer text-white/50 hover:text-white transition-colors"
+        >
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+            <polyline points="15 3 21 3 21 9" />
+            <line x1="10" y1="14" x2="21" y2="3" />
+          </svg>
+        </button>
+      </div>
+
+      {/* Tech */}
+      <p className="text-blue-400 text-sm font-medium mt-3">
+        {tech.join(' · ')}
+      </p>
+
+      {/* Description */}
+      <p className="text-white/60 text-sm mt-3 leading-relaxed">
+        {description}
+      </p>
+    </div>
   );
 };
-
-const StyledWrapper = styled.div`
-  width: 100%;
-  perspective: 1000px;
-
-  .card {
-    overflow: visible;
-    width: 100%;
-    height: 280px;
-    cursor: pointer;
-  }
-
-  .card * {
-    cursor: pointer;
-    user-select: none;
-  }
-
-  .content {
-    width: 100%;
-    height: 100%;
-    transform-style: preserve-3d;
-    transition: transform 300ms;
-    box-shadow: 0px 0px 10px 1px #000000ee;
-    border-radius: 12px;
-  }
-
-  .front,
-  .back {
-    background-color: #0f172a;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-    border-radius: 12px;
-    overflow: hidden;
-  }
-
-  .back {
-    width: 100%;
-    height: 100%;
-    justify-content: center;
-    display: flex;
-    align-items: center;
-    overflow: hidden;
-  }
-
-  .back::before {
-    position: absolute;
-    content: ' ';
-    display: block;
-    width: 160px;
-    height: 160%;
-    background: linear-gradient(90deg, transparent, #3b82f6, #60a5fa, #3b82f6, transparent);
-    animation: rotation_481 5000ms infinite linear;
-    will-change: transform;
-  }
-
-  .back-content {
-    position: absolute;
-    width: 99%;
-    height: 99%;
-    background-color: #0f172a;
-    border-radius: 12px;
-    overflow: hidden;
-    z-index: 2;
-  }
-
-  .back-glow {
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(circle at 30% 40%, rgba(59, 130, 246, 0.08) 0%, transparent 60%),
-                radial-gradient(circle at 70% 80%, rgba(96, 165, 250, 0.06) 0%, transparent 50%);
-  }
-
-  .back-text-overlay {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
-    padding: 28px;
-    color: white;
-    z-index: 1;
-  }
-
-  .back-title {
-    font-size: 18px;
-    font-weight: 700;
-    text-align: center;
-    color: #e2e8f0;
-  }
-
-  .back-description {
-    font-size: 13px;
-    line-height: 1.5;
-    text-align: center;
-    color: #94a3b8;
-  }
-
-  .back-tech {
-    font-size: 10px;
-    color: #3b82f6;
-    margin-top: 4px;
-    letter-spacing: 0.5px;
-  }
-
-  .front {
-    transform: rotateY(180deg);
-    color: white;
-    position: relative;
-  }
-
-  .front-cover {
-    width: 100%;
-    height: 100%;
-    border-radius: 12px;
-    background-color: #0f172a;
-  }
-
-  .front-overlay {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: 14px;
-    z-index: 2;
-  }
-
-  .front-info {
-    box-shadow: 0px 0px 10px 5px #00000088;
-    width: 100%;
-    padding: 12px;
-    background-color: #00000099;
-    backdrop-filter: blur(5px);
-    border-radius: 8px;
-  }
-
-  .front-title {
-    font-size: 13px;
-    max-width: 100%;
-    display: flex;
-    justify-content: space-between;
-    color: white;
-  }
-
-  .front-title p { margin: 0; }
-  .front-tech { color: #ffffff88; margin-top: 6px; font-size: 10px; }
-
-  @media (hover: hover) {
-    .card:hover .content {
-      transform: rotateY(180deg);
-    }
-  }
-
-  @keyframes rotation_481 {
-    0% { transform: rotateZ(0deg); }
-    100% { transform: rotateZ(360deg); }
-  }
-
-  @media (max-width: 1024px) { width: 48%; }
-  @media (max-width: 640px) {
-    width: 100%;
-    .back-description { font-size: 12px; }
-  }
-`;
 
 export default ProjectCard;

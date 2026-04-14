@@ -194,17 +194,6 @@ const StyledWrapper = styled.div`
     opacity: 0.8;
   }
 
-  .counter {
-    position: absolute;
-    bottom: -24px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-family: "Courier New", monospace;
-    font-size: 11px;
-    color: var(--text-muted);
-    opacity: 0.6;
-  }
-
   @keyframes shine {
     0% {
       transform: translateX(-100%) rotate(120deg);
@@ -214,5 +203,3 @@ const StyledWrapper = styled.div`
     }
   }
 `;
-
-export default PolaroidStack;

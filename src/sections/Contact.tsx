@@ -14,7 +14,6 @@ const Contact: React.FC = () => {
   const [codeError, setCodeError] = useState(false);
   const [verificationCode, setVerificationCode] = useState('');
   const [sendingCode, setSendingCode] = useState(false);
-  const [, setSendError] = useState('');
   const [codeSendError, setCodeSendError] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
 
@@ -100,7 +99,6 @@ const Contact: React.FC = () => {
 
   const sendEmail = async () => {
     try {
-      setSendError('');
       const templateParams = {
         to_email: 'thuanykamers@hotmail.com',
         from_email: formData.email,
@@ -113,7 +111,6 @@ const Contact: React.FC = () => {
       setIsSent(true);
     } catch (error) {
       console.error('Erro ao enviar email:', error);
-      setSendError('Erro ao enviar. Tente novamente.');
     }
   };
 
@@ -140,9 +137,11 @@ const Contact: React.FC = () => {
   return (
     <section id="contact" className="w-full py-20 md:py-48 flex flex-col items-center bg-(--background)" style={{ backgroundColor: 'var(--background)' }}>
       <div className="w-full max-w-5xl px-4 md:px-16">
-        <h2 className="text-3xl font-bold text-blue-400 text-left" style={{ marginBottom: '10px' }}>
-          {t('contact.title')}
-        </h2>
+        <div className="text-center" style={{ marginBottom: '40px' }}>
+          <h2 className="text-4xl font-bold tracking-tighter" style={{ color: 'var(--foreground)' }}>
+            {t('contact.title')} <span className="text-blue-400 italic">{t('contact.subtitle')}</span>
+          </h2>
+        </div>
 
         <div className="w-full backdrop-blur-md rounded-xl overflow-hidden shadow-2xl flex flex-col mt-16 mb-32" style={{ marginBottom: '80px', background: 'linear-gradient(135deg, rgba(13,17,23,0.65) 0%, rgba(22,27,34,0.65) 100%)', border: '1px solid rgba(255,255,255,0.08)' }}>
           <div style={{ padding: '20px 28px' }}>

@@ -25,9 +25,6 @@ function latLngToVec3(lat: number, lng: number, radius: number): THREE.Vector3 {
 
 const Globe = ({ size = 600, onMarkerClick }: GlobeProps) => {
   const mountRef = useRef<HTMLDivElement>(null);
-  const rendererRef = useRef<THREE.WebGLRenderer | null>(null);
-  const cameraRef = useRef<THREE.PerspectiveCamera | null>(null);
-  const globeMeshRef = useRef<THREE.Mesh | null>(null);
   const [pins, setPins] = useState<{ id: string; x: number; y: number; visible: boolean }[]>([]);
 
   useEffect(() => {
@@ -43,7 +40,6 @@ const Globe = ({ size = 600, onMarkerClick }: GlobeProps) => {
     // Camera
     const camera = new THREE.PerspectiveCamera(45, 1, 0.1, 100);
     camera.position.z = 3;
-    cameraRef.current = camera;
 
     // Renderer
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
@@ -51,7 +47,6 @@ const Globe = ({ size = 600, onMarkerClick }: GlobeProps) => {
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     renderer.setClearColor(0x000000, 0);
     container.appendChild(renderer.domElement);
-    rendererRef.current = renderer;
 
     // Lighting — soft, cartoon-like
     const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
@@ -76,7 +71,6 @@ const Globe = ({ size = 600, onMarkerClick }: GlobeProps) => {
 
     const globe = new THREE.Mesh(geometry, material);
     scene.add(globe);
-    globeMeshRef.current = globe;
 
     // Load texture and apply
     loader.load(
