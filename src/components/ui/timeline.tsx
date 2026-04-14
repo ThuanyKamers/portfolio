@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -14,24 +14,14 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
   const { t } = useTranslation();
   const ref = useRef<HTMLDivElement>(null);
   const lineRef = useRef<HTMLDivElement>(null);
-  const [height, setHeight] = useState(0);
 
   useEffect(() => {
-    if (!ref.current) return;
-    const observer = new ResizeObserver(() => {
-      setHeight(ref.current!.getBoundingClientRect().height);
-    });
-    observer.observe(ref.current);
-    setHeight(ref.current.getBoundingClientRect().height);
-    return () => observer.disconnect();
-  }, [ref]);
+    if (!ref.current || !lineRef.current) return;
 
-  useEffect(() => {
-    if (!ref.current || !lineRef.current || height === 0) return;
+    gsap.set(lineRef.current, { scaleY: 0, transformOrigin: "top center", opacity: 0 });
 
-    // Animate the line height to follow the center of the viewport
-    const tl = gsap.to(lineRef.current, {
-      height: height,
+    const scaleTween = gsap.to(lineRef.current, {
+      scaleY: 1,
       ease: "none",
       scrollTrigger: {
         trigger: ref.current,
@@ -41,8 +31,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
       },
     });
 
-    // Fade in the line
-    gsap.to(lineRef.current, {
+    const fadeTween = gsap.to(lineRef.current, {
       opacity: 1,
       duration: 0.5,
       scrollTrigger: {
@@ -53,10 +42,12 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
     });
 
     return () => {
-      tl.scrollTrigger?.kill();
-      tl.kill();
+      scaleTween.scrollTrigger?.kill();
+      scaleTween.kill();
+      fadeTween.scrollTrigger?.kill();
+      fadeTween.kill();
     };
-  }, [height]);
+  }, []);
 
   return (
     <div
@@ -114,19 +105,12 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
 
         {/* Linha animada com GSAP */}
         <div
-          style={{
-            height: height + "px",
-            left: "19px"
-          }}
-          className="absolute top-0 overflow-hidden w-0.5"
+          style={{ left: "19px" }}
+          className="absolute top-0 bottom-0 overflow-hidden w-0.5"
         >
           <div
             ref={lineRef}
-            style={{
-              height: 0,
-              opacity: 0,
-            }}
-            className="absolute inset-x-0 top-0 w-0.5 bg-linear-to-t from-purple-500 via-blue-500 to-transparent rounded-full"
+            className="absolute inset-0 w-0.5 bg-linear-to-t from-purple-500 via-blue-500 to-transparent rounded-full"
           />
         </div>
       </div>
