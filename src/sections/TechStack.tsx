@@ -117,7 +117,7 @@ const TechStack: React.FC = () => {
     <section id="tech-stack" className="w-full py-32 flex flex-col items-center bg-transparent relative overflow-hidden">
       
       <div className="w-full max-w-5xl px-4 sm:px-8 relative z-10">
-        <div className="mb-20 text-center">
+        <div className="text-center">
           <h2 className="text-4xl font-bold tracking-tighter" style={{ color: 'var(--foreground)' }}>
             {/* Traduzindo o título principal */}
             {t('tech.title')} <span className="text-blue-400 italic">{t('tech.subtitle')}</span>

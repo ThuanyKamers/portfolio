@@ -13,7 +13,6 @@ interface TimelineEntry {
 export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
   const { t } = useTranslation();
   const ref = useRef<HTMLDivElement>(null);
-  const containerRef = useRef<HTMLDivElement>(null);
   const lineRef = useRef<HTMLDivElement>(null);
   const [height, setHeight] = useState(0);
 
@@ -63,20 +62,13 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
     <div
       className="w-full font-sans md:px-10"
       style={{ backgroundColor: 'var(--background)' }}
-      ref={containerRef}
     >
       {/* Título */}
-      <div className="max-w-7xl mx-auto pt-20 px-4 md:px-8 lg:px-10">
-        <h2
-          className="text-3xl md:text-4xl font-bold"
-          style={{ color: 'var(--foreground)' }}
-        >
-          {t("exp.title")}
+      <div className="max-w-7xl mx-auto pt-20 px-4 md:px-8 lg:px-10 text-center" style={{ marginBottom: '40px' }}>
+        <h2 className="text-4xl font-bold tracking-tighter" style={{ color: 'var(--foreground)' }}>
+          {t("exp.title")} <span className="text-blue-400 italic">{t("exp.subtitle")}</span>
         </h2>
       </div>
-
-      {/* ESPAÇADOR GRANDE */}
-      <div className="h-12"></div>
 
       <div ref={ref} className="relative max-w-7xl mx-auto pb-20 px-4 md:px-8 lg:px-10">
         {data.map((item, index) => (

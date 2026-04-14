@@ -104,12 +104,11 @@ const Achievements: React.FC = () => {
       style={{ backgroundColor: "var(--background)" }}
     >
       <div className="w-full">
-        <h2
-          className="text-3xl md:text-4xl font-bold text-center px-8"
-          style={{ color: "var(--foreground)", marginBottom: '40px' }}
-        >
-          {t("achievements.title")}
-        </h2>
+        <div className="text-center px-8" style={{ marginBottom: '40px' }}>
+          <h2 className="text-4xl font-bold tracking-tighter" style={{ color: "var(--foreground)" }}>
+            {t("achievements.title")} <span className="text-blue-400 italic">{t("achievements.subtitle")}</span>
+          </h2>
+        </div>
 
         <MarqueeRow direction="right" speed={80}>
           {[

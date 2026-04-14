@@ -31,7 +31,7 @@ const Experience: React.FC = () => {
             ))}
           </ul>
 
-          <div className="flex justify-center" style={{ marginTop: '30px' }}>
+          <div className="flex justify-center -ml-20 -mr-4 md:ml-0 md:mr-0" style={{ marginTop: '30px' }}>
             <PolaroidStack
               images={[
                 { src: asset("images/experience/sp.png"), alt: "Preview 1", caption: Array.isArray(spCaptions) ? spCaptions[0] : "" },
@@ -59,7 +59,7 @@ const Experience: React.FC = () => {
             ))}
           </ul>
 
-          <div className="flex justify-center" style={{ marginTop: '30px' }}>
+          <div className="flex justify-center -ml-20 -mr-4 md:ml-0 md:mr-0" style={{ marginTop: '30px' }}>
             <PolaroidStack
               images={[
                 { src: asset("images/experience/nsc.png"), alt: "Office entrance", caption: Array.isArray(nscCaptions) ? nscCaptions[0] : "" },
@@ -91,7 +91,7 @@ const Experience: React.FC = () => {
             ))}
           </ul>
 
-          <div className="flex justify-center" style={{ marginTop: '30px' }}>
+          <div className="flex justify-center -ml-20 -mr-4 md:ml-0 md:mr-0" style={{ marginTop: '30px' }}>
             <PolaroidStack
               images={[
                 { src: asset("images/experience/flex.png"), alt: "Office entrance", caption: Array.isArray(flexCaptions) ? flexCaptions[0] : "" },

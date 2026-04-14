@@ -14,7 +14,8 @@ i18n
           "hero.description": "Bachelor's in Information Systems",
           "tech.title": "Tech",
           "tech.subtitle": "Stack",
-          "contact.title": "Contact Me",
+          "contact.title": "Contact",
+          "contact.subtitle": "Me",
           "contact.welcome": "Hey there! We're excited to link 🔗",
           "contact.input_label": "enter",
           "contact.fields.email": "email",
@@ -39,23 +40,16 @@ i18n
           "contact.buttons.send": "Send it!",
           "contact.success.sent": "Sent!",
           "contact.success.thanks": "We'll get back to you ASAP 😎",
-          "projects.title": "Projects",
+          "projects.title": "My",
+          "projects.subtitle": "Projects",
           "projects.list": [
             {
-              title: "My Portfolio",
-              description: "This website you are browsing, built with React, TypeScript and Tailwind CSS, focused on performance and design responsivity.",
-              tech: ["React", "TypeScript", "Tailwind"],
-              link: "#",
-              image: "images/projects/capaPortfolio.png",
-              cover: "images/projects/capaPortfolio.png"
-            },
-            {
-              title: "Extension Project",
-              description: "Youth Protagonism in the Digital Era",
-              tech: ["Teaching", "Informatics", "Community"],
-              link: "https://drive.google.com/file/d/10A321xLVbRhlm59tUFt54iqQoVAycy3P/view?usp=drive_link",
-              image: "images/projects/capaExtensao.png",
-              cover: "images/projects/capaExtensao.png"
+              title: "Electronic Time-Tracking System",
+              description: "Development of a solution for work schedule and time bank management, focused on legal compliance (CLT/Portaria 671). The project integrates complex logic flows, auditable data modeling, and AI-powered support.",
+              tech: ["PHP", "MySQL", "HTML", "CSS", "JS", "APIs"],
+              link: "https://skinny-protest-638.notion.site/Sistema-de-Ponto-Eletr-nico-3373f2d9e43b80148ce6d1cb4740ea06?source=copy_link",
+              image: "images/projects/capatimeproject.png",
+              cover: "images/projects/capatimeproject.png"
             },
             {
               title: "E-commerce Platform",
@@ -65,15 +59,16 @@ i18n
               image: "images/projects/dressup.png"
             },
             {
-              title: "Electronic Time-Tracking System",
-              description: "Development of a solution for work schedule and time bank management, focused on legal compliance (CLT/Portaria 671). The project integrates complex logic flows, auditable data modeling, and AI-powered support.",
-              tech: ["PHP", "MySQL", "HTML", "CSS", "JS", "APIs"],
-              link: "https://skinny-protest-638.notion.site/Sistema-de-Ponto-Eletr-nico-3373f2d9e43b80148ce6d1cb4740ea06?source=copy_link",
-              image: "images/projects/capatimeproject.png",
-              cover: "images/projects/capatimeproject.png"
+              title: "Extension Project",
+              description: "A project that introduces children to the world of technology, sparking interest in a software development career and showing them they can be the creators of tomorrow's solutions.",
+              tech: ["Teaching", "Informatics", "Community"],
+              link: "https://drive.google.com/file/d/10A321xLVbRhlm59tUFt54iqQoVAycy3P/view?usp=drive_link",
+              image: "images/projects/capaExtensao.png",
+              cover: "images/projects/capaExtensao.png"
             }
           ],
-          "achievements.title": "Achievements",
+          "achievements.title": "My",
+          "achievements.subtitle": "Achievements",
           "achievements.sw.badge": "3rd Place",
           "achievements.sw.date": "April 25-27, 2025",
           "achievements.sw.location": "São José, Santa Catarina, Brazil",
@@ -92,7 +87,8 @@ i18n
           "nav.projects": "Projects",
           "nav.achievements": "Achievements",
           "nav.contact": "Contact",
-          "exp.title": "IT Experience",
+          "exp.title": "IT",
+          "exp.subtitle": "Experience",
           "exp.sp.role": "Software Developer Intern",
           "exp.sp.period": "May 2025 - July 2025",
           "exp.sp.tasks": [
@@ -121,22 +117,21 @@ i18n
             "Utilize Salesforce to verify customer data and provide accurate guidance and instructions."
           ],
           "exp.flex.captions": ["Main Entrance", "End of Salesforce Training", "Christmas"],
-          "intl.title": "International Experience",
+          "intl.title": "International",
+          "intl.subtitle": "Experience",
+          "intl.hint": "Click on the pins to explore each country",
           "intl.brazil": "Brazil",
-          "intl.brazil.city": "São José, SC",
           "intl.brazil.jobs": [
             { "period": "2018", "role": "English Teacher", "company": "CAIC Prof. Febrônio Tancredo de Oliveira", "description": "Taught ESL to middle school students (6th–9th grade). Created tests and assignments to assess proficiency. Developed interactive games and activities to boost engagement and participation." },
             { "period": "2022", "role": "Store Manager", "company": "Cacau Show — Shopping Continente", "description": "Managed daily store operations in a mall environment. Led customer service and sales. Handled inventory control, store layout, and stockroom logistics. Trained and supervised new staff. Managed documents and reports using Master Retail PDV." }
           ],
           "intl.portugal": "Portugal",
-          "intl.portugal.city": "Lisboa / Palmela, Setúbal",
           "intl.portugal.jobs": [
             { "period": "2023-24", "role": "Waitress at 5-Star Hotel", "company": "Talenter — Lisboa", "description": "Premium service at a 5-star hotel and casino, covering breakfast, dinner, and coffee breaks. Worked large-scale events at the hotel and casino. Wine service and international guest relations, requiring polished etiquette and multilingual fluency. Managed multiple tables simultaneously during peak hours while maintaining quality and guest satisfaction." },
             { "period": "2023", "role": "Line Operator", "company": "Hit & Fit Holding", "description": "Operated on a tomato product manufacturing line (sauces and concentrates), ensuring smooth filling and packaging processes. Strictly applied food hygiene and safety standards (HACCP) to guarantee product integrity. Performed visual and technical inspection of the production line to identify and remove non-conforming products." },
             { "period": "2023-24", "role": "Line Operator", "company": "Hanon Systems — Palmela, Setúbal", "description": "Worked on the production line of automotive components for AutoEuropa (Volkswagen Group), following strict quality and cycle-time standards. Performed technical part inspections to ensure compliance with automotive industry norms, preventing defects on the final assembly line. Collaborated in a high-pace industrial environment, maintaining productivity and operational safety." }
           ],
           "intl.germany": "Germany",
-          "intl.germany.city": "Aachen",
           "intl.germany.jobs": [
             { "period": "2025-26", "role": "Sortation Associate", "company": "Amazon", "description": "Worked in a high-volume logistics center focused on Problem Solve and Quality Control. Executed Induct (package intake) and Stow (storage) tasks, ensuring inventory accuracy. Operated entirely in English with some German, requiring clear and fast communication in a dynamic environment. Fully committed to productivity targets and operational safety standards." }
           ]
@@ -149,7 +144,8 @@ i18n
           "hero.description": "Bacharel em Sistemas de Informação",
           "tech.title": "Stack",
           "tech.subtitle": "Tecnológica",
-          "contact.title": "Contate-me",
+          "contact.title": "Fale",
+          "contact.subtitle": "Comigo",
           "contact.welcome": "Olá! Ficamos felizes em fazer essa conexão 🔗",
           "contact.input_label": "digite seu",
           "contact.fields.email": "email",
@@ -174,23 +170,16 @@ i18n
           "contact.buttons.send": "Enviar!",
           "contact.success.sent": "Enviado!",
           "contact.success.thanks": "Retornaremos o mais rápido possível 😎",
-          "projects.title": "Projetos",
+          "projects.title": "Meus",
+          "projects.subtitle": "Projetos",
           "projects.list": [
             {
-              title: "Meu Portfólio",
-              description: "Este site que você está navegando, feito com React, TypeScript e Tailwind CSS, focado em performance e design responsivo.",
-              tech: ["React", "TypeScript", "Tailwind"],
-              link: "#",
-              image: "images/projects/capaPortfolio.png",
-              cover: "images/projects/capaPortfolio.png"
-            },
-            {
-              title: "Projeto de Extensão",
-              description: "Protagonismo Juvenil na Era Digital",
-              tech: ["Ensino", "Informática", "Comunidade"],
-              link: "https://drive.google.com/file/d/10A321xLVbRhlm59tUFt54iqQoVAycy3P/view?usp=drive_link",
-              image: "images/projects/capaExtensao.png",
-              cover: "images/projects/capaExtensao.png"
+              title: "Sistema de Ponto Eletrônico",
+              description: "Desenvolvimento de uma solução para gestão de jornada e banco de horas, focada em conformidade legal (CLT/Portaria 671). O projeto integra fluxos lógicos complexos, modelagem de dados auditável e suporte via inteligência artificial.",
+              tech: ["PHP", "MySQL", "HTML", "CSS", "JS", "APIs"],
+              link: "https://skinny-protest-638.notion.site/Sistema-de-Ponto-Eletr-nico-3373f2d9e43b80148ce6d1cb4740ea06?source=copy_link",
+              image: "images/projects/capatimeproject.png",
+              cover: "images/projects/capatimeproject.png"
             },
             {
               title: "Plataforma E-commerce",
@@ -200,15 +189,16 @@ i18n
               image: "images/projects/dressup.png"
             },
             {
-              title: "Sistema de Ponto Eletrônico",
-              description: "Desenvolvimento de uma solução para gestão de jornada e banco de horas, focada em conformidade legal (CLT/Portaria 671). O projeto integra fluxos lógicos complexos, modelagem de dados auditável e suporte via inteligência artificial.",
-              tech: ["PHP", "MySQL", "HTML", "CSS", "JS", "APIs"],
-              link: "https://skinny-protest-638.notion.site/Sistema-de-Ponto-Eletr-nico-3373f2d9e43b80148ce6d1cb4740ea06?source=copy_link",
-              image: "images/projects/capatimeproject.png",
-              cover: "images/projects/capatimeproject.png"
+              title: "Projeto de Extensão",
+              description: "Projeto que introduz o universo da tecnologia para crianças, despertando o interesse pela carreira de desenvolvimento de software e mostrando que elas podem ser as criadoras das soluções do futuro.",
+              tech: ["Ensino", "Informática", "Comunidade"],
+              link: "https://drive.google.com/file/d/10A321xLVbRhlm59tUFt54iqQoVAycy3P/view?usp=drive_link",
+              image: "images/projects/capaExtensao.png",
+              cover: "images/projects/capaExtensao.png"
             }
           ],
-          "achievements.title": "Conquistas",
+          "achievements.title": "Minhas",
+          "achievements.subtitle": "Conquistas",
           "achievements.sw.badge": "3º Lugar",
           "achievements.sw.date": "25 a 27 de abril de 2025",
           "achievements.sw.location": "São José, Santa Catarina, Brasil",
@@ -227,7 +217,8 @@ i18n
           "nav.projects": "Projetos",
           "nav.achievements": "Conquistas",
           "nav.contact": "Contato",
-          "exp.title": "Experiência em TI",
+          "exp.title": "Experiência em",
+          "exp.subtitle": "TI",
           "exp.sp.role": "Estagiária de Desenvolvimento de Software",
           "exp.sp.period": "Mai 2025 - Jul 2025",
           "exp.sp.tasks": [
@@ -256,22 +247,21 @@ i18n
             "Utilizar o Salesforce para verificar dados de clientes e fornecer orientações precisas."
           ],
           "exp.flex.captions": ["Entrada Principal", "Fim do Treinamento Salesforce", "Natal"],
-          "intl.title": "Experiência Internacional",
+          "intl.title": "Experiência",
+          "intl.subtitle": "Internacional",
+          "intl.hint": "Clique nos pins para explorar cada país",
           "intl.brazil": "Brasil",
-          "intl.brazil.city": "São José, SC",
           "intl.brazil.jobs": [
             { "period": "2018", "role": "Professora de Inglês", "company": "CAIC Prof. Febrônio Tancredo de Oliveira", "description": "Lecionar inglês para alunos do ensino fundamental (6º ao 9º ano). Elaborar provas e atividades para avaliar o progresso dos alunos. Criar jogos interativos e atividades criativas para engajar os alunos e aumentar a participação." },
             { "period": "2022", "role": "Gerente de Loja", "company": "Cacau Show — Shopping Continente", "description": "Gerenciar operações diárias da loja em ambiente de shopping. Liderar vendas e atender clientes. Controlar estoque, layout da loja e logística do depósito. Treinar e supervisionar novos funcionários. Gerenciar documentos e relatórios com o sistema Master Retail PDV." }
           ],
           "intl.portugal": "Portugal",
-          "intl.portugal.city": "Lisboa / Palmela, Setúbal",
           "intl.portugal.jobs": [
             { "period": "2023-24", "role": "Garçonete em Hotel 5 Estrelas", "company": "Talenter — Lisboa", "description": "Atender com alto padrão em hotel 5 estrelas e cassino no café da manhã, jantar e coffee breaks. Participar de grandes eventos no hotel e cassino. Servir vinhos e atender clientes internacionais, com postura polida e fluência em idiomas. Gerenciar múltiplas mesas simultaneamente em horários de pico e manter qualidade e satisfação do cliente." },
             { "period": "2023", "role": "Operadora de Linha", "company": "Hit & Fit Holding", "description": "Operar em linha de produção de derivados de tomate (molhos e concentrados) e garantir a fluidez do envase e embalagem. Aplicar rigorosamente as normas de higiene e segurança alimentar (HACCP) para garantir a integridade do produto. Inspecionar visual e tecnicamente a esteira para identificar e remover produtos fora do padrão." },
             { "period": "2023-24", "role": "Operadora de Linha", "company": "Hanon Systems — Palmela, Setúbal", "description": "Operar na linha de produção de componentes automotivos para a AutoEuropa (Grupo Volkswagen) e seguir padrões rigorosos de qualidade e tempo de ciclo. Inspecionar tecnicamente peças para garantir conformidade com normas da indústria automotiva. Colaborar em ambiente industrial de alta cadência e manter produtividade e segurança operacional." }
           ],
           "intl.germany": "Alemanha",
-          "intl.germany.city": "Aachen",
           "intl.germany.jobs": [
             { "period": "2025-26", "role": "Sortation Associate", "company": "Amazon", "description": "Operar em centro logístico de alto volume, com foco em Problem Solve e Quality Control. Executar tarefas de Induct (entrada de pacotes) e Stow (armazenamento) e garantir precisão do inventário. Comunicar em inglês e alemão em ambiente dinâmico. Focar em metas de produtividade e segurança operacional." }
           ]
@@ -284,7 +274,8 @@ i18n
           "hero.description": "Licenciatura en Sistemas de Información",
           "tech.title": "Mis",
           "tech.subtitle": "Tecnologías",
-          "contact.title": "Contáctame",
+          "contact.title": "Habla",
+          "contact.subtitle": "Conmigo",
           "contact.welcome": "¡Hola! Estamos emocionados por conectar 🔗",
           "contact.input_label": "ingrese su",
           "contact.fields.email": "correo",
@@ -309,23 +300,16 @@ i18n
           "contact.buttons.send": "¡Enviar!",
           "contact.success.sent": "¡Enviado!",
           "contact.success.thanks": "Te responderemos lo antes posible 😎",
-          "projects.title": "Proyectos",
+          "projects.title": "Mis",
+          "projects.subtitle": "Proyectos",
           "projects.list": [
             {
-              title: "Mi Portafolio",
-              description: "Este sitio que estás navegando, hecho con React, TypeScript y Tailwind CSS, enfocado en el rendimiento y diseño responsivo.",
-              tech: ["React", "TypeScript", "Tailwind"],
-              link: "#",
-              image: "images/projects/capaPortfolio.png",
-              cover: "images/projects/capaPortfolio.png"
-            },
-            {
-              title: "Proyecto de Extensión",
-              description: "Protagonismo Juvenil en la Era Digital",
-              tech: ["Enseñanza", "Informática", "Comunidad"],
-              link: "https://drive.google.com/file/d/10A321xLVbRhlm59tUFt54iqQoVAycy3P/view?usp=drive_link",
-              image: "images/projects/capaExtensao.png",
-              cover: "images/projects/capaExtensao.png"
+              title: "Sistema de Control de Asistencia",
+              description: "Desarrollo de una solución para gestión de jornada y banco de horas, enfocada en conformidad legal (CLT/Portaria 671). El proyecto integra flujos lógicos complejos, modelado de datos auditable y soporte con inteligencia artificial.",
+              tech: ["PHP", "MySQL", "HTML", "CSS", "JS", "APIs"],
+              link: "https://skinny-protest-638.notion.site/Sistema-de-Ponto-Eletr-nico-3373f2d9e43b80148ce6d1cb4740ea06?source=copy_link",
+              image: "images/projects/capatimeproject.png",
+              cover: "images/projects/capatimeproject.png"
             },
             {
               title: "Plataforma E-commerce",
@@ -335,15 +319,16 @@ i18n
               image: "images/projects/dressup.png"
             },
             {
-              title: "Sistema de Control de Asistencia",
-              description: "Desarrollo de una solución para gestión de jornada y banco de horas, enfocada en conformidad legal (CLT/Portaria 671). El proyecto integra flujos lógicos complejos, modelado de datos auditable y soporte con inteligencia artificial.",
-              tech: ["PHP", "MySQL", "HTML", "CSS", "JS", "APIs"],
-              link: "https://skinny-protest-638.notion.site/Sistema-de-Ponto-Eletr-nico-3373f2d9e43b80148ce6d1cb4740ea06?source=copy_link",
-              image: "images/projects/capatimeproject.png",
-              cover: "images/projects/capatimeproject.png"
+              title: "Proyecto de Extensión",
+              description: "Proyecto que introduce el universo de la tecnología a los niños, despertando el interés por la carrera de desarrollo de software y mostrándoles que pueden ser las creadoras de las soluciones del futuro.",
+              tech: ["Enseñanza", "Informática", "Comunidad"],
+              link: "https://drive.google.com/file/d/10A321xLVbRhlm59tUFt54iqQoVAycy3P/view?usp=drive_link",
+              image: "images/projects/capaExtensao.png",
+              cover: "images/projects/capaExtensao.png"
             }
           ],
-          "achievements.title": "Logros",
+          "achievements.title": "Mis",
+          "achievements.subtitle": "Logros",
           "achievements.sw.badge": "3er Lugar",
           "achievements.sw.date": "25 al 27 de abril de 2025",
           "achievements.sw.location": "São José, Santa Catarina, Brasil",
@@ -362,7 +347,8 @@ i18n
           "nav.projects": "Proyectos",
           "nav.achievements": "Logros",
           "nav.contact": "Contacto",
-          "exp.title": "Experiencia en TI",
+          "exp.title": "Experiencia en",
+          "exp.subtitle": "TI",
           "exp.sp.role": "Pasante de Desarrollo de Software",
           "exp.sp.period": "May 2025 - Jul 2025",
           "exp.sp.tasks": [
@@ -391,22 +377,21 @@ i18n
             "Utilización de Salesforce para verificar datos de clientes y proporcionar orientación precisa."
           ],
           "exp.flex.captions": ["Entrada Principal", "Fin del Entrenamiento Salesforce", "Navidad"],
-          "intl.title": "Experiencia Internacional",
+          "intl.title": "Experiencia",
+          "intl.subtitle": "Internacional",
+          "intl.hint": "Haz clic en los pines para explorar cada país",
           "intl.brazil": "Brasil",
-          "intl.brazil.city": "São José, SC",
           "intl.brazil.jobs": [
             { "period": "2018", "role": "Profesora de Inglés", "company": "CAIC Prof. Febrônio Tancredo de Oliveira", "description": "Enseñó inglés a alumnos de secundaria (6º a 9º grado). Elaboró exámenes y actividades para evaluar el progreso. Creó juegos interactivos y actividades creativas para aumentar la participación." },
             { "period": "2022", "role": "Gerente de Tienda", "company": "Cacau Show — Shopping Continente", "description": "Gestionó operaciones diarias de la tienda en centro comercial. Lideró atención al cliente y ventas. Controló inventario, disposición de la tienda y logística. Capacitó y supervisó nuevos empleados. Gestionó documentos y reportes con Master Retail PDV." }
           ],
           "intl.portugal": "Portugal",
-          "intl.portugal.city": "Lisboa / Palmela, Setúbal",
           "intl.portugal.jobs": [
             { "period": "2023-24", "role": "Camarera en Hotel 5 Estrellas", "company": "Talenter — Lisboa", "description": "Servicio de alto nivel en hotel 5 estrellas y casino, cubriendo desayuno, cena y coffee breaks. Participación en grandes eventos del hotel y casino. Servicio de vinos y atención a clientes internacionales, con etiqueta refinada y fluidez en idiomas. Gestión de múltiples mesas simultáneamente en horarios pico, manteniendo calidad y satisfacción del cliente." },
             { "period": "2023", "role": "Operadora de Línea", "company": "Hit & Fit Holding", "description": "Operación en línea de producción de derivados de tomate (salsas y concentrados), asegurando la fluidez del envasado y embalaje. Aplicación rigurosa de normas de higiene y seguridad alimentaria (HACCP). Inspección visual y técnica de la cinta para identificar y retirar productos fuera de estándar." },
             { "period": "2023-24", "role": "Operadora de Línea", "company": "Hanon Systems — Palmela, Setúbal", "description": "Trabajo en línea de producción de componentes automotrices para AutoEuropa (Grupo Volkswagen), siguiendo estándares rigurosos de calidad y tiempo de ciclo. Inspección técnica de piezas para garantizar conformidad con normas de la industria automotriz. Colaboración en ambiente industrial de alta cadencia, manteniendo productividad y seguridad operacional." }
           ],
           "intl.germany": "Alemania",
-          "intl.germany.city": "Aachen",
           "intl.germany.jobs": [
             { "period": "2025-26", "role": "Sortation Associate", "company": "Amazon", "description": "Trabajo en centro logístico de alto volumen, enfocado en Problem Solve y Quality Control. Ejecución de tareas de Induct (entrada de paquetes) y Stow (almacenamiento), garantizando precisión del inventario. Trabajo realizado en inglés con interacciones en alemán, requiriendo comunicación clara y rápida. Enfoque total en metas de productividad y seguridad operacional." }
           ]
@@ -419,7 +404,8 @@ i18n
           "hero.description": "Bachelor in Informationssystemen",
           "tech.title": "Mein",
           "tech.subtitle": "Tech-Stack",
-          "contact.title": "Kontakt",
+          "contact.title": "Schreib",
+          "contact.subtitle": "Mir",
           "contact.welcome": "Hallo! Wir freuen uns auf die Verbindung 🔗",
           "contact.input_label": "eingeben",
           "contact.fields.email": "E-Mail",
@@ -444,23 +430,16 @@ i18n
           "contact.buttons.send": "Absenden!",
           "contact.success.sent": "Gesendet!",
           "contact.success.thanks": "Wir melden uns so schnell wie möglich 😎",
-          "projects.title": "Projekte",
+          "projects.title": "Meine",
+          "projects.subtitle": "Projekte",
           "projects.list": [
             {
-              title: "Mein Portfolio",
-              description: "Diese Website, die du gerade besuchst, erstellt mit React, TypeScript und Tailwind CSS, mit Fokus auf Performance und responsives Design.",
-              tech: ["React", "TypeScript", "Tailwind"],
-              link: "#",
-              image: "images/projects/capaPortfolio.png",
-              cover: "images/projects/capaPortfolio.png"
-            },
-            {
-              title: "Erweiterungsprojekt",
-              description: "Jugendlicher Protagonismus im digitalen Zeitalter",
-              tech: ["Unterricht", "Informatik", "Gemeinschaft"],
-              link: "https://drive.google.com/file/d/10A321xLVbRhlm59tUFt54iqQoVAycy3P/view?usp=drive_link",
-              image: "images/projects/capaExtensao.png",
-              cover: "images/projects/capaExtensao.png"
+              title: "Elektronisches Zeiterfassungssystem",
+              description: "Entwicklung einer Lösung für Arbeitszeitverwaltung und Zeitkonto, mit Fokus auf gesetzliche Konformität (CLT/Portaria 671). Das Projekt integriert komplexe Logikabläufe, prüfbare Datenmodellierung und KI-gestützten Support.",
+              tech: ["PHP", "MySQL", "HTML", "CSS", "JS", "APIs"],
+              link: "https://skinny-protest-638.notion.site/Sistema-de-Ponto-Eletr-nico-3373f2d9e43b80148ce6d1cb4740ea06?source=copy_link",
+              image: "images/projects/capatimeproject.png",
+              cover: "images/projects/capatimeproject.png"
             },
             {
               title: "E-Commerce-Plattform",
@@ -470,15 +449,16 @@ i18n
               image: "images/projects/dressup.png"
             },
             {
-              title: "Elektronisches Zeiterfassungssystem",
-              description: "Entwicklung einer Lösung für Arbeitszeitverwaltung und Zeitkonto, mit Fokus auf gesetzliche Konformität (CLT/Portaria 671). Das Projekt integriert komplexe Logikabläufe, prüfbare Datenmodellierung und KI-gestützten Support.",
-              tech: ["PHP", "MySQL", "HTML", "CSS", "JS", "APIs"],
-              link: "https://skinny-protest-638.notion.site/Sistema-de-Ponto-Eletr-nico-3373f2d9e43b80148ce6d1cb4740ea06?source=copy_link",
-              image: "images/projects/capatimeproject.png",
-              cover: "images/projects/capatimeproject.png"
+              title: "Erweiterungsprojekt",
+              description: "Ein Projekt, das Kindern die Welt der Technologie näherbringt, das Interesse an einer Karriere in der Softwareentwicklung weckt und ihnen zeigt, dass sie die Schöpfer der Lösungen von morgen sein können.",
+              tech: ["Unterricht", "Informatik", "Gemeinschaft"],
+              link: "https://drive.google.com/file/d/10A321xLVbRhlm59tUFt54iqQoVAycy3P/view?usp=drive_link",
+              image: "images/projects/capaExtensao.png",
+              cover: "images/projects/capaExtensao.png"
             }
           ],
-          "achievements.title": "Erfolge",
+          "achievements.title": "Meine",
+          "achievements.subtitle": "Erfolge",
           "achievements.sw.badge": "3. Platz",
           "achievements.sw.date": "25. bis 27. April 2025",
           "achievements.sw.location": "São José, Santa Catarina, Brasilien",
@@ -497,7 +477,8 @@ i18n
           "nav.projects": "Projekte",
           "nav.achievements": "Erfolge",
           "nav.contact": "Kontakt",
-          "exp.title": "IT-Erfahrung",
+          "exp.title": "IT",
+          "exp.subtitle": "Erfahrung",
           "exp.sp.role": "Software-Entwicklungspraktikantin",
           "exp.sp.period": "Mai 2025 - Jul 2025",
           "exp.sp.tasks": [
@@ -526,22 +507,21 @@ i18n
             "Nutzung von Salesforce zur Überprüfung von Kundendaten und Bereitstellung präziser Anleitungen."
           ],
           "exp.flex.captions": ["Haupteingang", "Ende des Salesforce-Trainings", "Weihnachten"],
-          "intl.title": "Internationale Erfahrung",
+          "intl.title": "Internationale",
+          "intl.subtitle": "Erfahrung",
+          "intl.hint": "Klicke auf die Pins, um jedes Land zu erkunden",
           "intl.brazil": "Brasilien",
-          "intl.brazil.city": "São José, SC",
           "intl.brazil.jobs": [
             { "period": "2018", "role": "Englischlehrerin", "company": "CAIC Prof. Febrônio Tancredo de Oliveira", "description": "Unterrichtete Englisch für Schüler der Sekundarstufe (6.–9. Klasse). Erstellte Prüfungen und Aufgaben zur Leistungsbewertung. Entwickelte interaktive Spiele und kreative Aktivitäten zur Steigerung der Beteiligung." },
             { "period": "2022", "role": "Filialleiterin", "company": "Cacau Show — Shopping Continente", "description": "Leitete den täglichen Filialbetrieb im Einkaufszentrum. Führte Kundenservice und Verkauf. Kontrollierte Lagerbestand, Ladenlayout und Logistik. Schulte und beaufsichtigte neue Mitarbeiter. Verwaltete Dokumente und Berichte mit Master Retail PDV." }
           ],
           "intl.portugal": "Portugal",
-          "intl.portugal.city": "Lissabon / Palmela, Setúbal",
           "intl.portugal.jobs": [
             { "period": "2023-24", "role": "Kellnerin im 5-Sterne-Hotel", "company": "Talenter — Lissabon", "description": "Erstklassiger Service in einem 5-Sterne-Hotel und Casino bei Frühstück, Abendessen und Kaffeepausen. Einsatz bei Großveranstaltungen im Hotel und Casino. Weinservice und internationale Gästebetreuung mit gepflegtem Auftreten und Sprachgewandtheit. Gleichzeitige Betreuung mehrerer Tische in Stoßzeiten bei Wahrung von Qualität und Gästezufriedenheit." },
             { "period": "2023", "role": "Linienoperatorin", "company": "Hit & Fit Holding", "description": "Arbeit an der Produktionslinie für Tomatenprodukte (Soßen und Konzentrate) mit Sicherstellung reibungsloser Abfüll- und Verpackungsprozesse. Strikte Anwendung von Hygiene- und Lebensmittelsicherheitsstandards (HACCP). Visuelle und technische Kontrolle des Förderbands zur Identifizierung und Entfernung nicht konformer Produkte." },
             { "period": "2023-24", "role": "Linienoperatorin", "company": "Hanon Systems — Palmela, Setúbal", "description": "Arbeit an der Produktionslinie für Automobilkomponenten für AutoEuropa (Volkswagen-Konzern) unter strikten Qualitäts- und Taktzeitstandards. Technische Teileinspektion zur Sicherstellung der Konformität mit Automobilindustrienormen. Zusammenarbeit in einem hochfrequenten Industrieumfeld bei Aufrechterhaltung von Produktivität und Arbeitssicherheit." }
           ],
           "intl.germany": "Deutschland",
-          "intl.germany.city": "Aachen",
           "intl.germany.jobs": [
             { "period": "2025-26", "role": "Sortation Associate", "company": "Amazon", "description": "Einsatz in einem Hochvolumen-Logistikzentrum mit Fokus auf Problem Solve und Quality Control. Durchführung von Induct- (Paketeingang) und Stow-Aufgaben (Einlagerung) zur Sicherstellung der Bestandsgenauigkeit. Arbeit auf Englisch mit deutschen Interaktionen, erforderte klare und schnelle Kommunikation. Voller Fokus auf Produktivitätsziele und Arbeitssicherheit." }
           ]
@@ -554,7 +534,8 @@ i18n
           "hero.description": "Licence en Systèmes d'Information",
           "tech.title": "Ma",
           "tech.subtitle": "Stack Tech",
-          "contact.title": "Me Contacter",
+          "contact.title": "Me",
+          "contact.subtitle": "Contacter",
           "contact.welcome": "Bonjour ! Nous sommes ravis de cette connexion 🔗",
           "contact.input_label": "entrez votre",
           "contact.fields.email": "e-mail",
@@ -579,23 +560,16 @@ i18n
           "contact.buttons.send": "Envoyer !",
           "contact.success.sent": "Envoyé !",
           "contact.success.thanks": "Nous vous répondrons dès que possible 😎",
-          "projects.title": "Projets",
+          "projects.title": "Mes",
+          "projects.subtitle": "Projets",
           "projects.list": [
             {
-              title: "Mon Portfolio",
-              description: "Ce site que vous parcourez, créé avec React, TypeScript et Tailwind CSS, axé sur la performance et le design responsive.",
-              tech: ["React", "TypeScript", "Tailwind"],
-              link: "#",
-              image: "images/projects/capaPortfolio.png",
-              cover: "images/projects/capaPortfolio.png"
-            },
-            {
-              title: "Projet d'Extension",
-              description: "Protagonisme Juvénile à l'Ère Numérique",
-              tech: ["Enseignement", "Informatique", "Communauté"],
-              link: "https://drive.google.com/file/d/10A321xLVbRhlm59tUFt54iqQoVAycy3P/view?usp=drive_link",
-              image: "images/projects/capaExtensao.png",
-              cover: "images/projects/capaExtensao.png"
+              title: "Système de Pointage Électronique",
+              description: "Développement d'une solution de gestion des horaires et de banque d'heures, axée sur la conformité légale (CLT/Portaria 671). Le projet intègre des flux logiques complexes, une modélisation de données auditable et un support par intelligence artificielle.",
+              tech: ["PHP", "MySQL", "HTML", "CSS", "JS", "APIs"],
+              link: "https://skinny-protest-638.notion.site/Sistema-de-Ponto-Eletr-nico-3373f2d9e43b80148ce6d1cb4740ea06?source=copy_link",
+              image: "images/projects/capatimeproject.png",
+              cover: "images/projects/capatimeproject.png"
             },
             {
               title: "Plateforme E-commerce",
@@ -605,15 +579,16 @@ i18n
               image: "images/projects/dressup.png"
             },
             {
-              title: "Système de Pointage Électronique",
-              description: "Développement d'une solution de gestion des horaires et de banque d'heures, axée sur la conformité légale (CLT/Portaria 671). Le projet intègre des flux logiques complexes, une modélisation de données auditable et un support par intelligence artificielle.",
-              tech: ["PHP", "MySQL", "HTML", "CSS", "JS", "APIs"],
-              link: "https://skinny-protest-638.notion.site/Sistema-de-Ponto-Eletr-nico-3373f2d9e43b80148ce6d1cb4740ea06?source=copy_link",
-              image: "images/projects/capatimeproject.png",
-              cover: "images/projects/capatimeproject.png"
+              title: "Projet d'Extension",
+              description: "Projet qui introduit l'univers de la technologie aux enfants, éveillant l'intérêt pour une carrière en développement logiciel et leur montrant qu'elles peuvent être les créatrices des solutions de demain.",
+              tech: ["Enseignement", "Informatique", "Communauté"],
+              link: "https://drive.google.com/file/d/10A321xLVbRhlm59tUFt54iqQoVAycy3P/view?usp=drive_link",
+              image: "images/projects/capaExtensao.png",
+              cover: "images/projects/capaExtensao.png"
             }
           ],
-          "achievements.title": "Réalisations",
+          "achievements.title": "Mes",
+          "achievements.subtitle": "Réalisations",
           "achievements.sw.badge": "3ème Place",
           "achievements.sw.date": "25 au 27 avril 2025",
           "achievements.sw.location": "São José, Santa Catarina, Brésil",
@@ -632,7 +607,8 @@ i18n
           "nav.projects": "Projets",
           "nav.achievements": "Réalisations",
           "nav.contact": "Contact",
-          "exp.title": "Expérience en TI",
+          "exp.title": "Expérience en",
+          "exp.subtitle": "TI",
           "exp.sp.role": "Stagiaire en Développement Logiciel",
           "exp.sp.period": "Mai 2025 - Jul 2025",
           "exp.sp.tasks": [
@@ -661,22 +637,21 @@ i18n
             "Utilisation de Salesforce pour vérifier les données clients et fournir des instructions précises."
           ],
           "exp.flex.captions": ["Entrée Principale", "Fin de la Formation Salesforce", "Noël"],
-          "intl.title": "Expérience Internationale",
+          "intl.title": "Expérience",
+          "intl.subtitle": "Internationale",
+          "intl.hint": "Cliquez sur les épingles pour explorer chaque pays",
           "intl.brazil": "Brésil",
-          "intl.brazil.city": "São José, SC",
           "intl.brazil.jobs": [
             { "period": "2018", "role": "Professeure d'Anglais", "company": "CAIC Prof. Febrônio Tancredo de Oliveira", "description": "Enseigné l'anglais à des collégiens (6e à 9e année). Conçu des examens et activités pour évaluer les progrès. Créé des jeux interactifs et activités créatives pour stimuler la participation." },
             { "period": "2022", "role": "Responsable de Magasin", "company": "Cacau Show — Shopping Continente", "description": "Géré les opérations quotidiennes du magasin en centre commercial. Dirigé le service client et les ventes. Contrôlé les stocks, l'agencement et la logistique. Formé et supervisé les nouveaux employés. Géré les documents et rapports avec Master Retail PDV." }
           ],
           "intl.portugal": "Portugal",
-          "intl.portugal.city": "Lisbonne / Palmela, Setúbal",
           "intl.portugal.jobs": [
             { "period": "2023-24", "role": "Serveuse dans un Hôtel 5 Étoiles", "company": "Talenter — Lisbonne", "description": "Service haut de gamme dans un hôtel 5 étoiles et casino, couvrant petit-déjeuner, dîner et pauses café. Participation à de grands événements de l'hôtel et du casino. Service de vins et relations avec une clientèle internationale, exigeant une étiquette soignée et une maîtrise des langues. Gestion de plusieurs tables simultanément aux heures de pointe, maintenant qualité et satisfaction client." },
             { "period": "2023", "role": "Opératrice de Ligne", "company": "Hit & Fit Holding", "description": "Travail sur une ligne de production de dérivés de tomate (sauces et concentrés), assurant la fluidité du conditionnement et de l'emballage. Application rigoureuse des normes d'hygiène et de sécurité alimentaire (HACCP). Inspection visuelle et technique du convoyeur pour identifier et retirer les produits non conformes." },
             { "period": "2023-24", "role": "Opératrice de Ligne", "company": "Hanon Systems — Palmela, Setúbal", "description": "Travail sur la ligne de production de composants automobiles pour AutoEuropa (Groupe Volkswagen), suivant des normes strictes de qualité et de temps de cycle. Inspection technique des pièces pour assurer la conformité aux normes de l'industrie automobile. Collaboration dans un environnement industriel à haute cadence, maintenant productivité et sécurité opérationnelle." }
           ],
           "intl.germany": "Allemagne",
-          "intl.germany.city": "Aix-la-Chapelle",
           "intl.germany.jobs": [
             { "period": "2025-26", "role": "Sortation Associate", "company": "Amazon", "description": "Travail dans un centre logistique à haut volume, axé sur le Problem Solve et le Quality Control. Exécution de tâches d'Induct (réception de colis) et de Stow (stockage), garantissant la précision de l'inventaire. Travail en anglais avec des interactions en allemand, exigeant une communication claire et rapide. Engagement total envers les objectifs de productivité et de sécurité opérationnelle." }
           ]
