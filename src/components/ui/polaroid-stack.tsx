@@ -56,11 +56,11 @@ export const PolaroidStack: React.FC<PolaroidStackProps> = ({ images, autoRotate
                 <img
                   src={img.src}
                   alt={img.alt}
-                  loading="eager"
+                  loading="lazy"
                   style={{ transform: img.rotation ? `rotate(${img.rotation}deg) scale(1.8)` : 'none' }}
                 />
-                <div className="dust" />
-                <div className="scratches" />
+                {offset === 0 && <div className="dust" />}
+                {offset === 0 && <div className="scratches" />}
               </div>
               {img.caption && <div className="caption">{img.caption}</div>}
             </div>
@@ -138,7 +138,7 @@ const StyledWrapper = styled.div`
     object-fit: cover;
   }
 
-  .photo::before {
+  .polaroid.active .photo::before {
     content: "";
     position: absolute;
     top: 0;
