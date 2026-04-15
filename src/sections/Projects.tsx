@@ -22,7 +22,7 @@ const Projects: React.FC = () => {
       style={{ backgroundColor: 'var(--background)' }}
     >
       <div className="w-full max-w-6xl px-6 md:px-12">
-        <div className="text-center">
+        <div className="text-center" data-reveal>
           <h2 className="text-4xl font-bold tracking-tighter" style={{ color: 'var(--foreground)' }}>
             {t('projects.title')} <span className="text-blue-400 italic">{t('projects.subtitle')}</span>
           </h2>
@@ -32,15 +32,16 @@ const Projects: React.FC = () => {
         {Array.isArray(projects) && (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14" style={{ marginTop: '40px' }}>
             {projects.map((p, i) => (
-              <ProjectCard
-                key={i}
-                title={p.title}
-                description={p.description}
-                tech={p.tech}
-                link={p.link}
-                image={p.image ? asset(p.image) : undefined}
-                cover={p.cover ? asset(p.cover) : undefined}
-              />
+              <div key={i} data-reveal>
+                <ProjectCard
+                  title={p.title}
+                  description={p.description}
+                  tech={p.tech}
+                  link={p.link}
+                  image={p.image ? asset(p.image) : undefined}
+                  cover={p.cover ? asset(p.cover) : undefined}
+                />
+              </div>
             ))}
           </div>
         )}

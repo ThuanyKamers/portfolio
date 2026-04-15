@@ -104,12 +104,13 @@ const Achievements: React.FC = () => {
       style={{ backgroundColor: "var(--background)" }}
     >
       <div className="w-full">
-        <div className="text-center px-8" style={{ marginBottom: '40px' }}>
+        <div className="text-center px-8" style={{ marginBottom: '40px' }} data-reveal>
           <h2 className="text-4xl font-bold tracking-tighter" style={{ color: "var(--foreground)" }}>
             {t("achievements.title")} <span className="text-blue-400 italic">{t("achievements.subtitle")}</span>
           </h2>
         </div>
 
+        <div data-reveal>
         <MarqueeRow direction="right" speed={80}>
           {[
             ...achievements.map((achievement) => (
@@ -170,6 +171,7 @@ const Achievements: React.FC = () => {
             )),
           ]}
         </MarqueeRow>
+        </div>
       </div>
 
       {/* Modal */}

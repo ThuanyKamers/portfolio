@@ -14,20 +14,13 @@ const useIsMobile = () => {
   return isMobile;
 };
 
-const SkillStack = ({ name, color, index, iconUrl }: { name: string; color: string; index: number; iconUrl: string }) => {
+const SkillStack = ({ name, color, iconUrl }: { name: string; color: string; index: number; iconUrl: string }) => {
   const [isHovered, setIsHovered] = useState(false);
   const isMobile = useIsMobile();
 
   if (isMobile) {
     return (
-      <div
-        className="flex flex-col items-center justify-center py-4"
-        style={{
-          animationDelay: `${index * 100}ms`,
-          animation: 'fadeInUp 0.6s ease-out forwards',
-          opacity: 0,
-        }}
-      >
+      <div className="flex flex-col items-center justify-center py-4" data-reveal>
         <div className="w-12 h-12 rounded-lg bg-black/40 border flex items-center justify-center" style={{ borderColor: color }}>
           <img src={iconUrl} alt={name} className="w-7 h-7 object-contain" />
         </div>
@@ -40,14 +33,10 @@ const SkillStack = ({ name, color, index, iconUrl }: { name: string; color: stri
 
   return (
     <div
+      data-reveal
       className="relative flex flex-col items-center justify-center h-40 group"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      style={{
-        animationDelay: `${index * 100}ms`,
-        animation: 'fadeInUp 0.6s ease-out forwards',
-        opacity: 0
-      }}
     >
       <div className={`relative w-15 h-15 transition-all duration-500 ${isHovered ? 'rotate-[-35deg] skew-y-20 -translate-y-4' : ''}`}>
         {/* Camadas da Pilha */}
@@ -117,7 +106,7 @@ const TechStack: React.FC = () => {
     <section id="tech-stack" className="w-full py-32 flex flex-col items-center bg-transparent relative overflow-hidden">
       
       <div className="w-full max-w-5xl px-4 sm:px-8 relative z-10">
-        <div className="text-center">
+        <div className="text-center" data-reveal>
           <h2 className="text-4xl font-bold tracking-tighter" style={{ color: 'var(--foreground)' }}>
             {/* Traduzindo o título principal */}
             {t('tech.title')} <span className="text-blue-400 italic">{t('tech.subtitle')}</span>
@@ -126,23 +115,16 @@ const TechStack: React.FC = () => {
 
         <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-x-4 sm:gap-x-8 gap-y-3">
           {techs.map((tech, index) => (
-            <SkillStack 
-              key={tech.name} 
-              name={tech.name} 
-              color={tech.color} 
-              index={index} 
+            <SkillStack
+              key={tech.name}
+              name={tech.name}
+              color={tech.color}
+              index={index}
               iconUrl={asset(tech.iconUrl)}
             />
           ))}
         </div>
       </div>
-
-      <style>{`
-        @keyframes fadeInUp {
-          from { opacity: 0; transform: translateY(30px); }
-          to { opacity: 1; transform: translateY(0); }
-        }
-      `}</style>
     </section>
   );
 };

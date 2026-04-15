@@ -84,7 +84,7 @@ const InternationalExperience: React.FC = () => {
       className="py-32 flex flex-col items-center"
       style={{ backgroundColor: "var(--background)", position: "relative", zIndex: 1 }}
     >
-      <div className="text-center px-8">
+      <div className="text-center px-8" data-reveal>
         <h2 className="text-4xl font-bold tracking-tighter" style={{ color: "var(--foreground)" }}>
           {t("intl.title")} <span className="text-blue-400 italic">{t("intl.subtitle")}</span>
         </h2>
@@ -97,7 +97,7 @@ const InternationalExperience: React.FC = () => {
         </p>
       </div>
 
-      <div className="flex justify-center px-4">
+      <div className="flex justify-center px-4" data-reveal>
         <Globe
           size={typeof window !== 'undefined' && window.innerWidth < 640 ? 320 : 600}
           onMarkerClick={(id) => { setActiveCountry(id); setSlideIndex(0); }}

@@ -18,30 +18,37 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
   useEffect(() => {
     if (!ref.current || !lineRef.current) return;
 
-    gsap.set(lineRef.current, { scaleY: 0, transformOrigin: "top center", opacity: 0 });
+    const container = ref.current;
+    const line = lineRef.current;
 
-    const scaleTween = gsap.to(lineRef.current, {
-      scaleY: 1,
+    gsap.set(line, { height: 0, opacity: 0 });
+
+    const scaleTween = gsap.to(line, {
+      height: () => container.offsetHeight,
       ease: "none",
       scrollTrigger: {
-        trigger: ref.current,
+        trigger: container,
         start: "top center",
         end: "bottom center",
         scrub: 1.5,
+        invalidateOnRefresh: true,
       },
     });
 
-    const fadeTween = gsap.to(lineRef.current, {
+    const fadeTween = gsap.to(line, {
       opacity: 1,
       duration: 0.5,
       scrollTrigger: {
-        trigger: ref.current,
+        trigger: container,
         start: "top 80%",
         toggleActions: "play none none reverse",
       },
     });
 
+    const refreshTimeout = setTimeout(() => ScrollTrigger.refresh(), 200);
+
     return () => {
+      clearTimeout(refreshTimeout);
       scaleTween.scrollTrigger?.kill();
       scaleTween.kill();
       fadeTween.scrollTrigger?.kill();
@@ -55,7 +62,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
       style={{ backgroundColor: 'var(--background)' }}
     >
       {/* Título */}
-      <div className="max-w-7xl mx-auto pt-20 px-4 md:px-8 lg:px-10 text-center" style={{ marginBottom: '40px' }}>
+      <div className="max-w-7xl mx-auto pt-20 px-4 md:px-8 lg:px-10 text-center" style={{ marginBottom: '40px' }} data-reveal>
         <h2 className="text-4xl font-bold tracking-tighter" style={{ color: 'var(--foreground)' }}>
           {t("exp.title")} <span className="text-blue-400 italic">{t("exp.subtitle")}</span>
         </h2>
@@ -91,7 +98,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
               </h3>
             </div>
 
-            <div className="relative pl-20 pr-4 md:pl-4 w-full">
+            <div className="relative pl-20 pr-4 md:pl-4 w-full" data-reveal>
               <h3
                 className="md:hidden block text-2xl mb-4 text-left font-bold"
                 style={{ color: 'var(--text-muted)' }}
@@ -105,14 +112,10 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
 
         {/* Linha animada com GSAP */}
         <div
-          style={{ left: "19px" }}
-          className="absolute top-0 bottom-0 overflow-hidden w-0.5"
-        >
-          <div
-            ref={lineRef}
-            className="absolute inset-0 w-0.5 bg-linear-to-t from-purple-500 via-blue-500 to-transparent rounded-full"
-          />
-        </div>
+          ref={lineRef}
+          style={{ left: "19px", height: 0 }}
+          className="absolute top-0 w-0.5 bg-linear-to-t from-purple-500 via-blue-500 to-transparent rounded-full"
+        />
       </div>
     </div>
   );
