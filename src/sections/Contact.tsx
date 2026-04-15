@@ -142,13 +142,13 @@ const Contact: React.FC = () => {
   return (
     <section id="contact" className="w-full py-20 md:py-48 flex flex-col items-center bg-(--background)" style={{ backgroundColor: 'var(--background)' }}>
       <div className="w-full max-w-5xl px-4 md:px-16">
-        <div className="text-center" style={{ marginBottom: '40px' }}>
+        <div className="text-center" style={{ marginBottom: '40px' }} data-reveal>
           <h2 className="text-4xl font-bold tracking-tighter" style={{ color: 'var(--foreground)' }}>
             {t('contact.title')} <span className="text-blue-400 italic">{t('contact.subtitle')}</span>
           </h2>
         </div>
 
-        <div onClick={focusInput} className="w-full backdrop-blur-md rounded-xl overflow-hidden shadow-2xl flex flex-col mt-16 mb-32 cursor-text" style={{ marginBottom: '80px', background: 'linear-gradient(135deg, rgba(13,17,23,0.65) 0%, rgba(22,27,34,0.65) 100%)', border: '1px solid rgba(255,255,255,0.08)' }}>
+        <div data-reveal onClick={focusInput} className="w-full backdrop-blur-md rounded-xl overflow-hidden shadow-2xl flex flex-col mt-16 mb-32 cursor-text" style={{ marginBottom: '80px', background: 'linear-gradient(135deg, rgba(13,17,23,0.65) 0%, rgba(22,27,34,0.65) 100%)', border: '1px solid rgba(255,255,255,0.08)' }}>
           <div style={{ padding: '20px 28px' }}>
             <div style={{ display: 'flex', gap: '8px' }}>
               <div style={{ width: '14px', height: '14px', borderRadius: '50%', backgroundColor: '#ff5f56' }}></div>
@@ -247,7 +247,6 @@ const Contact: React.FC = () => {
                   </span>
                   <input
                     ref={inputRef}
-                    autoFocus
                     className="bg-transparent border-none outline-none flex-1 text-white border-b border-transparent focus:border-blue-500/50 transition-all"
                     value={inputValue}
                     onChange={(e) => setInputValue(e.target.value)}

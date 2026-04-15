@@ -23,7 +23,27 @@ function App() {
       smooth: 2,
       effects: true,
     });
+    ScrollTrigger.refresh();
+
+    const ctx = gsap.context(() => {
+      const targets = gsap.utils.toArray<HTMLElement>('[data-reveal]');
+      targets.forEach((el) => {
+        gsap.from(el, {
+          opacity: 0,
+          y: 40,
+          duration: 0.9,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: el,
+            start: 'top 85%',
+            toggleActions: 'play none none none',
+          },
+        });
+      });
+    });
+
     return () => {
+      ctx.revert();
       smoother.kill();
     };
   }, []);
