@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { asset } from '../utils/asset';
+import { useIsMobile } from '../hooks/useIsMobile';
 
 const TECHS = [
   { name: "HTML", color: "#A855F7", iconUrl: "images/tech/html.png" },
@@ -22,19 +23,6 @@ const TECHS = [
 ] as const;
 
 const STACK_LAYERS = [0, 1, 2, 3];
-
-const useIsMobile = () => {
-  const [isMobile, setIsMobile] = useState(() =>
-    typeof window !== 'undefined' && window.matchMedia('(hover: none)').matches
-  );
-  useEffect(() => {
-    const mq = window.matchMedia('(hover: none)');
-    const onChange = () => setIsMobile(mq.matches);
-    mq.addEventListener('change', onChange);
-    return () => mq.removeEventListener('change', onChange);
-  }, []);
-  return isMobile;
-};
 
 interface SkillStackProps {
   name: string;

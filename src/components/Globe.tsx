@@ -116,6 +116,7 @@ const Globe = ({ size = 600, onMarkerClick }: GlobeProps) => {
     };
 
     renderer.domElement.style.cursor = "grab";
+    renderer.domElement.style.touchAction = "none";
     renderer.domElement.addEventListener("pointerdown", onPointerDown);
     renderer.domElement.addEventListener("pointermove", onPointerMove);
     renderer.domElement.addEventListener("pointerup", onPointerUp);
