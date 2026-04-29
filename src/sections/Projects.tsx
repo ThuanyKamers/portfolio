@@ -21,7 +21,7 @@ const Projects: React.FC = () => {
       className="py-20 md:py-32 flex flex-col items-center transition-colors duration-300"
       style={{ backgroundColor: 'var(--background)' }}
     >
-      <div className="w-full max-w-6xl px-6 md:px-12">
+      <div className="w-full max-w-6xl px-8 md:px-12">
         <div className="text-center" data-reveal>
           <h2 className="text-4xl font-bold tracking-tighter" style={{ color: 'var(--foreground)' }}>
             {t('projects.title')} <span className="text-blue-400 italic">{t('projects.subtitle')}</span>
