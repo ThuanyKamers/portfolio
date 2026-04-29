@@ -43,9 +43,9 @@ const ProjectCard: React.FC<ProjectCardProps> = React.memo(({ title, description
       </div>
 
       {/* Title row with inline separator */}
-      <div className="flex items-center gap-4" style={{ marginTop: '20px' }}>
-        <h3 className="text-white font-bold text-lg md:text-xl shrink-0">{title}</h3>
-        <div className="flex-1 h-px" style={{ backgroundColor: 'rgba(255,255,255,0.12)' }} />
+      <div className="flex items-center gap-3 md:gap-4" style={{ marginTop: '20px' }}>
+        <h3 className="text-white font-bold text-lg md:text-xl flex-1 md:flex-none md:shrink-0 min-w-0">{title}</h3>
+        <div className="hidden md:block flex-1 h-px" style={{ backgroundColor: 'rgba(255,255,255,0.12)' }} />
         <button
           onClick={openLink}
           aria-label={`Open ${title}`}

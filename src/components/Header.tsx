@@ -40,7 +40,7 @@ const Header: React.FC = () => {
         opacity: 0.98,
       }}
     >
-      <div className="w-full px-4 md:px-12">
+      <div className="w-full px-6 md:px-12">
 
         {/* Desktop layout (original grid) */}
         <div
@@ -134,7 +134,7 @@ const Header: React.FC = () => {
           backgroundColor: 'var(--background)',
         }}
       >
-        <nav className="flex flex-col px-6 pb-4 gap-3">
+        <nav className="flex flex-col px-8 pb-4 gap-3">
           {navItems.map((item) => (
             <button
               key={item.id}
