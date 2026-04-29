@@ -12,9 +12,9 @@ const Contact: React.FC = () => {
   const [isSent, setIsSent] = useState(false);
   const [hasEmailError, setHasEmailError] = useState(false);
   const [codeError, setCodeError] = useState(false);
-  const [verificationCode, setVerificationCode] = useState('');
   const [sendingCode, setSendingCode] = useState(false);
   const [codeSendError, setCodeSendError] = useState(false);
+  const verificationCodeRef = useRef('');
   const scrollRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -38,7 +38,7 @@ const Contact: React.FC = () => {
 
   const sendVerificationCode = async (email: string): Promise<boolean> => {
     const code = generateCode();
-    setVerificationCode(code);
+    verificationCodeRef.current = code;
 
     try {
       setSendingCode(true);
@@ -86,7 +86,7 @@ const Contact: React.FC = () => {
 
       if (step === 1) {
         // Verify the code
-        if (inputValue.trim() !== verificationCode) {
+        if (inputValue.trim() !== verificationCodeRef.current) {
           setCodeError(true);
           return;
         }
@@ -123,7 +123,7 @@ const Contact: React.FC = () => {
     setStep(0);
     setFormData({ email: '', name: '', company: '', description: '' });
     setIsSent(false);
-    setVerificationCode('');
+    verificationCodeRef.current = '';
     setCodeError(false);
     setHasEmailError(false);
   };

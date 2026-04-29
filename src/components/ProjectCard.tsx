@@ -9,12 +9,12 @@ interface ProjectCardProps {
   cover?: string;
 }
 
-const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, tech, image, cover, link }) => {
-  const openLink = () => {
+const ProjectCard: React.FC<ProjectCardProps> = React.memo(({ title, description, tech, image, cover, link }) => {
+  const openLink = React.useCallback(() => {
     if (link && link !== '#') {
       window.open(link, '_blank', 'noopener,noreferrer');
     }
-  };
+  }, [link]);
 
   const preview = cover || image;
 
@@ -70,6 +70,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, tech, ima
       </p>
     </div>
   );
-};
+});
 
 export default ProjectCard;

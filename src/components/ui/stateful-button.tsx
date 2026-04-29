@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "../../lib/utils";
 
@@ -12,14 +12,20 @@ export const Button = ({
   className?: string;
 }) => {
   const [status, setStatus] = useState<"idle" | "loading" | "success">("idle");
+  const resetTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  useEffect(() => () => {
+    if (resetTimerRef.current) clearTimeout(resetTimerRef.current);
+  }, []);
 
   const handleClick = async () => {
     setStatus("loading");
     try {
       await onClick();
       setStatus("success");
-      setTimeout(() => setStatus("idle"), 3000);
-    } catch (error) {
+      if (resetTimerRef.current) clearTimeout(resetTimerRef.current);
+      resetTimerRef.current = setTimeout(() => setStatus("idle"), 3000);
+    } catch {
       setStatus("idle");
     }
   };

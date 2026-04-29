@@ -1,8 +1,27 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo, useCallback } from "react";
 import { createPortal } from "react-dom";
 import { useTranslation } from "react-i18next";
-import MarqueeRow from "../components/ui/MarqueeRow";
 import { asset } from "../utils/asset";
+
+const SW_IMAGES = [
+  asset("images/achievements/CertificadoSW.png"),
+  asset("images/achievements/sw.png"),
+  asset("images/achievements/sw1.png"),
+  asset("images/achievements/sw2.png"),
+  asset("images/achievements/sw3.png"),
+  asset("images/achievements/sw4.png"),
+  asset("images/achievements/sw5.png"),
+  asset("images/achievements/sw6.png"),
+  asset("images/achievements/sw7.png"),
+];
+
+const SW_DOC_URLS = {
+  pitch: "https://drive.google.com/file/d/1BuEUpegRA1SCEJ9fwQdKufRhmCrRLM1j/view?usp=sharing",
+  graphs: "https://drive.google.com/file/d/1hebzriee5VOueX5Mhml786cu-aLsCbbo/view?usp=sharing",
+  frontend: "https://docs.google.com/document/d/1Z-SjtJI0lCFRD61zH8EE1tA0SMwPSPi8EISzvDNx5qw/edit?usp=sharing",
+};
+
+const TOTAL_CARDS = 4;
 
 interface AchievementDoc {
   label: string;
@@ -25,35 +44,14 @@ const Achievements: React.FC = () => {
   const [activeCard, setActiveCard] = useState<AchievementData | null>(null);
   const [slideIndex, setSlideIndex] = useState(0);
 
-  /*
-   * ========================================
-   * CONFIGURE SEUS ACHIEVEMENTS AQUI
-   * ========================================
-   * Para adicionar um novo achievement:
-   * 1. Copie o objeto do card1 e cole como card2, card3, etc.
-   * 2. Preencha os campos com suas informações
-   * 3. Adicione as traduções no i18n.ts
-   * 4. Coloque as imagens na pasta public/images
-   * ========================================
-   */
-
-  const achievements: AchievementData[] = [
+  // Para adicionar um achievement: copie o objeto e preencha as traduções no i18n.ts
+  const achievements: AchievementData[] = useMemo(() => [
     {
       id: "sw",
       cardTitle: "Startup Weekend SJ",
       cardSubtitle: t("achievements.sw.theme"),
-      backgroundImage: asset("images/achievements/CertificadoSW.png"),
-      images: [
-        asset("images/achievements/CertificadoSW.png"),
-        asset("images/achievements/sw.png"),
-        asset("images/achievements/sw1.png"),
-        asset("images/achievements/sw2.png"),
-        asset("images/achievements/sw3.png"),
-        asset("images/achievements/sw4.png"),
-        asset("images/achievements/sw5.png"),
-        asset("images/achievements/sw6.png"),
-        asset("images/achievements/sw7.png"),
-      ],
+      backgroundImage: SW_IMAGES[0],
+      images: SW_IMAGES,
       details: [
         { label: t("achievements.sw.placement"), value: t("achievements.sw.badge") },
         { label: "MVP", value: "VerifiCAR" },
@@ -62,16 +60,14 @@ const Achievements: React.FC = () => {
       ],
       description: t("achievements.sw.description"),
       docs: [
-        { label: t("achievements.sw.pitch"), url: "https://drive.google.com/file/d/1BuEUpegRA1SCEJ9fwQdKufRhmCrRLM1j/view?usp=sharing" },
-        { label: t("achievements.sw.graphs"), url: "https://drive.google.com/file/d/1hebzriee5VOueX5Mhml786cu-aLsCbbo/view?usp=sharing" },
-        { label: t("achievements.sw.frontend"), url: "https://docs.google.com/document/d/1Z-SjtJI0lCFRD61zH8EE1tA0SMwPSPi8EISzvDNx5qw/edit?usp=sharing" },
+        { label: t("achievements.sw.pitch"), url: SW_DOC_URLS.pitch },
+        { label: t("achievements.sw.graphs"), url: SW_DOC_URLS.graphs },
+        { label: t("achievements.sw.frontend"), url: SW_DOC_URLS.frontend },
       ],
     },
-  ];
+  ], [t]);
 
-  // Preenche até 4 cards (os vazios ficam como "Em Breve")
-  const totalCards = 4;
-  const emptySlots = totalCards - achievements.length;
+  const emptySlots = TOTAL_CARDS - achievements.length;
 
   useEffect(() => {
     if (activeCard) {
@@ -93,9 +89,9 @@ const Achievements: React.FC = () => {
     return () => clearInterval(interval);
   }, [activeCard]);
 
-  const openDoc = (url: string) => {
+  const openDoc = useCallback((url: string) => {
     window.open(url, "_blank", "noopener,noreferrer");
-  };
+  }, []);
 
   return (
     <section
@@ -110,13 +106,11 @@ const Achievements: React.FC = () => {
           </h2>
         </div>
 
-        <div data-reveal>
-        <MarqueeRow direction="right" speed={80}>
-          {[
-            ...achievements.map((achievement) => (
+        <div data-reveal className="flex flex-wrap justify-center gap-4 px-8">
+            {achievements.map((achievement) => (
               <div
                 key={achievement.id}
-                className="cursor-pointer px-3"
+                className="cursor-pointer"
                 onClick={() => { setActiveCard(achievement); setSlideIndex(0); }}
               >
                 <div style={{ padding: '20px' }}>
@@ -148,9 +142,9 @@ const Achievements: React.FC = () => {
                   </div>
                 </div>
               </div>
-            )),
-            ...Array.from({ length: emptySlots }).map((_, i) => (
-              <div key={`empty-${i}`} className="px-3" style={{ padding: '20px' }}>
+            ))}
+            {Array.from({ length: emptySlots }).map((_, i) => (
+              <div key={`empty-${i}`} style={{ padding: '20px' }}>
                 <div
                   className="group overflow-hidden relative
                     after:duration-500 before:duration-500 duration-500
@@ -168,9 +162,7 @@ const Achievements: React.FC = () => {
                   </div>
                 </div>
               </div>
-            )),
-          ]}
-        </MarqueeRow>
+            ))}
         </div>
       </div>
 
