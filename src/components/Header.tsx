@@ -1,21 +1,27 @@
-import React, { useState } from 'react';
+import React, { useCallback, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { LanguageSwitcher } from './ui/LanguageSwitcher';
+
+const NAV_IDS = ['experience', 'international', 'tech-stack', 'projects', 'achievements', 'contact'] as const;
+const NAV_KEYS: Record<typeof NAV_IDS[number], string> = {
+  'experience': 'nav.experience',
+  'international': 'nav.international',
+  'tech-stack': 'nav.techStack',
+  'projects': 'nav.projects',
+  'achievements': 'nav.achievements',
+  'contact': 'nav.contact',
+};
 
 const Header: React.FC = () => {
   const { t } = useTranslation();
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const navItems = [
-    { id: 'experience', label: t('nav.experience') },
-    { id: 'international', label: t('nav.international') },
-    { id: 'tech-stack', label: t('nav.techStack') },
-    { id: 'projects', label: t('nav.projects') },
-    { id: 'achievements', label: t('nav.achievements') },
-    { id: 'contact', label: t('nav.contact') },
-  ];
+  const navItems = useMemo(
+    () => NAV_IDS.map((id) => ({ id, label: t(NAV_KEYS[id]) })),
+    [t]
+  );
 
-  const scrollToSection = (sectionId: string) => {
+  const scrollToSection = useCallback((sectionId: string) => {
     setMenuOpen(false);
     const element = document.getElementById(sectionId);
     if (element) {
@@ -23,7 +29,7 @@ const Header: React.FC = () => {
       const top = element.getBoundingClientRect().top + window.scrollY - headerHeight;
       window.scrollTo({ top, behavior: 'smooth' });
     }
-  };
+  }, []);
 
   return (
     <header

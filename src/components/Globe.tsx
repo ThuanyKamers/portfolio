@@ -12,11 +12,11 @@ const MARKERS = [
   { id: "germany", lat: 50.78, lng: 6.08 },
 ];
 
-// Convert lat/lng to 3D point on sphere
-function latLngToVec3(lat: number, lng: number, radius: number): THREE.Vector3 {
+// Convert lat/lng to 3D point on sphere; writes into `out` to avoid allocations
+function latLngToVec3(lat: number, lng: number, radius: number, out: THREE.Vector3): THREE.Vector3 {
   const phi = (90 - lat) * (Math.PI / 180);
   const theta = (lng + 180) * (Math.PI / 180);
-  return new THREE.Vector3(
+  return out.set(
     -radius * Math.sin(phi) * Math.cos(theta),
     radius * Math.cos(phi),
     radius * Math.sin(phi) * Math.sin(theta)
@@ -120,31 +120,50 @@ const Globe = ({ size = 600, onMarkerClick }: GlobeProps) => {
     renderer.domElement.addEventListener("pointermove", onPointerMove);
     renderer.domElement.addEventListener("pointerup", onPointerUp);
 
-    // Pin projection
+    // Reused vectors to avoid per-frame allocations
+    const camPos = new THREE.Vector3();
+    const localPos = new THREE.Vector3();
+    const worldPos = new THREE.Vector3();
+    const screenPos = new THREE.Vector3();
+    const globeCenter = new THREE.Vector3();
+    const markerFromCenter = new THREE.Vector3();
+    const cameraFromCenter = new THREE.Vector3();
+    let lastPinsRef: { id: string; x: number; y: number; visible: boolean }[] = [];
+
+    const pinsEqual = (
+      a: { x: number; y: number; visible: boolean }[],
+      b: { x: number; y: number; visible: boolean }[]
+    ) => {
+      if (a.length !== b.length) return false;
+      for (let i = 0; i < a.length; i++) {
+        if (a[i].visible !== b[i].visible) return false;
+        if (Math.abs(a[i].x - b[i].x) > 0.5) return false;
+        if (Math.abs(a[i].y - b[i].y) > 0.5) return false;
+      }
+      return true;
+    };
+
     const projectPins = () => {
-      if (!globe || !camera) return;
       globe.updateMatrixWorld(true);
-      const camPos = camera.position.clone();
+      camPos.copy(camera.position);
+      globeCenter.setFromMatrixPosition(globe.matrixWorld);
+      cameraFromCenter.copy(camPos).sub(globeCenter).normalize();
 
       const projected = MARKERS.map((m) => {
-        // Point on globe surface
-        const localPos = latLngToVec3(m.lat, m.lng, 1.02);
-        const worldPos = localPos.clone().applyMatrix4(globe.matrixWorld);
-
-        // Project to screen
-        const screenPos = worldPos.clone().project(camera);
+        latLngToVec3(m.lat, m.lng, 1.02, localPos);
+        worldPos.copy(localPos).applyMatrix4(globe.matrixWorld);
+        screenPos.copy(worldPos).project(camera);
         const x = (screenPos.x * 0.5 + 0.5) * size;
         const y = (-screenPos.y * 0.5 + 0.5) * size;
-
-        // Visible = marker is on the side facing the camera
-        const globeCenter = new THREE.Vector3().setFromMatrixPosition(globe.matrixWorld);
-        const markerFromCenter = worldPos.clone().sub(globeCenter).normalize();
-        const cameraFromCenter = camPos.clone().sub(globeCenter).normalize();
+        markerFromCenter.copy(worldPos).sub(globeCenter).normalize();
         const visible = markerFromCenter.dot(cameraFromCenter) > 0.15;
-
         return { id: m.id, x, y, visible };
       });
-      setPins(projected);
+
+      if (!pinsEqual(lastPinsRef, projected)) {
+        lastPinsRef = projected;
+        setPins(projected);
+      }
     };
 
     // Animation loop

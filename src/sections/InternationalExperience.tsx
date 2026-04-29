@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback, useMemo } from "react";
 import { createPortal } from "react-dom";
 import { useTranslation } from "react-i18next";
 import Globe from "../components/Globe";
@@ -54,9 +54,28 @@ const InternationalExperience: React.FC = () => {
   const { t } = useTranslation();
   const [activeCountry, setActiveCountry] = useState<string | null>(null);
   const [slideIndex, setSlideIndex] = useState(0);
+  const [globeSize, setGlobeSize] = useState(() =>
+    typeof window !== 'undefined' && window.innerWidth < 640 ? 320 : 600
+  );
+
+  useEffect(() => {
+    const onResize = () => setGlobeSize(window.innerWidth < 640 ? 320 : 600);
+    window.addEventListener('resize', onResize);
+    return () => window.removeEventListener('resize', onResize);
+  }, []);
 
   const active = activeCountry ? COUNTRIES[activeCountry] : null;
-  const jobs = active ? (t(active.jobsKey, { returnObjects: true }) as JobData[]) : [];
+  const jobs = useMemo(
+    () => (active ? (t(active.jobsKey, { returnObjects: true }) as JobData[]) : []),
+    [active, t]
+  );
+
+  const handleMarkerClick = useCallback((id: string) => {
+    setActiveCountry(id);
+    setSlideIndex(0);
+  }, []);
+
+  const closeModal = useCallback(() => setActiveCountry(null), []);
 
   useEffect(() => {
     if (activeCountry) {
@@ -98,10 +117,7 @@ const InternationalExperience: React.FC = () => {
       </div>
 
       <div className="flex justify-center px-4" data-reveal>
-        <Globe
-          size={typeof window !== 'undefined' && window.innerWidth < 640 ? 320 : 600}
-          onMarkerClick={(id) => { setActiveCountry(id); setSlideIndex(0); }}
-        />
+        <Globe size={globeSize} onMarkerClick={handleMarkerClick} />
       </div>
 
       {/* Modal — same style as Achievements */}
@@ -109,7 +125,7 @@ const InternationalExperience: React.FC = () => {
         <div
           className="fixed inset-0 flex items-center justify-center p-4 md:p-8"
           style={{ backgroundColor: "rgba(0,0,0,0.9)", zIndex: 99999 }}
-          onClick={() => setActiveCountry(null)}
+          onClick={closeModal}
         >
           <div
             className="relative flex flex-col md:flex-row rounded-2xl overflow-y-auto md:overflow-hidden w-full"
@@ -117,7 +133,7 @@ const InternationalExperience: React.FC = () => {
             onClick={(e) => e.stopPropagation()}
           >
             <button
-              onClick={() => setActiveCountry(null)}
+              onClick={closeModal}
               className="absolute top-3 right-3 md:top-5 md:right-5 z-10 w-9 h-9 flex items-center justify-center rounded-full text-white/50 hover:text-white hover:bg-white/10 text-lg cursor-pointer transition-all"
             >
               ✕
