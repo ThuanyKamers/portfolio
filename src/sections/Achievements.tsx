@@ -2,6 +2,7 @@ import React, { useState, useEffect, useMemo, useCallback } from "react";
 import { createPortal } from "react-dom";
 import { useTranslation } from "react-i18next";
 import { asset } from "../utils/asset";
+import { useIsMobile } from "../hooks/useIsMobile";
 
 const SW_IMAGES = [
   asset("images/achievements/CertificadoSW.png"),
@@ -39,8 +40,22 @@ interface AchievementData {
   docs: AchievementDoc[];
 }
 
+const HOVER_FX_CLASSES =
+  "after:duration-500 before:duration-500 duration-500 " +
+  "hover:after:duration-500 hover:after:translate-x-24 " +
+  "hover:before:translate-y-12 hover:before:-translate-x-32 " +
+  "hover:duration-500 hover:rotate-12 " +
+  "after:absolute after:rounded-full after:blur-xl after:bottom-32 after:right-16 after:w-12 after:h-12 " +
+  "before:absolute before:rounded-full before:blur-xl before:top-20 before:right-16 before:w-12 before:h-12";
+
+const STATIC_CLASSES =
+  "after:absolute after:rounded-full after:blur-xl after:bottom-32 after:right-16 after:w-12 after:h-12 " +
+  "before:absolute before:rounded-full before:blur-xl before:top-20 before:right-16 before:w-12 before:h-12";
+
 const Achievements: React.FC = () => {
   const { t } = useTranslation();
+  const isMobile = useIsMobile();
+  const fxClasses = isMobile ? STATIC_CLASSES : HOVER_FX_CLASSES;
   const [activeCard, setActiveCard] = useState<AchievementData | null>(null);
   const [slideIndex, setSlideIndex] = useState(0);
 
@@ -123,14 +138,7 @@ const Achievements: React.FC = () => {
                     }}
                   >
                     <div
-                      className="group overflow-hidden relative
-                        after:duration-500 before:duration-500 duration-500
-                        hover:after:duration-500 hover:after:translate-x-24
-                        hover:before:translate-y-12 hover:before:-translate-x-32
-                        hover:duration-500
-                        after:absolute after:bg-sky-700 after:rounded-full after:blur-xl after:bottom-32 after:right-16 after:w-12 after:h-12
-                        before:absolute before:bg-sky-400 before:rounded-full before:blur-xl before:top-20 before:right-16 before:w-12 before:h-12
-                        hover:rotate-12 flex justify-center items-center h-36 w-44 sm:h-44 sm:w-56 origin-bottom-right bg-neutral-900 rounded-2xl outline outline-slate-400 -outline-offset-8"
+                      className={`group overflow-hidden relative after:bg-sky-700 before:bg-sky-400 flex justify-center items-center h-36 w-44 sm:h-44 sm:w-56 origin-bottom-right bg-neutral-900 rounded-2xl outline outline-slate-400 -outline-offset-8 ${fxClasses}`}
                     >
                       <div className="z-10 flex flex-col items-center gap-2 px-5">
                         <span className="text-slate-400 text-xl font-bold tracking-tight text-center leading-tight">
@@ -146,14 +154,7 @@ const Achievements: React.FC = () => {
             {Array.from({ length: emptySlots }).map((_, i) => (
               <div key={`empty-${i}`} style={{ padding: '20px' }}>
                 <div
-                  className="group overflow-hidden relative
-                    after:duration-500 before:duration-500 duration-500
-                    hover:after:duration-500 hover:after:translate-x-24
-                    hover:before:translate-y-12 hover:before:-translate-x-32
-                    hover:duration-500
-                    after:absolute after:bg-slate-700 after:rounded-full after:blur-xl after:bottom-32 after:right-16 after:w-12 after:h-12
-                    before:absolute before:bg-slate-500 before:rounded-full before:blur-xl before:top-20 before:right-16 before:w-12 before:h-12
-                    hover:rotate-12 flex justify-center items-center h-36 w-44 sm:h-44 sm:w-56 origin-bottom-right bg-neutral-900 rounded-2xl outline outline-slate-600 -outline-offset-8"
+                  className={`group overflow-hidden relative after:bg-slate-700 before:bg-slate-500 flex justify-center items-center h-36 w-44 sm:h-44 sm:w-56 origin-bottom-right bg-neutral-900 rounded-2xl outline outline-slate-600 -outline-offset-8 ${fxClasses}`}
                 >
                   <div className="z-10 flex flex-col items-center gap-2">
                     <span className="text-slate-600 text-2xl font-bold tracking-tight text-center">
