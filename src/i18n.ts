@@ -133,7 +133,8 @@ i18n
           ],
           "intl.germany": "Germany",
           "intl.germany.jobs": [
-            { "period": "2025-26", "role": "Sortation Associate", "company": "Amazon — Aachen", "description": "Worked in a high-volume logistics center focused on Problem Solve and Quality Control. Executed Induct (package intake) and Stow (storage) tasks, ensuring inventory accuracy. Operated entirely in English with some German, requiring clear and fast communication in a dynamic environment. Fully committed to productivity targets and operational safety standards." }
+            { "period": "2025-26", "role": "Sortation Associate", "company": "Amazon — Aachen", "description": "Worked in a high-volume logistics center focused on Problem Solve and Quality Control. Executed Induct (package intake) and Stow (storage) tasks, ensuring inventory accuracy. Worked in English in a fast-paced, dynamic environment. Fully committed to productivity targets and operational safety standards." },
+            { "period": "2026", "role": "Sortation Associate", "company": "Amazon — Euskirchen", "description": "Loading parcel bags onto roll carts for delivery, scanner-guided staging of the carts at the handover points for drivers, and preparing empty carts and bags for the next shift." }
           ]
         }
       },
@@ -263,7 +264,8 @@ i18n
           ],
           "intl.germany": "Alemanha",
           "intl.germany.jobs": [
-            { "period": "2025-26", "role": "Sortation Associate", "company": "Amazon — Aachen", "description": "Operar em centro logístico de alto volume, com foco em Problem Solve e Quality Control. Executar tarefas de Induct (entrada de pacotes) e Stow (armazenamento) e garantir precisão do inventário. Comunicar em inglês e alemão em ambiente dinâmico. Focar em metas de produtividade e segurança operacional." }
+            { "period": "2025-26", "role": "Sortation Associate", "company": "Amazon — Aachen", "description": "Operar em centro logístico de alto volume, com foco em Problem Solve e Quality Control. Executar tarefas de Induct (entrada de pacotes) e Stow (armazenamento) e garantir precisão do inventário. Comunicar em inglês em ambiente dinâmico. Focar em metas de produtividade e segurança operacional." },
+            { "period": "2026", "role": "Sortation Associate", "company": "Amazon — Euskirchen", "description": "Carregar sacos de pacotes em carrinhos para entrega, posicionar os carrinhos com scanner nos pontos de entrega aos motoristas e preparar carrinhos e sacos vazios para o próximo turno." }
           ]
         }
       },
@@ -393,7 +395,8 @@ i18n
           ],
           "intl.germany": "Alemania",
           "intl.germany.jobs": [
-            { "period": "2025-26", "role": "Sortation Associate", "company": "Amazon — Aachen", "description": "Trabajo en centro logístico de alto volumen, enfocado en Problem Solve y Quality Control. Ejecución de tareas de Induct (entrada de paquetes) y Stow (almacenamiento), garantizando precisión del inventario. Trabajo realizado en inglés con interacciones en alemán, requiriendo comunicación clara y rápida. Enfoque total en metas de productividad y seguridad operacional." }
+            { "period": "2025-26", "role": "Sortation Associate", "company": "Amazon — Aachen", "description": "Trabajo en centro logístico de alto volumen, enfocado en Problem Solve y Quality Control. Ejecución de tareas de Induct (entrada de paquetes) y Stow (almacenamiento), garantizando precisión del inventario. Trabajo realizado en inglés, con comunicación clara y rápida. Enfoque total en metas de productividad y seguridad operacional." },
+            { "period": "2026", "role": "Sortation Associate", "company": "Amazon — Euskirchen", "description": "Carga de bolsas de paquetes en carros para su reparto, ubicación de los carros con escáner en los puntos de entrega a los conductores y preparación de carros y bolsas vacíos para el siguiente turno." }
           ]
         }
       },
@@ -523,7 +526,8 @@ i18n
           ],
           "intl.germany": "Deutschland",
           "intl.germany.jobs": [
-            { "period": "2025-26", "role": "Sortation Associate", "company": "Amazon — Aachen", "description": "Einsatz in einem Hochvolumen-Logistikzentrum mit Fokus auf Problem Solve und Quality Control. Durchführung von Induct- (Paketeingang) und Stow-Aufgaben (Einlagerung) zur Sicherstellung der Bestandsgenauigkeit. Arbeit auf Englisch mit deutschen Interaktionen, erforderte klare und schnelle Kommunikation. Voller Fokus auf Produktivitätsziele und Arbeitssicherheit." }
+            { "period": "2025-26", "role": "Sortation Associate", "company": "Amazon — Aachen", "description": "Einsatz in einem Hochvolumen-Logistikzentrum mit Fokus auf Problem Solve und Quality Control. Durchführung von Induct- (Paketeingang) und Stow-Aufgaben (Einlagerung) zur Sicherstellung der Bestandsgenauigkeit. Arbeit auf Englisch mit klarer und schneller Kommunikation. Voller Fokus auf Produktivitätsziele und Arbeitssicherheit." },
+            { "period": "2026", "role": "Sortation Associate", "company": "Amazon — Euskirchen", "description": "Beladen von Rollwagen mit Paketsäcken für die Zustellung, scannergestützte Bereitstellung der Rollwagen an den Übergabepunkten für die Fahrer und Vorbereitung leerer Rollwagen und Säcke für die nächste Schicht." }
           ]
         }
       },
@@ -653,7 +657,8 @@ i18n
           ],
           "intl.germany": "Allemagne",
           "intl.germany.jobs": [
-            { "period": "2025-26", "role": "Sortation Associate", "company": "Amazon — Aachen", "description": "Travail dans un centre logistique à haut volume, axé sur le Problem Solve et le Quality Control. Exécution de tâches d'Induct (réception de colis) et de Stow (stockage), garantissant la précision de l'inventaire. Travail en anglais avec des interactions en allemand, exigeant une communication claire et rapide. Engagement total envers les objectifs de productivité et de sécurité opérationnelle." }
+            { "period": "2025-26", "role": "Sortation Associate", "company": "Amazon — Aachen", "description": "Travail dans un centre logistique à haut volume, axé sur le Problem Solve et le Quality Control. Exécution de tâches d'Induct (réception de colis) et de Stow (stockage), garantissant la précision de l'inventaire. Travail en anglais, avec une communication claire et rapide. Engagement total envers les objectifs de productivité et de sécurité opérationnelle." },
+            { "period": "2026", "role": "Sortation Associate", "company": "Amazon — Euskirchen", "description": "Chargement de sacs de colis sur des chariots pour la livraison, placement des chariots à l'aide d'un scanner aux points de remise aux chauffeurs et préparation des chariots et sacs vides pour l'équipe suivante." }
           ]
         }
       }
