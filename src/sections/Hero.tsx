@@ -22,7 +22,7 @@ const Hero: React.FC = () => {
         {/* Bloco 2: Nome - Geralmente nome não se traduz */}
         <div style={{ paddingBottom: '20px' }}>
           <h1
-            className="text-5xl md:text-7xl font-extrabold tracking-tight"
+            className="text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tight wrap-break-word"
             style={{ color: 'var(--foreground)' }}
           >
             Thuany Paula Kamers
