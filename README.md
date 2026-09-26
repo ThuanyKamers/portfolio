@@ -4,8 +4,7 @@ My personal portfolio website, built with React and TypeScript.
 
 **Live site:** https://thuanykamers.github.io/portfolio/
 
-<!-- Screenshot: save the image as docs/screenshot.png and remove the comment around the next line -->
-<!-- ![Portfolio screenshot](docs/screenshot.png) -->
+![Portfolio screenshot](docs/screenshot.png)
 
 ## Stack
 
