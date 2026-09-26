@@ -17,7 +17,7 @@ const NSC_IMAGES = [
   { src: asset("images/experience/nsc3.png"), alt: "Women's day" },
   { src: asset("images/experience/nsc4.png"), alt: "Carnaval" },
   { src: asset("images/experience/nsc5.png"), alt: "Meeting with interns" },
-  { src: asset("images/experience/nsc6.PNG"), alt: "Another meeting with interns" },
+  { src: asset("images/experience/nsc6.png"), alt: "Another meeting with interns" },
 ];
 
 const FLEX_IMAGES: { src: string; alt: string; rotation?: number }[] = [
