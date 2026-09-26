@@ -1,7 +1,0 @@
-{
-  "permissions": {
-    "allow": [
-      "Bash(grep -o \"--[a-zA-Z0-9-]*\" /c/Users/thuan/Desktop/portfolio/src/styles/global.css)"
-    ]
-  }
-}
