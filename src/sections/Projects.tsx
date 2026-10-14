@@ -138,7 +138,7 @@ const Projects: React.FC = () => {
             />
           ))}
           <div
-            className="group shrink-0 w-72 sm:w-80 h-105 rounded-2xl flex flex-col items-center justify-center gap-3 text-center transition-all duration-300 hover:shadow-[0_0_32px_rgba(129,140,248,0.45)] border-white/15 hover:border-indigo-400/60"
+            className="group shrink-0 w-72 sm:w-80 h-105 rounded-2xl flex flex-col items-center justify-center gap-3 text-center transition-all duration-300 hover:shadow-[0_0_16px_rgba(129,140,248,0.4)] border-white/15 hover:border-indigo-400/60"
             style={{ borderWidth: '1px', borderStyle: 'dashed', backgroundColor: 'rgba(255,255,255,0.03)', padding: '20px' }}
           >
             <FaCode size={72} className="transition-transform duration-300 group-hover:scale-110" style={{ color: 'rgba(129,140,248,0.55)' }} />
