@@ -34,7 +34,7 @@ const ProjectCard: React.FC<ProjectCardProps> = React.memo(({ title, description
           draggable={false}
           loading="lazy"
           className="absolute left-1/2 top-4 w-72 sm:w-80 h-68 object-contain max-w-none opacity-60 scale-100 transition-[opacity,scale] duration-500 group-hover:scale-[0.97] group-hover:opacity-35"
-          style={{ transform: 'translateX(-50%)' }}
+          style={{ transform: 'translateX(-50%)', WebkitMaskImage: 'linear-gradient(to bottom, #000 65%, transparent)', maskImage: 'linear-gradient(to bottom, #000 65%, transparent)' }}
         />
       )}
       <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(8,10,16,0.95) 0%, rgba(8,10,16,0.6) 45%, rgba(8,10,16,0.1) 100%)' }} />
