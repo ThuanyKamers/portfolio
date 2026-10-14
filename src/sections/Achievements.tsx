@@ -174,7 +174,7 @@ const Achievements: React.FC = () => {
             ))}
         </div>
 
-        <div className="w-full max-w-3xl mx-auto px-8" style={{ marginTop: '60px' }} data-reveal>
+        <div className="w-full max-w-3xl" style={{ margin: '60px auto 0', padding: '0 32px' }} data-reveal>
           <h3 className="text-2xl font-bold tracking-tighter text-center" style={{ color: "var(--foreground)", marginBottom: '24px' }}>
             {t("achievements.certs.title")}
           </h3>
@@ -182,8 +182,8 @@ const Achievements: React.FC = () => {
             {CERTIFICATES.map((c) => (
               <li
                 key={c.name}
-                className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 rounded-lg px-4 py-3"
-                style={{ backgroundColor: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.06)" }}
+                className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 rounded-lg"
+                style={{ backgroundColor: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.06)", padding: "12px 16px" }}
               >
                 <span className="text-sm" style={{ color: "var(--foreground)" }}>
                   {c.url ? (

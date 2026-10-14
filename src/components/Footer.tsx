@@ -10,7 +10,9 @@ const Footer: React.FC = () => {
         borderColor: 'var(--card-bg)'
       }}
     >
-      <SocialLinks size={36} className="mb-6" />
+      <div style={{ marginBottom: '24px' }}>
+        <SocialLinks size={36} />
+      </div>
       <p className="text-sm" style={{ color: 'var(--text-muted)' }}>© 2026 Thuany Paula Kamers. All rights reserved.</p>
     </footer>
   );
