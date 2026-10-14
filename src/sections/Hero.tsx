@@ -1,6 +1,5 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import SocialLinks from '../components/SocialLinks';
 
 const Hero: React.FC = () => {
   const { t } = useTranslation(); // Isso "ativa" as traduções neste componente
@@ -48,11 +47,6 @@ const Hero: React.FC = () => {
           >
             {t('hero.description')} {/* "I am a information systems student..." */}
           </p>
-        </div>
-
-        {/* Bloco 5: Links */}
-        <div style={{ paddingTop: '30px' }}>
-          <SocialLinks />
         </div>
 
       </div>
