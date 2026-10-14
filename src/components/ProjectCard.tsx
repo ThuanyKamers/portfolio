@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 interface ProjectCardProps {
   title: string;
@@ -7,67 +8,58 @@ interface ProjectCardProps {
   link: string;
   image?: string;
   cover?: string;
+  open: boolean;
+  onToggle: () => void;
 }
 
-const ProjectCard: React.FC<ProjectCardProps> = React.memo(({ title, description, tech, image, cover, link }) => {
-  const openLink = React.useCallback(() => {
-    if (link && link !== '#') {
-      window.open(link, '_blank', 'noopener,noreferrer');
-    }
-  }, [link]);
-
+const ProjectCard: React.FC<ProjectCardProps> = React.memo(({ title, description, tech, image, cover, link, open, onToggle }) => {
+  const { t } = useTranslation();
   const preview = cover || image;
+  const hasLink = !!link && link !== '#';
+
+  const openLink = () => {
+    if (hasLink) window.open(link, '_blank', 'noopener,noreferrer');
+  };
 
   return (
-    <div className="flex flex-col w-full">
-      {/* Preview area */}
-      <div
-        className="rounded-lg overflow-hidden cursor-pointer transition-transform duration-300 hover:scale-[1.01]"
-        style={{
-          backgroundColor: 'rgba(255,255,255,0.04)',
-          border: '1px solid rgba(255,255,255,0.06)',
-          aspectRatio: '16 / 10',
-        }}
-        onClick={openLink}
-      >
-        {preview ? (
-          <img
-            src={preview}
-            alt={title}
-            className="w-full h-full object-cover"
-            loading="eager"
-          />
-        ) : (
-          <div className="w-full h-full flex items-center justify-center text-white/30 text-sm">No preview</div>
-        )}
-      </div>
+    <div
+      onClick={openLink}
+      className={`group relative shrink-0 h-105 rounded-2xl overflow-hidden select-none transition-[width] duration-300 ${open ? 'w-[min(30rem,85vw)]' : 'w-72 sm:w-80'} ${hasLink ? 'cursor-pointer' : ''}`}
+      style={{ backgroundColor: '#0d1117', border: '1px solid rgba(255,255,255,0.08)' }}
+    >
+      {preview && (
+        <img
+          src={preview}
+          alt={title}
+          draggable={false}
+          loading="lazy"
+          className="absolute top-0 left-1/2 h-full max-w-none object-cover opacity-60 scale-105 transition-[opacity,scale] duration-500 group-hover:scale-100 group-hover:opacity-35"
+          style={{ width: 'min(30rem, 85vw)', transform: 'translateX(-50%)' }}
+        />
+      )}
+      <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(8,10,16,0.95) 0%, rgba(8,10,16,0.6) 45%, rgba(8,10,16,0.1) 100%)' }} />
 
-      {/* Title row with inline separator */}
-      <div className="flex items-center gap-3 md:gap-4" style={{ marginTop: '20px' }}>
-        <h3 className="text-white font-bold text-lg md:text-xl flex-1 md:flex-none md:shrink-0 min-w-0">{title}</h3>
-        <div className="hidden md:block flex-1 h-px" style={{ backgroundColor: 'rgba(255,255,255,0.12)' }} />
+      <div className="absolute inset-x-0 bottom-0 flex flex-col gap-3" style={{ padding: '20px' }}>
+        <h3 className="text-white font-bold text-xl leading-tight">{title}</h3>
+        <div className="flex flex-wrap gap-2">
+          {tech.map((item) => (
+            <span key={item} className="text-[10px] font-semibold uppercase tracking-wider text-white/70 rounded-full" style={{ border: '1px solid rgba(255,255,255,0.2)', padding: '4px 10px' }}>
+              {item}
+            </span>
+          ))}
+        </div>
+        {open && <p className="text-white/75 text-sm leading-relaxed">{description}</p>}
         <button
-          onClick={openLink}
-          aria-label={`Open ${title}`}
-          className="shrink-0 cursor-pointer text-white/50 hover:text-white transition-colors"
+          onClick={(e) => {
+            e.stopPropagation();
+            onToggle();
+          }}
+          className="self-start cursor-pointer text-sm font-semibold text-white/80 hover:text-white rounded-full transition-colors"
+          style={{ border: '1px solid rgba(255,255,255,0.2)', backgroundColor: 'rgba(255,255,255,0.06)', padding: '8px 16px', marginTop: '4px' }}
         >
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-            <polyline points="15 3 21 3 21 9" />
-            <line x1="10" y1="14" x2="21" y2="3" />
-          </svg>
+          {open ? `${t('projects.close')} ⌃` : `${t('projects.details')} ⌄`}
         </button>
       </div>
-
-      {/* Tech */}
-      <p className="text-blue-400 text-sm font-medium mt-3">
-        {tech.join(' · ')}
-      </p>
-
-      {/* Description */}
-      <p className="text-white/60 text-sm mt-3 leading-relaxed">
-        {description}
-      </p>
     </div>
   );
 });
