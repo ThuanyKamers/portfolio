@@ -24,6 +24,14 @@ const SW_DOC_URLS = {
 
 const TOTAL_CARDS = 4;
 
+const CERTIFICATES = [
+  { name: "Recognizing Hallucinations, Inaccuracies, and Bias in AI", issuer: "Codecademy", date: "09/2026", url: "https://www.codecademy.com/profiles/thuanypk/certificates/1749aeec9b174fabab933fc63449bc34" },
+  { name: "Introduction to AWS Management Console", issuer: "AWS", date: "11/2025" },
+  { name: "PHP: Construindo sua aplicação", issuer: "Alura", date: "07/2025" },
+  { name: "Módulo de Treinamento em Segurança da Informação", issuer: "Uniglobo", date: "01/2025" },
+  { name: "Fundamentos de Python e Desenvolvimento Colaborativo com Git", issuer: "DIO", date: "06/2024" },
+];
+
 interface AchievementDoc {
   label: string;
   url: string;
@@ -164,6 +172,28 @@ const Achievements: React.FC = () => {
                 </div>
               </div>
             ))}
+        </div>
+
+        <div className="w-full max-w-3xl mx-auto px-8" style={{ marginTop: '60px' }} data-reveal>
+          <h3 className="text-2xl font-bold tracking-tighter text-center" style={{ color: "var(--foreground)", marginBottom: '24px' }}>
+            {t("achievements.certs.title")}
+          </h3>
+          <ul className="flex flex-col gap-3">
+            {CERTIFICATES.map((c) => (
+              <li
+                key={c.name}
+                className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 rounded-lg px-4 py-3"
+                style={{ backgroundColor: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.06)" }}
+              >
+                <span className="text-sm" style={{ color: "var(--foreground)" }}>
+                  {c.url ? (
+                    <a href={c.url} target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 underline decoration-white/20">{c.name}</a>
+                  ) : c.name}
+                </span>
+                <span className="text-xs font-mono" style={{ color: "var(--text-muted)" }}>{c.issuer} · {c.date}</span>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
 
