@@ -51,7 +51,7 @@ i18n
               description: "T-shirt store built as a team project, with product pages, a shopping cart and a simulated checkout.",
               tech: ["HTML", "CSS", "JavaScript"],
               link: "https://thuanykamers.github.io/DressUP/",
-              image: "images/projects/dressup.png"
+              image: "images/projects/dressup.webp"
             },
             {
               title: "Secure Cloud: CEI Snoopy",
@@ -186,7 +186,7 @@ i18n
               description: "Loja de camisetas feita em equipe, com páginas de produtos, carrinho de compras e checkout simulado.",
               tech: ["HTML", "CSS", "JavaScript"],
               link: "https://thuanykamers.github.io/DressUP/",
-              image: "images/projects/dressup.png"
+              image: "images/projects/dressup.webp"
             },
             {
               title: "Nuvem Segura: CEI Snoopy",
@@ -321,7 +321,7 @@ i18n
               description: "Tienda de camisetas desarrollada en equipo, con páginas de productos, carrito de compras y checkout simulado.",
               tech: ["HTML", "CSS", "JavaScript"],
               link: "https://thuanykamers.github.io/DressUP/",
-              image: "images/projects/dressup.png"
+              image: "images/projects/dressup.webp"
             },
             {
               title: "Nube Segura: CEI Snoopy",
@@ -456,7 +456,7 @@ i18n
               description: "Im Team entwickelter T-Shirt-Shop mit Produktseiten, Warenkorb und simuliertem Checkout.",
               tech: ["HTML", "CSS", "JavaScript"],
               link: "https://thuanykamers.github.io/DressUP/",
-              image: "images/projects/dressup.png"
+              image: "images/projects/dressup.webp"
             },
             {
               title: "Sichere Cloud: CEI Snoopy",
@@ -591,7 +591,7 @@ i18n
               description: "Boutique de t-shirts réalisée en équipe, avec pages produits, panier et paiement simulé.",
               tech: ["HTML", "CSS", "JavaScript"],
               link: "https://thuanykamers.github.io/DressUP/",
-              image: "images/projects/dressup.png"
+              image: "images/projects/dressup.webp"
             },
             {
               title: "Cloud Sécurisé : CEI Snoopy",
