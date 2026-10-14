@@ -45,24 +45,32 @@ i18n
           "projects.list": [
             {
               title: "Electronic Time-Tracking System",
-              description: "Development of a solution for work schedule and time bank management, focused on legal compliance (CLT/Portaria 671). The project integrates complex logic flows, auditable data modeling, and AI-powered support.",
-              tech: ["PHP", "MySQL", "HTML", "CSS", "JS", "APIs"],
-              link: "https://skinny-protest-638.notion.site/Sistema-de-Ponto-Eletr-nico-3373f2d9e43b80148ce6d1cb4740ea06?source=copy_link",
+              description: "Web system for working hours and time banks built for Brazilian labour law (CLT and Ordinance 671), with a tamper-proof audit trail and an AI assistant for admins.",
+              tech: ["PHP", "MySQL", "React", "TypeScript", "APIs"],
+              link: "https://skinny-protest-638.notion.site/Electronic-Time-Tracking-System-3373f2d9e43b80148ce6d1cb4740ea06",
               image: "images/projects/capatimeproject.png",
               cover: "images/projects/capatimeproject.png"
             },
             {
-              title: "E-commerce Platform",
-              description: "Full-stack e-commerce application with payment integration, product catalog, and user authentication.",
+              title: "Dress Up E-commerce",
+              description: "T-shirt store built as a team project, with product pages, a shopping cart and a simulated checkout.",
               tech: ["HTML", "CSS", "JavaScript"],
               link: "https://thuanykamers.github.io/DressUP/",
               image: "images/projects/dressup.png"
             },
             {
-              title: "Extension Project",
-              description: "A project that introduces children to the world of technology, sparking interest in a software development career and showing them they can be the creators of tomorrow's solutions.",
-              tech: ["Teaching", "Informatics", "Community"],
-              link: "https://drive.google.com/file/d/10A321xLVbRhlm59tUFt54iqQoVAycy3P/view?usp=drive_link",
+              title: "Secure Cloud: CEI Snoopy",
+              description: "University extension project: moved the records of a public daycare centre to a secure cloud and trained its staff to manage them.",
+              tech: ["Google Drive", "Cloud", "Digital Training"],
+              link: "https://skinny-protest-638.notion.site/Secure-Cloud-Protecting-the-Memory-of-CEI-Snoopy-3e43f2d9e43b81b5af28f88955de4e04",
+              image: "images/projects/capaExtensao.png",
+              cover: "images/projects/capaExtensao.png"
+            },
+            {
+              title: "Youth Agency in the Digital Age",
+              description: "University extension project: 8 weeks of digital literacy workshops for 27 students, bringing an unused school computer lab back into use.",
+              tech: ["Digital Literacy", "Scratch", "Teaching"],
+              link: "https://skinny-protest-638.notion.site/Youth-Agency-in-the-Digital-Age-3e43f2d9e43b8127a463f0bcc7a742e6",
               image: "images/projects/capaExtensao.png",
               cover: "images/projects/capaExtensao.png"
             }
@@ -92,20 +100,19 @@ i18n
           "exp.sp.role": "Software Developer Intern",
           "exp.sp.period": "May 2025 - July 2025",
           "exp.sp.tasks": [
-            "Led the back-end development of an electronic time-tracking system using PHP, MySQL, HTML, CSS and JavaScript.",
-            "Integration of the Meta API for secure delivery of password recovery links/codes.",
-            "Developed systemic automation via the OpenAI/GPT API for natural language database queries.",
-            "Designed and implemented complex business logic for automatic record recalculation.",
-            "Managed version control and source code using Git and GitHub."
+            "Full-stack development of a working prototype of a web-based time-tracking system (PHP, MySQL, HTML, CSS, JavaScript, TypeScript, React), with role-based access for employees, admins and support.",
+            "Integrated the Meta API for secure delivery of password recovery links and codes.",
+            "Integrated the OpenAI (GPT) API for natural-language database queries.",
+            "Built complex business logic, such as a dynamic calendar for hour calculations and a chat-based ticket system, compliant with Brazilian labour law (CLT and Ordinance 671) through auditable data modelling.",
+            "Managed version control with Git and GitHub."
           ],
           "exp.sp.captions": ["Home Office Day", "Prototype System", "The Corporate Office"],
           "exp.nsc.role": "IT Intern",
           "exp.nsc.period": "Sept 2024 - May 2025",
           "exp.nsc.tasks": [
-            "Provided support to employees using the JD Edwards system.",
-            "Managed user access and permissions through Active Directory.",
-            "Handled support tickets via ServiceNow.",
-            "Updated and created system documentation, publishing it on SharePoint and Confluence."
+            "Supported users of the JD Edwards ERP and resolved about 400 tickets in ServiceNow, following security standards.",
+            "Built the SharePoint folder structure, migrated more than 1,000 documents from Confluence and wrote new system documentation.",
+            "Independently created more than 50 accounts (Active Directory, Google Admin) and adjusted permissions for about 20% of employees."
           ],
           "exp.nsc.captions": ["Main Entrance", "First Day in Office", "Selfie in Office", "Women's Day", "Carnaval", "Interns Meeting", "Interns Meeting 2"],
           "exp.flex.role": "Customer Service Representative",
@@ -176,24 +183,32 @@ i18n
           "projects.list": [
             {
               title: "Sistema de Ponto Eletrônico",
-              description: "Desenvolvimento de uma solução para gestão de jornada e banco de horas, focada em conformidade legal (CLT/Portaria 671). O projeto integra fluxos lógicos complexos, modelagem de dados auditável e suporte via inteligência artificial.",
-              tech: ["PHP", "MySQL", "HTML", "CSS", "JS", "APIs"],
-              link: "https://skinny-protest-638.notion.site/Sistema-de-Ponto-Eletr-nico-3373f2d9e43b80148ce6d1cb4740ea06?source=copy_link",
+              description: "Sistema web de jornada e banco de horas conforme a CLT e a Portaria 671, com trilha de auditoria à prova de alteração e assistente de IA para administradores.",
+              tech: ["PHP", "MySQL", "React", "TypeScript", "APIs"],
+              link: "https://skinny-protest-638.notion.site/Electronic-Time-Tracking-System-3373f2d9e43b80148ce6d1cb4740ea06",
               image: "images/projects/capatimeproject.png",
               cover: "images/projects/capatimeproject.png"
             },
             {
-              title: "Plataforma E-commerce",
-              description: "Aplicação e-commerce completa com integração de pagamento, catálogo de produtos e autenticação.",
+              title: "Dress Up E-commerce",
+              description: "Loja de camisetas feita em equipe, com páginas de produtos, carrinho de compras e checkout simulado.",
               tech: ["HTML", "CSS", "JavaScript"],
               link: "https://thuanykamers.github.io/DressUP/",
               image: "images/projects/dressup.png"
             },
             {
-              title: "Projeto de Extensão",
-              description: "Projeto que introduz o universo da tecnologia para crianças, despertando o interesse pela carreira de desenvolvimento de software e mostrando que elas podem ser as criadoras das soluções do futuro.",
-              tech: ["Ensino", "Informática", "Comunidade"],
-              link: "https://drive.google.com/file/d/10A321xLVbRhlm59tUFt54iqQoVAycy3P/view?usp=drive_link",
+              title: "Nuvem Segura: CEI Snoopy",
+              description: "Projeto de extensão: migração dos registros de uma creche pública para uma nuvem segura e capacitação da equipe para gerenciá-los.",
+              tech: ["Google Drive", "Nuvem", "Capacitação Digital"],
+              link: "https://skinny-protest-638.notion.site/Secure-Cloud-Protecting-the-Memory-of-CEI-Snoopy-3e43f2d9e43b81b5af28f88955de4e04",
+              image: "images/projects/capaExtensao.png",
+              cover: "images/projects/capaExtensao.png"
+            },
+            {
+              title: "Protagonismo Juvenil na Era Digital",
+              description: "Projeto de extensão: 8 semanas de oficinas de letramento digital para 27 alunos, reativando o laboratório de informática da escola.",
+              tech: ["Letramento Digital", "Scratch", "Ensino"],
+              link: "https://skinny-protest-638.notion.site/Youth-Agency-in-the-Digital-Age-3e43f2d9e43b8127a463f0bcc7a742e6",
               image: "images/projects/capaExtensao.png",
               cover: "images/projects/capaExtensao.png"
             }
@@ -223,20 +238,19 @@ i18n
           "exp.sp.role": "Estagiária de Desenvolvimento de Software",
           "exp.sp.period": "Mai 2025 - Jul 2025",
           "exp.sp.tasks": [
-            "Desenvolver o back-end de um sistema eletrônico de controle de ponto com PHP, MySQL, HTML, CSS e JavaScript.",
-            "Integração da API da Meta para envio seguro de links/códigos de recuperação de senha.",
-            "Desenvolver automação sistêmica via API OpenAI/GPT para consultas em linguagem natural ao banco de dados.",
-            "Projetar e implementar lógica de negócios complexa para recálculo automático de registros.",
-            "Gerenciar controle de versão e código-fonte com Git e GitHub."
+            "Desenvolvimento full-stack de um protótipo funcional de sistema web de ponto eletrônico (PHP, MySQL, HTML, CSS, JavaScript, TypeScript, React), com controle de acesso por perfil: funcionário, administrador e suporte.",
+            "Integração da API da Meta para envio seguro de links e códigos de recuperação de senha.",
+            "Integração da API da OpenAI (GPT) para consultas ao banco de dados em linguagem natural.",
+            "Lógica de negócio complexa, como calendário dinâmico para cálculo de horas e sistema de chamados via chat, em conformidade com a CLT e a Portaria 671 por meio de modelagem de dados auditável.",
+            "Versionamento de código com Git e GitHub."
           ],
           "exp.sp.captions": ["Dia de Home Office", "Sistema Protótipo", "O Escritório"],
           "exp.nsc.role": "Estagiária de TI",
           "exp.nsc.period": "Set 2024 - Mai 2025",
           "exp.nsc.tasks": [
-            "Dar suporte aos colaboradores com o sistema JD Edwards.",
-            "Gerenciar acessos e permissões através do Active Directory.",
-            "Atender chamados via ServiceNow.",
-            "Atualizar e criar documentação de sistemas e publicar no SharePoint e Confluence."
+            "Suporte aos usuários do ERP JD Edwards e cerca de 400 chamados atendidos no ServiceNow, seguindo padrões de segurança.",
+            "Criação da estrutura de pastas no SharePoint, migração de mais de 1.000 documentos do Confluence e nova documentação de sistemas.",
+            "Criação autônoma de mais de 50 contas (Active Directory, Google Admin) e ajuste de permissões de cerca de 20% dos funcionários."
           ],
           "exp.nsc.captions": ["Entrada Principal", "Primeiro Dia no Escritório", "Selfie no Escritório", "Dia da Mulher", "Carnaval", "Reunião de Estagiários", "Reunião de Estagiários 2"],
           "exp.flex.role": "Atendente de SAC",
@@ -307,24 +321,32 @@ i18n
           "projects.list": [
             {
               title: "Sistema de Control de Asistencia",
-              description: "Desarrollo de una solución para gestión de jornada y banco de horas, enfocada en conformidad legal (CLT/Portaria 671). El proyecto integra flujos lógicos complejos, modelado de datos auditable y soporte con inteligencia artificial.",
-              tech: ["PHP", "MySQL", "HTML", "CSS", "JS", "APIs"],
-              link: "https://skinny-protest-638.notion.site/Sistema-de-Ponto-Eletr-nico-3373f2d9e43b80148ce6d1cb4740ea06?source=copy_link",
+              description: "Sistema web de jornada laboral y banco de horas conforme a la legislación laboral brasileña (CLT y Portaria 671), con registro de auditoría inalterable y asistente de IA para administradores.",
+              tech: ["PHP", "MySQL", "React", "TypeScript", "APIs"],
+              link: "https://skinny-protest-638.notion.site/Electronic-Time-Tracking-System-3373f2d9e43b80148ce6d1cb4740ea06",
               image: "images/projects/capatimeproject.png",
               cover: "images/projects/capatimeproject.png"
             },
             {
-              title: "Plataforma E-commerce",
-              description: "Aplicación de comercio electrónico completa con integración de pagos, catálogo de productos y autenticación.",
+              title: "Dress Up E-commerce",
+              description: "Tienda de camisetas desarrollada en equipo, con páginas de productos, carrito de compras y checkout simulado.",
               tech: ["HTML", "CSS", "JavaScript"],
               link: "https://thuanykamers.github.io/DressUP/",
               image: "images/projects/dressup.png"
             },
             {
-              title: "Proyecto de Extensión",
-              description: "Proyecto que introduce el universo de la tecnología a los niños, despertando el interés por la carrera de desarrollo de software y mostrándoles que pueden ser las creadoras de las soluciones del futuro.",
-              tech: ["Enseñanza", "Informática", "Comunidad"],
-              link: "https://drive.google.com/file/d/10A321xLVbRhlm59tUFt54iqQoVAycy3P/view?usp=drive_link",
+              title: "Nube Segura: CEI Snoopy",
+              description: "Proyecto de extensión universitaria: migración de los registros de una guardería pública a una nube segura y capacitación del equipo para gestionarlos.",
+              tech: ["Google Drive", "Nube", "Capacitación Digital"],
+              link: "https://skinny-protest-638.notion.site/Secure-Cloud-Protecting-the-Memory-of-CEI-Snoopy-3e43f2d9e43b81b5af28f88955de4e04",
+              image: "images/projects/capaExtensao.png",
+              cover: "images/projects/capaExtensao.png"
+            },
+            {
+              title: "Jóvenes Protagonistas en la Era Digital",
+              description: "Proyecto de extensión universitaria: 8 semanas de talleres de alfabetización digital para 27 alumnos, reactivando el laboratorio de informática de la escuela.",
+              tech: ["Alfabetización Digital", "Scratch", "Enseñanza"],
+              link: "https://skinny-protest-638.notion.site/Youth-Agency-in-the-Digital-Age-3e43f2d9e43b8127a463f0bcc7a742e6",
               image: "images/projects/capaExtensao.png",
               cover: "images/projects/capaExtensao.png"
             }
@@ -354,20 +376,19 @@ i18n
           "exp.sp.role": "Pasante de Desarrollo de Software",
           "exp.sp.period": "May 2025 - Jul 2025",
           "exp.sp.tasks": [
-            "Lideró el desarrollo back-end de un sistema electrónico de control de asistencia usando PHP, MySQL, HTML, CSS y JavaScript.",
-            "Integración de la API de Meta para el envío seguro de enlaces/códigos de recuperación de contraseña.",
-            "Desarrolló automatización sistémica vía API OpenAI/GPT para consultas en lenguaje natural a la base de datos.",
-            "Diseñó e implementó lógica de negocio compleja para el recálculo automático de registros.",
-            "Gestionó el control de versiones y código fuente usando Git y GitHub."
+            "Desarrollo full-stack de un prototipo funcional de sistema web de control de asistencia (PHP, MySQL, HTML, CSS, JavaScript, TypeScript, React), con control de acceso por perfil: empleado, administrador y soporte.",
+            "Integración de la API de Meta para el envío seguro de enlaces y códigos de recuperación de contraseña.",
+            "Integración de la API de OpenAI (GPT) para consultas a la base de datos en lenguaje natural.",
+            "Lógica de negocio compleja, como un calendario dinámico para el cálculo de horas y un sistema de tickets por chat, conforme a la legislación laboral brasileña (CLT y Portaria 671) mediante un modelado de datos auditable.",
+            "Control de versiones con Git y GitHub."
           ],
           "exp.sp.captions": ["Día de Home Office", "Sistema Prototipo", "La Oficina"],
           "exp.nsc.role": "Pasante de TI",
           "exp.nsc.period": "Sep 2024 - May 2025",
           "exp.nsc.tasks": [
-            "Soporte a empleados utilizando el sistema JD Edwards.",
-            "Gestión de accesos y permisos a través de Active Directory.",
-            "Atención de tickets vía ServiceNow.",
-            "Actualización y creación de documentación de sistemas, publicando en SharePoint y Confluence."
+            "Soporte a usuarios del ERP JD Edwards y cerca de 400 tickets atendidos en ServiceNow, siguiendo estándares de seguridad.",
+            "Creación de la estructura de carpetas en SharePoint, migración de más de 1.000 documentos desde Confluence y nueva documentación de sistemas.",
+            "Creación autónoma de más de 50 cuentas (Active Directory, Google Admin) y ajuste de permisos de cerca del 20% de los empleados."
           ],
           "exp.nsc.captions": ["Entrada Principal", "Primer Día en la Oficina", "Selfie en la Oficina", "Día de la Mujer", "Carnaval", "Reunión de Pasantes", "Reunión de Pasantes 2"],
           "exp.flex.role": "Representante de Atención al Cliente",
@@ -438,24 +459,32 @@ i18n
           "projects.list": [
             {
               title: "Elektronisches Zeiterfassungssystem",
-              description: "Entwicklung einer Lösung für Arbeitszeitverwaltung und Zeitkonto, mit Fokus auf gesetzliche Konformität (CLT/Portaria 671). Das Projekt integriert komplexe Logikabläufe, prüfbare Datenmodellierung und KI-gestützten Support.",
-              tech: ["PHP", "MySQL", "HTML", "CSS", "JS", "APIs"],
-              link: "https://skinny-protest-638.notion.site/Sistema-de-Ponto-Eletr-nico-3373f2d9e43b80148ce6d1cb4740ea06?source=copy_link",
+              description: "Websystem für Arbeitszeit und Zeitkonten nach brasilianischem Arbeitsrecht (CLT und Verordnung 671), mit manipulationssicherem Audit-Trail und KI-Assistent für Administratoren.",
+              tech: ["PHP", "MySQL", "React", "TypeScript", "APIs"],
+              link: "https://skinny-protest-638.notion.site/Elektronisches-Zeiterfassungssystem-3e73f2d9e43b811490d5f15f543f2024",
               image: "images/projects/capatimeproject.png",
               cover: "images/projects/capatimeproject.png"
             },
             {
-              title: "E-Commerce-Plattform",
-              description: "Vollständige E-Commerce-Anwendung mit Zahlungsintegration, Produktkatalog und Benutzerauthentifizierung.",
+              title: "Dress Up E-Commerce",
+              description: "Im Team entwickelter T-Shirt-Shop mit Produktseiten, Warenkorb und simuliertem Checkout.",
               tech: ["HTML", "CSS", "JavaScript"],
               link: "https://thuanykamers.github.io/DressUP/",
               image: "images/projects/dressup.png"
             },
             {
-              title: "Erweiterungsprojekt",
-              description: "Ein Projekt, das Kindern die Welt der Technologie näherbringt, das Interesse an einer Karriere in der Softwareentwicklung weckt und ihnen zeigt, dass sie die Schöpfer der Lösungen von morgen sein können.",
-              tech: ["Unterricht", "Informatik", "Gemeinschaft"],
-              link: "https://drive.google.com/file/d/10A321xLVbRhlm59tUFt54iqQoVAycy3P/view?usp=drive_link",
+              title: "Sichere Cloud: CEI Snoopy",
+              description: "Hochschul-Praxisprojekt: Migration der Unterlagen einer öffentlichen Kita in eine sichere Cloud und Schulung des Teams im Umgang damit.",
+              tech: ["Google Drive", "Cloud", "Digitale Schulung"],
+              link: "https://skinny-protest-638.notion.site/Sichere-Cloud-Das-Ged-chtnis-des-CEI-Snoopy-sch-tzen-3e43f2d9e43b81038633d97c5c6fe43f",
+              image: "images/projects/capaExtensao.png",
+              cover: "images/projects/capaExtensao.png"
+            },
+            {
+              title: "Jugendliche als Gestalter im digitalen Zeitalter",
+              description: "Hochschul-Praxisprojekt: 8 Wochen Workshops zu digitaler Kompetenz für 27 Schüler, um den ungenutzten Computerraum der Schule wieder in Betrieb zu nehmen.",
+              tech: ["Digitale Kompetenz", "Scratch", "Unterricht"],
+              link: "https://skinny-protest-638.notion.site/Jugendliche-als-Gestalter-im-digitalen-Zeitalter-3e43f2d9e43b81478b7bf569adaff087",
               image: "images/projects/capaExtensao.png",
               cover: "images/projects/capaExtensao.png"
             }
@@ -485,20 +514,19 @@ i18n
           "exp.sp.role": "Software-Entwicklungspraktikantin",
           "exp.sp.period": "Mai 2025 - Jul 2025",
           "exp.sp.tasks": [
-            "Leitete die Back-End-Entwicklung eines elektronischen Zeiterfassungssystems mit PHP, MySQL, HTML, CSS und JavaScript.",
-            "Integration der Meta-API für die sichere Zustellung von Passwort-Wiederherstellungslinks/-codes.",
-            "Entwickelte systemische Automatisierung über die OpenAI/GPT-API für natürlichsprachliche Datenbankabfragen.",
-            "Entwarf und implementierte komplexe Geschäftslogik für automatische Neuberechnung von Datensätzen.",
-            "Verwaltete Versionskontrolle und Quellcode mit Git und GitHub."
+            "Full-Stack-Entwicklung eines funktionsfähigen Prototyps eines webbasierten Zeiterfassungssystems (PHP, MySQL, HTML, CSS, JavaScript, TypeScript, React) mit rollenbasierter Zugriffskontrolle für Mitarbeitende, Administratoren und Support.",
+            "Integration der Meta-API für den sicheren Versand von Links und Codes zur Passwortwiederherstellung.",
+            "Integration der OpenAI-API (GPT) für Datenbankabfragen in natürlicher Sprache.",
+            "Komplexe Geschäftslogik, etwa ein dynamischer Kalender zur Stundenberechnung und ein chatbasiertes Ticketsystem, konform mit brasilianischem Arbeitsrecht (CLT und Verordnung 671) durch auditierbare Datenmodellierung.",
+            "Versionsverwaltung mit Git und GitHub."
           ],
           "exp.sp.captions": ["Home-Office-Tag", "Prototyp-System", "Das Büro"],
           "exp.nsc.role": "IT-Praktikantin",
           "exp.nsc.period": "Sep 2024 - Mai 2025",
           "exp.nsc.tasks": [
-            "Unterstützung der Mitarbeiter bei der Nutzung des JD-Edwards-Systems.",
-            "Verwaltung von Benutzerzugriffen und Berechtigungen über Active Directory.",
-            "Bearbeitung von Support-Tickets über ServiceNow.",
-            "Aktualisierung und Erstellung von Systemdokumentation, Veröffentlichung auf SharePoint und Confluence."
+            "Support für Anwender des ERP-Systems JD Edwards und rund 400 bearbeitete Tickets in ServiceNow unter Einhaltung der Sicherheitsstandards.",
+            "Aufbau der Ordnerstruktur in SharePoint, Migration von über 1.000 Dokumenten aus Confluence und Erstellung neuer Systemdokumentation.",
+            "Eigenständige Einrichtung von über 50 Konten (Active Directory, Google Admin) und Anpassung der Berechtigungen für rund 20 % der Mitarbeitenden."
           ],
           "exp.nsc.captions": ["Haupteingang", "Erster Tag im Büro", "Selfie im Büro", "Frauentag", "Karneval", "Praktikantentreffen", "Praktikantentreffen 2"],
           "exp.flex.role": "Kundendienstmitarbeiterin",
@@ -569,24 +597,32 @@ i18n
           "projects.list": [
             {
               title: "Système de Pointage Électronique",
-              description: "Développement d'une solution de gestion des horaires et de banque d'heures, axée sur la conformité légale (CLT/Portaria 671). Le projet intègre des flux logiques complexes, une modélisation de données auditable et un support par intelligence artificielle.",
-              tech: ["PHP", "MySQL", "HTML", "CSS", "JS", "APIs"],
-              link: "https://skinny-protest-638.notion.site/Sistema-de-Ponto-Eletr-nico-3373f2d9e43b80148ce6d1cb4740ea06?source=copy_link",
+              description: "Système web de gestion du temps de travail et des heures conforme au droit du travail brésilien (CLT et Portaria 671), avec piste d'audit infalsifiable et assistant IA pour les administrateurs.",
+              tech: ["PHP", "MySQL", "React", "TypeScript", "APIs"],
+              link: "https://skinny-protest-638.notion.site/Electronic-Time-Tracking-System-3373f2d9e43b80148ce6d1cb4740ea06",
               image: "images/projects/capatimeproject.png",
               cover: "images/projects/capatimeproject.png"
             },
             {
-              title: "Plateforme E-commerce",
-              description: "Application e-commerce complète avec intégration de paiement, catalogue de produits et authentification.",
+              title: "Dress Up E-commerce",
+              description: "Boutique de t-shirts réalisée en équipe, avec pages produits, panier et paiement simulé.",
               tech: ["HTML", "CSS", "JavaScript"],
               link: "https://thuanykamers.github.io/DressUP/",
               image: "images/projects/dressup.png"
             },
             {
-              title: "Projet d'Extension",
-              description: "Projet qui introduit l'univers de la technologie aux enfants, éveillant l'intérêt pour une carrière en développement logiciel et leur montrant qu'elles peuvent être les créatrices des solutions de demain.",
-              tech: ["Enseignement", "Informatique", "Communauté"],
-              link: "https://drive.google.com/file/d/10A321xLVbRhlm59tUFt54iqQoVAycy3P/view?usp=drive_link",
+              title: "Cloud Sécurisé : CEI Snoopy",
+              description: "Projet d'extension universitaire : migration des archives d'une crèche publique vers un cloud sécurisé et formation de l'équipe à leur gestion.",
+              tech: ["Google Drive", "Cloud", "Formation Numérique"],
+              link: "https://skinny-protest-638.notion.site/Secure-Cloud-Protecting-the-Memory-of-CEI-Snoopy-3e43f2d9e43b81b5af28f88955de4e04",
+              image: "images/projects/capaExtensao.png",
+              cover: "images/projects/capaExtensao.png"
+            },
+            {
+              title: "Jeunes Acteurs à l'Ère Numérique",
+              description: "Projet d'extension universitaire : 8 semaines d'ateliers de culture numérique pour 27 élèves, pour remettre en service la salle informatique de l'école.",
+              tech: ["Culture Numérique", "Scratch", "Enseignement"],
+              link: "https://skinny-protest-638.notion.site/Youth-Agency-in-the-Digital-Age-3e43f2d9e43b8127a463f0bcc7a742e6",
               image: "images/projects/capaExtensao.png",
               cover: "images/projects/capaExtensao.png"
             }
@@ -616,20 +652,19 @@ i18n
           "exp.sp.role": "Stagiaire en Développement Logiciel",
           "exp.sp.period": "Mai 2025 - Jul 2025",
           "exp.sp.tasks": [
-            "Direction du développement back-end d'un système électronique de suivi du temps avec PHP, MySQL, HTML, CSS et JavaScript.",
-            "Intégration de l'API Meta pour l'envoi sécurisé de liens/codes de récupération de mot de passe.",
-            "Développement d'automatisation systémique via l'API OpenAI/GPT pour des requêtes en langage naturel vers la base de données.",
-            "Conception et implémentation de logique métier complexe pour le recalcul automatique des enregistrements.",
-            "Gestion du contrôle de version et du code source avec Git et GitHub."
+            "Développement full-stack d'un prototype fonctionnel de système web de pointage (PHP, MySQL, HTML, CSS, JavaScript, TypeScript, React), avec contrôle d'accès par profil : employé, administrateur et support.",
+            "Intégration de l'API Meta pour l'envoi sécurisé des liens et codes de récupération de mot de passe.",
+            "Intégration de l'API OpenAI (GPT) pour des requêtes en langage naturel sur la base de données.",
+            "Logique métier complexe, comme un calendrier dynamique pour le calcul des heures et un système de tickets par chat, conforme au droit du travail brésilien (CLT et Portaria 671) grâce à une modélisation de données auditable.",
+            "Gestion de versions avec Git et GitHub."
           ],
           "exp.sp.captions": ["Jour de Télétravail", "Système Prototype", "Le Bureau"],
           "exp.nsc.role": "Stagiaire en Informatique",
           "exp.nsc.period": "Sep 2024 - Mai 2025",
           "exp.nsc.tasks": [
-            "Support aux employés utilisant le système JD Edwards.",
-            "Gestion des accès et permissions via Active Directory.",
-            "Traitement des tickets de support via ServiceNow.",
-            "Mise à jour et création de documentation système, publication sur SharePoint et Confluence."
+            "Support aux utilisateurs de l'ERP JD Edwards et environ 400 tickets traités dans ServiceNow, dans le respect des normes de sécurité.",
+            "Création de l'arborescence SharePoint, migration de plus de 1 000 documents depuis Confluence et rédaction d'une nouvelle documentation des systèmes.",
+            "Création autonome de plus de 50 comptes (Active Directory, Google Admin) et ajustement des permissions d'environ 20 % des employés."
           ],
           "exp.nsc.captions": ["Entrée Principale", "Premier Jour au Bureau", "Selfie au Bureau", "Journée de la Femme", "Carnaval", "Réunion des Stagiaires", "Réunion des Stagiaires 2"],
           "exp.flex.role": "Représentante du Service Client",
