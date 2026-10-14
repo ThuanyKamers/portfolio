@@ -10,7 +10,7 @@ i18n
       EN: {
         translation: {
           "hero.greeting": "Hi, I'm",
-          "hero.role": "Full Stack Developer",
+          "hero.role": "Junior Developer & IT Support",
           "hero.description": "Bachelor's in Information Systems",
           "tech.title": "Tech",
           "tech.subtitle": "Stack",
@@ -148,7 +148,7 @@ i18n
       PT: {
         translation: {
           "hero.greeting": "Olá, eu sou",
-          "hero.role": "Desenvolvedora Full Stack",
+          "hero.role": "Desenvolvedora Júnior e Suporte de TI",
           "hero.description": "Bacharel em Sistemas de Informação",
           "tech.title": "Stack",
           "tech.subtitle": "Tecnológica",
@@ -286,7 +286,7 @@ i18n
       ES: {
         translation: {
           "hero.greeting": "Hola, soy",
-          "hero.role": "Desarrolladora Full Stack",
+          "hero.role": "Desarrolladora Junior y Soporte de TI",
           "hero.description": "Licenciatura en Sistemas de Información",
           "tech.title": "Mis",
           "tech.subtitle": "Tecnologías",
@@ -424,7 +424,7 @@ i18n
       DE: {
         translation: {
           "hero.greeting": "Hallo, ich bin",
-          "hero.role": "Full-Stack-Entwicklerin",
+          "hero.role": "Junior-Entwicklerin & IT-Support",
           "hero.description": "Bachelor in Informationssystemen",
           "tech.title": "Mein",
           "tech.subtitle": "Tech-Stack",
@@ -562,7 +562,7 @@ i18n
       FR: {
         translation: {
           "hero.greeting": "Bonjour, je suis",
-          "hero.role": "Développeuse Full Stack",
+          "hero.role": "Développeuse Junior & Support Informatique",
           "hero.description": "Licence en Systèmes d'Information",
           "tech.title": "Ma",
           "tech.subtitle": "Stack Tech",
