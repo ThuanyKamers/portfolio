@@ -118,7 +118,7 @@ const Projects: React.FC = () => {
           ref={trackRef}
           data-reveal
           className="w-full flex gap-6 overflow-x-auto no-scrollbar cursor-grab active:cursor-grabbing"
-          style={{ marginTop: '16px', paddingTop: '24px', paddingBottom: '24px', userSelect: 'none', maxWidth: '100vw', paddingLeft: 'max(2rem, calc((100vw - 72rem) / 2 + 3rem))', paddingRight: 'max(2rem, calc((100vw - 72rem) / 2 + 3rem))' }}
+          style={{ marginTop: '16px', paddingTop: '24px', paddingBottom: '80px', marginBottom: '-56px', userSelect: 'none', maxWidth: '100vw', paddingLeft: 'max(2rem, calc((100vw - 72rem) / 2 + 3rem))', paddingRight: 'max(2rem, calc((100vw - 72rem) / 2 + 3rem))' }}
           onPointerDown={onPointerDown}
           onPointerMove={onPointerMove}
           onPointerUp={endDrag}
