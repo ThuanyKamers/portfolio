@@ -1,4 +1,5 @@
 import React from 'react';
+import SocialLinks from './SocialLinks';
 
 const Footer: React.FC = () => {
   return (
@@ -9,6 +10,7 @@ const Footer: React.FC = () => {
         borderColor: 'var(--card-bg)'
       }}
     >
+      <SocialLinks size={20} className="mb-4" />
       <p className="text-sm" style={{ color: 'var(--text-muted)' }}>© 2026 Thuany Paula Kamers. All rights reserved.</p>
     </footer>
   );
