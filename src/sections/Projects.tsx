@@ -69,7 +69,7 @@ const Projects: React.FC = () => {
           ref={trackRef}
           data-reveal
           className="w-full flex gap-6 overflow-x-auto no-scrollbar cursor-grab active:cursor-grabbing"
-          style={{ marginTop: '40px', paddingBottom: '8px', userSelect: 'none', maxWidth: '100vw', paddingLeft: 'max(2rem, calc((100vw - 72rem) / 2 + 3rem))', paddingRight: 'max(2rem, calc((100vw - 72rem) / 2 + 3rem))' }}
+          style={{ marginTop: '16px', paddingTop: '24px', paddingBottom: '24px', userSelect: 'none', maxWidth: '100vw', paddingLeft: 'max(2rem, calc((100vw - 72rem) / 2 + 3rem))', paddingRight: 'max(2rem, calc((100vw - 72rem) / 2 + 3rem))' }}
           onPointerDown={onPointerDown}
           onPointerMove={onPointerMove}
           onPointerUp={endDrag}
@@ -89,10 +89,10 @@ const Projects: React.FC = () => {
             />
           ))}
           <div
-            className="shrink-0 w-72 sm:w-80 h-105 rounded-2xl flex flex-col items-center justify-center gap-3 text-center"
-            style={{ border: '1px dashed rgba(255,255,255,0.15)', backgroundColor: 'rgba(255,255,255,0.03)', padding: '20px' }}
+            className="group shrink-0 w-72 sm:w-80 h-105 rounded-2xl flex flex-col items-center justify-center gap-3 text-center transition-all duration-300 hover:shadow-[0_0_32px_rgba(129,140,248,0.45)] border-white/15 hover:border-indigo-400/60"
+            style={{ borderWidth: '1px', borderStyle: 'dashed', backgroundColor: 'rgba(255,255,255,0.03)', padding: '20px' }}
           >
-            <FaCode size={72} style={{ color: 'rgba(129,140,248,0.55)' }} />
+            <FaCode size={72} className="transition-transform duration-300 group-hover:scale-110" style={{ color: 'rgba(129,140,248,0.55)' }} />
             <p className="text-white/70 font-bold text-xl" style={{ marginTop: '16px' }}>{t('projects.soon')}</p>
             <p className="text-white/40 text-sm">{t('projects.soonSub')}</p>
           </div>

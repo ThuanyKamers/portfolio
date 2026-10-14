@@ -24,7 +24,7 @@ const ProjectCard: React.FC<ProjectCardProps> = React.memo(({ title, description
   return (
     <div
       onClick={openLink}
-      className={`relative shrink-0 h-105 rounded-2xl overflow-hidden select-none transition-[width] duration-300 ${open ? 'w-[min(30rem,85vw)]' : 'w-72 sm:w-80'} ${hasLink ? 'cursor-pointer' : ''}`}
+      className={`group relative shrink-0 h-105 rounded-2xl overflow-hidden select-none transition-[width,transform,box-shadow] duration-300 hover:-translate-y-1.5 hover:shadow-[0_12px_32px_rgba(99,102,241,0.3)] ${open ? 'w-[min(30rem,85vw)]' : 'w-72 sm:w-80'} ${hasLink ? 'cursor-pointer' : ''}`}
       style={{ backgroundColor: '#0d1117', border: '1px solid rgba(255,255,255,0.08)' }}
     >
       {preview && (
@@ -33,7 +33,7 @@ const ProjectCard: React.FC<ProjectCardProps> = React.memo(({ title, description
           alt={title}
           draggable={false}
           loading="lazy"
-          className="absolute inset-0 w-full h-full object-cover opacity-60"
+          className="absolute inset-0 w-full h-full object-cover opacity-60 transition-all duration-500 group-hover:scale-110 group-hover:opacity-80"
         />
       )}
       <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(8,10,16,0.95) 0%, rgba(8,10,16,0.6) 45%, rgba(8,10,16,0.1) 100%)' }} />
