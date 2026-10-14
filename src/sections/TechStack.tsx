@@ -17,6 +17,8 @@ const TECHS = [
   { name: "Vite", color: "#646CFF", iconUrl: "images/tech/vite.png" },
   { name: "MySQL", color: "#A855F7", iconUrl: "images/tech/mysql.png" },
   { name: "Git & GitHub", color: "#F05032", iconUrl: "images/tech/git.png" },
+  { name: "Docker", color: "#2496ED", iconUrl: "images/tech/docker.png" },
+  { name: "XAMPP", color: "#FB7A24", iconUrl: "images/tech/xampp.png" },
   { name: "GSAP", color: "#88CE02", iconUrl: "images/tech/gsap.png" },
   { name: "Windows", color: "#0078D6", iconUrl: "images/tech/windows.png" },
   { name: "Linux", color: "#FCC624", iconUrl: "images/tech/linux.png" },
