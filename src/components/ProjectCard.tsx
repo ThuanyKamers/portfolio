@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 
 interface ProjectCardProps {
@@ -9,11 +9,12 @@ interface ProjectCardProps {
   image?: string;
   cover?: string;
   index: number;
+  open: boolean;
+  onToggle: () => void;
 }
 
-const ProjectCard: React.FC<ProjectCardProps> = React.memo(({ title, description, tech, image, cover, link, index }) => {
+const ProjectCard: React.FC<ProjectCardProps> = React.memo(({ title, description, tech, image, cover, link, index, open, onToggle }) => {
   const { t } = useTranslation();
-  const [open, setOpen] = useState(false);
   const preview = cover || image;
   const hasLink = !!link && link !== '#';
 
@@ -55,7 +56,7 @@ const ProjectCard: React.FC<ProjectCardProps> = React.memo(({ title, description
         <button
           onClick={(e) => {
             e.stopPropagation();
-            setOpen(!open);
+            onToggle();
           }}
           className="self-start cursor-pointer text-sm font-semibold text-white/80 hover:text-white rounded-full transition-colors"
           style={{ border: '1px solid rgba(255,255,255,0.2)', backgroundColor: 'rgba(255,255,255,0.06)', padding: '8px 16px', marginTop: '4px' }}

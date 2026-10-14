@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { FaCode } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
 import ProjectCard from '../components/ProjectCard';
@@ -10,6 +10,7 @@ const Projects: React.FC = () => {
   const innerRef = useRef<HTMLDivElement>(null);
   const drag = useRef({ active: false, startX: 0, startScroll: 0, moved: false, lastX: 0, lastT: 0, vel: 0 });
   const raf = useRef(0);
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const stopMotion = () => cancelAnimationFrame(raf.current);
   useEffect(() => stopMotion, []);
@@ -129,6 +130,8 @@ const Projects: React.FC = () => {
             <ProjectCard
               key={i}
               index={i}
+              open={openIndex === i}
+              onToggle={() => setOpenIndex(openIndex === i ? null : i)}
               title={p.title}
               description={p.description}
               tech={p.tech}
