@@ -26,11 +26,24 @@ const SW_DOC_URLS = {
 const TOTAL_CARDS = 4;
 
 const CERTIFICATES: Certificate[] = [
-  { name: "Recognizing Hallucinations, Inaccuracies, and Bias in AI", issuer: "Codecademy", date: "09/2026", url: "https://www.codecademy.com/profiles/thuanypk/certificates/1749aeec9b174fabab933fc63449bc34" },
-  { name: "Introduction to AWS Management Console", issuer: "AWS", date: "11/2025" },
-  { name: "PHP: Construindo sua aplicação", issuer: "Alura", date: "07/2025" },
-  { name: "Módulo de Treinamento em Segurança da Informação", issuer: "Uniglobo", date: "01/2025" },
-  { name: "Fundamentos de Python e Desenvolvimento Colaborativo com Git", issuer: "DIO", date: "06/2024" },
+  { name: "Recognizing Hallucinations, Inaccuracies, and Bias in AI", issuer: "Codecademy", date: "09/2026", image: asset("images/certs/codecademy-ai.webp"), url: "https://www.codecademy.com/profiles/thuanypk/certificates/1749aeec9b174fabab933fc63449bc34" },
+  { name: "Cybersecurity Job Simulation", issuer: "Mastercard · Forage", date: "10/2026", image: asset("images/certs/mastercard.webp") },
+  { name: "Introduction to AWS Management Console", issuer: "AWS", date: "11/2025", image: asset("images/certs/aws-console.webp") },
+  { name: "PHP: Criando sua Aplicação", issuer: "Alura", date: "07/2025", image: asset("images/certs/alura-php.webp") },
+  { name: "Startup Weekend Cyber Security", issuer: "Techstars", date: "05/2025", image: asset("images/certs/startup-weekend.webp") },
+  { name: "Modelagem de Dados", issuer: "Fundação Bradesco", date: "03/2025", image: asset("images/certs/bradesco-modelagem.webp") },
+  { name: "Design Thinking - Process", issuer: "FIAP", date: "03/2025", image: asset("images/certs/fiap-design-thinking.webp") },
+  { name: "Desenvolvimento Orientado a Objetos com Python", issuer: "Fundação Bradesco", date: "03/2025", image: asset("images/certs/bradesco-poo-python.webp") },
+  { name: "Introdução à Programação Orientada a Objetos (POO)", issuer: "Fundação Bradesco", date: "02/2025", image: asset("images/certs/bradesco-poo-intro.webp") },
+  { name: "AI-900 - Fundamentos de IA no Azure", issuer: "Fundação Bradesco · Microsoft", date: "02/2025", image: asset("images/certs/bradesco-ai900.webp") },
+  { name: "Segurança da Informação", issuer: "Uniglobo", date: "01/2025", image: asset("images/certs/uniglobo.webp") },
+  { name: "Administrando Banco de Dados", issuer: "Fundação Bradesco", date: "01/2025", image: asset("images/certs/bradesco-db-admin.webp") },
+  { name: "Implementando Banco de Dados", issuer: "Fundação Bradesco", date: "12/2024", image: asset("images/certs/bradesco-db-impl.webp") },
+  { name: "Dominando Python e Suas Estruturas de Dados", issuer: "DIO", date: "06/2024", image: asset("images/certs/dio-python.webp") },
+  { name: "Python Essencial e Desenvolvimento Colaborativo com Git", issuer: "DIO", date: "06/2024", image: asset("images/certs/dio-git.webp") },
+  { name: "Jornada Python", issuer: "Hashtag Treinamentos", date: "05/2024", image: asset("images/certs/hashtag-python.webp") },
+  { name: "NLW Unite - Fullstack", issuer: "Rocketseat", date: "04/2024", image: asset("images/certs/rocketseat-nlw.webp") },
+  { name: "Salesforce", issuer: "Inter Flex", date: "10/2020", image: asset("images/certs/inter-salesforce.webp") },
 ];
 
 const LINKEDIN_CERTS_URL = "https://www.linkedin.com/in/thuanypaulakamers/details/certifications/";
