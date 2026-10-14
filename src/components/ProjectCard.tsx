@@ -8,12 +8,11 @@ interface ProjectCardProps {
   link: string;
   image?: string;
   cover?: string;
-  index: number;
   open: boolean;
   onToggle: () => void;
 }
 
-const ProjectCard: React.FC<ProjectCardProps> = React.memo(({ title, description, tech, image, cover, link, index, open, onToggle }) => {
+const ProjectCard: React.FC<ProjectCardProps> = React.memo(({ title, description, tech, image, cover, link, open, onToggle }) => {
   const { t } = useTranslation();
   const preview = cover || image;
   const hasLink = !!link && link !== '#';
@@ -38,10 +37,6 @@ const ProjectCard: React.FC<ProjectCardProps> = React.memo(({ title, description
         />
       )}
       <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(8,10,16,0.95) 0%, rgba(8,10,16,0.6) 45%, rgba(8,10,16,0.1) 100%)' }} />
-
-      <span className="absolute top-4 left-5 font-mono text-xs tracking-widest text-white/40">
-        {String(index + 1).padStart(2, '0')}
-      </span>
 
       <div className="absolute inset-x-0 bottom-0 flex flex-col gap-3" style={{ padding: '20px' }}>
         <h3 className="text-white font-bold text-xl leading-tight">{title}</h3>
