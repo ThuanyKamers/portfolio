@@ -43,31 +43,31 @@ i18n
               description: "Web system for working hours and time banks built for Brazilian labour law (CLT and Ordinance 671), with a tamper-proof audit trail and an AI assistant for admins.",
               tech: ["PHP", "MySQL", "React", "TypeScript", "APIs"],
               link: "https://skinny-protest-638.notion.site/Electronic-Time-Tracking-System-3373f2d9e43b80148ce6d1cb4740ea06",
-              image: "images/projects/capaPonto.webp",
-              cover: "images/projects/capaPonto.webp"
+              image: "images/projects/capaPonto-v2.webp",
+              cover: "images/projects/capaPonto-v2.webp"
             },
             {
               title: "Dress Up E-commerce",
               description: "T-shirt store built as a team project, with product pages, a shopping cart and a simulated checkout.",
               tech: ["HTML", "CSS", "JavaScript"],
               link: "https://thuanykamers.github.io/DressUP/",
-              image: "images/projects/dressup.png"
+              image: "images/projects/dressup.webp"
             },
             {
               title: "Secure Cloud: CEI Snoopy",
               description: "University extension project: moved the records of a public daycare centre to a secure cloud and trained its staff to manage them.",
               tech: ["Google Drive", "Cloud", "Digital Training"],
               link: "https://skinny-protest-638.notion.site/Secure-Cloud-Protecting-the-Memory-of-CEI-Snoopy-3e43f2d9e43b81b5af28f88955de4e04",
-              image: "images/projects/capaNuvem.webp",
-              cover: "images/projects/capaNuvem.webp"
+              image: "images/projects/capaNuvem-v2.webp",
+              cover: "images/projects/capaNuvem-v2.webp"
             },
             {
               title: "Youth Agency in the Digital Age",
               description: "University extension project: 8 weeks of digital literacy workshops for 27 students, bringing an unused school computer lab back into use.",
               tech: ["Digital Literacy", "Scratch", "Teaching"],
               link: "https://skinny-protest-638.notion.site/Youth-Agency-in-the-Digital-Age-3e43f2d9e43b8127a463f0bcc7a742e6",
-              image: "images/projects/capaProtag.webp",
-              cover: "images/projects/capaProtag.webp"
+              image: "images/projects/capaProtag-v2.webp",
+              cover: "images/projects/capaProtag-v2.webp"
             }
           ],
           "achievements.title": "My",
@@ -178,31 +178,31 @@ i18n
               description: "Sistema web de jornada e banco de horas conforme a CLT e a Portaria 671, com trilha de auditoria à prova de alteração e assistente de IA para administradores.",
               tech: ["PHP", "MySQL", "React", "TypeScript", "APIs"],
               link: "https://skinny-protest-638.notion.site/Electronic-Time-Tracking-System-3373f2d9e43b80148ce6d1cb4740ea06",
-              image: "images/projects/capaPonto.webp",
-              cover: "images/projects/capaPonto.webp"
+              image: "images/projects/capaPonto-v2.webp",
+              cover: "images/projects/capaPonto-v2.webp"
             },
             {
               title: "Dress Up E-commerce",
               description: "Loja de camisetas feita em equipe, com páginas de produtos, carrinho de compras e checkout simulado.",
               tech: ["HTML", "CSS", "JavaScript"],
               link: "https://thuanykamers.github.io/DressUP/",
-              image: "images/projects/dressup.png"
+              image: "images/projects/dressup.webp"
             },
             {
               title: "Nuvem Segura: CEI Snoopy",
               description: "Projeto de extensão: migração dos registros de uma creche pública para uma nuvem segura e capacitação da equipe para gerenciá-los.",
               tech: ["Google Drive", "Nuvem", "Capacitação Digital"],
               link: "https://skinny-protest-638.notion.site/Secure-Cloud-Protecting-the-Memory-of-CEI-Snoopy-3e43f2d9e43b81b5af28f88955de4e04",
-              image: "images/projects/capaNuvem.webp",
-              cover: "images/projects/capaNuvem.webp"
+              image: "images/projects/capaNuvem-v2.webp",
+              cover: "images/projects/capaNuvem-v2.webp"
             },
             {
               title: "Protagonismo Juvenil na Era Digital",
               description: "Projeto de extensão: 8 semanas de oficinas de letramento digital para 27 alunos, reativando o laboratório de informática da escola.",
               tech: ["Letramento Digital", "Scratch", "Ensino"],
               link: "https://skinny-protest-638.notion.site/Youth-Agency-in-the-Digital-Age-3e43f2d9e43b8127a463f0bcc7a742e6",
-              image: "images/projects/capaProtag.webp",
-              cover: "images/projects/capaProtag.webp"
+              image: "images/projects/capaProtag-v2.webp",
+              cover: "images/projects/capaProtag-v2.webp"
             }
           ],
           "achievements.title": "Minhas",
@@ -313,31 +313,31 @@ i18n
               description: "Sistema web de jornada laboral y banco de horas conforme a la legislación laboral brasileña (CLT y Portaria 671), con registro de auditoría inalterable y asistente de IA para administradores.",
               tech: ["PHP", "MySQL", "React", "TypeScript", "APIs"],
               link: "https://skinny-protest-638.notion.site/Electronic-Time-Tracking-System-3373f2d9e43b80148ce6d1cb4740ea06",
-              image: "images/projects/capaPonto.webp",
-              cover: "images/projects/capaPonto.webp"
+              image: "images/projects/capaPonto-v2.webp",
+              cover: "images/projects/capaPonto-v2.webp"
             },
             {
               title: "Dress Up E-commerce",
               description: "Tienda de camisetas desarrollada en equipo, con páginas de productos, carrito de compras y checkout simulado.",
               tech: ["HTML", "CSS", "JavaScript"],
               link: "https://thuanykamers.github.io/DressUP/",
-              image: "images/projects/dressup.png"
+              image: "images/projects/dressup.webp"
             },
             {
               title: "Nube Segura: CEI Snoopy",
               description: "Proyecto de extensión universitaria: migración de los registros de una guardería pública a una nube segura y capacitación del equipo para gestionarlos.",
               tech: ["Google Drive", "Nube", "Capacitación Digital"],
               link: "https://skinny-protest-638.notion.site/Secure-Cloud-Protecting-the-Memory-of-CEI-Snoopy-3e43f2d9e43b81b5af28f88955de4e04",
-              image: "images/projects/capaNuvem.webp",
-              cover: "images/projects/capaNuvem.webp"
+              image: "images/projects/capaNuvem-v2.webp",
+              cover: "images/projects/capaNuvem-v2.webp"
             },
             {
               title: "Jóvenes Protagonistas en la Era Digital",
               description: "Proyecto de extensión universitaria: 8 semanas de talleres de alfabetización digital para 27 alumnos, reactivando el laboratorio de informática de la escuela.",
               tech: ["Alfabetización Digital", "Scratch", "Enseñanza"],
               link: "https://skinny-protest-638.notion.site/Youth-Agency-in-the-Digital-Age-3e43f2d9e43b8127a463f0bcc7a742e6",
-              image: "images/projects/capaProtag.webp",
-              cover: "images/projects/capaProtag.webp"
+              image: "images/projects/capaProtag-v2.webp",
+              cover: "images/projects/capaProtag-v2.webp"
             }
           ],
           "achievements.title": "Mis",
@@ -448,31 +448,31 @@ i18n
               description: "Websystem für Arbeitszeit und Zeitkonten nach brasilianischem Arbeitsrecht (CLT und Verordnung 671), mit manipulationssicherem Audit-Trail und KI-Assistent für Administratoren.",
               tech: ["PHP", "MySQL", "React", "TypeScript", "APIs"],
               link: "https://skinny-protest-638.notion.site/Elektronisches-Zeiterfassungssystem-3e73f2d9e43b811490d5f15f543f2024",
-              image: "images/projects/capaPonto.webp",
-              cover: "images/projects/capaPonto.webp"
+              image: "images/projects/capaPonto-v2.webp",
+              cover: "images/projects/capaPonto-v2.webp"
             },
             {
               title: "Dress Up E-Commerce",
               description: "Im Team entwickelter T-Shirt-Shop mit Produktseiten, Warenkorb und simuliertem Checkout.",
               tech: ["HTML", "CSS", "JavaScript"],
               link: "https://thuanykamers.github.io/DressUP/",
-              image: "images/projects/dressup.png"
+              image: "images/projects/dressup.webp"
             },
             {
               title: "Sichere Cloud: CEI Snoopy",
               description: "Hochschul-Praxisprojekt: Migration der Unterlagen einer öffentlichen Kita in eine sichere Cloud und Schulung des Teams im Umgang damit.",
               tech: ["Google Drive", "Cloud", "Digitale Schulung"],
               link: "https://skinny-protest-638.notion.site/Sichere-Cloud-Das-Ged-chtnis-des-CEI-Snoopy-sch-tzen-3e43f2d9e43b81038633d97c5c6fe43f",
-              image: "images/projects/capaNuvem.webp",
-              cover: "images/projects/capaNuvem.webp"
+              image: "images/projects/capaNuvem-v2.webp",
+              cover: "images/projects/capaNuvem-v2.webp"
             },
             {
               title: "Jugendliche als Gestalter im digitalen Zeitalter",
               description: "Hochschul-Praxisprojekt: 8 Wochen Workshops zu digitaler Kompetenz für 27 Schüler, um den ungenutzten Computerraum der Schule wieder in Betrieb zu nehmen.",
               tech: ["Digitale Kompetenz", "Scratch", "Unterricht"],
               link: "https://skinny-protest-638.notion.site/Jugendliche-als-Gestalter-im-digitalen-Zeitalter-3e43f2d9e43b81478b7bf569adaff087",
-              image: "images/projects/capaProtag.webp",
-              cover: "images/projects/capaProtag.webp"
+              image: "images/projects/capaProtag-v2.webp",
+              cover: "images/projects/capaProtag-v2.webp"
             }
           ],
           "achievements.title": "Meine",
@@ -583,31 +583,31 @@ i18n
               description: "Système web de gestion du temps de travail et des heures conforme au droit du travail brésilien (CLT et Portaria 671), avec piste d'audit infalsifiable et assistant IA pour les administrateurs.",
               tech: ["PHP", "MySQL", "React", "TypeScript", "APIs"],
               link: "https://skinny-protest-638.notion.site/Electronic-Time-Tracking-System-3373f2d9e43b80148ce6d1cb4740ea06",
-              image: "images/projects/capaPonto.webp",
-              cover: "images/projects/capaPonto.webp"
+              image: "images/projects/capaPonto-v2.webp",
+              cover: "images/projects/capaPonto-v2.webp"
             },
             {
               title: "Dress Up E-commerce",
               description: "Boutique de t-shirts réalisée en équipe, avec pages produits, panier et paiement simulé.",
               tech: ["HTML", "CSS", "JavaScript"],
               link: "https://thuanykamers.github.io/DressUP/",
-              image: "images/projects/dressup.png"
+              image: "images/projects/dressup.webp"
             },
             {
               title: "Cloud Sécurisé : CEI Snoopy",
               description: "Projet d'extension universitaire : migration des archives d'une crèche publique vers un cloud sécurisé et formation de l'équipe à leur gestion.",
               tech: ["Google Drive", "Cloud", "Formation Numérique"],
               link: "https://skinny-protest-638.notion.site/Secure-Cloud-Protecting-the-Memory-of-CEI-Snoopy-3e43f2d9e43b81b5af28f88955de4e04",
-              image: "images/projects/capaNuvem.webp",
-              cover: "images/projects/capaNuvem.webp"
+              image: "images/projects/capaNuvem-v2.webp",
+              cover: "images/projects/capaNuvem-v2.webp"
             },
             {
               title: "Jeunes Acteurs à l'Ère Numérique",
               description: "Projet d'extension universitaire : 8 semaines d'ateliers de culture numérique pour 27 élèves, pour remettre en service la salle informatique de l'école.",
               tech: ["Culture Numérique", "Scratch", "Enseignement"],
               link: "https://skinny-protest-638.notion.site/Youth-Agency-in-the-Digital-Age-3e43f2d9e43b8127a463f0bcc7a742e6",
-              image: "images/projects/capaProtag.webp",
-              cover: "images/projects/capaProtag.webp"
+              image: "images/projects/capaProtag-v2.webp",
+              cover: "images/projects/capaProtag-v2.webp"
             }
           ],
           "achievements.title": "Mes",

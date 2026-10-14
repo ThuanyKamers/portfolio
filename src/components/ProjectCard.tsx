@@ -22,45 +22,44 @@ const ProjectCard: React.FC<ProjectCardProps> = React.memo(({ title, description
   };
 
   return (
-    <div
-      onClick={openLink}
-      className={`group relative shrink-0 h-105 rounded-2xl overflow-hidden select-none transition-[width] duration-300 ${open ? 'w-[min(30rem,85vw)]' : 'w-72 sm:w-80'} ${hasLink ? 'cursor-pointer' : ''}`}
-      style={{ backgroundColor: '#0d1117', border: '1px solid rgba(255,255,255,0.08)' }}
-    >
-      {preview && (
-        <img
-          src={preview}
-          alt={title}
-          draggable={false}
-          loading="lazy"
-          className="absolute top-0 left-1/2 h-full max-w-none object-cover opacity-60 scale-105 transition-[opacity,scale] duration-500 group-hover:scale-100 group-hover:opacity-35"
-          style={{ width: 'min(30rem, 85vw)', transform: 'translateX(-50%)' }}
-        />
-      )}
-      <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(8,10,16,0.95) 0%, rgba(8,10,16,0.6) 45%, rgba(8,10,16,0.1) 100%)' }} />
+    <article onClick={openLink} className={`proj-card${open ? ' proj-card--expanded' : ''}${hasLink ? ' cursor-pointer' : ''}`}>
+      <div className="proj-card__bg">
+        {preview && <img src={preview} alt={title} className="proj-card__bg-img" draggable={false} loading="lazy" decoding="async" />}
+      </div>
+      <div className="proj-card__glow" />
+      <div className="proj-card__dark-hover" />
 
-      <div className="absolute inset-x-0 bottom-0 flex flex-col gap-3" style={{ padding: '20px' }}>
-        <h3 className="text-white font-bold text-xl leading-tight">{title}</h3>
-        <div className="flex flex-wrap gap-2">
+      <div className="proj-card__body">
+        <h3 className="proj-card__title">{title}</h3>
+        <div className="proj-card__tools">
           {tech.map((item) => (
-            <span key={item} className="text-[10px] font-semibold uppercase tracking-wider text-white/70 rounded-full" style={{ border: '1px solid rgba(255,255,255,0.2)', padding: '4px 10px' }}>
-              {item}
-            </span>
+            <span key={item} className="proj-card__tool">{item}</span>
           ))}
         </div>
-        {open && <p className="text-white/75 text-sm leading-relaxed">{description}</p>}
-        <button
-          onClick={(e) => {
-            e.stopPropagation();
-            onToggle();
-          }}
-          className="self-start cursor-pointer text-sm font-semibold text-white/80 hover:text-white rounded-full transition-colors"
-          style={{ border: '1px solid rgba(255,255,255,0.2)', backgroundColor: 'rgba(255,255,255,0.06)', padding: '8px 16px', marginTop: '4px' }}
-        >
-          {open ? `${t('projects.close')} ⌃` : `${t('projects.details')} ⌄`}
-        </button>
+        <div className="proj-card__desc-wrap">
+          <div className="proj-card__desc-inner">
+            <p className="proj-card__desc">{description}</p>
+          </div>
+        </div>
+        <div className="proj-card__actions">
+          <button
+            className="proj-card__toggle"
+            aria-expanded={open}
+            onClick={(e) => {
+              e.stopPropagation();
+              onToggle();
+            }}
+          >
+            <span>{open ? t('projects.close') : t('projects.details')}</span>
+            <svg className="proj-card__toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </button>
+        </div>
       </div>
-    </div>
+
+      <div className="proj-card__border-accent" />
+    </article>
   );
 });
 

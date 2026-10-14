@@ -6,15 +6,24 @@ import { useIsMobile } from "../hooks/useIsMobile";
 import { FaLinkedin } from "react-icons/fa";
 
 const SW_IMAGES = [
-  asset("images/achievements/CertificadoSW.png"),
-  asset("images/achievements/sw.png"),
-  asset("images/achievements/sw1.png"),
-  asset("images/achievements/sw2.png"),
-  asset("images/achievements/sw3.png"),
-  asset("images/achievements/sw4.png"),
-  asset("images/achievements/sw5.png"),
-  asset("images/achievements/sw6.png"),
-  asset("images/achievements/sw7.png"),
+  asset("images/achievements/CertificadoSW.webp"),
+  asset("images/achievements/swfoto1.webp"),
+  asset("images/achievements/sw.webp"),
+  asset("images/achievements/sw1.webp"),
+  asset("images/achievements/sw2.webp"),
+  asset("images/achievements/sw3.webp"),
+  asset("images/achievements/sw4.webp"),
+  asset("images/achievements/sw5.webp"),
+  asset("images/achievements/sw6.webp"),
+  asset("images/achievements/sw7.webp"),
+  asset("images/achievements/swfoto2.webp"),
+  asset("images/achievements/swfoto3.webp"),
+  asset("images/achievements/swfoto4.webp"),
+  asset("images/achievements/swfoto5.webp"),
+  asset("images/achievements/swfoto6.webp"),
+  asset("images/achievements/swfoto7.webp"),
+  asset("images/achievements/swfoto8.webp"),
+  asset("images/achievements/swfoto9.webp"),
 ];
 
 const SW_DOC_URLS = {
@@ -117,6 +126,7 @@ interface AchievementData {
   cardTitle: string;
   cardSubtitle: string;
   backgroundImage: string;
+  frontImage: string;
   images: string[];
   details: { label: string; value: string }[];
   description: string;
@@ -148,7 +158,8 @@ const Achievements: React.FC = () => {
       id: "sw",
       cardTitle: "Startup Weekend SJ",
       cardSubtitle: t("achievements.sw.theme"),
-      backgroundImage: SW_IMAGES[0],
+      frontImage: SW_IMAGES[0],
+      backgroundImage: SW_IMAGES[1],
       images: SW_IMAGES,
       details: [
         { label: t("achievements.sw.placement"), value: t("achievements.sw.badge") },
@@ -222,9 +233,14 @@ const Achievements: React.FC = () => {
                   >
                     <div
                       className={`group overflow-hidden relative after:bg-sky-700 before:bg-sky-400 flex justify-center items-center h-36 w-44 sm:h-44 sm:w-56 origin-bottom-right bg-neutral-900 rounded-2xl outline outline-slate-400 -outline-offset-8 ${fxClasses}`}
+                      style={{
+                        backgroundImage: `linear-gradient(rgba(10,10,10,0.55), rgba(10,10,10,0.75)), url(${achievement.frontImage})`,
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center',
+                      }}
                     >
                       <div className="z-10 flex flex-col items-center gap-2 px-5">
-                        <span className="text-slate-400 text-xl font-bold tracking-tight text-center leading-tight">
+                        <span className="text-white text-xl font-bold tracking-tight text-center leading-tight">
                           {achievement.cardTitle}
                         </span>
                         <p className="text-gray-50 text-xs">{achievement.cardSubtitle}</p>
@@ -300,7 +316,7 @@ const Achievements: React.FC = () => {
                       alt={`Slide ${i + 1}`}
                       className="absolute inset-0 w-full h-full transition-opacity duration-700"
                       style={{
-                        objectFit: "cover",
+                        objectFit: "contain",
                         opacity: i === slideIndex ? 1 : 0,
                       }}
                     />
@@ -338,7 +354,7 @@ const Achievements: React.FC = () => {
                           key={doc.url}
                           onClick={() => openDoc(doc.url)}
                           className="w-full px-4 py-3 rounded-lg text-sm font-semibold transition-all hover:scale-105 cursor-pointer text-center"
-                          style={{ backgroundColor: "rgba(255,255,255,0.06)", color: "rgba(255,255,255,0.7)", border: "1px solid rgba(255,255,255,0.1)" }}
+                          style={{ backgroundColor: "rgba(255,255,255,0.06)", color: "rgba(255,255,255,0.7)", border: "1px solid rgba(255,255,255,0.1)", padding: "12px 16px" }}
                         >
                           {doc.label}
                         </button>

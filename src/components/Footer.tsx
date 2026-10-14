@@ -4,10 +4,10 @@ import SocialLinks from './SocialLinks';
 const Footer: React.FC = () => {
   return (
     <footer 
-      className="py-10 border-t text-center"
+      className="py-10 text-center"
       style={{ 
-        backgroundColor: 'var(--background)',
-        borderColor: 'var(--card-bg)'
+        backgroundColor: 'var(--background)'
+
       }}
     >
       <div style={{ marginBottom: '24px' }}>
