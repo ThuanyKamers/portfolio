@@ -28,14 +28,19 @@ const ProjectCard: React.FC<ProjectCardProps> = React.memo(({ title, description
       style={{ backgroundColor: '#0d1117', border: '1px solid rgba(255,255,255,0.08)' }}
     >
       {preview && (
-        <img
-          src={preview}
-          alt={title}
-          draggable={false}
-          loading="lazy"
-          className="absolute left-1/2 top-4 w-72 sm:w-80 h-68 object-contain max-w-none opacity-60 scale-100 transition-[opacity,scale] duration-500 group-hover:scale-[0.97] group-hover:opacity-35"
-          style={{ transform: 'translateX(-50%)', WebkitMaskImage: 'linear-gradient(to bottom, #000 65%, transparent)', maskImage: 'linear-gradient(to bottom, #000 65%, transparent)' }}
-        />
+        <div className="absolute inset-0 opacity-60 transition-opacity duration-500 group-hover:opacity-35">
+          {/* fundo desfocado só preenche a área extra quando o card abre */}
+          <img src={preview} alt="" aria-hidden draggable={false} loading="lazy" className="absolute inset-0 w-full h-full object-cover blur-2xl scale-125" />
+          {/* imagem com o tamanho do card fechado: nunca muda de escala ao abrir */}
+          <img
+            src={preview}
+            alt={title}
+            draggable={false}
+            loading="lazy"
+            className="absolute left-0 top-0 h-full w-72 sm:w-80 max-w-none object-cover"
+            style={open ? { WebkitMaskImage: 'linear-gradient(to right, #000 80%, transparent)', maskImage: 'linear-gradient(to right, #000 80%, transparent)' } : undefined}
+          />
+        </div>
       )}
       <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(8,10,16,0.95) 0%, rgba(8,10,16,0.6) 45%, rgba(8,10,16,0.1) 100%)' }} />
 
