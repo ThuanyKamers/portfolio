@@ -4,7 +4,6 @@ import { useTranslation } from 'react-i18next';
 interface ProjectCardProps {
   title: string;
   description: string;
-  details?: string;
   tech: string[];
   link: string;
   image?: string;
@@ -12,15 +11,20 @@ interface ProjectCardProps {
   index: number;
 }
 
-const ProjectCard: React.FC<ProjectCardProps> = React.memo(({ title, description, details, tech, image, cover, link, index }) => {
+const ProjectCard: React.FC<ProjectCardProps> = React.memo(({ title, description, tech, image, cover, link, index }) => {
   const { t } = useTranslation();
   const [open, setOpen] = useState(false);
   const preview = cover || image;
   const hasLink = !!link && link !== '#';
 
+  const openLink = () => {
+    if (hasLink) window.open(link, '_blank', 'noopener,noreferrer');
+  };
+
   return (
     <div
-      className="relative shrink-0 w-72 sm:w-80 h-105 rounded-2xl overflow-hidden select-none"
+      onClick={openLink}
+      className={`relative shrink-0 h-105 rounded-2xl overflow-hidden select-none transition-[width] duration-300 ${open ? 'w-[min(30rem,85vw)]' : 'w-72 sm:w-80'} ${hasLink ? 'cursor-pointer' : ''}`}
       style={{ backgroundColor: '#0d1117', border: '1px solid rgba(255,255,255,0.08)' }}
     >
       {preview && (
@@ -47,43 +51,18 @@ const ProjectCard: React.FC<ProjectCardProps> = React.memo(({ title, description
             </span>
           ))}
         </div>
+        {open && <p className="text-white/75 text-sm leading-relaxed">{description}</p>}
         <button
-          onClick={() => setOpen(true)}
+          onClick={(e) => {
+            e.stopPropagation();
+            setOpen(!open);
+          }}
           className="self-start cursor-pointer text-sm font-semibold text-white/80 hover:text-white rounded-full transition-colors"
           style={{ border: '1px solid rgba(255,255,255,0.2)', backgroundColor: 'rgba(255,255,255,0.06)', padding: '8px 16px', marginTop: '4px' }}
         >
-          {t('projects.details')} ⌄
+          {open ? `${t('projects.close')} ⌃` : `${t('projects.details')} ⌄`}
         </button>
       </div>
-
-      {open && (
-        <div className="absolute inset-0 flex flex-col gap-3" style={{ backgroundColor: '#0a0d14', padding: '20px' }}>
-          <h3 className="text-white font-bold text-xl leading-tight">{title}</h3>
-          <div className="flex-1 overflow-y-auto no-scrollbar flex flex-col gap-3">
-            <p className="text-white/80 text-sm leading-relaxed">{description}</p>
-            {details && <p className="text-white/55 text-sm leading-relaxed">{details}</p>}
-          </div>
-          <div className="flex items-center gap-3">
-            <button
-              onClick={() => setOpen(false)}
-              className="cursor-pointer text-sm font-semibold text-white/80 hover:text-white rounded-full transition-colors"
-              style={{ border: '1px solid rgba(255,255,255,0.2)', backgroundColor: 'rgba(255,255,255,0.06)', padding: '8px 16px' }}
-            >
-              {t('projects.close')} ⌃
-            </button>
-            {hasLink && (
-              <a
-                href={link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm font-semibold text-blue-400 hover:text-blue-300 transition-colors"
-              >
-                {t('projects.open')} ↗
-              </a>
-            )}
-          </div>
-        </div>
-      )}
     </div>
   );
 });

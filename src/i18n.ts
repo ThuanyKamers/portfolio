@@ -45,12 +45,12 @@ i18n
           "projects.details": "Details",
           "projects.close": "Close",
           "projects.drag": "Drag to explore",
-          "projects.open": "Open project",
+          "projects.soon": "More Coming Soon",
+          "projects.soonSub": "Always building something new.",
           "projects.list": [
             {
               title: "Electronic Time-Tracking System",
               description: "Web system for working hours and time banks built for Brazilian labour law (CLT and Ordinance 671), with a tamper-proof audit trail and an AI assistant for admins.",
-              details: "Prototype built during my internship at SistemaPET for Brazilian labour law (CLT and Ordinance MTP 671/2021). Raw punches are never altered: every adjustment goes into a separate layer with a mandatory justification and a full audit trail (who, what, when, from where). The data model chains each punch to the previous one with a SHA-256 hash. Three profiles (employee, admin, support), punch adjustment requests, working-time models, holiday calendar, reports and a support chat. An AI assistant lets admins query the data in plain language.",
               tech: ["PHP", "MySQL", "React", "TypeScript", "APIs"],
               link: "https://skinny-protest-638.notion.site/Electronic-Time-Tracking-System-3373f2d9e43b80148ce6d1cb4740ea06",
               image: "images/projects/capatimeproject.png",
@@ -59,7 +59,6 @@ i18n
             {
               title: "Dress Up E-commerce",
               description: "T-shirt store built as a team project, with product pages, a shopping cart and a simulated checkout.",
-              details: "Team project: a t-shirt store built with HTML, CSS and JavaScript. It has several pages, a shopping cart and a simulated checkout, with no real payments or user accounts.",
               tech: ["HTML", "CSS", "JavaScript"],
               link: "https://thuanykamers.github.io/DressUP/",
               image: "images/projects/dressup.png"
@@ -67,7 +66,6 @@ i18n
             {
               title: "Secure Cloud: CEI Snoopy",
               description: "University extension project: moved the records of a public daycare centre to a secure cloud and trained its staff to manage them.",
-              details: "Extension project (Information Systems, Unisul) at CEI Snoopy, a public daycare centre in Palhoça (SC) serving about 90 children, whose records lived on a single computer in a building hit by repeated thefts. Three phases: a folder structure on Google Drive separating administrative and pedagogical work, secure migration of the local files, and hands-on workshops (5 participants, 4 weeks) with printed guides for offline use. The team gained autonomy to organise files in the cloud. Aligned with SDG 4 and SDG 8.",
               tech: ["Google Drive", "Cloud", "Digital Training"],
               link: "https://skinny-protest-638.notion.site/Secure-Cloud-Protecting-the-Memory-of-CEI-Snoopy-3e43f2d9e43b81b5af28f88955de4e04",
               image: "images/projects/capaExtensao.png",
@@ -76,7 +74,6 @@ i18n
             {
               title: "Youth Agency in the Digital Age",
               description: "University extension project: 8 weeks of digital literacy workshops for 27 students, bringing an unused school computer lab back into use.",
-              details: "Extension project (Information Systems, Unisul) at E.B.M. Guilherme Wiethorn Filho, a public school in Palhoça (SC) with 1,100 students whose new computer lab sat locked for lack of an IT teacher. 8 weeks, 3 hours a week, 27 students (about 12 years old): equipment check, productivity tools, safe research and programming logic with Scratch, then a digital project about the Bela Vista neighbourhood. The lab is in use again and the students asked for it to continue. Aligned with SDG 4.",
               tech: ["Digital Literacy", "Scratch", "Teaching"],
               link: "https://skinny-protest-638.notion.site/Youth-Agency-in-the-Digital-Age-3e43f2d9e43b8127a463f0bcc7a742e6",
               image: "images/projects/capaExtensao.png",
@@ -192,12 +189,12 @@ i18n
           "projects.details": "Detalhes",
           "projects.close": "Fechar",
           "projects.drag": "Arraste para explorar",
-          "projects.open": "Abrir projeto",
+          "projects.soon": "Mais em breve",
+          "projects.soonSub": "Sempre construindo algo novo.",
           "projects.list": [
             {
               title: "Sistema de Ponto Eletrônico",
               description: "Sistema web de jornada e banco de horas conforme a CLT e a Portaria 671, com trilha de auditoria à prova de alteração e assistente de IA para administradores.",
-              details: "Protótipo desenvolvido no meu estágio na SistemaPET para a legislação trabalhista brasileira (CLT e Portaria MTP 671/2021). As marcações originais nunca são alteradas: todo ajuste fica em uma camada separada, com justificativa obrigatória e trilha de auditoria completa (quem, o quê, quando e de onde). O modelo de dados encadeia cada marcação à anterior com um hash SHA-256. Três perfis (funcionário, administrador e suporte), solicitações de ajuste, modelos de jornada, calendário de feriados, relatórios e chat de suporte. Um assistente de IA permite que administradores consultem os dados em linguagem natural.",
               tech: ["PHP", "MySQL", "React", "TypeScript", "APIs"],
               link: "https://skinny-protest-638.notion.site/Electronic-Time-Tracking-System-3373f2d9e43b80148ce6d1cb4740ea06",
               image: "images/projects/capatimeproject.png",
@@ -206,7 +203,6 @@ i18n
             {
               title: "Dress Up E-commerce",
               description: "Loja de camisetas feita em equipe, com páginas de produtos, carrinho de compras e checkout simulado.",
-              details: "Projeto em equipe: loja de camisetas feita com HTML, CSS e JavaScript. Tem várias páginas, carrinho de compras e checkout simulado, sem pagamento real nem contas de usuário.",
               tech: ["HTML", "CSS", "JavaScript"],
               link: "https://thuanykamers.github.io/DressUP/",
               image: "images/projects/dressup.png"
@@ -214,7 +210,6 @@ i18n
             {
               title: "Nuvem Segura: CEI Snoopy",
               description: "Projeto de extensão: migração dos registros de uma creche pública para uma nuvem segura e capacitação da equipe para gerenciá-los.",
-              details: "Projeto de extensão (Sistemas de Informação, Unisul) no CEI Snoopy, uma creche pública de Palhoça (SC) com cerca de 90 crianças, cujos registros ficavam em um único computador, em um prédio com furtos repetidos. Três fases: estrutura de pastas no Google Drive separando a gestão administrativa e a pedagógica, migração segura dos arquivos locais e oficinas práticas (5 participantes, 4 semanas) com guias impressos para consulta offline. A equipe ganhou autonomia para organizar os arquivos na nuvem. Alinhado aos ODS 4 e 8.",
               tech: ["Google Drive", "Nuvem", "Capacitação Digital"],
               link: "https://skinny-protest-638.notion.site/Secure-Cloud-Protecting-the-Memory-of-CEI-Snoopy-3e43f2d9e43b81b5af28f88955de4e04",
               image: "images/projects/capaExtensao.png",
@@ -223,7 +218,6 @@ i18n
             {
               title: "Protagonismo Juvenil na Era Digital",
               description: "Projeto de extensão: 8 semanas de oficinas de letramento digital para 27 alunos, reativando o laboratório de informática da escola.",
-              details: "Projeto de extensão (Sistemas de Informação, Unisul) na E.B.M. Guilherme Wiethorn Filho, escola pública de Palhoça (SC) com 1.100 alunos, cujo laboratório de informática novo ficava trancado por falta de professor. 8 semanas, 3 horas por semana, 27 alunos (cerca de 12 anos): verificação dos equipamentos, ferramentas de produtividade, pesquisa segura e lógica de programação com Scratch, e um projeto digital sobre o bairro Bela Vista. O laboratório voltou a ser usado e os alunos pediram continuidade. Alinhado ao ODS 4.",
               tech: ["Letramento Digital", "Scratch", "Ensino"],
               link: "https://skinny-protest-638.notion.site/Youth-Agency-in-the-Digital-Age-3e43f2d9e43b8127a463f0bcc7a742e6",
               image: "images/projects/capaExtensao.png",
@@ -339,12 +333,12 @@ i18n
           "projects.details": "Detalles",
           "projects.close": "Cerrar",
           "projects.drag": "Arrastra para explorar",
-          "projects.open": "Abrir proyecto",
+          "projects.soon": "Más próximamente",
+          "projects.soonSub": "Siempre construyendo algo nuevo.",
           "projects.list": [
             {
               title: "Sistema de Control de Asistencia",
               description: "Sistema web de jornada laboral y banco de horas conforme a la legislación laboral brasileña (CLT y Portaria 671), con registro de auditoría inalterable y asistente de IA para administradores.",
-              details: "Prototipo desarrollado durante mi pasantía en SistemaPET para la legislación laboral brasileña (CLT y Portaria MTP 671/2021). Los registros originales nunca se modifican: cada ajuste queda en una capa separada, con justificación obligatoria y un registro de auditoría completo (quién, qué, cuándo y desde dónde). El modelo de datos encadena cada registro al anterior con un hash SHA-256. Tres perfiles (empleado, administrador y soporte), solicitudes de ajuste, modelos de jornada, calendario de feriados, informes y chat de soporte. Un asistente de IA permite a los administradores consultar los datos en lenguaje natural.",
               tech: ["PHP", "MySQL", "React", "TypeScript", "APIs"],
               link: "https://skinny-protest-638.notion.site/Electronic-Time-Tracking-System-3373f2d9e43b80148ce6d1cb4740ea06",
               image: "images/projects/capatimeproject.png",
@@ -353,7 +347,6 @@ i18n
             {
               title: "Dress Up E-commerce",
               description: "Tienda de camisetas desarrollada en equipo, con páginas de productos, carrito de compras y checkout simulado.",
-              details: "Proyecto en equipo: tienda de camisetas hecha con HTML, CSS y JavaScript. Tiene varias páginas, carrito de compras y checkout simulado, sin pagos reales ni cuentas de usuario.",
               tech: ["HTML", "CSS", "JavaScript"],
               link: "https://thuanykamers.github.io/DressUP/",
               image: "images/projects/dressup.png"
@@ -361,7 +354,6 @@ i18n
             {
               title: "Nube Segura: CEI Snoopy",
               description: "Proyecto de extensión universitaria: migración de los registros de una guardería pública a una nube segura y capacitación del equipo para gestionarlos.",
-              details: "Proyecto de extensión (Sistemas de Información, Unisul) en el CEI Snoopy, una guardería pública de Palhoça (SC) con unos 90 niños, cuyos registros estaban en un único computador, en un edificio con robos repetidos. Tres fases: estructura de carpetas en Google Drive que separa la gestión administrativa y la pedagógica, migración segura de los archivos locales y talleres prácticos (5 participantes, 4 semanas) con guías impresas para consulta sin conexión. El equipo ganó autonomía para organizar los archivos en la nube. Alineado con los ODS 4 y 8.",
               tech: ["Google Drive", "Nube", "Capacitación Digital"],
               link: "https://skinny-protest-638.notion.site/Secure-Cloud-Protecting-the-Memory-of-CEI-Snoopy-3e43f2d9e43b81b5af28f88955de4e04",
               image: "images/projects/capaExtensao.png",
@@ -370,7 +362,6 @@ i18n
             {
               title: "Jóvenes Protagonistas en la Era Digital",
               description: "Proyecto de extensión universitaria: 8 semanas de talleres de alfabetización digital para 27 alumnos, reactivando el laboratorio de informática de la escuela.",
-              details: "Proyecto de extensión (Sistemas de Información, Unisul) en la E.B.M. Guilherme Wiethorn Filho, escuela pública de Palhoça (SC) con 1.100 alumnos, cuyo laboratorio de informática nuevo estaba cerrado por falta de profesor. 8 semanas, 3 horas por semana, 27 alumnos (unos 12 años): revisión de los equipos, herramientas de productividad, búsqueda segura y lógica de programación con Scratch, y un proyecto digital sobre el barrio Bela Vista. El laboratorio volvió a usarse y los alumnos pidieron continuidad. Alineado con el ODS 4.",
               tech: ["Alfabetización Digital", "Scratch", "Enseñanza"],
               link: "https://skinny-protest-638.notion.site/Youth-Agency-in-the-Digital-Age-3e43f2d9e43b8127a463f0bcc7a742e6",
               image: "images/projects/capaExtensao.png",
@@ -486,12 +477,12 @@ i18n
           "projects.details": "Details",
           "projects.close": "Schließen",
           "projects.drag": "Ziehen zum Erkunden",
-          "projects.open": "Projekt öffnen",
+          "projects.soon": "Bald mehr",
+          "projects.soonSub": "Ich baue immer etwas Neues.",
           "projects.list": [
             {
               title: "Elektronisches Zeiterfassungssystem",
               description: "Websystem für Arbeitszeit und Zeitkonten nach brasilianischem Arbeitsrecht (CLT und Verordnung 671), mit manipulationssicherem Audit-Trail und KI-Assistent für Administratoren.",
-              details: "Prototyp, den ich während meines Praktikums bei SistemaPET für das brasilianische Arbeitsrecht (CLT und Verordnung MTP 671/2021) entwickelt habe. Originale Stempelungen werden nie verändert: Jede Korrektur landet in einer separaten Ebene mit Pflichtbegründung und vollständigem Audit-Trail (wer, was, wann, von wo). Das Datenmodell verkettet jede Stempelung per SHA-256-Hash mit der vorherigen. Drei Profile (Mitarbeitende, Administratoren, Support), Korrekturanfragen, Arbeitszeitmodelle, Feiertagskalender, Berichte und ein Support-Chat. Ein KI-Assistent lässt Administratoren die Daten in natürlicher Sprache abfragen.",
               tech: ["PHP", "MySQL", "React", "TypeScript", "APIs"],
               link: "https://skinny-protest-638.notion.site/Elektronisches-Zeiterfassungssystem-3e73f2d9e43b811490d5f15f543f2024",
               image: "images/projects/capatimeproject.png",
@@ -500,7 +491,6 @@ i18n
             {
               title: "Dress Up E-Commerce",
               description: "Im Team entwickelter T-Shirt-Shop mit Produktseiten, Warenkorb und simuliertem Checkout.",
-              details: "Teamprojekt: ein T-Shirt-Shop mit HTML, CSS und JavaScript. Er hat mehrere Seiten, einen Warenkorb und einen simulierten Checkout, ohne echte Zahlungen oder Benutzerkonten.",
               tech: ["HTML", "CSS", "JavaScript"],
               link: "https://thuanykamers.github.io/DressUP/",
               image: "images/projects/dressup.png"
@@ -508,7 +498,6 @@ i18n
             {
               title: "Sichere Cloud: CEI Snoopy",
               description: "Hochschul-Praxisprojekt: Migration der Unterlagen einer öffentlichen Kita in eine sichere Cloud und Schulung des Teams im Umgang damit.",
-              details: "Praxisprojekt (Informationssysteme, Unisul) in der CEI Snoopy, einer öffentlichen Kita in Palhoça (SC) mit rund 90 Kindern, deren Unterlagen auf einem einzigen Computer in einem von wiederholten Diebstählen betroffenen Gebäude lagen. Drei Phasen: eine Ordnerstruktur in Google Drive, die Verwaltung und pädagogische Arbeit trennt, sichere Migration der lokalen Dateien und praktische Workshops (5 Teilnehmerinnen, 4 Wochen) mit gedruckten Anleitungen für die Offline-Nutzung. Das Team kann Dateien nun selbstständig in der Cloud organisieren. Ausgerichtet auf SDG 4 und 8.",
               tech: ["Google Drive", "Cloud", "Digitale Schulung"],
               link: "https://skinny-protest-638.notion.site/Sichere-Cloud-Das-Ged-chtnis-des-CEI-Snoopy-sch-tzen-3e43f2d9e43b81038633d97c5c6fe43f",
               image: "images/projects/capaExtensao.png",
@@ -517,7 +506,6 @@ i18n
             {
               title: "Jugendliche als Gestalter im digitalen Zeitalter",
               description: "Hochschul-Praxisprojekt: 8 Wochen Workshops zu digitaler Kompetenz für 27 Schüler, um den ungenutzten Computerraum der Schule wieder in Betrieb zu nehmen.",
-              details: "Praxisprojekt (Informationssysteme, Unisul) an der E.B.M. Guilherme Wiethorn Filho, einer öffentlichen Schule in Palhoça (SC) mit 1.100 Schülern, deren neuer Computerraum mangels Informatiklehrer verschlossen blieb. 8 Wochen, 3 Stunden pro Woche, 27 Schüler (etwa 12 Jahre): Gerätecheck, Produktivitätswerkzeuge, sichere Recherche und Programmierlogik mit Scratch, danach ein digitales Projekt über den Stadtteil Bela Vista. Der Raum wird wieder genutzt, und die Schüler baten um Fortsetzung. Ausgerichtet auf SDG 4.",
               tech: ["Digitale Kompetenz", "Scratch", "Unterricht"],
               link: "https://skinny-protest-638.notion.site/Jugendliche-als-Gestalter-im-digitalen-Zeitalter-3e43f2d9e43b81478b7bf569adaff087",
               image: "images/projects/capaExtensao.png",
@@ -633,12 +621,12 @@ i18n
           "projects.details": "Détails",
           "projects.close": "Fermer",
           "projects.drag": "Faites glisser pour explorer",
-          "projects.open": "Ouvrir le projet",
+          "projects.soon": "Bientôt plus",
+          "projects.soonSub": "Toujours en train de construire quelque chose de nouveau.",
           "projects.list": [
             {
               title: "Système de Pointage Électronique",
               description: "Système web de gestion du temps de travail et des heures conforme au droit du travail brésilien (CLT et Portaria 671), avec piste d'audit infalsifiable et assistant IA pour les administrateurs.",
-              details: "Prototype développé pendant mon stage chez SistemaPET pour le droit du travail brésilien (CLT et Portaria MTP 671/2021). Les pointages d'origine ne sont jamais modifiés : chaque ajustement va dans une couche séparée, avec justification obligatoire et piste d'audit complète (qui, quoi, quand, d'où). Le modèle de données chaîne chaque pointage au précédent par un hash SHA-256. Trois profils (employé, administrateur, support), demandes d'ajustement, modèles d'horaires, calendrier des jours fériés, rapports et chat de support. Un assistant IA permet aux administrateurs d'interroger les données en langage naturel.",
               tech: ["PHP", "MySQL", "React", "TypeScript", "APIs"],
               link: "https://skinny-protest-638.notion.site/Electronic-Time-Tracking-System-3373f2d9e43b80148ce6d1cb4740ea06",
               image: "images/projects/capatimeproject.png",
@@ -647,7 +635,6 @@ i18n
             {
               title: "Dress Up E-commerce",
               description: "Boutique de t-shirts réalisée en équipe, avec pages produits, panier et paiement simulé.",
-              details: "Projet d'équipe : une boutique de t-shirts réalisée en HTML, CSS et JavaScript. Elle comporte plusieurs pages, un panier et un paiement simulé, sans vrais paiements ni comptes utilisateurs.",
               tech: ["HTML", "CSS", "JavaScript"],
               link: "https://thuanykamers.github.io/DressUP/",
               image: "images/projects/dressup.png"
@@ -655,7 +642,6 @@ i18n
             {
               title: "Cloud Sécurisé : CEI Snoopy",
               description: "Projet d'extension universitaire : migration des archives d'une crèche publique vers un cloud sécurisé et formation de l'équipe à leur gestion.",
-              details: "Projet d'extension (Systèmes d'information, Unisul) à la CEI Snoopy, une crèche publique de Palhoça (SC) accueillant environ 90 enfants, dont les archives étaient sur un seul ordinateur, dans un bâtiment touché par des vols répétés. Trois phases : une arborescence Google Drive séparant la gestion administrative et pédagogique, la migration sécurisée des fichiers locaux, et des ateliers pratiques (5 participantes, 4 semaines) avec des guides imprimés pour une consultation hors ligne. L'équipe a gagné en autonomie pour organiser ses fichiers dans le cloud. Aligné sur les ODD 4 et 8.",
               tech: ["Google Drive", "Cloud", "Formation Numérique"],
               link: "https://skinny-protest-638.notion.site/Secure-Cloud-Protecting-the-Memory-of-CEI-Snoopy-3e43f2d9e43b81b5af28f88955de4e04",
               image: "images/projects/capaExtensao.png",
@@ -664,7 +650,6 @@ i18n
             {
               title: "Jeunes Acteurs à l'Ère Numérique",
               description: "Projet d'extension universitaire : 8 semaines d'ateliers de culture numérique pour 27 élèves, pour remettre en service la salle informatique de l'école.",
-              details: "Projet d'extension (Systèmes d'information, Unisul) à l'E.B.M. Guilherme Wiethorn Filho, école publique de Palhoça (SC) de 1 100 élèves, dont la nouvelle salle informatique restait fermée faute de professeur. 8 semaines, 3 heures par semaine, 27 élèves (environ 12 ans) : vérification du matériel, outils de productivité, recherche sécurisée et logique de programmation avec Scratch, puis un projet numérique sur le quartier Bela Vista. La salle est de nouveau utilisée et les élèves ont demandé la suite. Aligné sur l'ODD 4.",
               tech: ["Culture Numérique", "Scratch", "Enseignement"],
               link: "https://skinny-protest-638.notion.site/Youth-Agency-in-the-Digital-Age-3e43f2d9e43b8127a463f0bcc7a742e6",
               image: "images/projects/capaExtensao.png",

@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+import { FaCode } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
 import ProjectCard from '../components/ProjectCard';
 import { asset } from '../utils/asset';
@@ -11,7 +12,6 @@ const Projects: React.FC = () => {
   const projects = t('projects.list', { returnObjects: true }) as Array<{
     title: string;
     description: string;
-    details?: string;
     tech: string[];
     link: string;
     image?: string;
@@ -82,13 +82,20 @@ const Projects: React.FC = () => {
               index={i}
               title={p.title}
               description={p.description}
-              details={p.details}
               tech={p.tech}
               link={p.link}
               image={p.image ? asset(p.image) : undefined}
               cover={p.cover ? asset(p.cover) : undefined}
             />
           ))}
+          <div
+            className="shrink-0 w-72 sm:w-80 h-105 rounded-2xl flex flex-col items-center justify-center gap-3 text-center"
+            style={{ border: '1px dashed rgba(255,255,255,0.15)', backgroundColor: 'rgba(255,255,255,0.03)', padding: '20px' }}
+          >
+            <FaCode size={72} style={{ color: 'rgba(129,140,248,0.55)' }} />
+            <p className="text-white/70 font-bold text-xl" style={{ marginTop: '16px' }}>{t('projects.soon')}</p>
+            <p className="text-white/40 text-sm">{t('projects.soonSub')}</p>
+          </div>
         </div>
       )}
     </section>
