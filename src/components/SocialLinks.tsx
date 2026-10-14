@@ -1,10 +1,9 @@
 import React from 'react';
-import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
 
 const LINKS = [
   { label: 'GitHub', href: 'https://github.com/ThuanyKamers', Icon: FaGithub },
   { label: 'LinkedIn', href: 'https://www.linkedin.com/in/thuanypaulakamers/', Icon: FaLinkedin },
-  { label: 'Email', href: 'mailto:thuanykamers@hotmail.com', Icon: FaEnvelope },
 ] as const;
 
 interface SocialLinksProps {
@@ -13,7 +12,7 @@ interface SocialLinksProps {
 }
 
 const SocialLinks: React.FC<SocialLinksProps> = ({ size = 28, className = '' }) => (
-  <div className={`flex items-center justify-center gap-6 ${className}`}>
+  <div className={`flex items-center justify-center gap-8 ${className}`}>
     {LINKS.map(({ label, href, Icon }) => (
       <a
         key={label}
