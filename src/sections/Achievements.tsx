@@ -3,6 +3,7 @@ import { createPortal } from "react-dom";
 import { useTranslation } from "react-i18next";
 import { asset } from "../utils/asset";
 import { useIsMobile } from "../hooks/useIsMobile";
+import { FaLinkedin } from "react-icons/fa";
 
 const SW_IMAGES = [
   asset("images/achievements/CertificadoSW.png"),
@@ -24,13 +25,74 @@ const SW_DOC_URLS = {
 
 const TOTAL_CARDS = 4;
 
-const CERTIFICATES = [
+const CERTIFICATES: Certificate[] = [
   { name: "Recognizing Hallucinations, Inaccuracies, and Bias in AI", issuer: "Codecademy", date: "09/2026", url: "https://www.codecademy.com/profiles/thuanypk/certificates/1749aeec9b174fabab933fc63449bc34" },
   { name: "Introduction to AWS Management Console", issuer: "AWS", date: "11/2025" },
   { name: "PHP: Construindo sua aplicação", issuer: "Alura", date: "07/2025" },
   { name: "Módulo de Treinamento em Segurança da Informação", issuer: "Uniglobo", date: "01/2025" },
   { name: "Fundamentos de Python e Desenvolvimento Colaborativo com Git", issuer: "DIO", date: "06/2024" },
 ];
+
+const LINKEDIN_CERTS_URL = "https://www.linkedin.com/in/thuanypaulakamers/details/certifications/";
+
+interface Certificate {
+  name: string;
+  issuer: string;
+  date: string;
+  url?: string;
+  image?: string;
+}
+
+// Duas faixas em sentidos opostos; passar o mouse pausa a faixa e mostra os detalhes
+const CertRow: React.FC<{ items: Certificate[]; reverse?: boolean }> = ({ items, reverse }) => {
+  const half = [...items, ...items];
+  return (
+    <div className="marquee-row w-full overflow-hidden">
+      <div className={`marquee-track${reverse ? " reverse" : ""}`}>
+        {[0, 1].map((copy) => (
+          <div key={copy} className="flex shrink-0 gap-4" style={{ paddingRight: "16px" }} aria-hidden={copy === 1}>
+            {half.map((c, i) => (
+              <CertCard key={`${copy}-${i}`} cert={c} />
+            ))}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+const CertCard: React.FC<{ cert: Certificate }> = ({ cert }) => {
+  const Tag = cert.url ? "a" : "div";
+  const linkProps = cert.url ? { href: cert.url, target: "_blank", rel: "noopener noreferrer" } : {};
+  return (
+    <Tag
+      {...linkProps}
+      className="group relative shrink-0 w-72 h-44 rounded-xl overflow-hidden select-none"
+      style={{ border: "1px solid rgba(255,255,255,0.08)", backgroundColor: "#0d1117" }}
+    >
+      <div className="absolute inset-0 flex items-center justify-center transition-all duration-300 group-hover:blur-sm group-hover:brightness-50 group-hover:scale-105">
+        {cert.image ? (
+          <img src={cert.image} alt={cert.name} loading="lazy" draggable={false} className="w-full h-full object-cover" />
+        ) : (
+          <div
+            className="w-full h-full flex items-center justify-center"
+            style={{ background: "linear-gradient(135deg, rgba(59,130,246,0.18), rgba(139,92,246,0.18))" }}
+          >
+            <span className="text-3xl font-bold tracking-tight text-white/70">{cert.issuer}</span>
+          </div>
+        )}
+      </div>
+      <div
+        className="absolute inset-0 flex flex-col items-center justify-center text-center gap-1 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+        style={{ padding: "16px" }}
+      >
+        <p className="text-white font-bold text-sm leading-snug">{cert.name}</p>
+        <p className="text-xs" style={{ color: "#a5b4fc" }}>{cert.issuer}</p>
+        <p className="text-xs text-white/50">{cert.date}</p>
+      </div>
+    </Tag>
+  );
+};
 
 interface AchievementDoc {
   label: string;
@@ -174,26 +236,25 @@ const Achievements: React.FC = () => {
             ))}
         </div>
 
-        <div className="w-full max-w-3xl" style={{ margin: '60px auto 0', padding: '0 32px' }} data-reveal>
-          <h3 className="text-2xl font-bold tracking-tighter text-center" style={{ color: "var(--foreground)", marginBottom: '24px' }}>
+        <div style={{ marginTop: '60px' }} data-reveal>
+          <h3 className="text-2xl font-bold tracking-tighter text-center" style={{ color: "var(--foreground)", marginBottom: '32px' }}>
             {t("achievements.certs.title")}
           </h3>
-          <ul className="flex flex-col gap-3">
-            {CERTIFICATES.map((c) => (
-              <li
-                key={c.name}
-                className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 rounded-lg"
-                style={{ backgroundColor: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.06)", padding: "12px 16px" }}
-              >
-                <span className="text-sm" style={{ color: "var(--foreground)" }}>
-                  {c.url ? (
-                    <a href={c.url} target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 underline decoration-white/20">{c.name}</a>
-                  ) : c.name}
-                </span>
-                <span className="text-xs font-mono" style={{ color: "var(--text-muted)" }}>{c.issuer} · {c.date}</span>
-              </li>
-            ))}
-          </ul>
+          <div className="flex flex-col gap-4 overflow-hidden">
+            <CertRow items={CERTIFICATES} />
+            <CertRow items={[...CERTIFICATES].reverse()} reverse />
+          </div>
+          <div className="flex justify-center" style={{ marginTop: '32px' }}>
+            <a
+              href={LINKEDIN_CERTS_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full text-sm font-semibold transition-colors hover:bg-white/10"
+              style={{ border: "1px solid rgba(255,255,255,0.2)", color: "var(--foreground)", padding: "12px 24px" }}
+            >
+              <FaLinkedin /> {t("achievements.certs.linkedin")} →
+            </a>
+          </div>
         </div>
       </div>
 
