@@ -129,7 +129,6 @@ const Projects: React.FC = () => {
           {projects.map((p, i) => (
             <ProjectCard
               key={i}
-              index={i}
               open={openIndex === i}
               onToggle={() => setOpenIndex(openIndex === i ? null : i)}
               title={p.title}
