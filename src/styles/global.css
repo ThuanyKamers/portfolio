@@ -85,6 +85,7 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: 50% 30%;
   transform: scale(1.05);
   transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s;
 }
@@ -186,3 +187,21 @@ body {
   transition: opacity 0.4s;
 }
 .proj-card:hover .proj-card__border-accent { opacity: 1; }
+
+/* Trilha do carrossel de projetos: movida por translate3d (GPU) */
+.proj-slider-container {
+  overflow: hidden;
+  width: 100%;
+  max-width: 100vw;
+  align-self: stretch;
+  cursor: grab;
+  user-select: none;
+  touch-action: pan-y;
+}
+.proj-slider-container:active { cursor: grabbing; }
+.proj-track {
+  display: flex;
+  gap: 18px;
+  width: max-content;
+  will-change: transform;
+}
