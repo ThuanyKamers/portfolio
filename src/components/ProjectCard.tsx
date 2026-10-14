@@ -33,8 +33,8 @@ const ProjectCard: React.FC<ProjectCardProps> = React.memo(({ title, description
           alt={title}
           draggable={false}
           loading="lazy"
-          className="absolute top-0 left-1/2 h-full max-w-none object-cover opacity-60 scale-105 transition-[opacity,scale] duration-500 group-hover:scale-100 group-hover:opacity-35"
-          style={{ width: 'min(30rem, 85vw)', transform: 'translateX(-50%)' }}
+          className="absolute left-1/2 top-6 w-72 sm:w-80 h-auto max-w-none opacity-60 scale-100 transition-[opacity,scale] duration-500 group-hover:scale-[0.97] group-hover:opacity-35"
+          style={{ transform: 'translateX(-50%)' }}
         />
       )}
       <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(8,10,16,0.95) 0%, rgba(8,10,16,0.6) 45%, rgba(8,10,16,0.1) 100%)' }} />
