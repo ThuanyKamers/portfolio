@@ -39,6 +39,14 @@ i18n
           "projects.soonSub": "Always building something new.",
           "projects.list": [
             {
+              title: "Verify It",
+              description: "Platform that helps used-vehicle buyers check whether an online listing is genuine: paste the link and find out if the owner registered it. Born as verifiCAR, 3rd place at Startup Weekend Cyber Security 2025.",
+              tech: ["React", "TypeScript", "Vite", "Vitest"],
+              link: "https://thuanykamers.github.io/verify-it/",
+              image: "images/projects/capaVerifyIt.webp",
+              cover: "images/projects/capaVerifyIt.webp"
+            },
+            {
               title: "Electronic Time-Tracking System",
               description: "Web system for working hours and time banks built for Brazilian labour law (CLT and Ordinance 671), with a tamper-proof audit trail and an AI assistant for admins.",
               tech: ["PHP", "MySQL", "React", "TypeScript", "APIs"],
@@ -173,6 +181,14 @@ i18n
           "projects.soon": "Mais em breve",
           "projects.soonSub": "Sempre construindo algo novo.",
           "projects.list": [
+            {
+              title: "Verify It",
+              description: "Plataforma que ajuda quem compra veículo usado a conferir se um anúncio online é verdadeiro: cole o link e descubra se o dono registrou o anúncio. Nasceu como verifiCAR, 3º lugar no Startup Weekend Cyber Security 2025.",
+              tech: ["React", "TypeScript", "Vite", "Vitest"],
+              link: "https://thuanykamers.github.io/verify-it/",
+              image: "images/projects/capaVerifyIt.webp",
+              cover: "images/projects/capaVerifyIt.webp"
+            },
             {
               title: "Sistema de Ponto Eletrônico",
               description: "Sistema web de jornada e banco de horas conforme a CLT e a Portaria 671, com trilha de auditoria à prova de alteração e assistente de IA para administradores.",
@@ -309,6 +325,14 @@ i18n
           "projects.soonSub": "Siempre construyendo algo nuevo.",
           "projects.list": [
             {
+              title: "Verify It",
+              description: "Plataforma que ayuda a quien compra un vehículo usado a comprobar si un anuncio en línea es auténtico: pega el enlace y descubre si el dueño lo registró. Nació como verifiCAR, 3.er lugar en el Startup Weekend Cyber Security 2025.",
+              tech: ["React", "TypeScript", "Vite", "Vitest"],
+              link: "https://thuanykamers.github.io/verify-it/",
+              image: "images/projects/capaVerifyIt.webp",
+              cover: "images/projects/capaVerifyIt.webp"
+            },
+            {
               title: "Sistema de Control de Asistencia",
               description: "Sistema web de jornada laboral y banco de horas conforme a la legislación laboral brasileña (CLT y Portaria 671), con registro de auditoría inalterable y asistente de IA para administradores.",
               tech: ["PHP", "MySQL", "React", "TypeScript", "APIs"],
@@ -444,6 +468,14 @@ i18n
           "projects.soonSub": "Ich baue immer etwas Neues.",
           "projects.list": [
             {
+              title: "Verify It",
+              description: "Plattform, die Käufern von Gebrauchtfahrzeugen hilft zu prüfen, ob ein Online-Inserat echt ist: Link einfügen und sehen, ob der Besitzer es registriert hat. Entstanden als verifiCAR, 3. Platz beim Startup Weekend Cyber Security 2025.",
+              tech: ["React", "TypeScript", "Vite", "Vitest"],
+              link: "https://thuanykamers.github.io/verify-it/",
+              image: "images/projects/capaVerifyIt.webp",
+              cover: "images/projects/capaVerifyIt.webp"
+            },
+            {
               title: "Elektronisches Zeiterfassungssystem",
               description: "Websystem für Arbeitszeit und Zeitkonten nach brasilianischem Arbeitsrecht (CLT und Verordnung 671), mit manipulationssicherem Audit-Trail und KI-Assistent für Administratoren.",
               tech: ["PHP", "MySQL", "React", "TypeScript", "APIs"],
@@ -578,6 +610,14 @@ i18n
           "projects.soon": "Bientôt plus",
           "projects.soonSub": "Toujours en train de construire quelque chose de nouveau.",
           "projects.list": [
+            {
+              title: "Verify It",
+              description: "Plateforme qui aide les acheteurs de véhicules d'occasion à vérifier si une annonce en ligne est authentique : collez le lien et découvrez si le propriétaire l'a enregistrée. Née sous le nom de verifiCAR, 3e place au Startup Weekend Cyber Security 2025.",
+              tech: ["React", "TypeScript", "Vite", "Vitest"],
+              link: "https://thuanykamers.github.io/verify-it/",
+              image: "images/projects/capaVerifyIt.webp",
+              cover: "images/projects/capaVerifyIt.webp"
+            },
             {
               title: "Système de Pointage Électronique",
               description: "Système web de gestion du temps de travail et des heures conforme au droit du travail brésilien (CLT et Portaria 671), avec piste d'audit infalsifiable et assistant IA pour les administrateurs.",
