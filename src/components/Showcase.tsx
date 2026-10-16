@@ -34,8 +34,8 @@ export const ShowcaseItem: React.FC<ShowcaseItemProps> = ({
   const [index, setIndex] = useState(0);
   const [inView, setInView] = useState(false);
   const [hovered, setHovered] = useState(false);
-  // Fotos em pé não cabem no quadro 4:3 sem zoom: mostra inteira com fundo desfocado
-  const [portrait, setPortrait] = useState<Record<string, boolean>>({});
+  // Capas (fit cover): o quadro assume a proporção da própria imagem, que aparece inteira sem corte
+  const [ratio, setRatio] = useState<number | null>(null);
   const validLinks = links.filter((l) => isRealLink(l.url));
   const primary = validLinks[0];
   const multi = images.length > 1;
@@ -66,6 +66,11 @@ export const ShowcaseItem: React.FC<ShowcaseItemProps> = ({
       ctx.revert();
     };
   }, []);
+
+  // Altura do item muda quando a capa carrega: recalcula as posições do scroll
+  useEffect(() => {
+    if (ratio) ScrollTrigger.refresh();
+  }, [ratio]);
 
   // Slideshow só roda com o item visível e sem o mouse em cima
   useEffect(() => {
@@ -101,10 +106,8 @@ export const ShowcaseItem: React.FC<ShowcaseItemProps> = ({
         onMouseLeave={() => setHovered(false)}
         role={primary ? 'link' : undefined}
         aria-label={primary ? `${title} — ${primary.label}` : undefined}
+        style={fit === 'cover' && ratio ? { aspectRatio: String(ratio) } : undefined}
       >
-        {fit === 'cover' && portrait[images[index]] && (
-          <img src={images[index]} alt="" aria-hidden className="showcase__backdrop" draggable={false} />
-        )}
 
         {images.map((src, i) => near(i) && (
           <img
@@ -114,11 +117,11 @@ export const ShowcaseItem: React.FC<ShowcaseItemProps> = ({
             loading="lazy"
             decoding="async"
             draggable={false}
-            onLoad={fit === 'cover' ? (e) => {
+            onLoad={fit === 'cover' && i === 0 ? (e) => {
               const { naturalWidth: w, naturalHeight: h } = e.currentTarget;
-              if (h > w) setPortrait((p) => ({ ...p, [src]: true }));
+              if (w && h) setRatio(Math.min(2.2, Math.max(0.8, w / h)));
             } : undefined}
-            className={`showcase__img showcase__img--${fit === 'cover' && portrait[src] ? 'contain' : fit}${i === index ? ' is-active' : ''}`}
+            className={`showcase__img showcase__img--${fit}${i === index ? ' is-active' : ''}`}
           />
         ))}
 
@@ -164,15 +167,16 @@ export const ShowcaseItem: React.FC<ShowcaseItemProps> = ({
           </div>
         )}
 
-        {validLinks.length > 0 && (
+        {/* O link principal fica na imagem; aqui só os links extras */}
+        {validLinks.length > 1 && (
           <div className="showcase__reveal showcase__links">
-            {validLinks.map((l, i) => (
+            {validLinks.slice(1).map((l) => (
               <a
                 key={l.url}
                 href={l.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`showcase__link${i === 0 ? ' showcase__link--primary' : ''}`}
+                className="showcase__link"
               >
                 {l.label} <FiArrowUpRight />
               </a>

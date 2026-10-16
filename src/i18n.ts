@@ -44,8 +44,8 @@ i18n
               description: "Platform that helps used-vehicle buyers check whether an online listing is genuine: paste the link and find out if the owner registered it. Born as verifiCAR, 3rd place at Startup Weekend Cyber Security 2025.",
               tech: ["React", "TypeScript", "Vite", "Vitest"],
               link: "https://thuanykamers.github.io/verify-it/",
-              image: "images/projects/capaVerifyIt.webp",
-              cover: "images/projects/capaVerifyIt.webp"
+              image: "images/projects/capaVerifyIt-v2.webp",
+              cover: "images/projects/capaVerifyIt-v2.webp"
             },
             {
               title: "Electronic Time-Tracking System",
@@ -67,16 +67,16 @@ i18n
               description: "University extension project: moved the records of a public daycare centre to a secure cloud and trained its staff to manage them.",
               tech: ["Google Drive", "Cloud", "Digital Training"],
               link: "https://skinny-protest-638.notion.site/Secure-Cloud-Protecting-the-Memory-of-CEI-Snoopy-3e43f2d9e43b81b5af28f88955de4e04",
-              image: "images/projects/capaNuvem-v2.webp",
-              cover: "images/projects/capaNuvem-v2.webp"
+              image: "images/projects/capaNuvem-v3.webp",
+              cover: "images/projects/capaNuvem-v3.webp"
             },
             {
               title: "Youth Agency in the Digital Age",
               description: "University extension project: 8 weeks of digital literacy workshops for 27 students, bringing an unused school computer lab back into use.",
               tech: ["Digital Literacy", "Scratch", "Teaching"],
               link: "https://skinny-protest-638.notion.site/Youth-Agency-in-the-Digital-Age-3e43f2d9e43b8127a463f0bcc7a742e6",
-              image: "images/projects/capaProtag-v2.webp",
-              cover: "images/projects/capaProtag-v2.webp"
+              image: "images/projects/capaProtag-v3.webp",
+              cover: "images/projects/capaProtag-v3.webp"
             }
           ],
           "achievements.title": "My",
@@ -188,8 +188,8 @@ i18n
               description: "Plataforma que ajuda quem compra veículo usado a conferir se um anúncio online é verdadeiro: cole o link e descubra se o dono registrou o anúncio. Nasceu como verifiCAR, 3º lugar no Startup Weekend Cyber Security 2025.",
               tech: ["React", "TypeScript", "Vite", "Vitest"],
               link: "https://thuanykamers.github.io/verify-it/",
-              image: "images/projects/capaVerifyIt.webp",
-              cover: "images/projects/capaVerifyIt.webp"
+              image: "images/projects/capaVerifyIt-v2.webp",
+              cover: "images/projects/capaVerifyIt-v2.webp"
             },
             {
               title: "Sistema de Ponto Eletrônico",
@@ -211,16 +211,16 @@ i18n
               description: "Projeto de extensão: migração dos registros de uma creche pública para uma nuvem segura e capacitação da equipe para gerenciá-los.",
               tech: ["Google Drive", "Nuvem", "Capacitação Digital"],
               link: "https://skinny-protest-638.notion.site/Secure-Cloud-Protecting-the-Memory-of-CEI-Snoopy-3e43f2d9e43b81b5af28f88955de4e04",
-              image: "images/projects/capaNuvem-v2.webp",
-              cover: "images/projects/capaNuvem-v2.webp"
+              image: "images/projects/capaNuvem-v3.webp",
+              cover: "images/projects/capaNuvem-v3.webp"
             },
             {
               title: "Protagonismo Juvenil na Era Digital",
               description: "Projeto de extensão: 8 semanas de oficinas de letramento digital para 27 alunos, reativando o laboratório de informática da escola.",
               tech: ["Letramento Digital", "Scratch", "Ensino"],
               link: "https://skinny-protest-638.notion.site/Youth-Agency-in-the-Digital-Age-3e43f2d9e43b8127a463f0bcc7a742e6",
-              image: "images/projects/capaProtag-v2.webp",
-              cover: "images/projects/capaProtag-v2.webp"
+              image: "images/projects/capaProtag-v3.webp",
+              cover: "images/projects/capaProtag-v3.webp"
             }
           ],
           "achievements.title": "Minhas",
@@ -332,8 +332,8 @@ i18n
               description: "Plataforma que ayuda a quien compra un vehículo usado a comprobar si un anuncio en línea es auténtico: pega el enlace y descubre si el dueño lo registró. Nació como verifiCAR, 3.er lugar en el Startup Weekend Cyber Security 2025.",
               tech: ["React", "TypeScript", "Vite", "Vitest"],
               link: "https://thuanykamers.github.io/verify-it/",
-              image: "images/projects/capaVerifyIt.webp",
-              cover: "images/projects/capaVerifyIt.webp"
+              image: "images/projects/capaVerifyIt-v2.webp",
+              cover: "images/projects/capaVerifyIt-v2.webp"
             },
             {
               title: "Sistema de Control de Asistencia",
@@ -355,16 +355,16 @@ i18n
               description: "Proyecto de extensión universitaria: migración de los registros de una guardería pública a una nube segura y capacitación del equipo para gestionarlos.",
               tech: ["Google Drive", "Nube", "Capacitación Digital"],
               link: "https://skinny-protest-638.notion.site/Secure-Cloud-Protecting-the-Memory-of-CEI-Snoopy-3e43f2d9e43b81b5af28f88955de4e04",
-              image: "images/projects/capaNuvem-v2.webp",
-              cover: "images/projects/capaNuvem-v2.webp"
+              image: "images/projects/capaNuvem-v3.webp",
+              cover: "images/projects/capaNuvem-v3.webp"
             },
             {
               title: "Jóvenes Protagonistas en la Era Digital",
               description: "Proyecto de extensión universitaria: 8 semanas de talleres de alfabetización digital para 27 alumnos, reactivando el laboratorio de informática de la escuela.",
               tech: ["Alfabetización Digital", "Scratch", "Enseñanza"],
               link: "https://skinny-protest-638.notion.site/Youth-Agency-in-the-Digital-Age-3e43f2d9e43b8127a463f0bcc7a742e6",
-              image: "images/projects/capaProtag-v2.webp",
-              cover: "images/projects/capaProtag-v2.webp"
+              image: "images/projects/capaProtag-v3.webp",
+              cover: "images/projects/capaProtag-v3.webp"
             }
           ],
           "achievements.title": "Mis",
@@ -476,8 +476,8 @@ i18n
               description: "Plattform, die Käufern von Gebrauchtfahrzeugen hilft zu prüfen, ob ein Online-Inserat echt ist: Link einfügen und sehen, ob der Besitzer es registriert hat. Entstanden als verifiCAR, 3. Platz beim Startup Weekend Cyber Security 2025.",
               tech: ["React", "TypeScript", "Vite", "Vitest"],
               link: "https://thuanykamers.github.io/verify-it/",
-              image: "images/projects/capaVerifyIt.webp",
-              cover: "images/projects/capaVerifyIt.webp"
+              image: "images/projects/capaVerifyIt-v2.webp",
+              cover: "images/projects/capaVerifyIt-v2.webp"
             },
             {
               title: "Elektronisches Zeiterfassungssystem",
@@ -499,16 +499,16 @@ i18n
               description: "Hochschul-Praxisprojekt: Migration der Unterlagen einer öffentlichen Kita in eine sichere Cloud und Schulung des Teams im Umgang damit.",
               tech: ["Google Drive", "Cloud", "Digitale Schulung"],
               link: "https://skinny-protest-638.notion.site/Sichere-Cloud-Das-Ged-chtnis-des-CEI-Snoopy-sch-tzen-3e43f2d9e43b81038633d97c5c6fe43f",
-              image: "images/projects/capaNuvem-v2.webp",
-              cover: "images/projects/capaNuvem-v2.webp"
+              image: "images/projects/capaNuvem-v3.webp",
+              cover: "images/projects/capaNuvem-v3.webp"
             },
             {
               title: "Jugendliche als Gestalter im digitalen Zeitalter",
               description: "Hochschul-Praxisprojekt: 8 Wochen Workshops zu digitaler Kompetenz für 27 Schüler, um den ungenutzten Computerraum der Schule wieder in Betrieb zu nehmen.",
               tech: ["Digitale Kompetenz", "Scratch", "Unterricht"],
               link: "https://skinny-protest-638.notion.site/Jugendliche-als-Gestalter-im-digitalen-Zeitalter-3e43f2d9e43b81478b7bf569adaff087",
-              image: "images/projects/capaProtag-v2.webp",
-              cover: "images/projects/capaProtag-v2.webp"
+              image: "images/projects/capaProtag-v3.webp",
+              cover: "images/projects/capaProtag-v3.webp"
             }
           ],
           "achievements.title": "Meine",
@@ -620,8 +620,8 @@ i18n
               description: "Plateforme qui aide les acheteurs de véhicules d'occasion à vérifier si une annonce en ligne est authentique : collez le lien et découvrez si le propriétaire l'a enregistrée. Née sous le nom de verifiCAR, 3e place au Startup Weekend Cyber Security 2025.",
               tech: ["React", "TypeScript", "Vite", "Vitest"],
               link: "https://thuanykamers.github.io/verify-it/",
-              image: "images/projects/capaVerifyIt.webp",
-              cover: "images/projects/capaVerifyIt.webp"
+              image: "images/projects/capaVerifyIt-v2.webp",
+              cover: "images/projects/capaVerifyIt-v2.webp"
             },
             {
               title: "Système de Pointage Électronique",
@@ -643,16 +643,16 @@ i18n
               description: "Projet d'extension universitaire : migration des archives d'une crèche publique vers un cloud sécurisé et formation de l'équipe à leur gestion.",
               tech: ["Google Drive", "Cloud", "Formation Numérique"],
               link: "https://skinny-protest-638.notion.site/Secure-Cloud-Protecting-the-Memory-of-CEI-Snoopy-3e43f2d9e43b81b5af28f88955de4e04",
-              image: "images/projects/capaNuvem-v2.webp",
-              cover: "images/projects/capaNuvem-v2.webp"
+              image: "images/projects/capaNuvem-v3.webp",
+              cover: "images/projects/capaNuvem-v3.webp"
             },
             {
               title: "Jeunes Acteurs à l'Ère Numérique",
               description: "Projet d'extension universitaire : 8 semaines d'ateliers de culture numérique pour 27 élèves, pour remettre en service la salle informatique de l'école.",
               tech: ["Culture Numérique", "Scratch", "Enseignement"],
               link: "https://skinny-protest-638.notion.site/Youth-Agency-in-the-Digital-Age-3e43f2d9e43b8127a463f0bcc7a742e6",
-              image: "images/projects/capaProtag-v2.webp",
-              cover: "images/projects/capaProtag-v2.webp"
+              image: "images/projects/capaProtag-v3.webp",
+              cover: "images/projects/capaProtag-v3.webp"
             }
           ],
           "achievements.title": "Mes",

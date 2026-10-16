@@ -94,18 +94,8 @@ body {
   user-select: none;
 }
 .showcase__img.is-active { opacity: 1; }
-.showcase__img--cover { object-fit: cover; object-position: center 15%; }
+.showcase__img--cover { object-fit: cover; }
 .showcase__img--contain { object-fit: contain; }
-.showcase__backdrop {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: blur(28px) brightness(0.55);
-  transform: scale(1.2);
-  pointer-events: none;
-}
 .showcase__media:hover .showcase__img--cover.is-active { transform: scale(1.04); }
 .showcase__open {
   position: absolute;
@@ -215,9 +205,3 @@ body {
   transition: background 0.2s, border-color 0.2s, transform 0.2s;
 }
 .showcase__link:hover { background: rgba(255, 255, 255, 0.08); transform: translateY(-2px); }
-.showcase__link--primary {
-  color: #fff;
-  border-color: transparent;
-  background: linear-gradient(90deg, #6366f1, #3b82f6);
-}
-.showcase__link--primary:hover { background: linear-gradient(90deg, #4f46e5, #2563eb); }
