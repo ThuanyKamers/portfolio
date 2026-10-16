@@ -416,3 +416,82 @@ body {
   .intl-modal, .intl-modal__card, .intl-job { animation: none; }
   .intl-story__img { transition: opacity 0.3s; transform: none; }
 }
+
+/* Conquistas: texto em cima e mosaico de fotos embaixo */
+.showcase--stacked { grid-template-columns: 1fr !important; gap: 2rem; }
+.showcase--stacked .showcase__body { max-width: 46rem; }
+.mosaic { display: flex; flex-direction: column; gap: 12px; min-height: 200px; }
+.mosaic__row { display: flex; gap: 12px; }
+.mosaic__tile {
+  display: block;
+  flex-shrink: 1; /* absorve arredondamento de subpixel */
+  height: 100%;
+  padding: 0;
+  border: 0;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #0d1117;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.mosaic__tile.is-in { opacity: 1; transform: none; }
+.mosaic__tile img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s ease, filter 0.3s ease;
+}
+.mosaic__tile:hover img { transform: scale(1.04); filter: brightness(1.08); }
+@media (prefers-reduced-motion: reduce) {
+  .mosaic__tile { opacity: 1; transform: none; transition: none; }
+}
+
+/* Foto ampliada */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 56px 16px;
+  background: rgba(3, 6, 15, 0.9);
+  backdrop-filter: blur(10px);
+  animation: intl-fade 0.25s ease both;
+}
+.lightbox__img {
+  max-width: min(100%, 1100px);
+  max-height: 100%;
+  border-radius: 12px;
+  box-shadow: 0 30px 80px -20px rgba(0, 0, 0, 0.8);
+  animation: intl-pop 0.35s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.lightbox__btn {
+  position: absolute;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  font-size: 1.3rem;
+  color: #fff;
+  background: rgba(13, 17, 23, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.lightbox__btn:hover { background: rgba(59, 130, 246, 0.6); }
+.lightbox__close { top: 16px; right: 16px; }
+.lightbox__prev { left: 16px; top: 50%; translate: 0 -50%; }
+.lightbox__next { right: 16px; top: 50%; translate: 0 -50%; }
+.lightbox__counter {
+  position: absolute;
+  bottom: 18px;
+  left: 50%;
+  translate: -50% 0;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.7);
+}

@@ -2,27 +2,23 @@ import React, { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { asset } from "../utils/asset";
 import { ShowcaseItem, type ShowcaseItemProps } from "../components/Showcase";
+import type { MosaicPhoto } from "../components/PhotoMosaic";
 import { FaLinkedin } from "react-icons/fa";
 
-const SW_IMAGES = [
-  asset("images/achievements/CertificadoSW.webp"),
-  asset("images/achievements/swfoto1.webp"),
-  asset("images/achievements/sw.webp"),
-  asset("images/achievements/sw1.webp"),
-  asset("images/achievements/sw2.webp"),
-  asset("images/achievements/sw3.webp"),
-  asset("images/achievements/sw4.webp"),
-  asset("images/achievements/sw5.webp"),
-  asset("images/achievements/sw6.webp"),
-  asset("images/achievements/sw7.webp"),
-  asset("images/achievements/swfoto2.webp"),
-  asset("images/achievements/swfoto3.webp"),
-  asset("images/achievements/swfoto4.webp"),
-  asset("images/achievements/swfoto5.webp"),
-  asset("images/achievements/swfoto6.webp"),
-  asset("images/achievements/swfoto7.webp"),
-  asset("images/achievements/swfoto8.webp"),
-  asset("images/achievements/swfoto9.webp"),
+// Tamanho real de cada foto: o mosaico reserva o espaço antes de carregar
+const SW_PHOTOS: MosaicPhoto[] = [
+  { src: asset("images/achievements/swfoto1.webp"), w: 1086, h: 1057 },
+  { src: asset("images/achievements/sw.webp"), w: 900, h: 1200 },
+  { src: asset("images/achievements/sw2.webp"), w: 1200, h: 800 },
+  { src: asset("images/achievements/sw3.webp"), w: 900, h: 1200 },
+  { src: asset("images/achievements/sw4.webp"), w: 1200, h: 675 },
+  { src: asset("images/achievements/sw5.webp"), w: 900, h: 1200 },
+  { src: asset("images/achievements/sw6.webp"), w: 800, h: 1200 },
+  { src: asset("images/achievements/sw7.webp"), w: 1200, h: 800 },
+  { src: asset("images/achievements/swfoto2.webp"), w: 900, h: 1200 },
+  { src: asset("images/achievements/swfoto3.webp"), w: 1200, h: 675 },
+  { src: asset("images/achievements/swfoto7.webp"), w: 900, h: 1200 },
+  { src: asset("images/achievements/swfoto8.webp"), w: 900, h: 1200 },
 ];
 
 const CERTIFICATES: Certificate[] = [
@@ -115,8 +111,8 @@ const Achievements: React.FC = () => {
     {
       title: "Startup Weekend SJ",
       subtitle: t("achievements.sw.theme"),
-      images: SW_IMAGES,
-      fit: "contain",
+      images: SW_PHOTOS.map((p) => p.src),
+      mosaic: SW_PHOTOS,
       details: [
         { label: t("achievements.sw.placement"), value: t("achievements.sw.badge") },
         { label: "MVP", value: "VerifiCAR" },

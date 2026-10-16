@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { FiArrowUpRight, FiChevronLeft, FiChevronRight } from 'react-icons/fi';
+import { PhotoMosaic, type MosaicPhoto } from './PhotoMosaic';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -22,13 +23,15 @@ export interface ShowcaseItemProps {
   fit?: 'cover' | 'contain';
   reverse?: boolean;
   autoPlay?: boolean;
+  // mosaic: texto em cima e todas as fotos inteiras numa grade embaixo (em vez do slideshow)
+  mosaic?: MosaicPhoto[];
 }
 
 const isRealLink = (url?: string) => !!url && url !== '#';
 
 // Item em duas colunas (foto + texto) que aparece acompanhando o scroll
 export const ShowcaseItem: React.FC<ShowcaseItemProps> = ({
-  title, subtitle, description, images, tags, details, links = [], fit = 'cover', reverse, autoPlay = true,
+  title, subtitle, description, images, tags, details, links = [], fit = 'cover', reverse, autoPlay = true, mosaic,
 }) => {
   const rootRef = useRef<HTMLElement>(null);
   const [index, setIndex] = useState(0);
@@ -38,7 +41,7 @@ export const ShowcaseItem: React.FC<ShowcaseItemProps> = ({
   const [ratio, setRatio] = useState<number | null>(null);
   const validLinks = links.filter((l) => isRealLink(l.url));
   const primary = validLinks[0];
-  const multi = images.length > 1;
+  const multi = !mosaic && images.length > 1;
 
   useEffect(() => {
     const root = rootRef.current;
@@ -47,13 +50,15 @@ export const ShowcaseItem: React.FC<ShowcaseItemProps> = ({
     const texts = root.querySelectorAll('.showcase__reveal');
 
     const ctx = gsap.context(() => {
-      gsap.timeline({
+      const tl = gsap.timeline({
         scrollTrigger: { trigger: root, start: 'top 88%', end: 'top 45%', scrub: 1 },
-      })
-        .fromTo(media,
+      });
+      if (media) {
+        tl.fromTo(media,
           { clipPath: 'inset(12% 12% 12% 12% round 20px)', scale: 0.92, opacity: 0.2 },
-          { clipPath: 'inset(0% 0% 0% 0% round 20px)', scale: 1, opacity: 1, ease: 'power2.out' })
-        .fromTo(texts,
+          { clipPath: 'inset(0% 0% 0% 0% round 20px)', scale: 1, opacity: 1, ease: 'power2.out' });
+      }
+      tl.fromTo(texts,
           { y: 50, opacity: 0 },
           { y: 0, opacity: 1, stagger: 0.08, ease: 'power2.out' }, 0.1);
     }, root);
@@ -98,7 +103,8 @@ export const ShowcaseItem: React.FC<ShowcaseItemProps> = ({
   };
 
   return (
-    <article ref={rootRef} className={`showcase${reverse ? ' showcase--reverse' : ''}`}>
+    <article ref={rootRef} className={`showcase${reverse ? ' showcase--reverse' : ''}${mosaic ? ' showcase--stacked' : ''}`}>
+      {!mosaic && (
       <div
         className={`showcase__media${primary || multi ? ' cursor-pointer' : ''}`}
         onClick={onMediaClick}
@@ -143,6 +149,7 @@ export const ShowcaseItem: React.FC<ShowcaseItemProps> = ({
           </>
         )}
       </div>
+      )}
 
       <div className="showcase__body">
         {subtitle && <p className="showcase__reveal showcase__subtitle">{subtitle}</p>}
@@ -184,6 +191,8 @@ export const ShowcaseItem: React.FC<ShowcaseItemProps> = ({
           </div>
         )}
       </div>
+
+      {mosaic && <PhotoMosaic photos={mosaic} title={title} />}
     </article>
   );
 };
