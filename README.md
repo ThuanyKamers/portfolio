@@ -43,7 +43,6 @@ Other scripts: `npm run build`, `npm run preview`, `npm run lint`.
 | --- | --- |
 | `VITE_EMAILJS_PUBLIC_KEY` | EmailJS public key |
 | `VITE_EMAILJS_SERVICE_ID` | EmailJS service |
-| `VITE_EMAILJS_TEMPLATE_CODE` | Template for the verification code e-mail |
 | `VITE_EMAILJS_TEMPLATE_CONTACT` | Template for the contact message |
 
 For the deployed site, the same four values are stored as repository secrets and passed to the build in `.github/workflows/deploy.yml`.

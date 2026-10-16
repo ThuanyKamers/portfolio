@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
+import { asset } from "../utils/asset";
 
 interface GlobeProps {
   size?: number;
@@ -74,7 +75,7 @@ const Globe = ({ size = 600, onMarkerClick }: GlobeProps) => {
 
     // Load texture and apply
     loader.load(
-      "//unpkg.com/three-globe/example/img/earth-blue-marble.jpg",
+      asset("images/globe/earth-blue-marble.webp"),
       (texture) => {
         texture.colorSpace = THREE.SRGBColorSpace;
         material.map = texture;

@@ -4,6 +4,8 @@ import { useTranslation } from 'react-i18next';
 
 type Status = 'idle' | 'sending' | 'sent' | 'error';
 
+const MAX = { name: 80, email: 120, message: 300 };
+
 const fieldStyle: React.CSSProperties = {
   width: '100%',
   background: 'transparent',
@@ -26,6 +28,8 @@ const labelStyle: React.CSSProperties = {
 const Contact: React.FC = () => {
   const { t } = useTranslation();
   const [form, setForm] = useState({ name: '', email: '', message: '' });
+  // Honeypot: campo invisível para pessoas; robôs costumam preencher
+  const [website, setWebsite] = useState('');
   const [status, setStatus] = useState<Status>('idle');
   const [emailError, setEmailError] = useState(false);
 
@@ -41,18 +45,22 @@ const Contact: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (status === 'sending') return;
+    if (website) {
+      // Robô detectado: finge sucesso sem enviar nada
+      setStatus('sent');
+      return;
+    }
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) {
       setEmailError(true);
       return;
     }
     setStatus('sending');
     try {
+      // O destinatário é fixo no template do EmailJS, nunca enviado pelo navegador
       await emailjs.send(import.meta.env.VITE_EMAILJS_SERVICE_ID, import.meta.env.VITE_EMAILJS_TEMPLATE_CONTACT, {
-        to_email: 'thuanykamers@hotmail.com',
-        from_email: form.email,
-        from_name: form.name,
-        company: '-',
-        message: form.message,
+        from_email: form.email.slice(0, MAX.email),
+        from_name: form.name.slice(0, MAX.name),
+        message: form.message.slice(0, MAX.message),
       });
       setStatus('sent');
       setForm({ name: '', email: '', message: '' });
@@ -76,12 +84,19 @@ const Contact: React.FC = () => {
         </div>
 
         <form data-reveal onSubmit={handleSubmit} className="flex flex-col gap-8" style={{ maxWidth: '32rem' }}>
+          <div aria-hidden="true" style={{ position: 'absolute', left: '-9999px', width: 1, height: 1, overflow: 'hidden' }}>
+            <label>
+              Website
+              <input type="text" name="website" tabIndex={-1} autoComplete="off" value={website} onChange={(e) => setWebsite(e.target.value)} />
+            </label>
+          </div>
           <label>
             <span style={labelStyle}>{t('contact.name')}</span>
             <input
               type="text"
               required
               autoComplete="name"
+              maxLength={MAX.name}
               placeholder={t('contact.namePh')}
               value={form.name}
               onChange={update('name')}
@@ -94,6 +109,7 @@ const Contact: React.FC = () => {
               type="email"
               required
               autoComplete="email"
+              maxLength={MAX.email}
               placeholder={t('contact.emailPh')}
               value={form.email}
               onChange={update('email')}
@@ -106,11 +122,13 @@ const Contact: React.FC = () => {
             <textarea
               required
               rows={5}
+              maxLength={MAX.message}
               placeholder={t('contact.messagePh')}
               value={form.message}
               onChange={update('message')}
               style={{ ...fieldStyle, resize: 'none' }}
             />
+            <span className="text-xs" style={{ color: 'var(--text-muted)' }}>{form.message.length}/{MAX.message}</span>
           </label>
 
           <div className="flex flex-col gap-3 items-start">
