@@ -53,13 +53,6 @@ i18n
               cover: "images/projects/capaPonto-v2.webp"
             },
             {
-              title: "Dress Up E-commerce",
-              description: "T-shirt store built as a team project, with product pages, a shopping cart and a simulated checkout.",
-              tech: ["HTML", "CSS", "JavaScript"],
-              link: "https://thuanykamers.github.io/DressUP/",
-              image: "images/projects/dressup.webp"
-            },
-            {
               title: "Secure Cloud: CEI Snoopy",
               description: "University extension project: moved the records of a public daycare centre to a secure cloud and trained its staff to manage them.",
               tech: ["Google Drive", "Cloud", "Digital Training"],
@@ -74,6 +67,13 @@ i18n
               link: "https://skinny-protest-638.notion.site/Youth-Agency-in-the-Digital-Age-3e43f2d9e43b8127a463f0bcc7a742e6",
               image: "images/projects/capaProtag-v3.webp",
               cover: "images/projects/capaProtag-v3.webp"
+            },
+            {
+              title: "Dress Up E-commerce",
+              description: "T-shirt store built as a team project, with product pages, a shopping cart and a simulated checkout.",
+              tech: ["HTML", "CSS", "JavaScript"],
+              link: "https://thuanykamers.github.io/DressUP/",
+              image: "images/projects/dressup.webp"
             }
           ],
           "achievements.title": "My",
@@ -126,6 +126,7 @@ i18n
           "intl.title": "International",
           "intl.subtitle": "Experience",
           "intl.hint": "Click on the pins to explore each country",
+          "intl.experiences": "experiences",
           "intl.brazil": "Brazil",
           "intl.brazil.jobs": [
             { "period": "2022", "role": "Store Manager", "company": "Cacau Show - Shopping Continente — São José", "description": "Managed daily store operations in a mall environment. Led customer service and sales. Handled inventory control, store layout, and stockroom logistics. Trained and supervised new staff. Managed documents and reports using Master Retail PDV." },
@@ -190,13 +191,6 @@ i18n
               cover: "images/projects/capaPonto-v2.webp"
             },
             {
-              title: "Dress Up E-commerce",
-              description: "Loja de camisetas feita em equipe, com páginas de produtos, carrinho de compras e checkout simulado.",
-              tech: ["HTML", "CSS", "JavaScript"],
-              link: "https://thuanykamers.github.io/DressUP/",
-              image: "images/projects/dressup.webp"
-            },
-            {
               title: "Nuvem Segura: CEI Snoopy",
               description: "Projeto de extensão: migração dos registros de uma creche pública para uma nuvem segura e capacitação da equipe para gerenciá-los.",
               tech: ["Google Drive", "Nuvem", "Capacitação Digital"],
@@ -211,6 +205,13 @@ i18n
               link: "https://skinny-protest-638.notion.site/Youth-Agency-in-the-Digital-Age-3e43f2d9e43b8127a463f0bcc7a742e6",
               image: "images/projects/capaProtag-v3.webp",
               cover: "images/projects/capaProtag-v3.webp"
+            },
+            {
+              title: "Dress Up E-commerce",
+              description: "Loja de camisetas feita em equipe, com páginas de produtos, carrinho de compras e checkout simulado.",
+              tech: ["HTML", "CSS", "JavaScript"],
+              link: "https://thuanykamers.github.io/DressUP/",
+              image: "images/projects/dressup.webp"
             }
           ],
           "achievements.title": "Minhas",
@@ -263,6 +264,7 @@ i18n
           "intl.title": "Experiência",
           "intl.subtitle": "Internacional",
           "intl.hint": "Clique nos pins para explorar cada país",
+          "intl.experiences": "experiências",
           "intl.brazil": "Brasil",
           "intl.brazil.jobs": [
             { "period": "2022", "role": "Gerente de Loja", "company": "Cacau Show - Shopping Continente — São José", "description": "Gerenciar operações diárias da loja em ambiente de shopping. Liderar vendas e atender clientes. Controlar estoque, layout da loja e logística do depósito. Treinar e supervisionar novos funcionários. Gerenciar documentos e relatórios com o sistema Master Retail PDV." },
@@ -327,13 +329,6 @@ i18n
               cover: "images/projects/capaPonto-v2.webp"
             },
             {
-              title: "Dress Up E-commerce",
-              description: "Tienda de camisetas desarrollada en equipo, con páginas de productos, carrito de compras y checkout simulado.",
-              tech: ["HTML", "CSS", "JavaScript"],
-              link: "https://thuanykamers.github.io/DressUP/",
-              image: "images/projects/dressup.webp"
-            },
-            {
               title: "Nube Segura: CEI Snoopy",
               description: "Proyecto de extensión universitaria: migración de los registros de una guardería pública a una nube segura y capacitación del equipo para gestionarlos.",
               tech: ["Google Drive", "Nube", "Capacitación Digital"],
@@ -348,6 +343,13 @@ i18n
               link: "https://skinny-protest-638.notion.site/Youth-Agency-in-the-Digital-Age-3e43f2d9e43b8127a463f0bcc7a742e6",
               image: "images/projects/capaProtag-v3.webp",
               cover: "images/projects/capaProtag-v3.webp"
+            },
+            {
+              title: "Dress Up E-commerce",
+              description: "Tienda de camisetas desarrollada en equipo, con páginas de productos, carrito de compras y checkout simulado.",
+              tech: ["HTML", "CSS", "JavaScript"],
+              link: "https://thuanykamers.github.io/DressUP/",
+              image: "images/projects/dressup.webp"
             }
           ],
           "achievements.title": "Mis",
@@ -400,6 +402,7 @@ i18n
           "intl.title": "Experiencia",
           "intl.subtitle": "Internacional",
           "intl.hint": "Haz clic en los pines para explorar cada país",
+          "intl.experiences": "experiencias",
           "intl.brazil": "Brasil",
           "intl.brazil.jobs": [
             { "period": "2022", "role": "Gerente de Tienda", "company": "Cacau Show - Shopping Continente — São José", "description": "Gestionó operaciones diarias de la tienda en centro comercial. Lideró atención al cliente y ventas. Controló inventario, disposición de la tienda y logística. Capacitó y supervisó nuevos empleados. Gestionó documentos y reportes con Master Retail PDV." },
@@ -464,13 +467,6 @@ i18n
               cover: "images/projects/capaPonto-v2.webp"
             },
             {
-              title: "Dress Up E-Commerce",
-              description: "Im Team entwickelter T-Shirt-Shop mit Produktseiten, Warenkorb und simuliertem Checkout.",
-              tech: ["HTML", "CSS", "JavaScript"],
-              link: "https://thuanykamers.github.io/DressUP/",
-              image: "images/projects/dressup.webp"
-            },
-            {
               title: "Sichere Cloud: CEI Snoopy",
               description: "Hochschul-Praxisprojekt: Migration der Unterlagen einer öffentlichen Kita in eine sichere Cloud und Schulung des Teams im Umgang damit.",
               tech: ["Google Drive", "Cloud", "Digitale Schulung"],
@@ -485,6 +481,13 @@ i18n
               link: "https://skinny-protest-638.notion.site/Jugendliche-als-Gestalter-im-digitalen-Zeitalter-3e43f2d9e43b81478b7bf569adaff087",
               image: "images/projects/capaProtag-v3.webp",
               cover: "images/projects/capaProtag-v3.webp"
+            },
+            {
+              title: "Dress Up E-Commerce",
+              description: "Im Team entwickelter T-Shirt-Shop mit Produktseiten, Warenkorb und simuliertem Checkout.",
+              tech: ["HTML", "CSS", "JavaScript"],
+              link: "https://thuanykamers.github.io/DressUP/",
+              image: "images/projects/dressup.webp"
             }
           ],
           "achievements.title": "Meine",
@@ -537,6 +540,7 @@ i18n
           "intl.title": "Internationale",
           "intl.subtitle": "Erfahrung",
           "intl.hint": "Klicke auf die Pins, um jedes Land zu erkunden",
+          "intl.experiences": "Erfahrungen",
           "intl.brazil": "Brasilien",
           "intl.brazil.jobs": [
             { "period": "2022", "role": "Filialleiterin", "company": "Cacau Show - Shopping Continente — São José", "description": "Leitete den täglichen Filialbetrieb im Einkaufszentrum. Führte Kundenservice und Verkauf. Kontrollierte Lagerbestand, Ladenlayout und Logistik. Schulte und beaufsichtigte neue Mitarbeiter. Verwaltete Dokumente und Berichte mit Master Retail PDV." },
@@ -601,13 +605,6 @@ i18n
               cover: "images/projects/capaPonto-v2.webp"
             },
             {
-              title: "Dress Up E-commerce",
-              description: "Boutique de t-shirts réalisée en équipe, avec pages produits, panier et paiement simulé.",
-              tech: ["HTML", "CSS", "JavaScript"],
-              link: "https://thuanykamers.github.io/DressUP/",
-              image: "images/projects/dressup.webp"
-            },
-            {
               title: "Cloud Sécurisé : CEI Snoopy",
               description: "Projet d'extension universitaire : migration des archives d'une crèche publique vers un cloud sécurisé et formation de l'équipe à leur gestion.",
               tech: ["Google Drive", "Cloud", "Formation Numérique"],
@@ -622,6 +619,13 @@ i18n
               link: "https://skinny-protest-638.notion.site/Youth-Agency-in-the-Digital-Age-3e43f2d9e43b8127a463f0bcc7a742e6",
               image: "images/projects/capaProtag-v3.webp",
               cover: "images/projects/capaProtag-v3.webp"
+            },
+            {
+              title: "Dress Up E-commerce",
+              description: "Boutique de t-shirts réalisée en équipe, avec pages produits, panier et paiement simulé.",
+              tech: ["HTML", "CSS", "JavaScript"],
+              link: "https://thuanykamers.github.io/DressUP/",
+              image: "images/projects/dressup.webp"
             }
           ],
           "achievements.title": "Mes",
@@ -674,6 +678,7 @@ i18n
           "intl.title": "Expérience",
           "intl.subtitle": "Internationale",
           "intl.hint": "Cliquez sur les épingles pour explorer chaque pays",
+          "intl.experiences": "expériences",
           "intl.brazil": "Brésil",
           "intl.brazil.jobs": [
             { "period": "2022", "role": "Responsable de Magasin", "company": "Cacau Show - Shopping Continente — São José", "description": "Géré les opérations quotidiennes du magasin en centre commercial. Dirigé le service client et les ventes. Contrôlé les stocks, l'agencement et la logistique. Formé et supervisé les nouveaux employés. Géré les documents et rapports avec Master Retail PDV." },

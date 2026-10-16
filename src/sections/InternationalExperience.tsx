@@ -50,10 +50,40 @@ const COUNTRIES: Record<string, CountryInfo> = {
   },
 };
 
+// "2023-24" -> [2023, 2024]; "2022" -> [2022, 2022]
+const parsePeriod = (period: string): [number, number] => {
+  const [a, b] = period.split("-");
+  const start = Number(a);
+  const end = b ? Number(b.length === 2 ? a.slice(0, 2) + b : b) : start;
+  return [start, end];
+};
+
+const periodRange = (jobs: JobData[]) => {
+  if (!Array.isArray(jobs) || jobs.length === 0) return "";
+  const years = jobs.flatMap((j) => parsePeriod(j.period)).filter((n) => !Number.isNaN(n));
+  const min = Math.min(...years);
+  const max = Math.max(...years);
+  return min === max ? String(min) : `${min} – ${max}`;
+};
+
+// "Empresa — Cidade" vira empresa e local separados
+const splitCompany = (company = "") => {
+  const i = company.lastIndexOf(" — ");
+  return i < 0 ? { name: company, place: "" } : { name: company.slice(0, i), place: company.slice(i + 3) };
+};
+
+const PinIcon = () => (
+  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+    <circle cx="12" cy="10" r="3" />
+  </svg>
+);
+
 const InternationalExperience: React.FC = () => {
   const { t } = useTranslation();
   const [activeCountry, setActiveCountry] = useState<string | null>(null);
   const [slideIndex, setSlideIndex] = useState(0);
+  const [paused, setPaused] = useState(false);
   const [globeSize, setGlobeSize] = useState(() =>
     typeof window !== 'undefined' && window.innerWidth < 640 ? 320 : 600
   );
@@ -77,25 +107,29 @@ const InternationalExperience: React.FC = () => {
 
   const closeModal = useCallback(() => setActiveCountry(null), []);
 
-  useEffect(() => {
-    if (activeCountry) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-      setSlideIndex(0);
-    }
-    return () => { document.body.style.overflow = ""; };
-  }, [activeCountry]);
+  const total = active?.images.length ?? 0;
+  const step = useCallback(
+    (delta: number) => setSlideIndex((i) => (total ? (i + delta + total) % total : 0)),
+    [total]
+  );
 
+  // Trava o scroll da página e liga os atalhos de teclado enquanto o painel está aberto
   useEffect(() => {
-    if (!active) return;
-    const images = active.images;
-    if (images.length <= 1) return;
-    const interval = setInterval(() => {
-      setSlideIndex((prev) => (prev + 1) % images.length);
-    }, 3000);
-    return () => clearInterval(interval);
-  }, [active]);
+    if (!activeCountry) return;
+    document.body.style.overflow = "hidden";
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") closeModal();
+      else if (e.key === "ArrowRight") step(1);
+      else if (e.key === "ArrowLeft") step(-1);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => {
+      document.body.style.overflow = "";
+      window.removeEventListener("keydown", onKey);
+    };
+  }, [activeCountry, closeModal, step]);
+
+  const yearRange = useMemo(() => periodRange(jobs), [jobs]);
 
   return (
     <section
@@ -120,76 +154,85 @@ const InternationalExperience: React.FC = () => {
         <Globe size={globeSize} onMarkerClick={handleMarkerClick} />
       </div>
 
-      {/* Modal — same style as Achievements */}
+      {/* Painel do país: fotos em formato stories + experiências em cards */}
       {active && createPortal(
-        <div
-          className="fixed inset-0 flex items-center justify-center p-4 md:p-8"
-          style={{ backgroundColor: "rgba(0,0,0,0.9)", zIndex: 99999 }}
-          onClick={closeModal}
-        >
-          <div
-            className="relative flex flex-col md:flex-row rounded-2xl overflow-y-auto md:overflow-hidden w-full"
-            style={{ backgroundColor: "#0d1117", maxWidth: "1300px", height: "90vh", maxHeight: "900px" }}
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button
-              onClick={closeModal}
-              className="absolute top-3 right-3 md:top-5 md:right-5 z-10 w-9 h-9 flex items-center justify-center rounded-full text-white/50 hover:text-white hover:bg-white/10 text-lg cursor-pointer transition-all"
-            >
-              ✕
+        <div className="intl-modal" onClick={closeModal} role="dialog" aria-modal="true" aria-label={t(active.countryKey)}>
+          <div className="intl-modal__card" onClick={(e) => e.stopPropagation()}>
+            <button className="intl-modal__close" onClick={closeModal} aria-label="Close">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" aria-hidden>
+                <path d="M18 6 6 18M6 6l12 12" />
+              </svg>
             </button>
 
-            {/* Left: Slideshow */}
-            <div className="relative overflow-hidden items-center justify-center h-52 shrink-0 md:h-auto md:flex md:flex-1" style={{ backgroundColor: "#0a0a0a" }}>
-              {active.images.map((src, i) => (
-                <img
-                  key={src}
-                  src={src}
-                  alt={`Slide ${i + 1}`}
-                  className="absolute inset-0 w-full h-full transition-opacity duration-700"
-                  style={{
-                    objectFit: "contain",
-                    opacity: i === slideIndex ? 1 : 0,
-                  }}
-                />
-              ))}
+            <div
+              className="intl-story"
+              onMouseEnter={() => setPaused(true)}
+              onMouseLeave={() => setPaused(false)}
+            >
+              {active.images.map((src, i) => {
+                const d = (i - slideIndex + total) % total;
+                if (d !== 0 && d !== 1 && d !== total - 1) return null;
+                return (
+                  <img
+                    key={src}
+                    src={src}
+                    alt={`${t(active.countryKey)} ${i + 1}`}
+                    decoding="async"
+                    draggable={false}
+                    className={`intl-story__img${i === slideIndex ? " is-active" : ""}`}
+                  />
+                );
+              })}
+
+              {total > 1 && (
+                <>
+                  <div className="intl-story__bars">
+                    {active.images.map((src, i) => (
+                      <span key={src} className="intl-story__bar">
+                        <span
+                          key={i === slideIndex ? `run-${slideIndex}` : "idle"}
+                          className={`intl-story__fill${i < slideIndex ? " is-done" : ""}${i === slideIndex ? " is-running" : ""}`}
+                          style={{ animationPlayState: paused ? "paused" : "running" }}
+                          onAnimationEnd={i === slideIndex ? () => step(1) : undefined}
+                        />
+                      </span>
+                    ))}
+                  </div>
+                  <button className="intl-story__tap intl-story__tap--prev" onClick={() => step(-1)} aria-label="Previous photo" />
+                  <button className="intl-story__tap intl-story__tap--next" onClick={() => step(1)} aria-label="Next photo" />
+                </>
+              )}
+
+              <div className="intl-story__caption">
+                <p className="intl-story__eyebrow"><PinIcon /> {yearRange}</p>
+                <h3 className="intl-story__country">{t(active.countryKey)}</h3>
+                <p className="intl-story__meta">
+                  {jobs.length} {t("intl.experiences")}
+                </p>
+              </div>
             </div>
 
-            {/* Right: Details */}
-            <div className="flex flex-col md:overflow-y-auto no-scrollbar w-full md:w-110 md:shrink-0" style={{ borderLeft: "1px solid rgba(255,255,255,0.06)", padding: "32px 24px" }}>
-              <div style={{ marginBottom: 20 }}>
-                <h3 className="text-xl font-bold text-white leading-tight uppercase tracking-widest">
-                  {t(active.countryKey)}
-                </h3>
-              </div>
-
-              {/* Jobs */}
-              <div className="flex flex-col">
-                {Array.isArray(jobs) && jobs.map((job, i) => (
-                  <div key={i} className="flex gap-4 items-stretch">
-                    <div className="flex flex-col items-center">
-                      <div className="w-3 h-3 rounded-full bg-blue-500 shrink-0 mt-1" />
-                      {i < jobs.length - 1 && (
-                        <div className="w-px flex-1 bg-blue-500/20" />
-                      )}
+            <div className="intl-jobs no-scrollbar">
+              {Array.isArray(jobs) && jobs.map((job, i) => {
+                const { name, place } = splitCompany(job.company);
+                return (
+                  <article key={`${job.role}-${i}`} className="intl-job" style={{ animationDelay: `${0.15 + i * 0.08}s` }}>
+                    <div className="intl-job__top">
+                      <span className="intl-job__period">{job.period}</span>
+                      {place && <span className="intl-job__place"><PinIcon /> {place}</span>}
                     </div>
-                    <div style={{ paddingBottom: 32 }}>
-                      <p className="text-white/25 text-[10px] uppercase tracking-widest mb-1">{job.period}</p>
-                      <p className="text-white font-bold text-sm">{job.role}</p>
-                      {job.company && (
-                        <p className="text-blue-400/70 text-xs mt-0.5 font-medium">{job.company}</p>
-                      )}
-                      {job.description && (
-                        <ul className="text-white/50 text-xs mt-2 leading-relaxed list-disc ml-4 space-y-1">
-                          {job.description.split(". ").filter(Boolean).map((s: string, j: number) => (
-                            <li key={j}>{s.endsWith(".") ? s : `${s}.`}</li>
-                          ))}
-                        </ul>
-                      )}
-                    </div>
-                  </div>
-                ))}
-              </div>
+                    <h4 className="intl-job__role">{job.role}</h4>
+                    {name && <p className="intl-job__company">{name}</p>}
+                    {job.description && (
+                      <ul className="intl-job__list">
+                        {job.description.split(". ").filter(Boolean).map((s, j) => (
+                          <li key={j}>{s.endsWith(".") ? s : `${s}.`}</li>
+                        ))}
+                      </ul>
+                    )}
+                  </article>
+                );
+              })}
             </div>
           </div>
         </div>,
