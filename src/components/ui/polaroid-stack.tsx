@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 
 interface PolaroidStackProps {
@@ -10,16 +10,27 @@ interface PolaroidStackProps {
 export const PolaroidStack: React.FC<PolaroidStackProps> = ({ images, autoRotate = true, autoRotateInterval = 5000 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
+  const [inView, setInView] = useState(false);
+  const stackRef = useRef<HTMLDivElement>(null);
+
+  // Pausa rotação e animações quando o stack está fora da tela
+  useEffect(() => {
+    const el = stackRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(([entry]) => setInView(entry.isIntersecting), { rootMargin: '200px' });
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
   useEffect(() => {
-    if (!autoRotate || isHovered) return;
+    if (!autoRotate || isHovered || !inView) return;
 
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % images.length);
     }, autoRotateInterval);
 
     return () => clearInterval(interval);
-  }, [autoRotate, autoRotateInterval, images.length, isHovered]);
+  }, [autoRotate, autoRotateInterval, images.length, isHovered, inView]);
 
   const handleClick = () => {
     setCurrentIndex((prev) => (prev + 1) % images.length);
@@ -28,7 +39,8 @@ export const PolaroidStack: React.FC<PolaroidStackProps> = ({ images, autoRotate
   return (
     <StyledWrapper>
       <div
-        className="polaroid-stack"
+        ref={stackRef}
+        className={`polaroid-stack ${inView ? 'in-view' : ''}`}
         onClick={handleClick}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
@@ -49,7 +61,7 @@ export const PolaroidStack: React.FC<PolaroidStackProps> = ({ images, autoRotate
                       ? 'rotate(-5deg) translate(-6px, 8px) scale(0.94)'
                       : `rotate(${offset * 2}deg) translate(${offset * 3}px, ${offset * 4}px) scale(${1 - offset * 0.03})`,
                 opacity: offset > 2 ? 0 : 1,
-                transition: 'all 0.4s ease',
+                visibility: offset > 2 ? 'hidden' : 'visible',
               }}
             >
               <div className="photo">
@@ -57,6 +69,7 @@ export const PolaroidStack: React.FC<PolaroidStackProps> = ({ images, autoRotate
                   src={img.src}
                   alt={img.alt}
                   loading="lazy"
+                  decoding="async"
                   style={{ transform: img.rotation ? `rotate(${img.rotation}deg) scale(1.8)` : 'none' }}
                 />
                 {offset === 0 && <div className="dust" />}
@@ -99,7 +112,7 @@ const StyledWrapper = styled.div`
       0 2px 2px rgba(0, 0, 0, 0.12),
       0 4px 4px rgba(0, 0, 0, 0.12),
       0 8px 8px rgba(0, 0, 0, 0.12);
-    transition: all 0.4s ease;
+    transition: transform 0.4s ease, opacity 0.4s ease, visibility 0.4s, box-shadow 0.4s ease;
     border-radius: 2px;
   }
 
@@ -138,7 +151,7 @@ const StyledWrapper = styled.div`
     object-fit: cover;
   }
 
-  .polaroid.active .photo::before {
+  .in-view .polaroid.active .photo::before {
     content: "";
     position: absolute;
     top: 0;

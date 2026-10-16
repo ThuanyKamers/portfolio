@@ -5,25 +5,25 @@ import { asset } from "../utils/asset";
 import { PolaroidStack } from "../components/ui/polaroid-stack";
 
 const SP_IMAGES = [
-  { src: asset("images/experience/sp.png"), alt: "Preview 1" },
-  { src: asset("images/experience/sp2.png"), alt: "Preview 2" },
-  { src: asset("images/experience/sp3.png"), alt: "Preview 3" },
+  { src: asset("images/experience/sp.webp"), alt: "Preview 1" },
+  { src: asset("images/experience/sp2.webp"), alt: "Preview 2" },
+  { src: asset("images/experience/sp3.webp"), alt: "Preview 3" },
 ];
 
 const NSC_IMAGES = [
-  { src: asset("images/experience/nsc.png"), alt: "Office entrance" },
-  { src: asset("images/experience/nsc1.png"), alt: "My first day" },
-  { src: asset("images/experience/nsc2.png"), alt: "Selfie photo in office" },
-  { src: asset("images/experience/nsc3.png"), alt: "Women's day" },
-  { src: asset("images/experience/nsc4.png"), alt: "Carnaval" },
-  { src: asset("images/experience/nsc5.png"), alt: "Meeting with interns" },
-  { src: asset("images/experience/nsc6.png"), alt: "Another meeting with interns" },
+  { src: asset("images/experience/nsc.webp"), alt: "Office entrance" },
+  { src: asset("images/experience/nsc1.webp"), alt: "My first day" },
+  { src: asset("images/experience/nsc2.webp"), alt: "Selfie photo in office" },
+  { src: asset("images/experience/nsc3.webp"), alt: "Women's day" },
+  { src: asset("images/experience/nsc4.webp"), alt: "Carnaval" },
+  { src: asset("images/experience/nsc5.webp"), alt: "Meeting with interns" },
+  { src: asset("images/experience/nsc6.webp"), alt: "Another meeting with interns" },
 ];
 
 const FLEX_IMAGES: { src: string; alt: string; rotation?: number }[] = [
-  { src: asset("images/experience/flex.png"), alt: "Office entrance" },
-  { src: asset("images/experience/flex2.png"), alt: "Last day of training" },
-  { src: asset("images/experience/flex3.png"), alt: "Christmas in office", rotation: -80 },
+  { src: asset("images/experience/flex.webp"), alt: "Office entrance" },
+  { src: asset("images/experience/flex2.webp"), alt: "Last day of training" },
+  { src: asset("images/experience/flex3.webp"), alt: "Christmas in office" },
 ];
 
 const Experience: React.FC = () => {

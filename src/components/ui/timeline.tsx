@@ -21,10 +21,11 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
     const container = ref.current;
     const line = lineRef.current;
 
-    gsap.set(line, { height: 0, opacity: 0 });
+    gsap.set(line, { scaleY: 0, opacity: 0, transformOrigin: "top" });
 
+    // scaleY em vez de height: evita recalcular layout a cada frame do scroll
     const scaleTween = gsap.to(line, {
-      height: () => container.offsetHeight,
+      scaleY: 1,
       ease: "none",
       scrollTrigger: {
         trigger: container,
@@ -113,8 +114,8 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
         {/* Linha animada com GSAP */}
         <div
           ref={lineRef}
-          style={{ left: "19px", height: 0 }}
-          className="absolute top-0 w-0.5 bg-linear-to-t from-purple-500 via-blue-500 to-transparent rounded-full"
+          style={{ left: "19px" }}
+          className="absolute top-0 h-full w-0.5 bg-linear-to-t from-purple-500 via-blue-500 to-transparent rounded-full"
         />
       </div>
     </div>

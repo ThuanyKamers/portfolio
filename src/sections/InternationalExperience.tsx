@@ -38,7 +38,7 @@ const COUNTRIES: Record<string, CountryInfo> = {
       asset("images/international/hanon1.jpg"),
       asset("images/international/hanon2.jpg"),
       asset("images/international/hanon3.jpg"),
-      asset("images/international/hanon4.jpg"),
+      asset("images/international/hanon4.webp"),
     ],
   },
   germany: {
