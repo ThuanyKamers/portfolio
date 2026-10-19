@@ -96,6 +96,18 @@ export const ShowcaseItem: React.FC<ShowcaseItemProps> = ({
     else if (multi) setIndex((i) => (i + 1) % images.length);
   };
 
+  // Inclinação 3D seguindo o mouse (via variáveis CSS, sem re-render)
+  const onVisualMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const el = e.currentTarget;
+    const r = el.getBoundingClientRect();
+    el.style.setProperty('--ry', `${((e.clientX - r.left) / r.width - 0.5) * 8}deg`);
+    el.style.setProperty('--rx', `${(0.5 - (e.clientY - r.top) / r.height) * 8}deg`);
+  };
+  const onVisualLeave = (e: React.MouseEvent<HTMLDivElement>) => {
+    e.currentTarget.style.setProperty('--ry', '0deg');
+    e.currentTarget.style.setProperty('--rx', '0deg');
+  };
+
   // Monta apenas a foto atual, a anterior (para o fade) e a próxima (pré-carregada)
   const near = (i: number) => {
     const d = (i - index + images.length) % images.length;
@@ -105,50 +117,52 @@ export const ShowcaseItem: React.FC<ShowcaseItemProps> = ({
   return (
     <article ref={rootRef} className={`showcase${reverse ? ' showcase--reverse' : ''}${mosaic ? ' showcase--stacked' : ''}`}>
       {!mosaic && (
-      <div
-        className={`showcase__media${primary || multi ? ' cursor-pointer' : ''}`}
-        onClick={onMediaClick}
-        onMouseEnter={() => setHovered(true)}
-        onMouseLeave={() => setHovered(false)}
-        role={primary ? 'link' : undefined}
-        aria-label={primary ? `${title} — ${primary.label}` : undefined}
-        style={fit === 'cover' && ratio ? { aspectRatio: String(ratio) } : undefined}
-      >
+        <div className="showcase__visual" onMouseMove={onVisualMove} onMouseLeave={onVisualLeave}>
 
-        {images.map((src, i) => near(i) && (
-          <img
-            key={src}
-            src={src}
-            alt={`${title} ${i + 1}`}
-            loading="lazy"
-            decoding="async"
-            draggable={false}
-            onLoad={fit === 'cover' && i === 0 ? (e) => {
-              const { naturalWidth: w, naturalHeight: h } = e.currentTarget;
-              if (w && h) setRatio(Math.min(2.2, Math.max(0.8, w / h)));
-            } : undefined}
-            className={`showcase__img showcase__img--${fit}${i === index ? ' is-active' : ''}`}
-          />
-        ))}
+          <div
+            className={`showcase__media${primary || multi ? ' cursor-pointer' : ''}`}
+            onClick={onMediaClick}
+            onMouseEnter={() => setHovered(true)}
+            onMouseLeave={() => setHovered(false)}
+            role={primary ? 'link' : undefined}
+            aria-label={primary ? `${title} — ${primary.label}` : undefined}
+            style={fit === 'cover' && ratio ? { aspectRatio: String(ratio) } : undefined}
+          >
+            {images.map((src, i) => near(i) && (
+              <img
+                key={src}
+                src={src}
+                alt={`${title} ${i + 1}`}
+                loading="lazy"
+                decoding="async"
+                draggable={false}
+                onLoad={fit === 'cover' && i === 0 ? (e) => {
+                  const { naturalWidth: w, naturalHeight: h } = e.currentTarget;
+                  if (w && h) setRatio(Math.min(2.2, Math.max(0.8, w / h)));
+                } : undefined}
+                className={`showcase__img showcase__img--${fit}${i === index ? ' is-active' : ''}`}
+              />
+            ))}
 
-        {primary && (
-          <span className="showcase__open">
-            {primary.label} <FiArrowUpRight />
-          </span>
-        )}
+            {primary && (
+              <span className="showcase__open">
+                {primary.label} <FiArrowUpRight />
+              </span>
+            )}
 
-        {multi && (
-          <>
-            <button className="showcase__nav showcase__nav--prev" onClick={go(-1)} aria-label="Previous">
-              <FiChevronLeft />
-            </button>
-            <button className="showcase__nav showcase__nav--next" onClick={go(1)} aria-label="Next">
-              <FiChevronRight />
-            </button>
-            <span className="showcase__counter">{index + 1} / {images.length}</span>
-          </>
-        )}
-      </div>
+            {multi && (
+              <>
+                <button className="showcase__nav showcase__nav--prev" onClick={go(-1)} aria-label="Previous">
+                  <FiChevronLeft />
+                </button>
+                <button className="showcase__nav showcase__nav--next" onClick={go(1)} aria-label="Next">
+                  <FiChevronRight />
+                </button>
+                <span className="showcase__counter">{index + 1} / {images.length}</span>
+              </>
+            )}
+          </div>
+        </div>
       )}
 
       <div className="showcase__body">

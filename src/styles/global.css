@@ -72,7 +72,7 @@ body {
 @media (min-width: 768px) {
   .showcase { grid-template-columns: 1.15fr 1fr; gap: 3.5rem; }
   .showcase--reverse { grid-template-columns: 1fr 1.15fr; }
-  .showcase--reverse .showcase__media { order: 2; }
+  .showcase--reverse .showcase__visual { order: 2; }
 }
 .showcase__media {
   position: relative;
@@ -584,3 +584,27 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .globe-pin__dot::after { animation: none; }
 }
+
+/* Cards de projeto: inclinação 3D seguindo o mouse + halo azul suave atrás */
+.showcase__visual {
+  position: relative;
+  transform: perspective(1000px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.showcase__visual:hover { transition-duration: 0.12s; }
+@media (hover: none), (prefers-reduced-motion: reduce) {
+  .showcase__visual { transform: none; }
+}
+.showcase__visual::before {
+  content: "";
+  position: absolute;
+  inset: -10% -8% -14%;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(79, 70, 229, 0.28), rgba(37, 99, 235, 0.1) 60%, transparent);
+  filter: blur(30px);
+  opacity: 0.7;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+.showcase__visual:hover::before { opacity: 1; }
+.showcase__visual .showcase__media { z-index: 1; }

@@ -124,7 +124,6 @@ i18n
           "exp.flex.captions": ["Main Entrance", "End of Salesforce Training", "Christmas"],
           "intl.title": "International",
           "intl.subtitle": "Experience",
-          "intl.hint": "Click on the pins to explore each country",
           "intl.experiences": "experiences",
           "intl.brazil": "Brazil",
           "intl.brazil.jobs": [
@@ -261,7 +260,6 @@ i18n
           "exp.flex.captions": ["Entrada Principal", "Fim do Treinamento Salesforce", "Natal"],
           "intl.title": "Experiência",
           "intl.subtitle": "Internacional",
-          "intl.hint": "Clique nos pins para explorar cada país",
           "intl.experiences": "experiências",
           "intl.brazil": "Brasil",
           "intl.brazil.jobs": [
@@ -398,7 +396,6 @@ i18n
           "exp.flex.captions": ["Entrada Principal", "Fin del Entrenamiento Salesforce", "Navidad"],
           "intl.title": "Experiencia",
           "intl.subtitle": "Internacional",
-          "intl.hint": "Haz clic en los pines para explorar cada país",
           "intl.experiences": "experiencias",
           "intl.brazil": "Brasil",
           "intl.brazil.jobs": [
@@ -535,7 +532,6 @@ i18n
           "exp.flex.captions": ["Haupteingang", "Ende des Salesforce-Trainings", "Weihnachten"],
           "intl.title": "Internationale",
           "intl.subtitle": "Erfahrung",
-          "intl.hint": "Klicke auf die Pins, um jedes Land zu erkunden",
           "intl.experiences": "Erfahrungen",
           "intl.brazil": "Brasilien",
           "intl.brazil.jobs": [
@@ -672,7 +668,6 @@ i18n
           "exp.flex.captions": ["Entrée Principale", "Fin de la Formation Salesforce", "Noël"],
           "intl.title": "Expérience",
           "intl.subtitle": "Internationale",
-          "intl.hint": "Cliquez sur les épingles pour explorer chaque pays",
           "intl.experiences": "expériences",
           "intl.brazil": "Brésil",
           "intl.brazil.jobs": [
