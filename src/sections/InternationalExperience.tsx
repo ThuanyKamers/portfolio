@@ -130,6 +130,10 @@ const InternationalExperience: React.FC = () => {
   }, [activeCountry, closeModal, step]);
 
   const yearRange = useMemo(() => periodRange(jobs), [jobs]);
+  const globeLabels = useMemo(
+    () => Object.fromEntries(Object.entries(COUNTRIES).map(([id, c]) => [id, t(c.countryKey)])),
+    [t]
+  );
 
   return (
     <section
@@ -151,7 +155,7 @@ const InternationalExperience: React.FC = () => {
       </div>
 
       <div className="flex justify-center px-4" data-reveal>
-        <Globe size={globeSize} onMarkerClick={handleMarkerClick} />
+        <Globe size={globeSize} onMarkerClick={handleMarkerClick} labels={globeLabels} />
       </div>
 
       {/* Painel do país: fotos em formato stories + experiências em cards */}
