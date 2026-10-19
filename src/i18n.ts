@@ -16,8 +16,8 @@ i18n
           "tech.subtitle": "Stack",
           "contact.title": "Contact",
           "contact.subtitle": "Me",
-          "contact.heading": "Let's build something.",
-          "contact.intro": "Have a project in mind? Drop a line and contact me!",
+          "contact.heading": "Let's talk.",
+          "contact.intro": "Have a role, a project, or just want to exchange ideas? Send me a message.",
           "contact.name": "Name",
           "contact.namePh": "Your name",
           "contact.email": "Email",
@@ -34,7 +34,6 @@ i18n
           "projects.subtitle": "Projects",
           "projects.open": "View project",
           "projects.soon": "More Coming Soon",
-          "projects.soonSub": "Always building something new.",
           "projects.list": [
             {
               title: "Verify It",
@@ -154,8 +153,8 @@ i18n
           "tech.subtitle": "Tecnológica",
           "contact.title": "Fale",
           "contact.subtitle": "Comigo",
-          "contact.heading": "Vamos construir algo.",
-          "contact.intro": "Tem um projeto em mente? Mande uma mensagem e fale comigo!",
+          "contact.heading": "Vamos conversar.",
+          "contact.intro": "Tem uma vaga, um projeto ou só quer trocar uma ideia? Me mande uma mensagem.",
           "contact.name": "Nome",
           "contact.namePh": "Seu nome",
           "contact.email": "Email",
@@ -172,7 +171,6 @@ i18n
           "projects.subtitle": "Projetos",
           "projects.open": "Ver projeto",
           "projects.soon": "Mais em breve",
-          "projects.soonSub": "Sempre construindo algo novo.",
           "projects.list": [
             {
               title: "Verify It",
@@ -292,8 +290,8 @@ i18n
           "tech.subtitle": "Tecnologías",
           "contact.title": "Habla",
           "contact.subtitle": "Conmigo",
-          "contact.heading": "Construyamos algo.",
-          "contact.intro": "¿Tienes un proyecto en mente? ¡Escríbeme y hablemos!",
+          "contact.heading": "Hablemos.",
+          "contact.intro": "¿Tienes una vacante, un proyecto o solo quieres intercambiar ideas? Envíame un mensaje.",
           "contact.name": "Nombre",
           "contact.namePh": "Tu nombre",
           "contact.email": "Email",
@@ -310,7 +308,6 @@ i18n
           "projects.subtitle": "Proyectos",
           "projects.open": "Ver proyecto",
           "projects.soon": "Más próximamente",
-          "projects.soonSub": "Siempre construyendo algo nuevo.",
           "projects.list": [
             {
               title: "Verify It",
@@ -430,8 +427,8 @@ i18n
           "tech.subtitle": "Tech-Stack",
           "contact.title": "Schreib",
           "contact.subtitle": "Mir",
-          "contact.heading": "Lass uns etwas bauen.",
-          "contact.intro": "Du hast ein Projekt im Kopf? Schreib mir einfach!",
+          "contact.heading": "Lass uns reden.",
+          "contact.intro": "Du hast eine Stelle, ein Projekt oder willst dich einfach austauschen? Schreib mir eine Nachricht.",
           "contact.name": "Name",
           "contact.namePh": "Dein Name",
           "contact.email": "E-Mail",
@@ -448,7 +445,6 @@ i18n
           "projects.subtitle": "Projekte",
           "projects.open": "Projekt ansehen",
           "projects.soon": "Bald mehr",
-          "projects.soonSub": "Ich baue immer etwas Neues.",
           "projects.list": [
             {
               title: "Verify It",
@@ -568,8 +564,8 @@ i18n
           "tech.subtitle": "Stack Tech",
           "contact.title": "Me",
           "contact.subtitle": "Contacter",
-          "contact.heading": "Construisons quelque chose.",
-          "contact.intro": "Un projet en tête ? Écris-moi et parlons-en !",
+          "contact.heading": "Discutons.",
+          "contact.intro": "Un poste, un projet ou simplement envie d'échanger ? Envoie-moi un message.",
           "contact.name": "Nom",
           "contact.namePh": "Votre nom",
           "contact.email": "E-mail",
@@ -586,7 +582,6 @@ i18n
           "projects.subtitle": "Projets",
           "projects.open": "Voir le projet",
           "projects.soon": "Bientôt plus",
-          "projects.soonSub": "Toujours en train de construire quelque chose de nouveau.",
           "projects.list": [
             {
               title: "Verify It",

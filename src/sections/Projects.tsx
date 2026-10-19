@@ -49,9 +49,11 @@ const Projects: React.FC = () => {
         })}
       </div>
 
-      <p className="text-center text-sm" style={{ color: 'var(--text-muted)', marginTop: '16px' }} data-reveal>
-        {t('projects.soon')} · {t('projects.soonSub')}
-      </p>
+      {/* Indicador de "carregando" para os próximos projetos */}
+      <div className="soon-loader" role="status" data-reveal>
+        <span className="soon-loader__spinner" aria-hidden />
+        <span>{t('projects.soon')}</span>
+      </div>
     </section>
   );
 };

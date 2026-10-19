@@ -495,3 +495,31 @@ body {
   font-size: 0.8rem;
   color: rgba(255, 255, 255, 0.7);
 }
+
+/* "Mais em breve" no fim dos projetos, com cara de loading */
+@keyframes soon-spin { to { transform: rotate(360deg); } }
+.soon-loader {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 8px;
+  padding: 12px 22px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.soon-loader__spinner {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid rgba(129, 140, 248, 0.2);
+  border-top-color: #818cf8;
+  border-right-color: #3b82f6;
+  animation: soon-spin 0.9s linear infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .soon-loader__spinner { animation: none; }
+}
