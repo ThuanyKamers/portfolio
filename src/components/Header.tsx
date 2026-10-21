@@ -1,6 +1,8 @@
-import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import React, { useCallback, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { FaBriefcase, FaCode, FaEnvelope, FaGlobeAmericas, FaRocket, FaTrophy } from 'react-icons/fa';
 import { LanguageSwitcher } from './ui/LanguageSwitcher';
+import DockNav from './DockNav';
 
 const NAV_IDS = ['experience', 'international', 'tech-stack', 'projects', 'achievements', 'contact'] as const;
 const NAV_KEYS: Record<typeof NAV_IDS[number], string> = {
@@ -12,80 +14,22 @@ const NAV_KEYS: Record<typeof NAV_IDS[number], string> = {
   'contact': 'nav.contact',
 };
 
-// Efeito Dock do macOS: o item sob o mouse cresce, os vizinhos crescem menos
-const DOCK_MAX_SCALE = 1.55;
-const DOCK_RADIUS = 200;
-const DOCK_DROP = 16;
+// Ícone e cor de cada seção no Dock
+const NAV_ICONS = {
+  'experience': { icon: FaBriefcase, gradient: 'linear-gradient(160deg, #60a5fa 0%, #2563eb 55%, #1e3a8a 100%)' },
+  'international': { icon: FaGlobeAmericas, gradient: 'linear-gradient(160deg, #5eead4 0%, #0d9488 55%, #134e4a 100%)' },
+  'tech-stack': { icon: FaCode, gradient: 'linear-gradient(160deg, #c4b5fd 0%, #7c3aed 55%, #4c1d95 100%)' },
+  'projects': { icon: FaRocket, gradient: 'linear-gradient(160deg, #fdba74 0%, #f97316 50%, #c2410c 100%)' },
+  'achievements': { icon: FaTrophy, gradient: 'linear-gradient(160deg, #fde68a 0%, #f59e0b 55%, #b45309 100%)' },
+  'contact': { icon: FaEnvelope, gradient: 'linear-gradient(160deg, #f9a8d4 0%, #ec4899 55%, #9d174d 100%)' },
+} as const;
 
 const Header: React.FC = () => {
   const { t } = useTranslation();
   const [menuOpen, setMenuOpen] = useState(false);
-  const itemRefs = useRef<(HTMLButtonElement | null)[]>([]);
-  const dockRaf = useRef(0);
-
-  const layoutDock = useCallback((mouseX: number | null) => {
-    const items = itemRefs.current.filter((el): el is HTMLButtonElement => !!el);
-    if (!items.length) return;
-    if (mouseX === null) {
-      items.forEach((el) => {
-        el.style.transition = 'transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), color 0.3s';
-        el.style.transform = '';
-        el.style.color = 'var(--text-muted)';
-      });
-      return;
-    }
-    // Posições originais (offsetLeft ignora transforms)
-    const rects = items.map((el) => ({ left: el.offsetLeft, width: el.offsetWidth }));
-    const navLeft = (items[0].offsetParent as HTMLElement).getBoundingClientRect().left;
-    const x = mouseX - navLeft;
-    const scales = rects.map((r) => {
-      const d = Math.abs(x - (r.left + r.width / 2));
-      const t = Math.max(0, 1 - d / DOCK_RADIUS);
-      return 1 + (DOCK_MAX_SCALE - 1) * (0.5 - 0.5 * Math.cos(Math.PI * t));
-    });
-    // Nova linha com larguras ampliadas, mantendo os espaços originais
-    const newLeft: number[] = [];
-    let cursor = rects[0].left;
-    rects.forEach((r, i) => {
-      if (i > 0) cursor += r.left - (rects[i - 1].left + rects[i - 1].width);
-      newLeft.push(cursor);
-      cursor += r.width * scales[i];
-    });
-    // Mantém fixo o ponto sob o mouse, para os vizinhos se afastarem para os dois lados
-    let mapped = x;
-    for (let i = 0; i < rects.length; i++) {
-      const r = rects[i];
-      if (x < r.left) { mapped = newLeft[i] - (r.left - x); break; }
-      if (x <= r.left + r.width) { mapped = newLeft[i] + (x - r.left) * scales[i]; break; }
-      mapped = newLeft[i] + r.width * scales[i] + (x - r.left - r.width);
-    }
-    const offset = x - mapped;
-    items.forEach((el, i) => {
-      const r = rects[i];
-      const s = scales[i];
-      const dx = newLeft[i] + (r.width * s) / 2 + offset - (r.left + r.width / 2);
-      const dy = (s - 1) / (DOCK_MAX_SCALE - 1) * DOCK_DROP;
-      el.style.transition = 'transform 0.12s ease-out, color 0.3s';
-      el.style.transform = `translate3d(${dx.toFixed(2)}px, ${dy.toFixed(2)}px, 0) scale(${s.toFixed(3)})`;
-      el.style.color = s > 1.3 ? 'var(--foreground)' : 'var(--text-muted)';
-    });
-  }, []);
-
-  const onDockMove = useCallback((e: React.PointerEvent) => {
-    const x = e.clientX;
-    cancelAnimationFrame(dockRaf.current);
-    dockRaf.current = requestAnimationFrame(() => layoutDock(x));
-  }, [layoutDock]);
-
-  const onDockLeave = useCallback(() => {
-    cancelAnimationFrame(dockRaf.current);
-    layoutDock(null);
-  }, [layoutDock]);
-
-  useEffect(() => () => cancelAnimationFrame(dockRaf.current), []);
 
   const navItems = useMemo(
-    () => NAV_IDS.map((id) => ({ id, label: t(NAV_KEYS[id]) })),
+    () => NAV_IDS.map((id) => ({ id, label: t(NAV_KEYS[id]), ...NAV_ICONS[id] })),
     [t]
   );
 
@@ -128,24 +72,7 @@ const Header: React.FC = () => {
             </div>
           </div>
 
-          <nav
-            className="flex items-center self-stretch"
-            style={{ gap: '2.5rem' }}
-            onPointerMove={onDockMove}
-            onPointerLeave={onDockLeave}
-          >
-            {navItems.map((item, i) => (
-              <button
-                key={item.id}
-                ref={(el) => { itemRefs.current[i] = el; }}
-                onClick={() => scrollToSection(item.id)}
-                className="text-xs font-extrabold uppercase tracking-widest whitespace-nowrap"
-                style={{ color: 'var(--text-muted)', transformOrigin: '50% 50%', willChange: 'transform' }}
-              >
-                {item.label}
-              </button>
-            ))}
-          </nav>
+          <DockNav items={navItems} onSelect={scrollToSection} />
 
           <div style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center', marginRight: '60px' }}>
             <LanguageSwitcher />
