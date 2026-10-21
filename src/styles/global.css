@@ -609,13 +609,14 @@ body {
 .showcase__visual:hover::before { opacity: 1; }
 .showcase__visual .showcase__media { z-index: 1; }
 
-/* Dock do header (estilo macOS): ícones crescem para baixo */
+/* Dock vertical (estilo macOS): ícones crescem para a direita */
 .dock {
   display: flex;
+  flex-direction: column;
   align-items: flex-start;
   gap: 10px;
-  height: 56px;
-  padding: 7px 10px;
+  width: 56px;
+  padding: 10px 6px;
   border-radius: 20px;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -650,8 +651,8 @@ body {
 }
 .dock__tooltip {
   position: absolute;
-  top: calc(100% + 10px);
-  left: 50%;
+  left: calc(100% + 12px);
+  top: 50%;
   padding: 4px 10px;
   border-radius: 7px;
   background: rgba(30, 30, 34, 0.92);
@@ -665,9 +666,9 @@ body {
 .dock__tooltip::before {
   content: '';
   position: absolute;
-  bottom: 100%;
-  left: 50%;
-  transform: translateX(-50%);
+  right: 100%;
+  top: 50%;
+  transform: translateY(-50%);
   border: 5px solid transparent;
-  border-bottom-color: rgba(30, 30, 34, 0.92);
+  border-right-color: rgba(30, 30, 34, 0.92);
 }

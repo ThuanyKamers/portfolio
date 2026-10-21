@@ -19,14 +19,15 @@ const BASE = 42;
 const MAX = 68;
 const RANGE = 150;
 
-const DockIcon: React.FC<{ item: DockItem; mouseX: MotionValue<number>; onSelect: (id: string) => void }> = ({ item, mouseX, onSelect }) => {
+const DockIcon: React.FC<{ item: DockItem; mouse: MotionValue<number>; onSelect: (id: string) => void }> = ({ item, mouse, onSelect }) => {
   const ref = useRef<HTMLButtonElement>(null);
   const [hovered, setHovered] = useState(false);
 
-  const distance = useTransform(mouseX, (x) => {
+  // Dock vertical: distância medida no eixo Y
+  const distance = useTransform(mouse, (y) => {
     const rect = ref.current?.getBoundingClientRect();
-    if (!rect || x === Infinity) return RANGE;
-    return x - (rect.left + rect.width / 2);
+    if (!rect || y === Infinity) return RANGE;
+    return y - (rect.top + rect.height / 2);
   });
   const target = useTransform(distance, [-RANGE, 0, RANGE], [BASE, MAX, BASE]);
   const size = useSpring(target, { mass: 0.1, stiffness: 170, damping: 14 });
@@ -53,9 +54,9 @@ const DockIcon: React.FC<{ item: DockItem; mouseX: MotionValue<number>; onSelect
         {hovered && (
           <motion.span
             className="dock__tooltip"
-            initial={{ opacity: 0, y: -4, x: '-50%' }}
-            animate={{ opacity: 1, y: 0, x: '-50%' }}
-            exit={{ opacity: 0, y: -4, x: '-50%' }}
+            initial={{ opacity: 0, x: -4, y: '-50%' }}
+            animate={{ opacity: 1, x: 0, y: '-50%' }}
+            exit={{ opacity: 0, x: -4, y: '-50%' }}
             transition={{ duration: 0.15 }}
           >
             {item.label}
@@ -67,16 +68,16 @@ const DockIcon: React.FC<{ item: DockItem; mouseX: MotionValue<number>; onSelect
 };
 
 const DockNav: React.FC<DockNavProps> = ({ items, onSelect }) => {
-  const mouseX = useMotionValue(Infinity);
+  const mouseY = useMotionValue(Infinity);
 
   return (
     <nav
       className="dock"
-      onMouseMove={(e) => mouseX.set(e.clientX)}
-      onMouseLeave={() => mouseX.set(Infinity)}
+      onMouseMove={(e) => mouseY.set(e.clientY)}
+      onMouseLeave={() => mouseY.set(Infinity)}
     >
       {items.map((item) => (
-        <DockIcon key={item.id} item={item} mouseX={mouseX} onSelect={onSelect} />
+        <DockIcon key={item.id} item={item} mouse={mouseY} onSelect={onSelect} />
       ))}
     </nav>
   );

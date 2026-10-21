@@ -73,7 +73,7 @@ const Header: React.FC = () => {
             </div>
           </div>
 
-          <DockNav items={navItems} onSelect={scrollToSection} />
+          <div />
 
           <div style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center', marginRight: '60px' }}>
             <LanguageSwitcher />
@@ -121,6 +121,11 @@ const Header: React.FC = () => {
           </div>
         </div>
 
+      </div>
+
+      {/* Dock vertical à esquerda, abaixo do logo (desktop) */}
+      <div className="hidden md:block" style={{ position: 'absolute', top: '88px', left: 'calc(3rem + 60px)' }}>
+        <DockNav items={navItems} onSelect={scrollToSection} />
       </div>
 
       {/* Mobile menu */}
