@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaGithub, FaLinkedin, FaInstagram } from 'react-icons/fa';
 
-const LINKS = [
+export const LINKS = [
   { label: 'GitHub', href: 'https://github.com/ThuanyKamers', Icon: FaGithub },
   { label: 'LinkedIn', href: 'https://www.linkedin.com/in/thuanypaulakamers/', Icon: FaLinkedin },
   { label: 'Instagram', href: 'https://www.instagram.com/anny.devv/', Icon: FaInstagram },

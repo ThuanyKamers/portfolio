@@ -1,6 +1,9 @@
 import React, { useCallback, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { FaBriefcase, FaCode, FaEnvelope, FaGlobeAmericas, FaRocket, FaTrophy } from 'react-icons/fa';
 import { LanguageSwitcher } from './ui/LanguageSwitcher';
+import DockNav from './DockNav';
+import { LINKS } from './SocialLinks';
 
 const NAV_IDS = ['experience', 'international', 'tech-stack', 'projects', 'achievements', 'contact'] as const;
 const NAV_KEYS: Record<typeof NAV_IDS[number], string> = {
@@ -12,13 +15,30 @@ const NAV_KEYS: Record<typeof NAV_IDS[number], string> = {
   'contact': 'nav.contact',
 };
 
+// Ícone de cada seção no Dock; todos em vidro escuro com leve tom índigo
+const DOCK_GRADIENT = 'linear-gradient(160deg, rgba(129, 140, 248, 0.28) 0%, rgba(79, 70, 229, 0.12) 55%, rgba(15, 23, 42, 0.45) 100%)';
+const NAV_ICONS = {
+  'experience': FaBriefcase,
+  'international': FaGlobeAmericas,
+  'tech-stack': FaCode,
+  'projects': FaRocket,
+  'achievements': FaTrophy,
+  'contact': FaEnvelope,
+} as const;
+
 const Header: React.FC = () => {
   const { t } = useTranslation();
   const [menuOpen, setMenuOpen] = useState(false);
 
   const navItems = useMemo(
-    () => NAV_IDS.map((id) => ({ id, label: t(NAV_KEYS[id]) })),
+    () => NAV_IDS.map((id) => ({ id, label: t(NAV_KEYS[id]), icon: NAV_ICONS[id], gradient: DOCK_GRADIENT })),
     [t]
+  );
+
+  // Redes sociais do rodapé, também no Dock
+  const dockLinks = useMemo(
+    () => LINKS.map(({ label, href, Icon }) => ({ id: label, label, icon: Icon, gradient: DOCK_GRADIENT, href })),
+    []
   );
 
   const scrollToSection = useCallback((sectionId: string) => {
@@ -33,10 +53,9 @@ const Header: React.FC = () => {
 
   return (
     <header
-      className="fixed top-0 left-0 w-full z-50 backdrop-blur-md border-b transition-colors duration-300"
+      className="fixed top-0 left-0 w-full z-50 backdrop-blur-md transition-colors duration-300"
       style={{
         backgroundColor: 'var(--background)',
-        borderColor: 'var(--card-bg)',
         opacity: 0.98,
       }}
     >
@@ -52,31 +71,9 @@ const Header: React.FC = () => {
             gap: '2rem',
           }}
         >
-          <div style={{ display: 'flex', justifyContent: 'flex-start', marginLeft: '60px' }}>
-            <div
-              className="font-bold text-2xl tracking-tighter"
-              style={{ color: 'var(--foreground)' }}
-            >
-              TPK<span className="text-blue-600">.</span>
-            </div>
-          </div>
+          <div />
 
-          <nav className="flex items-center" style={{ gap: '2.5rem' }}>
-            {navItems.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => scrollToSection(item.id)}
-                className="group relative text-xs font-extrabold uppercase tracking-widest transition-colors duration-400 ease-[cubic-bezier(0.25,0.8,0.25,1)] hover:text-(--foreground) whitespace-nowrap"
-                style={{ color: 'var(--text-muted)' }}
-              >
-                {item.label}
-                <span
-                  className="absolute -bottom-1 left-1/2 w-0 h-0.5 transition-all duration-400 ease-[cubic-bezier(0.25,0.8,0.25,1)] group-hover:w-full group-hover:left-0"
-                  style={{ backgroundColor: 'var(--foreground)' }}
-                />
-              </button>
-            ))}
-          </nav>
+          <div />
 
           <div style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center', marginRight: '60px' }}>
             <LanguageSwitcher />
@@ -84,13 +81,7 @@ const Header: React.FC = () => {
         </div>
 
         {/* Mobile layout */}
-        <div className="flex md:hidden items-center justify-between h-16">
-          <div
-            className="font-bold text-2xl tracking-tighter"
-            style={{ color: 'var(--foreground)' }}
-          >
-            TPK<span className="text-blue-600">.</span>
-          </div>
+        <div className="flex md:hidden items-center justify-end h-16">
 
           <div className="flex items-center gap-4">
             <LanguageSwitcher />
@@ -124,6 +115,11 @@ const Header: React.FC = () => {
           </div>
         </div>
 
+      </div>
+
+      {/* Dock vertical à esquerda (desktop) */}
+      <div className="hidden md:block" style={{ position: 'absolute', top: '20px', left: '20px' }}>
+        <DockNav items={navItems} links={dockLinks} onSelect={scrollToSection} />
       </div>
 
       {/* Mobile menu */}
