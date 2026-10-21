@@ -64,14 +64,7 @@ const Header: React.FC = () => {
             gap: '2rem',
           }}
         >
-          <div style={{ display: 'flex', justifyContent: 'flex-start', marginLeft: '60px' }}>
-            <div
-              className="font-bold text-2xl tracking-tighter"
-              style={{ color: 'var(--foreground)' }}
-            >
-              TPK<span className="text-blue-600">.</span>
-            </div>
-          </div>
+          <div />
 
           <div />
 
@@ -81,13 +74,7 @@ const Header: React.FC = () => {
         </div>
 
         {/* Mobile layout */}
-        <div className="flex md:hidden items-center justify-between h-16">
-          <div
-            className="font-bold text-2xl tracking-tighter"
-            style={{ color: 'var(--foreground)' }}
-          >
-            TPK<span className="text-blue-600">.</span>
-          </div>
+        <div className="flex md:hidden items-center justify-end h-16">
 
           <div className="flex items-center gap-4">
             <LanguageSwitcher />
@@ -123,8 +110,8 @@ const Header: React.FC = () => {
 
       </div>
 
-      {/* Dock vertical à esquerda, abaixo do logo (desktop) */}
-      <div className="hidden md:block" style={{ position: 'absolute', top: '88px', left: '20px' }}>
+      {/* Dock vertical à esquerda (desktop) */}
+      <div className="hidden md:block" style={{ position: 'absolute', top: '20px', left: '20px' }}>
         <DockNav items={navItems} onSelect={scrollToSection} />
       </div>
 
