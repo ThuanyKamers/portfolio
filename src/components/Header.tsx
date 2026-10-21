@@ -14,14 +14,15 @@ const NAV_KEYS: Record<typeof NAV_IDS[number], string> = {
   'contact': 'nav.contact',
 };
 
-// Ícone e cor de cada seção no Dock
+// Ícone de cada seção no Dock; todos com o mesmo tom índigo/azul do site
+const DOCK_GRADIENT = 'linear-gradient(160deg, #818cf8 0%, #4f46e5 50%, #1e3a8a 100%)';
 const NAV_ICONS = {
-  'experience': { icon: FaBriefcase, gradient: 'linear-gradient(160deg, #60a5fa 0%, #2563eb 55%, #1e3a8a 100%)' },
-  'international': { icon: FaGlobeAmericas, gradient: 'linear-gradient(160deg, #5eead4 0%, #0d9488 55%, #134e4a 100%)' },
-  'tech-stack': { icon: FaCode, gradient: 'linear-gradient(160deg, #c4b5fd 0%, #7c3aed 55%, #4c1d95 100%)' },
-  'projects': { icon: FaRocket, gradient: 'linear-gradient(160deg, #fdba74 0%, #f97316 50%, #c2410c 100%)' },
-  'achievements': { icon: FaTrophy, gradient: 'linear-gradient(160deg, #fde68a 0%, #f59e0b 55%, #b45309 100%)' },
-  'contact': { icon: FaEnvelope, gradient: 'linear-gradient(160deg, #f9a8d4 0%, #ec4899 55%, #9d174d 100%)' },
+  'experience': FaBriefcase,
+  'international': FaGlobeAmericas,
+  'tech-stack': FaCode,
+  'projects': FaRocket,
+  'achievements': FaTrophy,
+  'contact': FaEnvelope,
 } as const;
 
 const Header: React.FC = () => {
@@ -29,7 +30,7 @@ const Header: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const navItems = useMemo(
-    () => NAV_IDS.map((id) => ({ id, label: t(NAV_KEYS[id]), ...NAV_ICONS[id] })),
+    () => NAV_IDS.map((id) => ({ id, label: t(NAV_KEYS[id]), icon: NAV_ICONS[id], gradient: DOCK_GRADIENT })),
     [t]
   );
 
