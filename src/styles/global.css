@@ -672,3 +672,9 @@ body {
   border: 5px solid transparent;
   border-right-color: rgba(30, 30, 34, 0.92);
 }
+.dock__divider {
+  align-self: stretch;
+  height: 1px;
+  margin: 2px 4px;
+  background: rgba(255, 255, 255, 0.14);
+}

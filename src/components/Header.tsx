@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { FaBriefcase, FaCode, FaEnvelope, FaGlobeAmericas, FaRocket, FaTrophy } from 'react-icons/fa';
 import { LanguageSwitcher } from './ui/LanguageSwitcher';
 import DockNav from './DockNav';
+import { LINKS } from './SocialLinks';
 
 const NAV_IDS = ['experience', 'international', 'tech-stack', 'projects', 'achievements', 'contact'] as const;
 const NAV_KEYS: Record<typeof NAV_IDS[number], string> = {
@@ -32,6 +33,12 @@ const Header: React.FC = () => {
   const navItems = useMemo(
     () => NAV_IDS.map((id) => ({ id, label: t(NAV_KEYS[id]), icon: NAV_ICONS[id], gradient: DOCK_GRADIENT })),
     [t]
+  );
+
+  // Redes sociais do rodapé, também no Dock
+  const dockLinks = useMemo(
+    () => LINKS.map(({ label, href, Icon }) => ({ id: label, label, icon: Icon, gradient: DOCK_GRADIENT, href })),
+    []
   );
 
   const scrollToSection = useCallback((sectionId: string) => {
@@ -112,7 +119,7 @@ const Header: React.FC = () => {
 
       {/* Dock vertical à esquerda (desktop) */}
       <div className="hidden md:block" style={{ position: 'absolute', top: '20px', left: '20px' }}>
-        <DockNav items={navItems} onSelect={scrollToSection} />
+        <DockNav items={navItems} links={dockLinks} onSelect={scrollToSection} />
       </div>
 
       {/* Mobile menu */}

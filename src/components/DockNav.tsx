@@ -7,10 +7,12 @@ export interface DockItem {
   label: string;
   icon: IconType;
   gradient: string;
+  href?: string;
 }
 
 interface DockNavProps {
   items: DockItem[];
+  links?: DockItem[];
   onSelect: (id: string) => void;
 }
 
@@ -39,7 +41,7 @@ const DockIcon: React.FC<{ item: DockItem; mouse: MotionValue<number>; onSelect:
       ref={ref}
       type="button"
       aria-label={item.label}
-      onClick={() => onSelect(item.id)}
+      onClick={() => (item.href ? window.open(item.href, '_blank', 'noopener,noreferrer') : onSelect(item.id))}
       onHoverStart={() => setHovered(true)}
       onHoverEnd={() => setHovered(false)}
       onFocus={() => setHovered(true)}
@@ -67,7 +69,7 @@ const DockIcon: React.FC<{ item: DockItem; mouse: MotionValue<number>; onSelect:
   );
 };
 
-const DockNav: React.FC<DockNavProps> = ({ items, onSelect }) => {
+const DockNav: React.FC<DockNavProps> = ({ items, links = [], onSelect }) => {
   const mouseY = useMotionValue(Infinity);
 
   return (
@@ -77,6 +79,10 @@ const DockNav: React.FC<DockNavProps> = ({ items, onSelect }) => {
       onMouseLeave={() => mouseY.set(Infinity)}
     >
       {items.map((item) => (
+        <DockIcon key={item.id} item={item} mouse={mouseY} onSelect={onSelect} />
+      ))}
+      {links.length > 0 && <span className="dock__divider" aria-hidden="true" />}
+      {links.map((item) => (
         <DockIcon key={item.id} item={item} mouse={mouseY} onSelect={onSelect} />
       ))}
     </nav>
