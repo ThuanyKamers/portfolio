@@ -15,8 +15,8 @@ const NAV_KEYS: Record<typeof NAV_IDS[number], string> = {
   'contact': 'nav.contact',
 };
 
-// Ícone de cada seção no Dock; todos com o mesmo tom índigo/azul do site
-const DOCK_GRADIENT = 'linear-gradient(160deg, #818cf8 0%, #4f46e5 50%, #1e3a8a 100%)';
+// Ícone de cada seção no Dock; todos em vidro escuro com leve tom índigo
+const DOCK_GRADIENT = 'linear-gradient(160deg, rgba(129, 140, 248, 0.28) 0%, rgba(79, 70, 229, 0.12) 55%, rgba(15, 23, 42, 0.45) 100%)';
 const NAV_ICONS = {
   'experience': FaBriefcase,
   'international': FaGlobeAmericas,
