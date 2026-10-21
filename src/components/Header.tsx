@@ -124,7 +124,7 @@ const Header: React.FC = () => {
       </div>
 
       {/* Dock vertical à esquerda, abaixo do logo (desktop) */}
-      <div className="hidden md:block" style={{ position: 'absolute', top: '88px', left: 'calc(3rem + 60px)' }}>
+      <div className="hidden md:block" style={{ position: 'absolute', top: '88px', left: '20px' }}>
         <DockNav items={navItems} onSelect={scrollToSection} />
       </div>
 
