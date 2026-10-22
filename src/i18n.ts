@@ -688,8 +688,8 @@ i18n
         }
       }
     },
-    lng: "PT",
-    fallbackLng: "PT",
+    lng: "EN",
+    fallbackLng: "EN",
     interpolation: { escapeValue: false }
   });
 
