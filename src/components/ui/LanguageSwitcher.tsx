@@ -16,7 +16,7 @@ const LanguageDropdown = () => {
   const { i18n } = useTranslation();
   const [open, setOpen] = useState(false);
 
-  const initialLang = i18n.language.toUpperCase() || "PT";
+  const initialLang = i18n.language.toUpperCase() || "EN";
   const [currentLang, setCurrentLang] = useState(langNames[initialLang] || "Português");
 
   const handleSelectLang = (langCode: string) => {
