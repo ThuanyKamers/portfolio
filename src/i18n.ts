@@ -105,6 +105,7 @@ i18n
           ],
           "exp.sp.captions": ["Home Office Day", "Prototype System", "The Corporate Office"],
           "exp.sp.doc": "Project documentation",
+          "exp.sp.docUrl": "https://skinny-protest-638.notion.site/Electronic-Time-Tracking-System-3373f2d9e43b80148ce6d1cb4740ea06",
           "exp.nsc.role": "IT Intern",
           "exp.nsc.period": "Sept 2024 - May 2025",
           "exp.nsc.tasks": [
@@ -183,7 +184,7 @@ i18n
               title: "Sistema de Ponto Eletrônico",
               description: "Sistema web de jornada e banco de horas conforme a CLT e a Portaria 671, com trilha de auditoria à prova de alteração e assistente de IA para administradores.",
               tech: ["PHP", "MySQL", "React", "TypeScript", "APIs"],
-              link: "https://skinny-protest-638.notion.site/Electronic-Time-Tracking-System-3373f2d9e43b80148ce6d1cb4740ea06",
+              link: "https://skinny-protest-638.notion.site/Sistema-de-Ponto-Eletr-nico-3eb3f2d9e43b81dba454c7e49c96e539",
               image: "images/projects/capaPonto-v2.webp",
               cover: "images/projects/capaPonto-v2.webp"
             },
@@ -241,6 +242,7 @@ i18n
           ],
           "exp.sp.captions": ["Dia de Home Office", "Sistema Protótipo", "O Escritório"],
           "exp.sp.doc": "Documentação do projeto",
+          "exp.sp.docUrl": "https://skinny-protest-638.notion.site/Sistema-de-Ponto-Eletr-nico-3eb3f2d9e43b81dba454c7e49c96e539",
           "exp.nsc.role": "Estagiária de TI",
           "exp.nsc.period": "Set 2024 - Mai 2025",
           "exp.nsc.tasks": [
@@ -377,6 +379,7 @@ i18n
           ],
           "exp.sp.captions": ["Día de Home Office", "Sistema Prototipo", "La Oficina"],
           "exp.sp.doc": "Documentación del proyecto",
+          "exp.sp.docUrl": "https://skinny-protest-638.notion.site/Electronic-Time-Tracking-System-3373f2d9e43b80148ce6d1cb4740ea06",
           "exp.nsc.role": "Pasante de TI",
           "exp.nsc.period": "Sep 2024 - May 2025",
           "exp.nsc.tasks": [
@@ -513,6 +516,7 @@ i18n
           ],
           "exp.sp.captions": ["Home-Office-Tag", "Prototyp-System", "Das Büro"],
           "exp.sp.doc": "Projektdokumentation",
+          "exp.sp.docUrl": "https://skinny-protest-638.notion.site/Elektronisches-Zeiterfassungssystem-3e73f2d9e43b811490d5f15f543f2024",
           "exp.nsc.role": "IT-Praktikantin",
           "exp.nsc.period": "Sep 2024 - Mai 2025",
           "exp.nsc.tasks": [
@@ -649,6 +653,7 @@ i18n
           ],
           "exp.sp.captions": ["Jour de Télétravail", "Système Prototype", "Le Bureau"],
           "exp.sp.doc": "Documentation du projet",
+          "exp.sp.docUrl": "https://skinny-protest-638.notion.site/Electronic-Time-Tracking-System-3373f2d9e43b80148ce6d1cb4740ea06",
           "exp.nsc.role": "Stagiaire en Informatique",
           "exp.nsc.period": "Sep 2024 - Mai 2025",
           "exp.nsc.tasks": [
