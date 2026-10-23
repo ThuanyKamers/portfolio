@@ -127,7 +127,7 @@ i18n
           "intl.experiences": "experiences",
           "intl.brazil": "Brazil",
           "intl.brazil.jobs": [
-            { "period": "2022", "role": "Store Manager", "company": "Cacau Show - Shopping Continente — São José", "description": "Managed daily store operations in a mall environment. Led customer service and sales. Handled inventory control, store layout, and stockroom logistics. Trained and supervised new staff. Managed documents and reports using Master Retail PDV." },
+            { "period": "2022-23", "role": "Store Manager", "company": "Cacau Show - Shopping Continente — São José", "description": "Managed daily store operations in a mall environment. Led customer service and sales. Handled inventory control, store layout, and stockroom logistics. Trained and supervised new staff. Managed documents and reports using Master Retail PDV." },
             { "period": "2018", "role": "English Teacher", "company": "CAIC Prof. Febrônio Tancredo de Oliveira — Palhoça", "description": "Taught ESL to middle school students (6th–9th grade). Created tests and assignments to assess proficiency. Developed interactive games and activities to boost engagement and participation." }
           ],
           "intl.portugal": "Portugal",
@@ -263,7 +263,7 @@ i18n
           "intl.experiences": "experiências",
           "intl.brazil": "Brasil",
           "intl.brazil.jobs": [
-            { "period": "2022", "role": "Gerente de Loja", "company": "Cacau Show - Shopping Continente — São José", "description": "Gerenciar operações diárias da loja em ambiente de shopping. Liderar vendas e atender clientes. Controlar estoque, layout da loja e logística do depósito. Treinar e supervisionar novos funcionários. Gerenciar documentos e relatórios com o sistema Master Retail PDV." },
+            { "period": "2022-23", "role": "Gerente de Loja", "company": "Cacau Show - Shopping Continente — São José", "description": "Gerenciar operações diárias da loja em ambiente de shopping. Liderar vendas e atender clientes. Controlar estoque, layout da loja e logística do depósito. Treinar e supervisionar novos funcionários. Gerenciar documentos e relatórios com o sistema Master Retail PDV." },
             { "period": "2018", "role": "Professora de Inglês", "company": "CAIC Prof. Febrônio Tancredo de Oliveira — Palhoça", "description": "Lecionar inglês para alunos do ensino fundamental (6º ao 9º ano). Elaborar provas e atividades para avaliar o progresso dos alunos. Criar jogos interativos e atividades criativas para engajar os alunos e aumentar a participação." }
           ],
           "intl.portugal": "Portugal",
@@ -399,7 +399,7 @@ i18n
           "intl.experiences": "experiencias",
           "intl.brazil": "Brasil",
           "intl.brazil.jobs": [
-            { "period": "2022", "role": "Gerente de Tienda", "company": "Cacau Show - Shopping Continente — São José", "description": "Gestionó operaciones diarias de la tienda en centro comercial. Lideró atención al cliente y ventas. Controló inventario, disposición de la tienda y logística. Capacitó y supervisó nuevos empleados. Gestionó documentos y reportes con Master Retail PDV." },
+            { "period": "2022-23", "role": "Gerente de Tienda", "company": "Cacau Show - Shopping Continente — São José", "description": "Gestionó operaciones diarias de la tienda en centro comercial. Lideró atención al cliente y ventas. Controló inventario, disposición de la tienda y logística. Capacitó y supervisó nuevos empleados. Gestionó documentos y reportes con Master Retail PDV." },
             { "period": "2018", "role": "Profesora de Inglés", "company": "CAIC Prof. Febrônio Tancredo de Oliveira — Palhoça", "description": "Enseñó inglés a alumnos de secundaria (6º a 9º grado). Elaboró exámenes y actividades para evaluar el progreso. Creó juegos interactivos y actividades creativas para aumentar la participación." }
           ],
           "intl.portugal": "Portugal",
@@ -535,7 +535,7 @@ i18n
           "intl.experiences": "Erfahrungen",
           "intl.brazil": "Brasilien",
           "intl.brazil.jobs": [
-            { "period": "2022", "role": "Filialleiterin", "company": "Cacau Show - Shopping Continente — São José", "description": "Leitete den täglichen Filialbetrieb im Einkaufszentrum. Führte Kundenservice und Verkauf. Kontrollierte Lagerbestand, Ladenlayout und Logistik. Schulte und beaufsichtigte neue Mitarbeiter. Verwaltete Dokumente und Berichte mit Master Retail PDV." },
+            { "period": "2022-23", "role": "Filialleiterin", "company": "Cacau Show - Shopping Continente — São José", "description": "Leitete den täglichen Filialbetrieb im Einkaufszentrum. Führte Kundenservice und Verkauf. Kontrollierte Lagerbestand, Ladenlayout und Logistik. Schulte und beaufsichtigte neue Mitarbeiter. Verwaltete Dokumente und Berichte mit Master Retail PDV." },
             { "period": "2018", "role": "Englischlehrerin", "company": "CAIC Prof. Febrônio Tancredo de Oliveira — Palhoça", "description": "Unterrichtete Englisch für Schüler der Sekundarstufe (6.–9. Klasse). Erstellte Prüfungen und Aufgaben zur Leistungsbewertung. Entwickelte interaktive Spiele und kreative Aktivitäten zur Steigerung der Beteiligung." }
           ],
           "intl.portugal": "Portugal",
@@ -671,7 +671,7 @@ i18n
           "intl.experiences": "expériences",
           "intl.brazil": "Brésil",
           "intl.brazil.jobs": [
-            { "period": "2022", "role": "Responsable de Magasin", "company": "Cacau Show - Shopping Continente — São José", "description": "Géré les opérations quotidiennes du magasin en centre commercial. Dirigé le service client et les ventes. Contrôlé les stocks, l'agencement et la logistique. Formé et supervisé les nouveaux employés. Géré les documents et rapports avec Master Retail PDV." },
+            { "period": "2022-23", "role": "Responsable de Magasin", "company": "Cacau Show - Shopping Continente — São José", "description": "Géré les opérations quotidiennes du magasin en centre commercial. Dirigé le service client et les ventes. Contrôlé les stocks, l'agencement et la logistique. Formé et supervisé les nouveaux employés. Géré les documents et rapports avec Master Retail PDV." },
             { "period": "2018", "role": "Professeure d'Anglais", "company": "CAIC Prof. Febrônio Tancredo de Oliveira — Palhoça", "description": "Enseigné l'anglais à des collégiens (6e à 9e année). Conçu des examens et activités pour évaluer les progrès. Créé des jeux interactifs et activités créatives pour stimuler la participation." }
           ],
           "intl.portugal": "Portugal",
