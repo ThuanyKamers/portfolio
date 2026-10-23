@@ -98,19 +98,18 @@ i18n
           "exp.sp.role": "Software Developer Intern",
           "exp.sp.period": "May 2025 - July 2025",
           "exp.sp.tasks": [
-            "Full-stack development of a working prototype of a web-based time-tracking system (PHP, MySQL, HTML, CSS, JavaScript, TypeScript, React), with role-based access for employees, admins and support.",
-            "Integrated the Meta API for secure delivery of password recovery links and codes.",
-            "Integrated the OpenAI (GPT) API for natural-language database queries.",
-            "Built complex business logic, such as a dynamic calendar for hour calculations and a chat-based ticket system, compliant with Brazilian labour law (CLT and Ordinance 671) through auditable data modelling.",
-            "Managed version control with Git and GitHub."
+            "Full-stack development of a working prototype of a web-based time tracking system (PHP, MySQL, HTML, CSS, JavaScript, TypeScript, React), including role-based access control for employees, administrators and support, and version control with Git and GitHub.",
+            "Integration of the Meta API to send password recovery links and codes securely, improving security and usability.",
+            "Connection of the OpenAI API (GPT) so that database queries can be made in natural language.",
+            "Implementation of complex business logic (dynamic calendar for time calculation, chat ticket system) and compliance with Brazilian labour law (CLT) and the time recording ordinance (Portaria 671) through audit-proof data modelling."
           ],
           "exp.sp.captions": ["Home Office Day", "Prototype System", "The Corporate Office"],
           "exp.nsc.role": "IT Intern",
           "exp.nsc.period": "Sept 2024 - May 2025",
           "exp.nsc.tasks": [
-            "Supported users of the JD Edwards ERP and resolved about 400 tickets in ServiceNow, following security standards.",
-            "Built the SharePoint folder structure, migrated more than 1,000 documents from Confluence and wrote new system documentation.",
-            "Independently created more than 50 accounts (Active Directory, Google Admin) and adjusted permissions for about 20% of employees."
+            "User support for the JD Edwards ERP system and handling of around 400 support tickets in ServiceNow in line with security standards.",
+            "Design of the SharePoint folder structure, migration of over 1,000 documents from Confluence and creation of new system documentation.",
+            "Independent setup of over 50 user accounts (Active Directory, Google Admin) and adjustment of permissions for about 20% of staff."
           ],
           "exp.nsc.captions": ["Main Entrance", "First Day in Office", "Selfie in Office", "Women's Day", "Carnaval", "Interns Meeting", "Interns Meeting 2"],
           "exp.flex.role": "Customer Service Representative",
@@ -138,8 +137,8 @@ i18n
           ],
           "intl.germany": "Germany",
           "intl.germany.jobs": [
-            { "period": "2026", "role": "Sortation Associate", "company": "Amazon — Euskirchen", "description": "Loading parcel bags onto roll carts for delivery, scanner-guided staging of the carts at the handover points for drivers, and preparing empty carts and bags for the next shift." },
-            { "period": "2025-26", "role": "Sortation Associate", "company": "Amazon — Aachen", "description": "Worked in a high-volume logistics center focused on Problem Solve and Quality Control. Executed Induct (package intake) and Stow (storage) tasks, ensuring inventory accuracy. Worked in English in a fast-paced, dynamic environment. Fully committed to productivity targets and operational safety standards." }
+            { "period": "2026", "role": "Sortation Associate", "company": "Amazon — Euskirchen", "description": "Picking parcel bags and loading them onto roll carts (12 bags per cart) for delivery. Scanner-guided staging of roll carts at the assigned handover points for delivery drivers. Managing the material cycle: collecting empty roll carts and preparing empty bags for the night shift to fill." },
+            { "period": "2025-26", "role": "Sortation Associate", "company": "Amazon — Aachen", "description": "Handling logistics processes in a high-volume distribution centre, with a focus on Problem Solve and quality control. Carrying out Induct and Stow processes and ensuring inventory accuracy. Scanner-guided picking of parcel bags and staging of roll carts for delivery drivers. Meeting productivity and occupational safety targets. Daily collaboration in a multilingual team (working language: English)." }
           ]
         }
       },
@@ -234,19 +233,18 @@ i18n
           "exp.sp.role": "Estagiária de Desenvolvimento de Software",
           "exp.sp.period": "Mai 2025 - Jul 2025",
           "exp.sp.tasks": [
-            "Desenvolvimento full-stack de um protótipo funcional de sistema web de ponto eletrônico (PHP, MySQL, HTML, CSS, JavaScript, TypeScript, React), com controle de acesso por perfil: funcionário, administrador e suporte.",
-            "Integração da API da Meta para envio seguro de links e códigos de recuperação de senha.",
-            "Integração da API da OpenAI (GPT) para consultas ao banco de dados em linguagem natural.",
-            "Lógica de negócio complexa, como calendário dinâmico para cálculo de horas e sistema de chamados via chat, em conformidade com a CLT e a Portaria 671 por meio de modelagem de dados auditável.",
-            "Versionamento de código com Git e GitHub."
+            "Desenvolvimento full-stack de um protótipo funcional de sistema web de ponto eletrônico (PHP, MySQL, HTML, CSS, JavaScript, TypeScript, React), com controle de acesso por perfil para funcionários, administradores e suporte, e versionamento de código com Git e GitHub.",
+            "Integração da API da Meta para envio seguro de links e códigos de recuperação de senha, melhorando a segurança e a usabilidade.",
+            "Conexão da API da OpenAI (GPT) para que consultas ao banco de dados possam ser feitas em linguagem natural.",
+            "Implementação de lógica de negócio complexa (calendário dinâmico para cálculo de horas, sistema de chamados via chat) e conformidade com a CLT e a Portaria 671 por meio de modelagem de dados auditável."
           ],
           "exp.sp.captions": ["Dia de Home Office", "Sistema Protótipo", "O Escritório"],
           "exp.nsc.role": "Estagiária de TI",
           "exp.nsc.period": "Set 2024 - Mai 2025",
           "exp.nsc.tasks": [
-            "Suporte aos usuários do ERP JD Edwards e cerca de 400 chamados atendidos no ServiceNow, seguindo padrões de segurança.",
-            "Criação da estrutura de pastas no SharePoint, migração de mais de 1.000 documentos do Confluence e nova documentação de sistemas.",
-            "Criação autônoma de mais de 50 contas (Active Directory, Google Admin) e ajuste de permissões de cerca de 20% dos funcionários."
+            "Suporte aos usuários do ERP JD Edwards e atendimento de cerca de 400 chamados no ServiceNow, seguindo os padrões de segurança.",
+            "Criação da estrutura de pastas no SharePoint, migração de mais de 1.000 documentos do Confluence e elaboração de nova documentação dos sistemas.",
+            "Criação autônoma de mais de 50 contas de usuário (Active Directory, Google Admin) e ajuste de permissões de cerca de 20% dos colaboradores."
           ],
           "exp.nsc.captions": ["Entrada Principal", "Primeiro Dia no Escritório", "Selfie no Escritório", "Dia da Mulher", "Carnaval", "Reunião de Estagiários", "Reunião de Estagiários 2"],
           "exp.flex.role": "Atendente de SAC",
@@ -274,8 +272,8 @@ i18n
           ],
           "intl.germany": "Alemanha",
           "intl.germany.jobs": [
-            { "period": "2026", "role": "Sortation Associate", "company": "Amazon — Euskirchen", "description": "Carregar sacos de pacotes em carrinhos para entrega, posicionar os carrinhos com scanner nos pontos de entrega aos motoristas e preparar carrinhos e sacos vazios para o próximo turno." },
-            { "period": "2025-26", "role": "Sortation Associate", "company": "Amazon — Aachen", "description": "Operar em centro logístico de alto volume, com foco em Problem Solve e Quality Control. Executar tarefas de Induct (entrada de pacotes) e Stow (armazenamento) e garantir precisão do inventário. Comunicar em inglês em ambiente dinâmico. Focar em metas de produtividade e segurança operacional." }
+            { "period": "2026", "role": "Sortation Associate", "company": "Amazon — Euskirchen", "description": "Separação de sacos de pacotes e carregamento em carrinhos (12 sacos por carrinho) para a entrega. Posicionamento dos carrinhos com auxílio de scanner nos pontos de entrega designados aos motoristas. Gestão do ciclo de materiais: coleta dos carrinhos vazios e preparação dos sacos vazios para o turno da noite encher." },
+            { "period": "2025-26", "role": "Sortation Associate", "company": "Amazon — Aachen", "description": "Execução de processos logísticos em um centro de distribuição de alto volume, com foco em Problem Solve e controle de qualidade. Realização dos processos de Induct e Stow, garantindo a precisão do inventário. Separação de sacos de pacotes e posicionamento de carrinhos com auxílio de scanner para os motoristas de entrega. Cumprimento das metas de produtividade e de segurança do trabalho. Colaboração diária em uma equipe multilíngue (idioma de trabalho: inglês)." }
           ]
         }
       },
@@ -370,19 +368,18 @@ i18n
           "exp.sp.role": "Pasante de Desarrollo de Software",
           "exp.sp.period": "May 2025 - Jul 2025",
           "exp.sp.tasks": [
-            "Desarrollo full-stack de un prototipo funcional de sistema web de control de asistencia (PHP, MySQL, HTML, CSS, JavaScript, TypeScript, React), con control de acceso por perfil: empleado, administrador y soporte.",
-            "Integración de la API de Meta para el envío seguro de enlaces y códigos de recuperación de contraseña.",
-            "Integración de la API de OpenAI (GPT) para consultas a la base de datos en lenguaje natural.",
-            "Lógica de negocio compleja, como un calendario dinámico para el cálculo de horas y un sistema de tickets por chat, conforme a la legislación laboral brasileña (CLT y Portaria 671) mediante un modelado de datos auditable.",
-            "Control de versiones con Git y GitHub."
+            "Desarrollo full-stack de un prototipo funcional de un sistema web de control horario (PHP, MySQL, HTML, CSS, JavaScript, TypeScript, React), con control de acceso por roles para empleados, administradores y soporte, y control de versiones con Git y GitHub.",
+            "Integración de la API de Meta para enviar de forma segura enlaces y códigos de recuperación de contraseña, mejorando la seguridad y la usabilidad.",
+            "Conexión de la API de OpenAI (GPT) para que las consultas a la base de datos puedan hacerse en lenguaje natural.",
+            "Implementación de lógica de negocio compleja (calendario dinámico para el cálculo de horas, sistema de tickets por chat) y cumplimiento de la legislación laboral brasileña (CLT) y de la normativa de registro de jornada (Portaria 671) mediante un modelado de datos auditable."
           ],
           "exp.sp.captions": ["Día de Home Office", "Sistema Prototipo", "La Oficina"],
           "exp.nsc.role": "Pasante de TI",
           "exp.nsc.period": "Sep 2024 - May 2025",
           "exp.nsc.tasks": [
-            "Soporte a usuarios del ERP JD Edwards y cerca de 400 tickets atendidos en ServiceNow, siguiendo estándares de seguridad.",
-            "Creación de la estructura de carpetas en SharePoint, migración de más de 1.000 documentos desde Confluence y nueva documentación de sistemas.",
-            "Creación autónoma de más de 50 cuentas (Active Directory, Google Admin) y ajuste de permisos de cerca del 20% de los empleados."
+            "Soporte a usuarios del ERP JD Edwards y gestión de unos 400 tickets en ServiceNow conforme a los estándares de seguridad.",
+            "Diseño de la estructura de carpetas de SharePoint, migración de más de 1.000 documentos desde Confluence y creación de nueva documentación de sistemas.",
+            "Creación autónoma de más de 50 cuentas de usuario (Active Directory, Google Admin) y ajuste de permisos para cerca del 20% del personal."
           ],
           "exp.nsc.captions": ["Entrada Principal", "Primer Día en la Oficina", "Selfie en la Oficina", "Día de la Mujer", "Carnaval", "Reunión de Pasantes", "Reunión de Pasantes 2"],
           "exp.flex.role": "Representante de Atención al Cliente",
@@ -410,8 +407,8 @@ i18n
           ],
           "intl.germany": "Alemania",
           "intl.germany.jobs": [
-            { "period": "2026", "role": "Sortation Associate", "company": "Amazon — Euskirchen", "description": "Carga de bolsas de paquetes en carros para su reparto, ubicación de los carros con escáner en los puntos de entrega a los conductores y preparación de carros y bolsas vacíos para el siguiente turno." },
-            { "period": "2025-26", "role": "Sortation Associate", "company": "Amazon — Aachen", "description": "Trabajo en centro logístico de alto volumen, enfocado en Problem Solve y Quality Control. Ejecución de tareas de Induct (entrada de paquetes) y Stow (almacenamiento), garantizando precisión del inventario. Trabajo realizado en inglés, con comunicación clara y rápida. Enfoque total en metas de productividad y seguridad operacional." }
+            { "period": "2026", "role": "Sortation Associate", "company": "Amazon — Euskirchen", "description": "Recogida de bolsas de paquetes y carga en carros (12 bolsas por carro) para el reparto. Ubicación de los carros guiada por escáner en los puntos de entrega asignados a los conductores de reparto. Gestión del ciclo de material: recogida de carros vacíos y preparación de bolsas vacías para que el turno de noche las llene." },
+            { "period": "2025-26", "role": "Sortation Associate", "company": "Amazon — Aachen", "description": "Gestión de procesos logísticos en un centro de distribución de alto volumen, con foco en Problem Solve y control de calidad. Ejecución de los procesos de Induct y Stow, garantizando la precisión del inventario. Recogida de bolsas de paquetes y ubicación de carros guiadas por escáner para los conductores de reparto. Cumplimiento de los objetivos de productividad y de seguridad laboral. Colaboración diaria en un equipo multilingüe (idioma de trabajo: inglés)." }
           ]
         }
       },
@@ -506,19 +503,18 @@ i18n
           "exp.sp.role": "Software-Entwicklungspraktikantin",
           "exp.sp.period": "Mai 2025 - Jul 2025",
           "exp.sp.tasks": [
-            "Full-Stack-Entwicklung eines funktionsfähigen Prototyps eines webbasierten Zeiterfassungssystems (PHP, MySQL, HTML, CSS, JavaScript, TypeScript, React) mit rollenbasierter Zugriffskontrolle für Mitarbeitende, Administratoren und Support.",
-            "Integration der Meta-API für den sicheren Versand von Links und Codes zur Passwortwiederherstellung.",
-            "Integration der OpenAI-API (GPT) für Datenbankabfragen in natürlicher Sprache.",
-            "Komplexe Geschäftslogik, etwa ein dynamischer Kalender zur Stundenberechnung und ein chatbasiertes Ticketsystem, konform mit brasilianischem Arbeitsrecht (CLT und Verordnung 671) durch auditierbare Datenmodellierung.",
-            "Versionsverwaltung mit Git und GitHub."
+            "Full-Stack-Entwicklung eines funktionsfähigen Prototyps eines webbasierten Zeiterfassungssystems (PHP, MySQL, HTML, CSS, JavaScript, TypeScript, React) inklusive rollenbasierter Zugriffskontrolle für Mitarbeitende, Administratoren und Support sowie Versionsverwaltung mit Git und GitHub.",
+            "Integration der Meta-API zum sicheren Versand von Links und Codes zur Passwortwiederherstellung, was Sicherheit und Benutzerfreundlichkeit verbesserte.",
+            "Anbindung der OpenAI-API (GPT), sodass Datenbankabfragen in natürlicher Sprache möglich sind.",
+            "Umsetzung komplexer Geschäftslogik (dynamischer Kalender zur Zeitberechnung, Chat-Ticketsystem) und Einhaltung des brasilianischen Arbeitsrechts (CLT) sowie der Zeiterfassungsverordnung (Portaria 671) durch revisionssichere Datenmodellierung."
           ],
           "exp.sp.captions": ["Home-Office-Tag", "Prototyp-System", "Das Büro"],
           "exp.nsc.role": "IT-Praktikantin",
           "exp.nsc.period": "Sep 2024 - Mai 2025",
           "exp.nsc.tasks": [
-            "Support für Anwender des ERP-Systems JD Edwards und rund 400 bearbeitete Tickets in ServiceNow unter Einhaltung der Sicherheitsstandards.",
-            "Aufbau der Ordnerstruktur in SharePoint, Migration von über 1.000 Dokumenten aus Confluence und Erstellung neuer Systemdokumentation.",
-            "Eigenständige Einrichtung von über 50 Konten (Active Directory, Google Admin) und Anpassung der Berechtigungen für rund 20 % der Mitarbeitenden."
+            "Anwenderbetreuung für das ERP-System JD Edwards und Bearbeitung von rund 400 Support-Tickets in ServiceNow gemäß Sicherheitsstandards.",
+            "Konzeption der SharePoint-Ordnerstruktur, Migration von über 1.000 Dokumenten aus Confluence und Erstellung neuer Systemdokumentation.",
+            "Selbstständige Einrichtung von über 50 Benutzerkonten (Active Directory, Google Admin) und Anpassung der Berechtigungen für etwa 20% der Belegschaft."
           ],
           "exp.nsc.captions": ["Haupteingang", "Erster Tag im Büro", "Selfie im Büro", "Frauentag", "Karneval", "Praktikantentreffen", "Praktikantentreffen 2"],
           "exp.flex.role": "Kundendienstmitarbeiterin",
@@ -546,8 +542,8 @@ i18n
           ],
           "intl.germany": "Deutschland",
           "intl.germany.jobs": [
-            { "period": "2026", "role": "Sortation Associate", "company": "Amazon — Euskirchen", "description": "Beladen von Rollwagen mit Paketsäcken für die Zustellung, scannergestützte Bereitstellung der Rollwagen an den Übergabepunkten für die Fahrer und Vorbereitung leerer Rollwagen und Säcke für die nächste Schicht." },
-            { "period": "2025-26", "role": "Sortation Associate", "company": "Amazon — Aachen", "description": "Einsatz in einem Hochvolumen-Logistikzentrum mit Fokus auf Problem Solve und Quality Control. Durchführung von Induct- (Paketeingang) und Stow-Aufgaben (Einlagerung) zur Sicherstellung der Bestandsgenauigkeit. Arbeit auf Englisch mit klarer und schneller Kommunikation. Voller Fokus auf Produktivitätsziele und Arbeitssicherheit." }
+            { "period": "2026", "role": "Sortation Associate", "company": "Amazon — Euskirchen", "description": "Kommissionieren von Paketsäcken und Beladen von Rollwagen (12 Säcke pro Wagen) für die Zustellung. Scannergestütztes Bereitstellen der Rollwagen an den zugewiesenen Übergabepunkten für die Zusteller. Steuerung des Materialkreislaufs: Einsammeln leerer Rollwagen und Vorbereiten leerer Säcke für die Befüllung durch die Nachtschicht." },
+            { "period": "2025-26", "role": "Sortation Associate", "company": "Amazon — Aachen", "description": "Abwicklung logistischer Prozesse in einem Verteilzentrum mit hohem Volumen, mit Schwerpunkt auf Problem Solve und Qualitätskontrolle. Durchführung von Induct- und Stow-Prozessen und Sicherstellung der Bestandsgenauigkeit. Scannergestütztes Kommissionieren von Paketsäcken und Bereitstellen von Rollwagen für die Zusteller. Einhaltung von Produktivitäts- und Arbeitssicherheitszielen. Tägliche Zusammenarbeit in einem mehrsprachigen Team (Arbeitssprache: Englisch)." }
           ]
         }
       },
@@ -642,19 +638,18 @@ i18n
           "exp.sp.role": "Stagiaire en Développement Logiciel",
           "exp.sp.period": "Mai 2025 - Jul 2025",
           "exp.sp.tasks": [
-            "Développement full-stack d'un prototype fonctionnel de système web de pointage (PHP, MySQL, HTML, CSS, JavaScript, TypeScript, React), avec contrôle d'accès par profil : employé, administrateur et support.",
-            "Intégration de l'API Meta pour l'envoi sécurisé des liens et codes de récupération de mot de passe.",
-            "Intégration de l'API OpenAI (GPT) pour des requêtes en langage naturel sur la base de données.",
-            "Logique métier complexe, comme un calendrier dynamique pour le calcul des heures et un système de tickets par chat, conforme au droit du travail brésilien (CLT et Portaria 671) grâce à une modélisation de données auditable.",
-            "Gestion de versions avec Git et GitHub."
+            "Développement full-stack d'un prototype fonctionnel de système web de pointage (PHP, MySQL, HTML, CSS, JavaScript, TypeScript, React), avec contrôle d'accès par rôle pour les employés, les administrateurs et le support, et gestion de versions avec Git et GitHub.",
+            "Intégration de l'API Meta pour envoyer de façon sécurisée les liens et codes de récupération de mot de passe, améliorant la sécurité et l'ergonomie.",
+            "Connexion de l'API OpenAI (GPT) pour permettre des requêtes en langage naturel sur la base de données.",
+            "Mise en œuvre d'une logique métier complexe (calendrier dynamique pour le calcul des heures, système de tickets par chat) et conformité au droit du travail brésilien (CLT) et à l'ordonnance sur l'enregistrement du temps de travail (Portaria 671) grâce à une modélisation des données auditable."
           ],
           "exp.sp.captions": ["Jour de Télétravail", "Système Prototype", "Le Bureau"],
           "exp.nsc.role": "Stagiaire en Informatique",
           "exp.nsc.period": "Sep 2024 - Mai 2025",
           "exp.nsc.tasks": [
-            "Support aux utilisateurs de l'ERP JD Edwards et environ 400 tickets traités dans ServiceNow, dans le respect des normes de sécurité.",
-            "Création de l'arborescence SharePoint, migration de plus de 1 000 documents depuis Confluence et rédaction d'une nouvelle documentation des systèmes.",
-            "Création autonome de plus de 50 comptes (Active Directory, Google Admin) et ajustement des permissions d'environ 20 % des employés."
+            "Support aux utilisateurs de l'ERP JD Edwards et traitement d'environ 400 tickets dans ServiceNow conformément aux normes de sécurité.",
+            "Conception de l'arborescence SharePoint, migration de plus de 1 000 documents depuis Confluence et rédaction d'une nouvelle documentation des systèmes.",
+            "Création autonome de plus de 50 comptes utilisateurs (Active Directory, Google Admin) et ajustement des droits d'environ 20% du personnel."
           ],
           "exp.nsc.captions": ["Entrée Principale", "Premier Jour au Bureau", "Selfie au Bureau", "Journée de la Femme", "Carnaval", "Réunion des Stagiaires", "Réunion des Stagiaires 2"],
           "exp.flex.role": "Représentante du Service Client",
@@ -682,8 +677,8 @@ i18n
           ],
           "intl.germany": "Allemagne",
           "intl.germany.jobs": [
-            { "period": "2026", "role": "Sortation Associate", "company": "Amazon — Euskirchen", "description": "Chargement de sacs de colis sur des chariots pour la livraison, placement des chariots à l'aide d'un scanner aux points de remise aux chauffeurs et préparation des chariots et sacs vides pour l'équipe suivante." },
-            { "period": "2025-26", "role": "Sortation Associate", "company": "Amazon — Aachen", "description": "Travail dans un centre logistique à haut volume, axé sur le Problem Solve et le Quality Control. Exécution de tâches d'Induct (réception de colis) et de Stow (stockage), garantissant la précision de l'inventaire. Travail en anglais, avec une communication claire et rapide. Engagement total envers les objectifs de productivité et de sécurité opérationnelle." }
+            { "period": "2026", "role": "Sortation Associate", "company": "Amazon — Euskirchen", "description": "Préparation des sacs de colis et chargement sur des chariots (12 sacs par chariot) pour la livraison. Mise en place des chariots, guidée par scanner, aux points de remise attribués aux livreurs. Gestion du cycle du matériel : récupération des chariots vides et préparation des sacs vides que l'équipe de nuit remplira." },
+            { "period": "2025-26", "role": "Sortation Associate", "company": "Amazon — Aachen", "description": "Gestion de processus logistiques dans un centre de distribution à fort volume, avec un accent sur le Problem Solve et le contrôle qualité. Réalisation des processus Induct et Stow en garantissant l'exactitude des stocks. Préparation des sacs de colis et mise en place des chariots, guidées par scanner, pour les livreurs. Respect des objectifs de productivité et de sécurité au travail. Collaboration quotidienne au sein d'une équipe multilingue (langue de travail : anglais)." }
           ]
         }
       }
