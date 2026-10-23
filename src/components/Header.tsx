@@ -55,7 +55,7 @@ const Header: React.FC = () => {
     <header
       className="site-header fixed top-0 left-0 w-full z-50 transition-colors duration-300"
     >
-      <div className="w-full px-6 md:px-12">
+      <div className="site-header__inner w-full">
 
         {/* Desktop layout (original grid) */}
         <div
@@ -90,7 +90,7 @@ const Header: React.FC = () => {
                 className="block w-5 h-0.5 transition-all duration-300 origin-center"
                 style={{
                   backgroundColor: 'var(--foreground)',
-                  transform: menuOpen ? 'rotate(45deg) translate(2px, 2px)' : 'none',
+                  transform: menuOpen ? 'translateY(8px) rotate(45deg)' : 'none',
                 }}
               />
               <span
@@ -104,7 +104,7 @@ const Header: React.FC = () => {
                 className="block w-5 h-0.5 transition-all duration-300 origin-center"
                 style={{
                   backgroundColor: 'var(--foreground)',
-                  transform: menuOpen ? 'rotate(-45deg) translate(2px, -2px)' : 'none',
+                  transform: menuOpen ? 'translateY(-8px) rotate(-45deg)' : 'none',
                 }}
               />
             </button>
@@ -126,13 +126,13 @@ const Header: React.FC = () => {
           backgroundColor: 'var(--background)',
         }}
       >
-        <nav className="flex flex-col px-8 pb-4 gap-3">
+        <nav className="flex flex-col" style={{ padding: '4px 20px 20px', gap: '4px' }}>
           {navItems.map((item) => (
             <button
               key={item.id}
               onClick={() => scrollToSection(item.id)}
-              className="text-left text-sm font-bold uppercase tracking-widest py-2 transition-colors duration-200"
-              style={{ color: 'var(--text-muted)' }}
+              className="text-left text-sm font-bold uppercase tracking-widest transition-colors duration-200"
+              style={{ color: 'var(--text-muted)', padding: '10px 0' }}
             >
               {item.label}
             </button>

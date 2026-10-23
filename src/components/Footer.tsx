@@ -4,10 +4,11 @@ import SocialLinks from './SocialLinks';
 const Footer: React.FC = () => {
   return (
     <footer 
-      className="py-10 text-center"
-      style={{ 
-        backgroundColor: 'var(--background)'
-
+      className="text-center"
+      style={{
+        backgroundColor: 'var(--background)',
+        // Respiro extra embaixo para a barra do Safari e a área segura do iPhone
+        padding: '40px 20px calc(40px + env(safe-area-inset-bottom))',
       }}
     >
       <div style={{ marginBottom: '24px' }}>
