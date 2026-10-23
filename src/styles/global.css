@@ -686,8 +686,12 @@ body {
 
 /* Header: faixa sólida só no celular; no desktop fica invisível e sem blur,
    e só o dock e o seletor de idioma recebem cliques */
-.site-header { background: var(--background); }
+.site-header { background: rgba(10, 11, 22, 0.94); }
 @media (min-width: 768px) {
   .site-header { background: transparent; pointer-events: none; }
   .site-header__hit { pointer-events: auto; }
+}
+.site-header__inner { padding: 0 20px; }
+@media (min-width: 768px) {
+  .site-header__inner { padding: 0; }
 }
