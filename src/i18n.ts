@@ -104,6 +104,7 @@ i18n
             "Implementation of complex business logic (dynamic calendar for time calculation, chat ticket system) and compliance with Brazilian labour law (CLT) and the time recording ordinance (Portaria 671) through audit-proof data modelling."
           ],
           "exp.sp.captions": ["Home Office Day", "Prototype System", "The Corporate Office"],
+          "exp.sp.doc": "Project documentation",
           "exp.nsc.role": "IT Intern",
           "exp.nsc.period": "Sept 2024 - May 2025",
           "exp.nsc.tasks": [
@@ -239,6 +240,7 @@ i18n
             "Implementação de lógica de negócio complexa (calendário dinâmico para cálculo de horas, sistema de chamados via chat) e conformidade com a CLT e a Portaria 671 por meio de modelagem de dados auditável."
           ],
           "exp.sp.captions": ["Dia de Home Office", "Sistema Protótipo", "O Escritório"],
+          "exp.sp.doc": "Documentação do projeto",
           "exp.nsc.role": "Estagiária de TI",
           "exp.nsc.period": "Set 2024 - Mai 2025",
           "exp.nsc.tasks": [
@@ -374,6 +376,7 @@ i18n
             "Implementación de lógica de negocio compleja (calendario dinámico para el cálculo de horas, sistema de tickets por chat) y cumplimiento de la legislación laboral brasileña (CLT) y de la normativa de registro de jornada (Portaria 671) mediante un modelado de datos auditable."
           ],
           "exp.sp.captions": ["Día de Home Office", "Sistema Prototipo", "La Oficina"],
+          "exp.sp.doc": "Documentación del proyecto",
           "exp.nsc.role": "Pasante de TI",
           "exp.nsc.period": "Sep 2024 - May 2025",
           "exp.nsc.tasks": [
@@ -509,6 +512,7 @@ i18n
             "Umsetzung komplexer Geschäftslogik (dynamischer Kalender zur Zeitberechnung, Chat-Ticketsystem) und Einhaltung des brasilianischen Arbeitsrechts (CLT) sowie der Zeiterfassungsverordnung (Portaria 671) durch revisionssichere Datenmodellierung."
           ],
           "exp.sp.captions": ["Home-Office-Tag", "Prototyp-System", "Das Büro"],
+          "exp.sp.doc": "Projektdokumentation",
           "exp.nsc.role": "IT-Praktikantin",
           "exp.nsc.period": "Sep 2024 - Mai 2025",
           "exp.nsc.tasks": [
@@ -644,6 +648,7 @@ i18n
             "Mise en œuvre d'une logique métier complexe (calendrier dynamique pour le calcul des heures, système de tickets par chat) et conformité au droit du travail brésilien (CLT) et à l'ordonnance sur l'enregistrement du temps de travail (Portaria 671) grâce à une modélisation des données auditable."
           ],
           "exp.sp.captions": ["Jour de Télétravail", "Système Prototype", "Le Bureau"],
+          "exp.sp.doc": "Documentation du projet",
           "exp.nsc.role": "Stagiaire en Informatique",
           "exp.nsc.period": "Sep 2024 - Mai 2025",
           "exp.nsc.tasks": [
