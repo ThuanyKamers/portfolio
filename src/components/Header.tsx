@@ -53,11 +53,7 @@ const Header: React.FC = () => {
 
   return (
     <header
-      className="fixed top-0 left-0 w-full z-50 backdrop-blur-md transition-colors duration-300"
-      style={{
-        backgroundColor: 'var(--background)',
-        opacity: 0.98,
-      }}
+      className="site-header fixed top-0 left-0 w-full z-50 transition-colors duration-300"
     >
       <div className="w-full px-6 md:px-12">
 
@@ -75,7 +71,7 @@ const Header: React.FC = () => {
 
           <div />
 
-          <div style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center', marginRight: '60px' }}>
+          <div className="site-header__hit" style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center', marginRight: '60px' }}>
             <LanguageSwitcher />
           </div>
         </div>
@@ -118,7 +114,7 @@ const Header: React.FC = () => {
       </div>
 
       {/* Dock vertical à esquerda (desktop) */}
-      <div className="hidden md:block" style={{ position: 'absolute', top: '20px', left: '20px' }}>
+      <div className="site-header__hit hidden md:block" style={{ position: 'absolute', top: '20px', left: '20px' }}>
         <DockNav items={navItems} links={dockLinks} onSelect={scrollToSection} />
       </div>
 
