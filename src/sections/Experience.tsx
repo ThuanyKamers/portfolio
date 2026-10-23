@@ -3,6 +3,10 @@ import { useTranslation } from "react-i18next";
 import { Timeline } from "../components/ui/timeline";
 import { asset } from "../utils/asset";
 import { PolaroidStack } from "../components/ui/polaroid-stack";
+import { FaExternalLinkAlt } from "react-icons/fa";
+
+// Documentação pública do sistema de ponto (Notion)
+const SP_DOC_URL = "https://skinny-protest-638.notion.site/Electronic-Time-Tracking-System-3373f2d9e43b80148ce6d1cb4740ea06";
 
 const SP_IMAGES = [
   { src: asset("images/experience/sp.webp"), alt: "Preview 1" },
@@ -58,6 +62,15 @@ const Experience: React.FC = () => {
                 <li key={i} className="leading-relaxed">{task}</li>
               ))}
             </ul>
+            <a
+              href={SP_DOC_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 underline underline-offset-4 transition-colors"
+              style={{ marginTop: '16px' }}
+            >
+              {t("exp.sp.doc")} <FaExternalLinkAlt size={12} />
+            </a>
 
             <div className="flex justify-center -ml-20 -mr-4 md:ml-0 md:mr-0" style={{ marginTop: '30px' }}>
               <PolaroidStack images={withCaptions(SP_IMAGES, spCaptions)} />
