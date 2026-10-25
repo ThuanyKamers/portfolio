@@ -133,7 +133,7 @@ const ProfileForm: React.FC<{ initial: Profile | null; onDone: (p: Profile) => v
   );
 };
 
-const ChatPanel: React.FC<{ onClose: () => void }> = ({ onClose }) => {
+const ChatPanel: React.FC<{ onClose: () => void; style?: React.CSSProperties }> = ({ onClose, style }) => {
   const { t, i18n } = useTranslation();
   const [profile, setProfile] = useState<Profile | null>(() => load<Profile | null>(PROFILE_KEY, null));
   const [editing, setEditing] = useState(false);
@@ -231,6 +231,7 @@ const ChatPanel: React.FC<{ onClose: () => void }> = ({ onClose }) => {
       className="chat-panel"
       role="dialog"
       aria-label={t('chat.title')}
+      style={style}
       initial={{ opacity: 0, y: 16, scale: 0.97 }}
       animate={{ opacity: 1, y: 0, scale: 1 }}
       exit={{ opacity: 0, y: 16, scale: 0.97 }}

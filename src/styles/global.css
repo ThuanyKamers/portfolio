@@ -697,22 +697,35 @@ body {
 }
 
 /* Chat ao vivo: balão flutuante de vidro (mesmo visual do dock) e painel */
+.chat-bounds {
+  position: fixed;
+  inset: 8px 8px calc(8px + env(safe-area-inset-bottom));
+  pointer-events: none;
+}
 .chat-fab {
   position: fixed;
-  right: 20px;
-  bottom: calc(20px + env(safe-area-inset-bottom));
+  right: 22px;
+  bottom: calc(22px + env(safe-area-inset-bottom));
   z-index: 60;
-  width: 54px;
-  height: 54px;
-  background: linear-gradient(160deg, rgba(129, 140, 248, 0.28) 0%, rgba(79, 70, 229, 0.12) 55%, rgba(15, 23, 42, 0.45) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  color: #a5b4fc;
+  cursor: grab;
+  touch-action: none;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.55)) drop-shadow(0 0 12px rgba(99, 102, 241, 0.35));
+  transition: color 0.2s;
 }
+.chat-fab:hover { color: #c7d2fe; }
+.chat-fab:focus-visible { outline: 2px solid #818cf8; outline-offset: 4px; border-radius: 12px; }
 .chat-panel {
   position: fixed;
   right: 20px;
   bottom: calc(86px + env(safe-area-inset-bottom));
   z-index: 60;
   width: 360px;
-  height: min(540px, calc(100dvh - 120px));
   display: flex;
   flex-direction: column;
   border-radius: 20px;
@@ -725,8 +738,7 @@ body {
   -webkit-backdrop-filter: blur(18px) saturate(140%);
 }
 @media (max-width: 480px) {
-  .chat-panel { left: 12px; right: 12px; width: auto; bottom: calc(84px + env(safe-area-inset-bottom)); }
-  .chat-fab { right: 16px; }
+  .chat-panel { left: 12px; right: 12px; width: auto; }
 }
 .chat-panel__header {
   display: flex;
