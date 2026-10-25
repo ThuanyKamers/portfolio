@@ -9,6 +9,7 @@ i18n
     resources: {
       EN: {
         translation: {
+          "footer.visits": "visits",
           "hero.greeting": "Hi, I'm",
           "hero.role": "Junior Developer & IT Support",
           "hero.description": "Bachelor's in Information Systems",
@@ -146,6 +147,7 @@ i18n
       },
       PT: {
         translation: {
+          "footer.visits": "visitas",
           "hero.greeting": "Olá, eu sou",
           "hero.role": "Desenvolvedora Júnior e Suporte de TI",
           "hero.description": "Bacharel em Sistemas de Informação",
@@ -283,6 +285,7 @@ i18n
       },
       ES: {
         translation: {
+          "footer.visits": "visitas",
           "hero.greeting": "Hola, soy",
           "hero.role": "Desarrolladora Junior y Soporte de TI",
           "hero.description": "Licenciatura en Sistemas de Información",
@@ -420,6 +423,7 @@ i18n
       },
       DE: {
         translation: {
+          "footer.visits": "Besuche",
           "hero.greeting": "Hallo, ich bin",
           "hero.role": "Junior-Entwicklerin & IT-Support",
           "hero.description": "Bachelor in Informationssystemen",
@@ -557,6 +561,7 @@ i18n
       },
       FR: {
         translation: {
+          "footer.visits": "visites",
           "hero.greeting": "Bonjour, je suis",
           "hero.role": "Développeuse Junior & Support Informatique",
           "hero.description": "Licence en Systèmes d'Information",
