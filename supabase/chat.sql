@@ -5,7 +5,10 @@ create table if not exists public.messages (
   created_at timestamptz not null default now(),
   name       text check (name is null or char_length(name) between 1 and 30),
   country    text check (country is null or country ~ '^[A-Z]{2}$'),
-  content    text not null check (char_length(btrim(content)) between 1 and 500)
+  content    text not null default '',
+  gif_url    text check (gif_url is null or gif_url ~ '^https://media[0-9]?\.giphy\.com/'),
+  constraint messages_content_check
+    check (char_length(content) <= 500 and (char_length(btrim(content)) >= 1 or gif_url is not null))
 );
 
 -- Qualquer visitante pode ler e enviar; ninguém edita nem apaga pelo site

@@ -1,10 +1,11 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
-import { FaPaperPlane, FaTimes, FaUser } from 'react-icons/fa';
+import { FaArrowUp, FaComments, FaTimes, FaUser } from 'react-icons/fa';
 import { countries } from 'country-flag-icons';
 import * as Flags from 'country-flag-icons/react/1x1';
 import { supabase, type ChatMessage } from '../../lib/supabase';
+import GifPicker, { GIPHY_KEY } from './GifPicker';
 
 interface Profile {
   name: string | null;
@@ -133,6 +134,18 @@ const ProfileForm: React.FC<{ initial: Profile | null; onDone: (p: Profile) => v
   );
 };
 
+// Mensagens seguidas da mesma pessoa em poucos minutos viram um grupo, como no iMessage
+const GROUP_GAP_MS = 5 * 60 * 1000;
+const TIMESTAMP_GAP_MS = 60 * 60 * 1000;
+const senderKey = (m: ChatMessage, own: boolean) => (own ? 'me' : `${m.name ?? ''}|${m.country ?? ''}`);
+
+// Rabinho da bolha (lado direito; espelhado com CSS para as mensagens recebidas)
+const Tail: React.FC = () => (
+  <svg className="imsg-tail" viewBox="0 0 10 16" aria-hidden="true">
+    <path d="M0 0H3V8C3 12 5.5 14.8 10 16C6 16.6 2.4 16 0 14.6Z" />
+  </svg>
+);
+
 const ChatPanel: React.FC<{ onClose: () => void; style?: React.CSSProperties }> = ({ onClose, style }) => {
   const { t, i18n } = useTranslation();
   const [profile, setProfile] = useState<Profile | null>(() => load<Profile | null>(PROFILE_KEY, null));
@@ -142,6 +155,7 @@ const ChatPanel: React.FC<{ onClose: () => void; style?: React.CSSProperties }> 
   const [text, setText] = useState('');
   const [error, setError] = useState<string | null>(null);
   const [sending, setSending] = useState(false);
+  const [gifOpen, setGifOpen] = useState(false);
   const [mine, setMine] = useState<number[]>(() => load<number[]>(MINE_KEY, []));
   const lastSent = useRef(0);
   const listRef = useRef<HTMLDivElement>(null);
@@ -182,39 +196,39 @@ const ChatPanel: React.FC<{ onClose: () => void; style?: React.CSSProperties }> 
     };
   }, [t]);
 
-  // Rola para a última mensagem
-  useEffect(() => {
+  // Rola para a última mensagem (também quando um GIF termina de carregar e muda a altura)
+  const scrollToEnd = () => {
     const el = listRef.current;
     if (el) el.scrollTop = el.scrollHeight;
-  }, [messages, profile, editing]);
+  };
+  useEffect(scrollToEnd, [messages, profile, editing, gifOpen]);
 
-  const timeFormat = useMemo(
-    () => new Intl.DateTimeFormat(i18n.language.toLowerCase(), { day: '2-digit', month: 'short', hour: '2-digit', minute: '2-digit' }),
-    [i18n.language],
-  );
+  const lang = i18n.language.toLowerCase();
+  const formatStamp = useMemo(() => {
+    const recent = new Intl.DateTimeFormat(lang, { weekday: 'short', hour: '2-digit', minute: '2-digit' });
+    const older = new Intl.DateTimeFormat(lang, { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' });
+    return (d: Date) => (Date.now() - d.getTime() < 6 * 24 * 3600 * 1000 ? recent : older).format(d);
+  }, [lang]);
 
-  const send = async (e: React.FormEvent) => {
-    e.preventDefault();
-    const content = text.trim();
-    if (!supabase || !profile || !content || sending) return;
+  const post = async (content: string, gifUrl: string | null) => {
+    if (!supabase || !profile || sending) return false;
     if (Date.now() - lastSent.current < COOLDOWN_MS) {
       setError(t('chat.wait'));
-      return;
+      return false;
     }
     setSending(true);
     setError(null);
     const { data, error: err } = await supabase
       .from('messages')
-      .insert({ name: profile.name, country: profile.country, content: content.slice(0, MAX_LENGTH) })
+      .insert({ name: profile.name, country: profile.country, content: content.slice(0, MAX_LENGTH), gif_url: gifUrl })
       .select()
       .single();
     setSending(false);
     if (err || !data) {
       setError(t('chat.sendError'));
-      return;
+      return false;
     }
     lastSent.current = Date.now();
-    setText('');
     const msg = data as ChatMessage;
     setMessages((prev) => (prev.some((m) => m.id === msg.id) ? prev : [...prev, msg]));
     setMine((prev) => {
@@ -222,9 +236,21 @@ const ChatPanel: React.FC<{ onClose: () => void; style?: React.CSSProperties }> 
       save(MINE_KEY, next);
       return next;
     });
+    return true;
+  };
+
+  const send = async (e: React.FormEvent) => {
+    e.preventDefault();
+    const content = text.trim();
+    if (content && (await post(content, null))) setText('');
+  };
+
+  const sendGif = async (url: string) => {
+    if (await post('', url)) setGifOpen(false);
   };
 
   const showForm = !profile || editing;
+  const lastOwnId = [...messages].reverse().find((m) => mine.includes(m.id))?.id;
 
   return (
     <motion.div
@@ -237,13 +263,29 @@ const ChatPanel: React.FC<{ onClose: () => void; style?: React.CSSProperties }> 
       exit={{ opacity: 0, y: 16, scale: 0.97 }}
       transition={{ duration: 0.18 }}
     >
-      <div className="chat-panel__header">
-        <div>
+      <div className="imsg-header">
+        {profile && !showForm ? (
+          <button
+            type="button"
+            className="imsg-header__me"
+            onClick={() => setEditing(true)}
+            aria-label={t('chat.editProfile')}
+            title={t('chat.editProfile')}
+          >
+            <Avatar country={profile.country} size={28} />
+          </button>
+        ) : (
+          <span className="imsg-header__me" />
+        )}
+        <div className="imsg-header__title">
+          <span className="imsg-header__icon">
+            <FaComments size={18} />
+          </span>
           <strong>{t('chat.title')}</strong>
           <span>{t('chat.subtitle')}</span>
         </div>
         <button type="button" className="chat-icon-btn" aria-label={t('chat.close')} onClick={onClose}>
-          <FaTimes size={14} />
+          <FaTimes size={13} />
         </button>
       </div>
 
@@ -258,47 +300,84 @@ const ChatPanel: React.FC<{ onClose: () => void; style?: React.CSSProperties }> 
         />
       ) : (
         <>
-          <div className="chat-messages" ref={listRef}>
+          <div className="imsg-list" ref={listRef}>
             {loading && <p className="chat-empty">{t('chat.loading')}</p>}
             {!loading && messages.length === 0 && <p className="chat-empty">{t('chat.empty')}</p>}
-            {messages.map((m) => {
+            {messages.map((m, i) => {
               const own = mine.includes(m.id);
+              const prev = messages[i - 1];
+              const next = messages[i + 1];
+              const time = new Date(m.created_at).getTime();
+              const showStamp = !prev || time - new Date(prev.created_at).getTime() > TIMESTAMP_GAP_MS;
+              const key = senderKey(m, own);
+              const first =
+                showStamp ||
+                !prev ||
+                senderKey(prev, mine.includes(prev.id)) !== key ||
+                time - new Date(prev.created_at).getTime() > GROUP_GAP_MS;
+              const nextStamp = next && new Date(next.created_at).getTime() - time > TIMESTAMP_GAP_MS;
+              const last =
+                !next ||
+                nextStamp ||
+                senderKey(next, mine.includes(next.id)) !== key ||
+                new Date(next.created_at).getTime() - time > GROUP_GAP_MS;
+
               return (
-                <div key={m.id} className={`chat-msg${own ? ' is-own' : ''}`}>
-                  <Avatar country={m.country} />
-                  <div className="chat-msg__body">
-                    <div className="chat-msg__meta">
-                      <span className="chat-msg__name">{m.name ?? t('chat.anonName')}</span>
-                      <time dateTime={m.created_at}>{timeFormat.format(new Date(m.created_at))}</time>
-                    </div>
-                    <p className="chat-msg__text">{m.content}</p>
+                <React.Fragment key={m.id}>
+                  {showStamp && <p className="imsg-stamp">{formatStamp(new Date(m.created_at))}</p>}
+                  {!own && first && <p className="imsg-name">{m.name ?? t('chat.anonName')}</p>}
+                  <div className={`imsg-row${own ? ' is-own' : ''}${last ? ' is-last' : ''}`}>
+                    {!own && (last ? <Avatar country={m.country} size={28} /> : <span className="imsg-spacer" />)}
+                    {m.gif_url ? (
+                      <img className="imsg-gif" src={m.gif_url} alt="GIF" onLoad={scrollToEnd} />
+                    ) : (
+                      <p className="imsg-bubble">
+                        {m.content}
+                        {last && <Tail />}
+                      </p>
+                    )}
                   </div>
-                </div>
+                  {m.gif_url && m.content.trim() && (
+                    <div className={`imsg-row${own ? ' is-own' : ''}`}>
+                      {!own && <span className="imsg-spacer" />}
+                      <p className="imsg-bubble">{m.content}</p>
+                    </div>
+                  )}
+                  {m.id === lastOwnId && i === messages.length - 1 && <p className="imsg-delivered">{t('chat.delivered')}</p>}
+                </React.Fragment>
               );
             })}
           </div>
 
-          <form className="chat-compose" onSubmit={send}>
-            <button
-              type="button"
-              className="chat-me"
-              onClick={() => setEditing(true)}
-              aria-label={t('chat.editProfile')}
-              title={t('chat.editProfile')}
-            >
-              <Avatar country={profile.country} size={30} />
-            </button>
-            <input
-              className="chat-input"
-              value={text}
-              maxLength={MAX_LENGTH}
-              onChange={(e) => setText(e.target.value)}
-              placeholder={t('chat.placeholder')}
-              aria-label={t('chat.placeholder')}
-            />
-            <button type="submit" className="chat-send" aria-label={t('chat.send')} disabled={!text.trim() || sending}>
-              <FaPaperPlane size={14} />
-            </button>
+          {gifOpen && GIPHY_KEY && <GifPicker onPick={sendGif} />}
+
+          <form className="imsg-compose" onSubmit={send}>
+            {GIPHY_KEY && (
+              <button
+                type="button"
+                className={`imsg-gif-btn${gifOpen ? ' is-active' : ''}`}
+                onClick={() => setGifOpen((o) => !o)}
+                aria-label={t('chat.gif')}
+                aria-pressed={gifOpen}
+              >
+                GIF
+              </button>
+            )}
+            <div className="imsg-field">
+              <input
+                value={text}
+                maxLength={MAX_LENGTH}
+                onChange={(e) => setText(e.target.value)}
+                onFocus={() => setGifOpen(false)}
+                placeholder={t('chat.placeholder')}
+                aria-label={t('chat.placeholder')}
+              />
+              {text.trim() && (
+                <button type="submit" className="imsg-send" aria-label={t('chat.send')} disabled={sending}>
+                  <FaArrowUp size={13} />
+                </button>
+              )}
+            </div>
           </form>
           {error && <p className="chat-error" role="alert">{error}</p>}
         </>
