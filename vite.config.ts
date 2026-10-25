@@ -6,9 +6,9 @@ const CSP = [
   "default-src 'self'",
   "script-src 'self'",
   "style-src 'self' 'unsafe-inline'", // styled-components e estilos inline do React
-  "img-src 'self' data: blob:",
+  "img-src 'self' data: blob: https://thuanypk.goatcounter.com", // pixel do contador de visitas
   "font-src 'self'",
-  "connect-src 'self' https://api.emailjs.com",
+  "connect-src 'self' https://api.emailjs.com https://thuanypk.goatcounter.com",
   "object-src 'none'",
   "base-uri 'self'",
   "form-action 'self'",
