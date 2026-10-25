@@ -12,6 +12,7 @@ import Achievements from './sections/Achievements';
 import InternationalExperience from './sections/InternationalExperience';
 import Footer from './components/Footer';
 import SnowBackground from './components/SnowBackground';
+import ChatWidget from './components/chat/ChatWidget';
 
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
@@ -52,6 +53,7 @@ function App() {
     <>
       <SnowBackground />
       <Header />
+      <ChatWidget />
       <div id="smooth-wrapper">
         <div id="smooth-content">
           <main className="w-full flex flex-col items-center relative overflow-x-hidden" style={{ zIndex: 1 }}>
