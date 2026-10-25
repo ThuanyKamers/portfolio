@@ -10,8 +10,8 @@ const enabled = Boolean(import.meta.env.VITE_SUPABASE_URL && import.meta.env.VIT
 
 const POSITION_KEY = 'chat-position';
 const GAP = 12;
-const PANEL_WIDTH = 360;
-const PANEL_MAX_HEIGHT = 540;
+const PANEL_WIDTH = 340;
+const PANEL_MAX_HEIGHT = 660;
 
 // Posiciona o painel junto do balão, abrindo para o lado e para a direção com mais espaço
 const panelStyle = (rect: DOMRect): React.CSSProperties => {

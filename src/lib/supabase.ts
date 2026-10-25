@@ -12,4 +12,5 @@ export interface ChatMessage {
   name: string | null;
   country: string | null;
   content: string;
+  gif_url: string | null;
 }

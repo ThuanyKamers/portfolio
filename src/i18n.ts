@@ -9,6 +9,10 @@ i18n
     resources: {
       EN: {
         translation: {
+          "chat.gif": "Send a GIF",
+          "chat.gifSearch": "Search GIPHY",
+          "chat.gifError": "Couldn't load GIFs.",
+          "chat.delivered": "Delivered",
           "chat.open": "Open chat",
           "chat.close": "Close chat",
           "chat.title": "Chat",
@@ -21,7 +25,7 @@ i18n
           "chat.noFlag": "No flag",
           "chat.search": "Search country",
           "chat.start": "Join chat",
-          "chat.placeholder": "Write a message...",
+          "chat.placeholder": "Message",
           "chat.send": "Send",
           "chat.empty": "No messages yet. Be the first!",
           "chat.loading": "Loading messages...",
@@ -167,6 +171,10 @@ i18n
       },
       PT: {
         translation: {
+          "chat.gif": "Enviar GIF",
+          "chat.gifSearch": "Buscar no GIPHY",
+          "chat.gifError": "Não foi possível carregar os GIFs.",
+          "chat.delivered": "Entregue",
           "chat.open": "Abrir chat",
           "chat.close": "Fechar chat",
           "chat.title": "Chat",
@@ -179,7 +187,7 @@ i18n
           "chat.noFlag": "Sem bandeira",
           "chat.search": "Buscar país",
           "chat.start": "Entrar no chat",
-          "chat.placeholder": "Escreva uma mensagem...",
+          "chat.placeholder": "Mensagem",
           "chat.send": "Enviar",
           "chat.empty": "Nenhuma mensagem ainda. Seja o primeiro!",
           "chat.loading": "Carregando mensagens...",
@@ -325,6 +333,10 @@ i18n
       },
       ES: {
         translation: {
+          "chat.gif": "Enviar GIF",
+          "chat.gifSearch": "Buscar en GIPHY",
+          "chat.gifError": "No se pudieron cargar los GIFs.",
+          "chat.delivered": "Entregado",
           "chat.open": "Abrir chat",
           "chat.close": "Cerrar chat",
           "chat.title": "Chat",
@@ -337,7 +349,7 @@ i18n
           "chat.noFlag": "Sin bandera",
           "chat.search": "Buscar país",
           "chat.start": "Entrar al chat",
-          "chat.placeholder": "Escribe un mensaje...",
+          "chat.placeholder": "Mensaje",
           "chat.send": "Enviar",
           "chat.empty": "Aún no hay mensajes. ¡Sé el primero!",
           "chat.loading": "Cargando mensajes...",
@@ -483,6 +495,10 @@ i18n
       },
       DE: {
         translation: {
+          "chat.gif": "GIF senden",
+          "chat.gifSearch": "GIPHY durchsuchen",
+          "chat.gifError": "GIFs konnten nicht geladen werden.",
+          "chat.delivered": "Zugestellt",
           "chat.open": "Chat öffnen",
           "chat.close": "Chat schließen",
           "chat.title": "Chat",
@@ -495,7 +511,7 @@ i18n
           "chat.noFlag": "Keine Flagge",
           "chat.search": "Land suchen",
           "chat.start": "Chat beitreten",
-          "chat.placeholder": "Nachricht schreiben...",
+          "chat.placeholder": "Nachricht",
           "chat.send": "Senden",
           "chat.empty": "Noch keine Nachrichten. Sei die erste Person!",
           "chat.loading": "Nachrichten werden geladen...",
@@ -641,6 +657,10 @@ i18n
       },
       FR: {
         translation: {
+          "chat.gif": "Envoyer un GIF",
+          "chat.gifSearch": "Rechercher sur GIPHY",
+          "chat.gifError": "Impossible de charger les GIF.",
+          "chat.delivered": "Distribué",
           "chat.open": "Ouvrir le chat",
           "chat.close": "Fermer le chat",
           "chat.title": "Chat",
@@ -653,7 +673,7 @@ i18n
           "chat.noFlag": "Sans drapeau",
           "chat.search": "Rechercher un pays",
           "chat.start": "Rejoindre le chat",
-          "chat.placeholder": "Écrivez un message...",
+          "chat.placeholder": "Message",
           "chat.send": "Envoyer",
           "chat.empty": "Aucun message pour l'instant. Soyez le premier !",
           "chat.loading": "Chargement des messages...",
