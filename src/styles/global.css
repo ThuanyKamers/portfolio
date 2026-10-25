@@ -725,22 +725,80 @@ body {
   right: 20px;
   bottom: calc(86px + env(safe-area-inset-bottom));
   z-index: 60;
-  width: 360px;
+  width: 340px;
   display: flex;
   flex-direction: column;
-  border-radius: 22px;
   overflow: hidden;
   color: #fff;
   font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  /* Moldura do iPhone: tela de vidro escuro, borda preta e aro de titânio */
+  border-radius: 54px;
+  border: 11px solid #0b0b0c;
   background: rgba(0, 0, 0, 0.62);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 0 24px 60px -20px rgba(0, 0, 0, 0.8);
+  box-shadow: 0 0 0 2px #4a4a4f, 0 0 0 3px #1c1c1e, 0 30px 70px -20px rgba(0, 0, 0, 0.85);
   backdrop-filter: blur(24px) saturate(160%);
   -webkit-backdrop-filter: blur(24px) saturate(160%);
 }
-@media (max-width: 480px) {
-  .chat-panel { left: 12px; right: 12px; width: auto; }
+/* Barrinha de "home" no rodapé */
+.chat-panel::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 7px;
+  width: 120px;
+  height: 5px;
+  border-radius: 3px;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.85);
+  pointer-events: none;
 }
+@media (max-width: 480px) {
+  .chat-panel { left: 12px; right: 12px; width: auto; border-radius: 46px; border-width: 8px; }
+}
+.iphone-status {
+  position: relative;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 46px;
+  padding: 4px 28px 0 34px;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+.iphone-island {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  width: 96px;
+  height: 28px;
+  border-radius: 20px;
+  transform: translateX(-50%);
+  background: #000;
+}
+.iphone-status__icons { display: flex; align-items: center; gap: 5px; }
+.iphone-status__icons svg { fill: #fff; }
+.iphone-battery {
+  position: relative;
+  width: 24px;
+  height: 12px;
+  padding: 1.5px;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+}
+.iphone-battery::after {
+  content: '';
+  position: absolute;
+  right: -3.5px;
+  top: 3.5px;
+  width: 1.5px;
+  height: 4px;
+  border-radius: 0 1px 1px 0;
+  background: rgba(255, 255, 255, 0.45);
+}
+.iphone-battery span { display: block; width: 80%; height: 100%; border-radius: 2px; background: #fff; }
 .chat-icon-btn {
   display: flex;
   align-items: center;
@@ -765,32 +823,42 @@ body {
 }
 .chat-avatar svg { display: block; }
 .chat-empty { margin: auto; text-align: center; font-size: 13px; color: rgba(235, 235, 245, 0.6); padding: 0 20px; }
-.chat-error { padding: 0 14px 10px; font-size: 12px; color: #ff6961; }
+.chat-error { margin-top: -18px; padding: 0 14px 22px; font-size: 12px; color: #ff6961; }
 
 /* Cabeçalho no estilo do app Mensagens */
 .imsg-header {
+  flex-shrink: 0;
   display: grid;
-  grid-template-columns: 32px 1fr 32px;
+  grid-template-columns: 44px 1fr 44px;
   align-items: start;
-  padding: 12px 14px 10px;
-  background: rgba(30, 30, 32, 0.55);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 2px 8px 8px;
+  background: rgba(28, 28, 30, 0.6);
+  border-bottom: 0.5px solid rgba(255, 255, 255, 0.15);
 }
-.imsg-header__me { width: 28px; height: 28px; border-radius: 50%; cursor: pointer; }
-.imsg-header__title { display: flex; flex-direction: column; align-items: center; gap: 2px; text-align: center; }
-.imsg-header__icon {
+.imsg-back {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  padding-left: 6px;
+  color: #0a84ff;
+  cursor: pointer;
+}
+.imsg-contact { display: flex; flex-direction: column; align-items: center; gap: 4px; cursor: pointer; }
+.imsg-contact:disabled { cursor: default; }
+.imsg-contact__avatar {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
-  margin-bottom: 2px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   color: #fff;
-  background: linear-gradient(180deg, #6e6e76 0%, #4a4a50 100%);
+  background: linear-gradient(180deg, #a5a5ad 0%, #85858c 100%);
 }
-.imsg-header__title strong { font-size: 12px; font-weight: 500; }
-.imsg-header__title span:last-child { font-size: 10px; color: rgba(235, 235, 245, 0.6); }
+.imsg-contact__name { display: flex; align-items: center; gap: 4px; font-size: 11px; color: #fff; }
+.imsg-contact__name svg { color: rgba(235, 235, 245, 0.45); }
+.imsg-header__spacer { width: 44px; }
+.imsg-note { margin: 6px 0 4px; text-align: center; font-size: 11px; color: rgba(235, 235, 245, 0.55); }
 
 /* Conversa */
 .imsg-list {
@@ -836,15 +904,15 @@ body {
 .imsg-delivered { align-self: flex-end; margin: -2px 2px 4px; font-size: 11px; color: rgba(235, 235, 245, 0.6); }
 
 /* Barra de digitar */
-.imsg-compose { display: flex; align-items: center; gap: 8px; padding: 8px 12px 12px; }
+.imsg-compose { display: flex; align-items: center; gap: 8px; padding: 8px 12px 24px; }
 .imsg-gif-btn {
   flex-shrink: 0;
   width: 34px;
   height: 34px;
   border-radius: 50%;
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 0.02em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: #ebebf5;
   background: rgba(118, 118, 128, 0.32);
   cursor: pointer;
@@ -884,7 +952,7 @@ body {
   cursor: pointer;
 }
 .imsg-send:disabled { opacity: 0.5; }
-.imsg-header__me:focus-visible, .imsg-send:focus-visible, .imsg-gif-btn:focus-visible, .chat-flag:focus-visible,
+.imsg-back:focus-visible, .imsg-contact:focus-visible, .imsg-send:focus-visible, .imsg-gif-btn:focus-visible, .chat-flag:focus-visible,
 .chat-gifs__item:focus-visible { outline: 2px solid #0a84ff; outline-offset: 2px; }
 
 /* Seletor de GIFs */
@@ -937,7 +1005,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  padding: 16px;
+  padding: 16px 16px 26px;
 }
 .chat-profile__preview { display: flex; align-items: center; gap: 12px; font-weight: 600; }
 .chat-label { display: flex; flex-direction: column; gap: 6px; font-size: 12px; color: rgba(235, 235, 245, 0.6); }

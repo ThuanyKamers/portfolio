@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
-import { FaArrowUp, FaComments, FaTimes, FaUser } from 'react-icons/fa';
+import { FaArrowUp, FaChevronLeft, FaChevronRight, FaPlus, FaUser, FaUsers } from 'react-icons/fa';
 import { countries } from 'country-flag-icons';
 import * as Flags from 'country-flag-icons/react/1x1';
 import { supabase, type ChatMessage } from '../../lib/supabase';
@@ -146,6 +146,39 @@ const Tail: React.FC = () => (
   </svg>
 );
 
+// Barra de status do iPhone: hora atual, sinal, Wi-Fi e bateria
+const StatusBar: React.FC = () => {
+  const [now, setNow] = useState(() => new Date());
+  useEffect(() => {
+    const id = setInterval(() => setNow(new Date()), 15000);
+    return () => clearInterval(id);
+  }, []);
+  return (
+    <div className="iphone-status" aria-hidden="true">
+      <span className="iphone-status__time">
+        {now.getHours()}:{String(now.getMinutes()).padStart(2, '0')}
+      </span>
+      <span className="iphone-island" />
+      <span className="iphone-status__icons">
+        <svg width="17" height="11" viewBox="0 0 17 11">
+          <rect x="0" y="7" width="3" height="4" rx="1" />
+          <rect x="4.5" y="5" width="3" height="6" rx="1" />
+          <rect x="9" y="2.5" width="3" height="8.5" rx="1" />
+          <rect x="13.5" y="0" width="3" height="11" rx="1" />
+        </svg>
+        <svg width="15" height="11" viewBox="0 0 15 11">
+          <path d="M7.5 2.2c2.1 0 4 .8 5.4 2.1l1.1-1.1A9.2 9.2 0 0 0 7.5.6 9.2 9.2 0 0 0 1 3.2l1.1 1.1a7.6 7.6 0 0 1 5.4-2.1Z" />
+          <path d="M7.5 5.3c1.3 0 2.4.5 3.3 1.3l1.1-1.1a6.2 6.2 0 0 0-8.8 0l1.1 1.1c.9-.8 2-1.3 3.3-1.3Z" />
+          <path d="M7.5 8.3c.5 0 .9.2 1.2.5L7.5 10 6.3 8.8c.3-.3.7-.5 1.2-.5Z" />
+        </svg>
+        <span className="iphone-battery">
+          <span />
+        </span>
+      </span>
+    </div>
+  );
+};
+
 const ChatPanel: React.FC<{ onClose: () => void; style?: React.CSSProperties }> = ({ onClose, style }) => {
   const { t, i18n } = useTranslation();
   const [profile, setProfile] = useState<Profile | null>(() => load<Profile | null>(PROFILE_KEY, null));
@@ -263,30 +296,27 @@ const ChatPanel: React.FC<{ onClose: () => void; style?: React.CSSProperties }> 
       exit={{ opacity: 0, y: 16, scale: 0.97 }}
       transition={{ duration: 0.18 }}
     >
+      <StatusBar />
       <div className="imsg-header">
-        {profile && !showForm ? (
-          <button
-            type="button"
-            className="imsg-header__me"
-            onClick={() => setEditing(true)}
-            aria-label={t('chat.editProfile')}
-            title={t('chat.editProfile')}
-          >
-            <Avatar country={profile.country} size={28} />
-          </button>
-        ) : (
-          <span className="imsg-header__me" />
-        )}
-        <div className="imsg-header__title">
-          <span className="imsg-header__icon">
-            <FaComments size={18} />
-          </span>
-          <strong>{t('chat.title')}</strong>
-          <span>{t('chat.subtitle')}</span>
-        </div>
-        <button type="button" className="chat-icon-btn" aria-label={t('chat.close')} onClick={onClose}>
-          <FaTimes size={13} />
+        <button type="button" className="imsg-back" aria-label={t('chat.close')} onClick={onClose}>
+          <FaChevronLeft size={20} />
         </button>
+        <button
+          type="button"
+          className="imsg-contact"
+          onClick={() => profile && setEditing(true)}
+          disabled={!profile || showForm}
+          aria-label={t('chat.editProfile')}
+          title={profile && !showForm ? t('chat.editProfile') : undefined}
+        >
+          <span className="imsg-contact__avatar">
+            <FaUsers size={22} />
+          </span>
+          <span className="imsg-contact__name">
+            {t('chat.title')} {profile && !showForm && <FaChevronRight size={8} />}
+          </span>
+        </button>
+        <span className="imsg-header__spacer" />
       </div>
 
       {showForm ? (
@@ -301,6 +331,7 @@ const ChatPanel: React.FC<{ onClose: () => void; style?: React.CSSProperties }> 
       ) : (
         <>
           <div className="imsg-list" ref={listRef}>
+            <p className="imsg-note">iMessage · {t('chat.subtitle')}</p>
             {loading && <p className="chat-empty">{t('chat.loading')}</p>}
             {!loading && messages.length === 0 && <p className="chat-empty">{t('chat.empty')}</p>}
             {messages.map((m, i) => {
@@ -360,7 +391,7 @@ const ChatPanel: React.FC<{ onClose: () => void; style?: React.CSSProperties }> 
                 aria-label={t('chat.gif')}
                 aria-pressed={gifOpen}
               >
-                GIF
+                <FaPlus size={14} />
               </button>
             )}
             <div className="imsg-field">
@@ -369,7 +400,7 @@ const ChatPanel: React.FC<{ onClose: () => void; style?: React.CSSProperties }> 
                 maxLength={MAX_LENGTH}
                 onChange={(e) => setText(e.target.value)}
                 onFocus={() => setGifOpen(false)}
-                placeholder={t('chat.placeholder')}
+                placeholder="iMessage"
                 aria-label={t('chat.placeholder')}
               />
               {text.trim() && (
