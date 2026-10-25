@@ -24,7 +24,7 @@ const VisitCounter: React.FC = () => {
     // Total de visitas de todas as páginas
     fetch(`${GOATCOUNTER}/counter/TOTAL.json`)
       .then((res) => (res.ok ? res.json() : null))
-      .then((data) => data?.count && setCount(String(data.count).replace(/ /g, ',')))
+      .then((data) => data?.count && setCount(String(data.count).replace(/\u202f/g, ',')))
       .catch(() => {});
   }, []);
 
