@@ -22,6 +22,7 @@ const SW_PHOTOS: MosaicPhoto[] = [
 ];
 
 const CERTIFICATES: Certificate[] = [
+  { name: "Cybersecurity Fundamentals", issuer: "IBM SkillsBuild", date: "10/2026", image: asset("images/certs/ibm-cybersecurity.webp"), url: "https://www.credly.com/badges/48529ee9-bcad-4ed5-a0a4-350bc5134b17" },
   { name: "Recognizing Hallucinations, Inaccuracies, and Bias in AI", issuer: "Codecademy", date: "09/2026", image: asset("images/certs/codecademy-ai.webp"), url: "https://www.codecademy.com/profiles/thuanypk/certificates/1749aeec9b174fabab933fc63449bc34" },
   { name: "Cybersecurity Job Simulation", issuer: "Mastercard · Forage", date: "10/2026", image: asset("images/certs/mastercard.webp") },
   { name: "Introduction to AWS Management Console", issuer: "AWS", date: "11/2025", image: asset("images/certs/aws-console.webp") },
