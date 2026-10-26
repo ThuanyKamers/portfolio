@@ -9,6 +9,8 @@ i18n
     resources: {
       EN: {
         translation: {
+          "chat.chattingAs": "Chatting as",
+          "chat.change": "Change",
           "chat.joinCta": "Tap here to join and comment",
           "chat.profileTitle": "How do you want to appear?",
           "chat.cancel": "Cancel",
@@ -174,6 +176,8 @@ i18n
       },
       PT: {
         translation: {
+          "chat.chattingAs": "Você está como",
+          "chat.change": "Alterar",
           "chat.joinCta": "Toque aqui pra entrar e comentar",
           "chat.profileTitle": "Como você quer aparecer?",
           "chat.cancel": "Cancelar",
@@ -339,6 +343,8 @@ i18n
       },
       ES: {
         translation: {
+          "chat.chattingAs": "Escribes como",
+          "chat.change": "Cambiar",
           "chat.joinCta": "Toca aquí para entrar y comentar",
           "chat.profileTitle": "¿Cómo quieres aparecer?",
           "chat.cancel": "Cancelar",
@@ -504,6 +510,8 @@ i18n
       },
       DE: {
         translation: {
+          "chat.chattingAs": "Du schreibst als",
+          "chat.change": "Ändern",
           "chat.joinCta": "Hier tippen, um mitzuschreiben",
           "chat.profileTitle": "Wie möchtest du erscheinen?",
           "chat.cancel": "Abbrechen",
@@ -669,6 +677,8 @@ i18n
       },
       FR: {
         translation: {
+          "chat.chattingAs": "Vous écrivez en tant que",
+          "chat.change": "Modifier",
           "chat.joinCta": "Touchez ici pour participer",
           "chat.profileTitle": "Comment voulez-vous apparaître ?",
           "chat.cancel": "Annuler",

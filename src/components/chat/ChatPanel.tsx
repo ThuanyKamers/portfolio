@@ -393,6 +393,17 @@ const ChatPanel: React.FC<{ onClose: () => void; style?: React.CSSProperties }> 
             })}
           </div>
 
+          {profile && (
+            <div className="imsg-identity">
+              <Avatar country={profile.country} size={18} />
+              <span>
+                {t('chat.chattingAs')} <strong>{profile.name ?? t('chat.anonName')}</strong>
+              </span>
+              <button type="button" onClick={() => setEditing(true)}>
+                {t('chat.change')}
+              </button>
+            </div>
+          )}
           {!profile ? (
             <div className="imsg-compose">
               <button type="button" className="imsg-join" onClick={() => setEditing(true)}>
