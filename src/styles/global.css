@@ -830,8 +830,8 @@ body {
   flex-shrink: 0;
   display: grid;
   grid-template-columns: 44px 1fr 44px;
-  align-items: start;
-  padding: 2px 8px 8px;
+  align-items: center;
+  padding: 0 8px 6px;
   background: rgba(28, 28, 30, 0.6);
   border-bottom: 0.5px solid rgba(255, 255, 255, 0.15);
 }
@@ -843,20 +843,7 @@ body {
   color: #0a84ff;
   cursor: pointer;
 }
-.imsg-contact { display: flex; flex-direction: column; align-items: center; gap: 4px; cursor: pointer; }
-.imsg-contact:disabled { cursor: default; }
-.imsg-contact__avatar {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  color: #fff;
-  background: linear-gradient(180deg, #a5a5ad 0%, #85858c 100%);
-}
-.imsg-contact__name { display: flex; align-items: center; gap: 4px; font-size: 11px; color: #fff; }
-.imsg-contact__name svg { color: rgba(235, 235, 245, 0.45); }
+.imsg-title { align-self: center; text-align: center; font-size: 16px; font-weight: 600; }
 .imsg-header__spacer { width: 44px; }
 .imsg-note { margin: 6px 0 4px; text-align: center; font-size: 11px; color: rgba(235, 235, 245, 0.55); }
 
@@ -980,7 +967,7 @@ body {
   cursor: pointer;
 }
 .imsg-send:disabled { opacity: 0.5; }
-.imsg-back:focus-visible, .imsg-contact:focus-visible, .imsg-send:focus-visible, .imsg-gif-btn:focus-visible, .chat-flag:focus-visible,
+.imsg-back:focus-visible, .imsg-send:focus-visible, .imsg-gif-btn:focus-visible, .chat-flag:focus-visible,
 .chat-gifs__item:focus-visible { outline: 2px solid #0a84ff; outline-offset: 2px; }
 
 /* Seletor de GIFs */
