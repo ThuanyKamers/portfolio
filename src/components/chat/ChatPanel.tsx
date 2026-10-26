@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
-import { FaArrowUp, FaChevronLeft, FaChevronRight, FaPlus, FaUser, FaUserPlus, FaUsers } from 'react-icons/fa';
+import { FaArrowUp, FaChevronLeft, FaPlus, FaUser, FaUserPlus } from 'react-icons/fa';
 import { countries } from 'country-flag-icons';
 import * as Flags from 'country-flag-icons/react/1x1';
 import { supabase, type ChatMessage } from '../../lib/supabase';
@@ -313,21 +313,7 @@ const ChatPanel: React.FC<{ onClose: () => void; style?: React.CSSProperties }> 
         <button type="button" className="imsg-back" aria-label={t('chat.close')} onClick={onClose}>
           <FaChevronLeft size={20} />
         </button>
-        <button
-          type="button"
-          className="imsg-contact"
-          onClick={() => profile && setEditing(true)}
-          disabled={!profile || showForm}
-          aria-label={t('chat.editProfile')}
-          title={profile && !showForm ? t('chat.editProfile') : undefined}
-        >
-          <span className="imsg-contact__avatar">
-            <FaUsers size={22} />
-          </span>
-          <span className="imsg-contact__name">
-            {t('chat.title')} {profile && !showForm && <FaChevronRight size={8} />}
-          </span>
-        </button>
+        <strong className="imsg-title">{t('chat.title')}</strong>
         <span className="imsg-header__spacer" />
       </div>
 
