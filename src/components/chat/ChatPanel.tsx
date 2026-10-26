@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
-import { FaArrowUp, FaChevronLeft, FaChevronRight, FaPlus, FaUser, FaUsers } from 'react-icons/fa';
+import { FaArrowUp, FaChevronLeft, FaChevronRight, FaPlus, FaUser, FaUserPlus, FaUsers } from 'react-icons/fa';
 import { countries } from 'country-flag-icons';
 import * as Flags from 'country-flag-icons/react/1x1';
 import { supabase, type ChatMessage } from '../../lib/supabase';
@@ -43,7 +43,11 @@ const Avatar: React.FC<{ country: string | null; size?: number }> = ({ country, 
   );
 };
 
-const ProfileForm: React.FC<{ initial: Profile | null; onDone: (p: Profile) => void }> = ({ initial, onDone }) => {
+const ProfileForm: React.FC<{ initial: Profile | null; onDone: (p: Profile) => void; onCancel: () => void }> = ({
+  initial,
+  onDone,
+  onCancel,
+}) => {
   const { t, i18n } = useTranslation();
   const [anonymous, setAnonymous] = useState(initial ? !initial.name : false);
   const [name, setName] = useState(initial?.name ?? '');
@@ -74,6 +78,13 @@ const ProfileForm: React.FC<{ initial: Profile | null; onDone: (p: Profile) => v
         if (canSubmit) onDone({ name: anonymous ? null : trimmed.slice(0, 30), country });
       }}
     >
+      <div className="chat-profile__top">
+        <button type="button" className="chat-profile__cancel" onClick={onCancel}>
+          {t('chat.cancel')}
+        </button>
+        <strong>{t('chat.profileTitle')}</strong>
+        <span />
+      </div>
       <div className="chat-profile__preview">
         <Avatar country={country} size={56} />
         <span>{anonymous || !trimmed ? t('chat.anonName') : trimmed}</span>
@@ -282,7 +293,8 @@ const ChatPanel: React.FC<{ onClose: () => void; style?: React.CSSProperties }> 
     if (await post('', url)) setGifOpen(false);
   };
 
-  const showForm = !profile || editing;
+  // A conversa aparece sempre; o perfil só é pedido quando a pessoa quer comentar
+  const showForm = editing;
   const lastOwnId = [...messages].reverse().find((m) => mine.includes(m.id))?.id;
 
   return (
@@ -327,6 +339,7 @@ const ChatPanel: React.FC<{ onClose: () => void; style?: React.CSSProperties }> 
             setProfile(p);
             setEditing(false);
           }}
+          onCancel={() => setEditing(false)}
         />
       ) : (
         <>
@@ -380,36 +393,46 @@ const ChatPanel: React.FC<{ onClose: () => void; style?: React.CSSProperties }> 
             })}
           </div>
 
-          {gifOpen && GIPHY_KEY && <GifPicker onPick={sendGif} />}
-
-          <form className="imsg-compose" onSubmit={send}>
-            {GIPHY_KEY && (
-              <button
-                type="button"
-                className={`imsg-gif-btn${gifOpen ? ' is-active' : ''}`}
-                onClick={() => setGifOpen((o) => !o)}
-                aria-label={t('chat.gif')}
-                aria-pressed={gifOpen}
-              >
-                <FaPlus size={14} />
+          {!profile ? (
+            <div className="imsg-compose">
+              <button type="button" className="imsg-join" onClick={() => setEditing(true)}>
+                <FaUserPlus size={15} /> {t('chat.joinCta')}
               </button>
-            )}
-            <div className="imsg-field">
-              <input
-                value={text}
-                maxLength={MAX_LENGTH}
-                onChange={(e) => setText(e.target.value)}
-                onFocus={() => setGifOpen(false)}
-                placeholder="iMessage"
-                aria-label={t('chat.placeholder')}
-              />
-              {text.trim() && (
-                <button type="submit" className="imsg-send" aria-label={t('chat.send')} disabled={sending}>
-                  <FaArrowUp size={13} />
+            </div>
+          ) : (
+            <>
+            {gifOpen && GIPHY_KEY && <GifPicker onPick={sendGif} />}
+
+            <form className="imsg-compose" onSubmit={send}>
+              {GIPHY_KEY && (
+                <button
+                  type="button"
+                  className={`imsg-gif-btn${gifOpen ? ' is-active' : ''}`}
+                  onClick={() => setGifOpen((o) => !o)}
+                  aria-label={t('chat.gif')}
+                  aria-pressed={gifOpen}
+                >
+                  <FaPlus size={14} />
                 </button>
               )}
-            </div>
-          </form>
+              <div className="imsg-field">
+                <input
+                  value={text}
+                  maxLength={MAX_LENGTH}
+                  onChange={(e) => setText(e.target.value)}
+                  onFocus={() => setGifOpen(false)}
+                  placeholder="iMessage"
+                  aria-label={t('chat.placeholder')}
+                />
+                {text.trim() && (
+                  <button type="submit" className="imsg-send" aria-label={t('chat.send')} disabled={sending}>
+                    <FaArrowUp size={13} />
+                  </button>
+                )}
+              </div>
+            </form>
+            </>
+          )}
           {error && <p className="chat-error" role="alert">{error}</p>}
         </>
       )}
