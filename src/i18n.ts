@@ -9,6 +9,9 @@ i18n
     resources: {
       EN: {
         translation: {
+          "chat.joinCta": "Tap here to join and comment",
+          "chat.profileTitle": "How do you want to appear?",
+          "chat.cancel": "Cancel",
           "chat.gif": "Send a GIF",
           "chat.gifSearch": "Search GIPHY",
           "chat.gifError": "Couldn't load GIFs.",
@@ -171,6 +174,9 @@ i18n
       },
       PT: {
         translation: {
+          "chat.joinCta": "Toque aqui pra entrar e comentar",
+          "chat.profileTitle": "Como você quer aparecer?",
+          "chat.cancel": "Cancelar",
           "chat.gif": "Enviar GIF",
           "chat.gifSearch": "Buscar no GIPHY",
           "chat.gifError": "Não foi possível carregar os GIFs.",
@@ -333,6 +339,9 @@ i18n
       },
       ES: {
         translation: {
+          "chat.joinCta": "Toca aquí para entrar y comentar",
+          "chat.profileTitle": "¿Cómo quieres aparecer?",
+          "chat.cancel": "Cancelar",
           "chat.gif": "Enviar GIF",
           "chat.gifSearch": "Buscar en GIPHY",
           "chat.gifError": "No se pudieron cargar los GIFs.",
@@ -495,6 +504,9 @@ i18n
       },
       DE: {
         translation: {
+          "chat.joinCta": "Hier tippen, um mitzuschreiben",
+          "chat.profileTitle": "Wie möchtest du erscheinen?",
+          "chat.cancel": "Abbrechen",
           "chat.gif": "GIF senden",
           "chat.gifSearch": "GIPHY durchsuchen",
           "chat.gifError": "GIFs konnten nicht geladen werden.",
@@ -657,6 +669,9 @@ i18n
       },
       FR: {
         translation: {
+          "chat.joinCta": "Touchez ici pour participer",
+          "chat.profileTitle": "Comment voulez-vous apparaître ?",
+          "chat.cancel": "Annuler",
           "chat.gif": "Envoyer un GIF",
           "chat.gifSearch": "Rechercher sur GIPHY",
           "chat.gifError": "Impossible de charger les GIF.",
