@@ -193,7 +193,8 @@ const StatusBar: React.FC = () => {
 const ChatPanel: React.FC<{ onClose: () => void; style?: React.CSSProperties }> = ({ onClose, style }) => {
   const { t, i18n } = useTranslation();
   const [profile, setProfile] = useState<Profile | null>(() => load<Profile | null>(PROFILE_KEY, null));
-  const [editing, setEditing] = useState(false);
+  // Quem ainda não tem perfil começa escolhendo nome e bandeira (Cancelar leva para a conversa)
+  const [editing, setEditing] = useState(() => !profile);
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [loading, setLoading] = useState(true);
   const [text, setText] = useState('');
@@ -293,7 +294,6 @@ const ChatPanel: React.FC<{ onClose: () => void; style?: React.CSSProperties }> 
     if (await post('', url)) setGifOpen(false);
   };
 
-  // A conversa aparece sempre; o perfil só é pedido quando a pessoa quer comentar
   const showForm = editing;
   const lastOwnId = [...messages].reverse().find((m) => mine.includes(m.id))?.id;
 
