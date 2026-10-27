@@ -70,7 +70,6 @@ i18n
               description: "Mobile app for Android and iOS where citizens report discarded rubble with photos and exact GPS, and city workers find it on a map and mark it as collected. Includes precise duplicate detection and fake-GPS blocking. Built as a proposal for the city of Palhoça.",
               tech: ["Flutter", "Dart", "Node.js", "Express", "PostgreSQL", "Docker"],
               link: "https://skinny-protest-638.notion.site/Rubble-Tracker-App-4033f2d9e43b80ec8bb6cf9546658e61",
-              links: [{ label: "GitHub", url: "https://github.com/ThuanyKamers/rubble-tracker" }],
               image: "images/projects/capaRubble.webp",
               cover: "images/projects/capaRubble.webp"
             },
@@ -246,7 +245,6 @@ i18n
               description: "App para Android e iOS em que o cidadão denuncia entulho descartado na rua com fotos e GPS exato, e os servidores da prefeitura veem tudo no mapa e marcam como recolhido. Tem detecção precisa de duplicatas e bloqueio de GPS falso. Feito como proposta para a prefeitura de Palhoça.",
               tech: ["Flutter", "Dart", "Node.js", "Express", "PostgreSQL", "Docker"],
               link: "https://skinny-protest-638.notion.site/Rubble-Tracker-App-de-Recolhimento-de-Entulho-4033f2d9e43b814f8f78e8e22b56d66a",
-              links: [{ label: "GitHub", url: "https://github.com/ThuanyKamers/rubble-tracker" }],
               image: "images/projects/capaRubble.webp",
               cover: "images/projects/capaRubble.webp"
             },
@@ -422,7 +420,6 @@ i18n
               description: "App para Android e iOS donde los ciudadanos reportan escombros abandonados con fotos y GPS exacto, y los funcionarios municipales los ven en un mapa y los marcan como recogidos. Incluye detección precisa de duplicados y bloqueo de GPS falso. Creada como propuesta para la ciudad de Palhoça.",
               tech: ["Flutter", "Dart", "Node.js", "Express", "PostgreSQL", "Docker"],
               link: "https://skinny-protest-638.notion.site/Rubble-Tracker-App-4033f2d9e43b80ec8bb6cf9546658e61",
-              links: [{ label: "GitHub", url: "https://github.com/ThuanyKamers/rubble-tracker" }],
               image: "images/projects/capaRubble.webp",
               cover: "images/projects/capaRubble.webp"
             },
@@ -598,7 +595,6 @@ i18n
               description: "Mobile App für Android und iOS, mit der Bürger illegal abgeladenen Bauschutt mit Fotos und genauem GPS melden. Mitarbeiter der Stadt sehen die Meldungen auf einer Karte und markieren sie als abgeholt. Mit präziser Duplikaterkennung und Sperre gegen gefälschtes GPS. Entwickelt als Vorschlag für die Stadt Palhoça.",
               tech: ["Flutter", "Dart", "Node.js", "Express", "PostgreSQL", "Docker"],
               link: "https://skinny-protest-638.notion.site/Rubble-Tracker-Schuttmelde-App-4033f2d9e43b81e08691eabb0699b4be",
-              links: [{ label: "GitHub", url: "https://github.com/ThuanyKamers/rubble-tracker" }],
               image: "images/projects/capaRubble.webp",
               cover: "images/projects/capaRubble.webp"
             },
@@ -774,7 +770,6 @@ i18n
               description: "Application Android et iOS où les citoyens signalent des gravats abandonnés avec photos et GPS précis, et les agents municipaux les voient sur une carte et les marquent comme ramassés. Avec détection précise des doublons et blocage du faux GPS. Conçue comme proposition pour la ville de Palhoça.",
               tech: ["Flutter", "Dart", "Node.js", "Express", "PostgreSQL", "Docker"],
               link: "https://skinny-protest-638.notion.site/Rubble-Tracker-App-4033f2d9e43b80ec8bb6cf9546658e61",
-              links: [{ label: "GitHub", url: "https://github.com/ThuanyKamers/rubble-tracker" }],
               image: "images/projects/capaRubble.webp",
               cover: "images/projects/capaRubble.webp"
             },
