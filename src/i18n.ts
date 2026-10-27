@@ -66,12 +66,13 @@ i18n
           "projects.soon": "More Coming Soon",
           "projects.list": [
             {
-              title: "Verify It",
-              description: "Platform that helps used-vehicle buyers check whether an online listing is genuine: paste the link and find out if the owner registered it. Born as verifiCAR, 3rd place at Startup Weekend Cyber Security 2025.",
-              tech: ["React", "TypeScript", "Vite", "Vitest"],
-              link: "https://thuanykamers.github.io/verify-it/",
-              image: "images/projects/capaVerifyIt-v2.webp",
-              cover: "images/projects/capaVerifyIt-v2.webp"
+              title: "Rubble Tracker",
+              description: "Mobile app for Android and iOS where citizens report discarded rubble with photos and exact GPS, and city workers find it on a map and mark it as collected. Includes precise duplicate detection and fake-GPS blocking. Built as a proposal for the city of Palhoça.",
+              tech: ["Flutter", "Dart", "Node.js", "Express", "PostgreSQL", "Docker"],
+              link: "https://skinny-protest-638.notion.site/Rubble-Tracker-App-4033f2d9e43b80ec8bb6cf9546658e61",
+              links: [{ label: "GitHub", url: "https://github.com/ThuanyKamers/rubble-tracker" }],
+              image: "images/projects/capaRubble.webp",
+              cover: "images/projects/capaRubble.webp"
             },
             {
               title: "Electronic Time-Tracking System",
@@ -80,6 +81,21 @@ i18n
               link: "https://skinny-protest-638.notion.site/Electronic-Time-Tracking-System-3373f2d9e43b80148ce6d1cb4740ea06",
               image: "images/projects/capaPonto-v2.webp",
               cover: "images/projects/capaPonto-v2.webp"
+            },
+            {
+              title: "Verify It",
+              description: "Platform that helps used-vehicle buyers check whether an online listing is genuine: paste the link and find out if the owner registered it. Born as verifiCAR, 3rd place at Startup Weekend Cyber Security 2025.",
+              tech: ["React", "TypeScript", "Vite", "Vitest"],
+              link: "https://thuanykamers.github.io/verify-it/",
+              image: "images/projects/capaVerifyIt-v2.webp",
+              cover: "images/projects/capaVerifyIt-v2.webp"
+            },
+            {
+              title: "Dress Up E-commerce",
+              description: "T-shirt store built as a team project, with product pages, a shopping cart and a simulated checkout.",
+              tech: ["HTML", "CSS", "JavaScript"],
+              link: "https://thuanykamers.github.io/DressUP/",
+              image: "images/projects/dressup.webp"
             },
             {
               title: "Secure Cloud: CEI Snoopy",
@@ -96,13 +112,6 @@ i18n
               link: "https://skinny-protest-638.notion.site/Youth-Agency-in-the-Digital-Age-3e43f2d9e43b8127a463f0bcc7a742e6",
               image: "images/projects/capaProtag-v3.webp",
               cover: "images/projects/capaProtag-v3.webp"
-            },
-            {
-              title: "Dress Up E-commerce",
-              description: "T-shirt store built as a team project, with product pages, a shopping cart and a simulated checkout.",
-              tech: ["HTML", "CSS", "JavaScript"],
-              link: "https://thuanykamers.github.io/DressUP/",
-              image: "images/projects/dressup.webp"
             }
           ],
           "achievements.title": "My",
@@ -233,12 +242,13 @@ i18n
           "projects.soon": "Mais em breve",
           "projects.list": [
             {
-              title: "Verify It",
-              description: "Plataforma que ajuda quem compra veículo usado a conferir se um anúncio online é verdadeiro: cole o link e descubra se o dono registrou o anúncio. Nasceu como verifiCAR, 3º lugar no Startup Weekend Cyber Security 2025.",
-              tech: ["React", "TypeScript", "Vite", "Vitest"],
-              link: "https://thuanykamers.github.io/verify-it/",
-              image: "images/projects/capaVerifyIt-v2.webp",
-              cover: "images/projects/capaVerifyIt-v2.webp"
+              title: "Rubble Tracker",
+              description: "App para Android e iOS em que o cidadão denuncia entulho descartado na rua com fotos e GPS exato, e os servidores da prefeitura veem tudo no mapa e marcam como recolhido. Tem detecção precisa de duplicatas e bloqueio de GPS falso. Feito como proposta para a prefeitura de Palhoça.",
+              tech: ["Flutter", "Dart", "Node.js", "Express", "PostgreSQL", "Docker"],
+              link: "https://skinny-protest-638.notion.site/Rubble-Tracker-App-de-Recolhimento-de-Entulho-4033f2d9e43b814f8f78e8e22b56d66a",
+              links: [{ label: "GitHub", url: "https://github.com/ThuanyKamers/rubble-tracker" }],
+              image: "images/projects/capaRubble.webp",
+              cover: "images/projects/capaRubble.webp"
             },
             {
               title: "Sistema de Ponto Eletrônico",
@@ -247,6 +257,21 @@ i18n
               link: "https://skinny-protest-638.notion.site/Sistema-de-Ponto-Eletr-nico-3eb3f2d9e43b81dba454c7e49c96e539",
               image: "images/projects/capaPonto-v2.webp",
               cover: "images/projects/capaPonto-v2.webp"
+            },
+            {
+              title: "Verify It",
+              description: "Plataforma que ajuda quem compra veículo usado a conferir se um anúncio online é verdadeiro: cole o link e descubra se o dono registrou o anúncio. Nasceu como verifiCAR, 3º lugar no Startup Weekend Cyber Security 2025.",
+              tech: ["React", "TypeScript", "Vite", "Vitest"],
+              link: "https://thuanykamers.github.io/verify-it/",
+              image: "images/projects/capaVerifyIt-v2.webp",
+              cover: "images/projects/capaVerifyIt-v2.webp"
+            },
+            {
+              title: "Dress Up E-commerce",
+              description: "Loja de camisetas feita em equipe, com páginas de produtos, carrinho de compras e checkout simulado.",
+              tech: ["HTML", "CSS", "JavaScript"],
+              link: "https://thuanykamers.github.io/DressUP/",
+              image: "images/projects/dressup.webp"
             },
             {
               title: "Nuvem Segura: CEI Snoopy",
@@ -263,13 +288,6 @@ i18n
               link: "https://skinny-protest-638.notion.site/Youth-Agency-in-the-Digital-Age-3e43f2d9e43b8127a463f0bcc7a742e6",
               image: "images/projects/capaProtag-v3.webp",
               cover: "images/projects/capaProtag-v3.webp"
-            },
-            {
-              title: "Dress Up E-commerce",
-              description: "Loja de camisetas feita em equipe, com páginas de produtos, carrinho de compras e checkout simulado.",
-              tech: ["HTML", "CSS", "JavaScript"],
-              link: "https://thuanykamers.github.io/DressUP/",
-              image: "images/projects/dressup.webp"
             }
           ],
           "achievements.title": "Minhas",
@@ -400,12 +418,13 @@ i18n
           "projects.soon": "Más próximamente",
           "projects.list": [
             {
-              title: "Verify It",
-              description: "Plataforma que ayuda a quien compra un vehículo usado a comprobar si un anuncio en línea es auténtico: pega el enlace y descubre si el dueño lo registró. Nació como verifiCAR, 3.er lugar en el Startup Weekend Cyber Security 2025.",
-              tech: ["React", "TypeScript", "Vite", "Vitest"],
-              link: "https://thuanykamers.github.io/verify-it/",
-              image: "images/projects/capaVerifyIt-v2.webp",
-              cover: "images/projects/capaVerifyIt-v2.webp"
+              title: "Rubble Tracker",
+              description: "App para Android e iOS donde los ciudadanos reportan escombros abandonados con fotos y GPS exacto, y los funcionarios municipales los ven en un mapa y los marcan como recogidos. Incluye detección precisa de duplicados y bloqueo de GPS falso. Creada como propuesta para la ciudad de Palhoça.",
+              tech: ["Flutter", "Dart", "Node.js", "Express", "PostgreSQL", "Docker"],
+              link: "https://skinny-protest-638.notion.site/Rubble-Tracker-App-4033f2d9e43b80ec8bb6cf9546658e61",
+              links: [{ label: "GitHub", url: "https://github.com/ThuanyKamers/rubble-tracker" }],
+              image: "images/projects/capaRubble.webp",
+              cover: "images/projects/capaRubble.webp"
             },
             {
               title: "Sistema de Control de Asistencia",
@@ -414,6 +433,21 @@ i18n
               link: "https://skinny-protest-638.notion.site/Electronic-Time-Tracking-System-3373f2d9e43b80148ce6d1cb4740ea06",
               image: "images/projects/capaPonto-v2.webp",
               cover: "images/projects/capaPonto-v2.webp"
+            },
+            {
+              title: "Verify It",
+              description: "Plataforma que ayuda a quien compra un vehículo usado a comprobar si un anuncio en línea es auténtico: pega el enlace y descubre si el dueño lo registró. Nació como verifiCAR, 3.er lugar en el Startup Weekend Cyber Security 2025.",
+              tech: ["React", "TypeScript", "Vite", "Vitest"],
+              link: "https://thuanykamers.github.io/verify-it/",
+              image: "images/projects/capaVerifyIt-v2.webp",
+              cover: "images/projects/capaVerifyIt-v2.webp"
+            },
+            {
+              title: "Dress Up E-commerce",
+              description: "Tienda de camisetas desarrollada en equipo, con páginas de productos, carrito de compras y checkout simulado.",
+              tech: ["HTML", "CSS", "JavaScript"],
+              link: "https://thuanykamers.github.io/DressUP/",
+              image: "images/projects/dressup.webp"
             },
             {
               title: "Nube Segura: CEI Snoopy",
@@ -430,13 +464,6 @@ i18n
               link: "https://skinny-protest-638.notion.site/Youth-Agency-in-the-Digital-Age-3e43f2d9e43b8127a463f0bcc7a742e6",
               image: "images/projects/capaProtag-v3.webp",
               cover: "images/projects/capaProtag-v3.webp"
-            },
-            {
-              title: "Dress Up E-commerce",
-              description: "Tienda de camisetas desarrollada en equipo, con páginas de productos, carrito de compras y checkout simulado.",
-              tech: ["HTML", "CSS", "JavaScript"],
-              link: "https://thuanykamers.github.io/DressUP/",
-              image: "images/projects/dressup.webp"
             }
           ],
           "achievements.title": "Mis",
@@ -567,12 +594,13 @@ i18n
           "projects.soon": "Bald mehr",
           "projects.list": [
             {
-              title: "Verify It",
-              description: "Plattform, die Käufern von Gebrauchtfahrzeugen hilft zu prüfen, ob ein Online-Inserat echt ist: Link einfügen und sehen, ob der Besitzer es registriert hat. Entstanden als verifiCAR, 3. Platz beim Startup Weekend Cyber Security 2025.",
-              tech: ["React", "TypeScript", "Vite", "Vitest"],
-              link: "https://thuanykamers.github.io/verify-it/",
-              image: "images/projects/capaVerifyIt-v2.webp",
-              cover: "images/projects/capaVerifyIt-v2.webp"
+              title: "Rubble Tracker",
+              description: "Mobile App für Android und iOS, mit der Bürger illegal abgeladenen Bauschutt mit Fotos und genauem GPS melden. Mitarbeiter der Stadt sehen die Meldungen auf einer Karte und markieren sie als abgeholt. Mit präziser Duplikaterkennung und Sperre gegen gefälschtes GPS. Entwickelt als Vorschlag für die Stadt Palhoça.",
+              tech: ["Flutter", "Dart", "Node.js", "Express", "PostgreSQL", "Docker"],
+              link: "https://skinny-protest-638.notion.site/Rubble-Tracker-Schuttmelde-App-4033f2d9e43b81e08691eabb0699b4be",
+              links: [{ label: "GitHub", url: "https://github.com/ThuanyKamers/rubble-tracker" }],
+              image: "images/projects/capaRubble.webp",
+              cover: "images/projects/capaRubble.webp"
             },
             {
               title: "Elektronisches Zeiterfassungssystem",
@@ -581,6 +609,21 @@ i18n
               link: "https://skinny-protest-638.notion.site/Elektronisches-Zeiterfassungssystem-3e73f2d9e43b811490d5f15f543f2024",
               image: "images/projects/capaPonto-v2.webp",
               cover: "images/projects/capaPonto-v2.webp"
+            },
+            {
+              title: "Verify It",
+              description: "Plattform, die Käufern von Gebrauchtfahrzeugen hilft zu prüfen, ob ein Online-Inserat echt ist: Link einfügen und sehen, ob der Besitzer es registriert hat. Entstanden als verifiCAR, 3. Platz beim Startup Weekend Cyber Security 2025.",
+              tech: ["React", "TypeScript", "Vite", "Vitest"],
+              link: "https://thuanykamers.github.io/verify-it/",
+              image: "images/projects/capaVerifyIt-v2.webp",
+              cover: "images/projects/capaVerifyIt-v2.webp"
+            },
+            {
+              title: "Dress Up E-Commerce",
+              description: "Im Team entwickelter T-Shirt-Shop mit Produktseiten, Warenkorb und simuliertem Checkout.",
+              tech: ["HTML", "CSS", "JavaScript"],
+              link: "https://thuanykamers.github.io/DressUP/",
+              image: "images/projects/dressup.webp"
             },
             {
               title: "Sichere Cloud: CEI Snoopy",
@@ -597,13 +640,6 @@ i18n
               link: "https://skinny-protest-638.notion.site/Jugendliche-als-Gestalter-im-digitalen-Zeitalter-3e43f2d9e43b81478b7bf569adaff087",
               image: "images/projects/capaProtag-v3.webp",
               cover: "images/projects/capaProtag-v3.webp"
-            },
-            {
-              title: "Dress Up E-Commerce",
-              description: "Im Team entwickelter T-Shirt-Shop mit Produktseiten, Warenkorb und simuliertem Checkout.",
-              tech: ["HTML", "CSS", "JavaScript"],
-              link: "https://thuanykamers.github.io/DressUP/",
-              image: "images/projects/dressup.webp"
             }
           ],
           "achievements.title": "Meine",
@@ -734,12 +770,13 @@ i18n
           "projects.soon": "Bientôt plus",
           "projects.list": [
             {
-              title: "Verify It",
-              description: "Plateforme qui aide les acheteurs de véhicules d'occasion à vérifier si une annonce en ligne est authentique : collez le lien et découvrez si le propriétaire l'a enregistrée. Née sous le nom de verifiCAR, 3e place au Startup Weekend Cyber Security 2025.",
-              tech: ["React", "TypeScript", "Vite", "Vitest"],
-              link: "https://thuanykamers.github.io/verify-it/",
-              image: "images/projects/capaVerifyIt-v2.webp",
-              cover: "images/projects/capaVerifyIt-v2.webp"
+              title: "Rubble Tracker",
+              description: "Application Android et iOS où les citoyens signalent des gravats abandonnés avec photos et GPS précis, et les agents municipaux les voient sur une carte et les marquent comme ramassés. Avec détection précise des doublons et blocage du faux GPS. Conçue comme proposition pour la ville de Palhoça.",
+              tech: ["Flutter", "Dart", "Node.js", "Express", "PostgreSQL", "Docker"],
+              link: "https://skinny-protest-638.notion.site/Rubble-Tracker-App-4033f2d9e43b80ec8bb6cf9546658e61",
+              links: [{ label: "GitHub", url: "https://github.com/ThuanyKamers/rubble-tracker" }],
+              image: "images/projects/capaRubble.webp",
+              cover: "images/projects/capaRubble.webp"
             },
             {
               title: "Système de Pointage Électronique",
@@ -748,6 +785,21 @@ i18n
               link: "https://skinny-protest-638.notion.site/Electronic-Time-Tracking-System-3373f2d9e43b80148ce6d1cb4740ea06",
               image: "images/projects/capaPonto-v2.webp",
               cover: "images/projects/capaPonto-v2.webp"
+            },
+            {
+              title: "Verify It",
+              description: "Plateforme qui aide les acheteurs de véhicules d'occasion à vérifier si une annonce en ligne est authentique : collez le lien et découvrez si le propriétaire l'a enregistrée. Née sous le nom de verifiCAR, 3e place au Startup Weekend Cyber Security 2025.",
+              tech: ["React", "TypeScript", "Vite", "Vitest"],
+              link: "https://thuanykamers.github.io/verify-it/",
+              image: "images/projects/capaVerifyIt-v2.webp",
+              cover: "images/projects/capaVerifyIt-v2.webp"
+            },
+            {
+              title: "Dress Up E-commerce",
+              description: "Boutique de t-shirts réalisée en équipe, avec pages produits, panier et paiement simulé.",
+              tech: ["HTML", "CSS", "JavaScript"],
+              link: "https://thuanykamers.github.io/DressUP/",
+              image: "images/projects/dressup.webp"
             },
             {
               title: "Cloud Sécurisé : CEI Snoopy",
@@ -764,13 +816,6 @@ i18n
               link: "https://skinny-protest-638.notion.site/Youth-Agency-in-the-Digital-Age-3e43f2d9e43b8127a463f0bcc7a742e6",
               image: "images/projects/capaProtag-v3.webp",
               cover: "images/projects/capaProtag-v3.webp"
-            },
-            {
-              title: "Dress Up E-commerce",
-              description: "Boutique de t-shirts réalisée en équipe, avec pages produits, panier et paiement simulé.",
-              tech: ["HTML", "CSS", "JavaScript"],
-              link: "https://thuanykamers.github.io/DressUP/",
-              image: "images/projects/dressup.webp"
             }
           ],
           "achievements.title": "Mes",
