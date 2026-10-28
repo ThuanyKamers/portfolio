@@ -126,7 +126,7 @@ export const PhotoMosaic: React.FC<PhotoMosaicProps> = ({ photos, title }) => {
 
   useEffect(() => {
     if (open === null) return;
-    document.body.style.overflow = 'hidden';
+    document.documentElement.style.overflow = 'hidden';
     const onKey = (e: KeyboardEvent) => {
       if (e.key === 'Escape') close();
       else if (e.key === 'ArrowRight') step(1);
@@ -134,7 +134,7 @@ export const PhotoMosaic: React.FC<PhotoMosaicProps> = ({ photos, title }) => {
     };
     window.addEventListener('keydown', onKey);
     return () => {
-      document.body.style.overflow = '';
+      document.documentElement.style.overflow = '';
       window.removeEventListener('keydown', onKey);
     };
   }, [open, close, step]);
