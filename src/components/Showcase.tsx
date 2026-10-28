@@ -125,7 +125,7 @@ export const ShowcaseItem: React.FC<ShowcaseItemProps> = ({
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
             role={primary ? 'link' : undefined}
-            aria-label={primary ? `${title} — ${primary.label}` : undefined}
+            aria-label={primary ? `${title}, ${primary.label}` : undefined}
             style={fit === 'cover' && ratio ? { aspectRatio: String(ratio) } : undefined}
           >
             {images.map((src, i) => near(i) && (
