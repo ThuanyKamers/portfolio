@@ -191,7 +191,7 @@ const StatusBar: React.FC = () => {
   );
 };
 
-const ChatPanel: React.FC<{ onClose: () => void; style?: React.CSSProperties }> = ({ onClose, style }) => {
+const ChatPanel: React.FC<{ style?: React.CSSProperties }> = ({ style }) => {
   const { t, i18n } = useTranslation();
   const [profile, setProfile] = useState<Profile | null>(() => load<Profile | null>(PROFILE_KEY, null));
   // Toda vez que o chat abre, começa escolhendo nome e bandeira (Cancelar leva para a conversa)
@@ -311,9 +311,14 @@ const ChatPanel: React.FC<{ onClose: () => void; style?: React.CSSProperties }> 
     >
       <StatusBar />
       <div className="imsg-header">
-        <button type="button" className="imsg-back" aria-label={t('chat.close')} onClick={onClose}>
-          <FaChevronLeft size={20} />
-        </button>
+        {/* A seta volta para a escolha de nome e bandeira; quem fecha o chat é o X do botão flutuante */}
+        {showForm ? (
+          <span className="imsg-header__spacer" />
+        ) : (
+          <button type="button" className="imsg-back" aria-label={t('chat.editProfile')} onClick={() => setEditing(true)}>
+            <FaChevronLeft size={20} />
+          </button>
+        )}
         <div className="imsg-contact">
           <span className="imsg-contact__avatar" aria-hidden>
             <FaEarthAmericas size={30} />
