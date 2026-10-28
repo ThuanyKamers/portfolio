@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef, useState } from 'react';
+import React, { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { FaArrowUp, FaChevronLeft, FaChevronRight, FaPlus, FaUser, FaUserPlus } from 'react-icons/fa';
@@ -191,7 +191,7 @@ const StatusBar: React.FC = () => {
   );
 };
 
-const ChatPanel: React.FC<{ style?: React.CSSProperties }> = ({ style }) => {
+const ChatPanel: React.FC<{ style?: React.CSSProperties; origin?: { x: number; y: number } }> = ({ style, origin }) => {
   const { t, i18n } = useTranslation();
   const [profile, setProfile] = useState<Profile | null>(() => load<Profile | null>(PROFILE_KEY, null));
   // Toda vez que o chat abre, começa escolhendo nome e bandeira (Cancelar leva para a conversa)
@@ -205,6 +205,13 @@ const ChatPanel: React.FC<{ style?: React.CSSProperties }> = ({ style }) => {
   const [mine, setMine] = useState<number[]>(() => load<number[]>(MINE_KEY, []));
   const lastSent = useRef(0);
   const listRef = useRef<HTMLDivElement>(null);
+  const panelRef = useRef<HTMLDivElement>(null);
+
+  // O celular cresce a partir do balão, como uma janela abrindo no macOS
+  useLayoutEffect(() => {
+    const el = panelRef.current;
+    if (el && origin) el.style.transformOrigin = `${origin.x - el.offsetLeft}px ${origin.y - el.offsetTop}px`;
+  }, [origin]);
 
   // Histórico + mensagens novas ao vivo
   useEffect(() => {
@@ -304,10 +311,10 @@ const ChatPanel: React.FC<{ style?: React.CSSProperties }> = ({ style }) => {
       role="dialog"
       aria-label={t('chat.title')}
       style={style}
-      initial={{ opacity: 0, y: 16, scale: 0.97 }}
-      animate={{ opacity: 1, y: 0, scale: 1 }}
-      exit={{ opacity: 0, y: 16, scale: 0.97 }}
-      transition={{ duration: 0.18 }}
+      ref={panelRef}
+      initial={{ opacity: 0, scale: 0.06 }}
+      animate={{ opacity: 1, scale: 1, transition: { duration: 0.46, ease: [0.16, 1, 0.3, 1] } }}
+      exit={{ opacity: 0, scale: 0.06, transition: { duration: 0.28, ease: [0.4, 0, 0.7, 0.2] } }}
     >
       <StatusBar />
       <div className="imsg-header">

@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { FiChevronLeft, FiChevronRight, FiX } from 'react-icons/fi';
+import { zoomIn, zoomOut } from '../utils/macZoom';
 
 export interface MosaicPhoto {
   src: string;
@@ -89,7 +90,35 @@ export const PhotoMosaic: React.FC<PhotoMosaicProps> = ({ photos, title }) => {
     return () => io.disconnect();
   }, [rows]);
 
-  const close = useCallback(() => setOpen(null), []);
+  const boxRef = useRef<HTMLDivElement>(null);
+  const imgRef = useRef<HTMLImageElement>(null);
+  const closing = useRef(false);
+  const tileRect = useCallback(
+    (i: number) => rootRef.current?.querySelector<HTMLElement>(`[data-index="${i}"]`)?.getBoundingClientRect() ?? null,
+    []
+  );
+
+  // Abre crescendo a partir da miniatura clicada, como no macOS
+  const isOpen = open !== null;
+  useLayoutEffect(() => {
+    if (!isOpen || open === null) return;
+    const img = imgRef.current;
+    const from = tileRect(open);
+    if (!img) return;
+    if (img.complete && img.naturalWidth) zoomIn(img, from);
+    else img.addEventListener('load', () => zoomIn(img, from), { once: true });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isOpen]);
+
+  // Fecha encolhendo de volta para a miniatura da foto que está aberta
+  const close = useCallback(() => {
+    if (closing.current || open === null) return;
+    closing.current = true;
+    zoomOut(imgRef.current, tileRect(open), boxRef.current).then(() => {
+      closing.current = false;
+      setOpen(null);
+    });
+  }, [open, tileRect]);
   const step = useCallback(
     (delta: number) => setOpen((i) => (i === null ? i : (i + delta + photos.length) % photos.length)),
     [photos.length]
@@ -121,6 +150,7 @@ export const PhotoMosaic: React.FC<PhotoMosaicProps> = ({ photos, title }) => {
                 className="mosaic__tile"
                 style={{ width: row.height * (photo.w / photo.h), transitionDelay: `${(r + k) * 60}ms` }}
                 onClick={() => setOpen(index)}
+                data-index={index}
                 aria-label={`${title} ${index + 1}`}
               >
                 <img
@@ -139,9 +169,10 @@ export const PhotoMosaic: React.FC<PhotoMosaicProps> = ({ photos, title }) => {
       </div>
 
       {open !== null && createPortal(
-        <div className="lightbox" onClick={close} role="dialog" aria-modal="true" aria-label={title}>
+        <div ref={boxRef} className="lightbox" onClick={close} role="dialog" aria-modal="true" aria-label={title}>
           <img
             key={photos[open].src}
+            ref={imgRef}
             src={photos[open].src}
             alt={`${title} ${open + 1}`}
             className="lightbox__img"
