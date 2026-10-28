@@ -52,7 +52,7 @@ const Experience: React.FC = () => {
               Sistema Pet
             </h3>
             <p className="text-lg font-semibold mb-4" style={{ color: 'var(--foreground)' }}>
-              {t("exp.sp.role")} <span className="text-sm font-normal opacity-70">— {t("exp.sp.period")}</span>
+              {t("exp.sp.role")} <span className="text-sm font-normal opacity-70">· {t("exp.sp.period")}</span>
             </p>
             <ul className="space-y-3 ml-5 list-disc" style={{ color: 'var(--text-muted)' }}>
               {Array.isArray(spTasks) && spTasks.map((task, i) => (
@@ -83,7 +83,7 @@ const Experience: React.FC = () => {
               NSC Comunicação
             </h3>
             <p className="text-lg font-semibold mb-4" style={{ color: 'var(--foreground)' }}>
-              {t("exp.nsc.role")} <span className="text-sm font-normal opacity-70">— {t("exp.nsc.period")}</span>
+              {t("exp.nsc.role")} <span className="text-sm font-normal opacity-70">· {t("exp.nsc.period")}</span>
             </p>
             <ul className="space-y-3 ml-5 list-disc" style={{ color: 'var(--text-muted)' }}>
               {Array.isArray(nscTasks) && nscTasks.map((task, i) => (
@@ -105,7 +105,7 @@ const Experience: React.FC = () => {
               Flex Contact Center
             </h3>
             <p className="text-lg font-semibold mb-4" style={{ color: 'var(--foreground)' }}>
-              {t("exp.flex.role")} <span className="text-sm font-normal opacity-70">— {t("exp.flex.period")}</span>
+              {t("exp.flex.role")} <span className="text-sm font-normal opacity-70">· {t("exp.flex.period")}</span>
             </p>
             <ul className="space-y-3 ml-5 list-disc" style={{ color: 'var(--text-muted)' }}>
               {Array.isArray(flexTasks) && flexTasks.map((task, i) => (
