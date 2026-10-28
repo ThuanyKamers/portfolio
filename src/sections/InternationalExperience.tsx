@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useCallback, useMemo } from "react";
+import React, { useState, useEffect, useCallback, useLayoutEffect, useMemo, useRef } from "react";
+import { lastClick, zoomIn, zoomOut, type ZoomSource } from "../utils/macZoom";
 import { createPortal } from "react-dom";
 import { useTranslation } from "react-i18next";
 import Globe from "../components/Globe";
@@ -100,12 +101,31 @@ const InternationalExperience: React.FC = () => {
     [active, t]
   );
 
+  const modalRef = useRef<HTMLDivElement>(null);
+  const cardRef = useRef<HTMLDivElement>(null);
+  const source = useRef<ZoomSource>(null);
+  const closing = useRef(false);
+
   const handleMarkerClick = useCallback((id: string) => {
+    // O painel cresce a partir do ponto clicado no globo, como uma janela do macOS
+    source.current = lastClick();
     setActiveCountry(id);
     setSlideIndex(0);
   }, []);
 
-  const closeModal = useCallback(() => setActiveCountry(null), []);
+  const isOpen = activeCountry !== null;
+  useLayoutEffect(() => {
+    if (isOpen) zoomIn(cardRef.current, source.current);
+  }, [isOpen]);
+
+  const closeModal = useCallback(() => {
+    if (closing.current) return;
+    closing.current = true;
+    zoomOut(cardRef.current, source.current, modalRef.current).then(() => {
+      closing.current = false;
+      setActiveCountry(null);
+    });
+  }, []);
 
   const total = active?.images.length ?? 0;
   const step = useCallback(
@@ -153,8 +173,8 @@ const InternationalExperience: React.FC = () => {
 
       {/* Painel do país: fotos em formato stories + experiências em cards */}
       {active && createPortal(
-        <div className="intl-modal" onClick={closeModal} role="dialog" aria-modal="true" aria-label={t(active.countryKey)}>
-          <div className="intl-modal__card" onClick={(e) => e.stopPropagation()}>
+        <div ref={modalRef} className="intl-modal" onClick={closeModal} role="dialog" aria-modal="true" aria-label={t(active.countryKey)}>
+          <div ref={cardRef} className="intl-modal__card" onClick={(e) => e.stopPropagation()}>
             <button className="intl-modal__close" onClick={closeModal} aria-label="Close">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" aria-hidden>
                 <path d="M18 6 6 18M6 6l12 12" />
