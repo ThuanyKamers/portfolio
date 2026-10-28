@@ -44,11 +44,7 @@ const Avatar: React.FC<{ country: string | null; size?: number }> = ({ country, 
   );
 };
 
-const ProfileForm: React.FC<{ initial: Profile | null; onDone: (p: Profile) => void; onCancel: () => void }> = ({
-  initial,
-  onDone,
-  onCancel,
-}) => {
+const ProfileForm: React.FC<{ initial: Profile | null; onDone: (p: Profile) => void }> = ({ initial, onDone }) => {
   const { t, i18n } = useTranslation();
   const [anonymous, setAnonymous] = useState(initial ? !initial.name : false);
   const [name, setName] = useState(initial?.name ?? '');
@@ -80,9 +76,7 @@ const ProfileForm: React.FC<{ initial: Profile | null; onDone: (p: Profile) => v
       }}
     >
       <div className="chat-profile__top">
-        <button type="button" className="chat-profile__cancel" onClick={onCancel}>
-          {t('chat.cancel')}
-        </button>
+        <span />
         <strong>{t('chat.profileTitle')}</strong>
         <span />
       </div>
@@ -194,7 +188,7 @@ const StatusBar: React.FC = () => {
 const ChatPanel: React.FC<{ style?: React.CSSProperties; origin?: { x: number; y: number } }> = ({ style, origin }) => {
   const { t, i18n } = useTranslation();
   const [profile, setProfile] = useState<Profile | null>(() => load<Profile | null>(PROFILE_KEY, null));
-  // Toda vez que o chat abre, começa escolhendo nome e bandeira (Cancelar leva para a conversa)
+  // Toda vez que o chat abre, começa escolhendo nome e bandeira
   const [editing, setEditing] = useState(true);
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [loading, setLoading] = useState(true);
@@ -345,7 +339,6 @@ const ChatPanel: React.FC<{ style?: React.CSSProperties; origin?: { x: number; y
             setProfile(p);
             setEditing(false);
           }}
-          onCancel={() => setEditing(false)}
         />
       ) : (
         <>
@@ -399,17 +392,6 @@ const ChatPanel: React.FC<{ style?: React.CSSProperties; origin?: { x: number; y
             })}
           </div>
 
-          {profile && (
-            <div className="imsg-identity">
-              <Avatar country={profile.country} size={18} />
-              <span>
-                {t('chat.chattingAs')} <strong>{profile.name ?? t('chat.anonName')}</strong>
-              </span>
-              <button type="button" onClick={() => setEditing(true)}>
-                {t('chat.change')}
-              </button>
-            </div>
-          )}
           {!profile ? (
             <div className="imsg-compose">
               <button type="button" className="imsg-join" onClick={() => setEditing(true)}>
