@@ -87,7 +87,7 @@ const ChatWidget: React.FC = () => {
       <AnimatePresence>
         {open && anchor && (
           <Suspense fallback={null}>
-            <ChatPanel style={panelStyle(anchor)} onClose={() => setOpen(false)} />
+            <ChatPanel style={panelStyle(anchor)} />
           </Suspense>
         )}
       </AnimatePresence>
