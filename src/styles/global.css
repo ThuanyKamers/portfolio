@@ -21,6 +21,9 @@ body,
   color: var(--foreground) !important;
 }
 
+/* Reserva o espaço da barra de rolagem: quando um painel trava o scroll, a página não pula para o lado */
+html { overflow-y: auto; scrollbar-gutter: stable; }
+
 body {
   overscroll-behavior: none;
   overflow-x: hidden;

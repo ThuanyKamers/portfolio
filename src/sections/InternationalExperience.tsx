@@ -136,7 +136,7 @@ const InternationalExperience: React.FC = () => {
   // Trava o scroll da página e liga os atalhos de teclado enquanto o painel está aberto
   useEffect(() => {
     if (!activeCountry) return;
-    document.body.style.overflow = "hidden";
+    document.documentElement.style.overflow = "hidden";
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") closeModal();
       else if (e.key === "ArrowRight") step(1);
@@ -144,7 +144,7 @@ const InternationalExperience: React.FC = () => {
     };
     window.addEventListener("keydown", onKey);
     return () => {
-      document.body.style.overflow = "";
+      document.documentElement.style.overflow = "";
       window.removeEventListener("keydown", onKey);
     };
   }, [activeCountry, closeModal, step]);
