@@ -1,7 +1,8 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
-import { FaArrowUp, FaChevronLeft, FaPlus, FaUser, FaUserPlus } from 'react-icons/fa';
+import { FaArrowUp, FaChevronLeft, FaChevronRight, FaPlus, FaUser, FaUserPlus } from 'react-icons/fa';
+import { FaEarthAmericas } from 'react-icons/fa6';
 import { countries } from 'country-flag-icons';
 import * as Flags from 'country-flag-icons/react/1x1';
 import { supabase, type ChatMessage } from '../../lib/supabase';
@@ -193,8 +194,8 @@ const StatusBar: React.FC = () => {
 const ChatPanel: React.FC<{ onClose: () => void; style?: React.CSSProperties }> = ({ onClose, style }) => {
   const { t, i18n } = useTranslation();
   const [profile, setProfile] = useState<Profile | null>(() => load<Profile | null>(PROFILE_KEY, null));
-  // Quem ainda não tem perfil começa escolhendo nome e bandeira (Cancelar leva para a conversa)
-  const [editing, setEditing] = useState(() => !profile);
+  // Toda vez que o chat abre, começa escolhendo nome e bandeira (Cancelar leva para a conversa)
+  const [editing, setEditing] = useState(true);
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [loading, setLoading] = useState(true);
   const [text, setText] = useState('');
@@ -313,7 +314,14 @@ const ChatPanel: React.FC<{ onClose: () => void; style?: React.CSSProperties }> 
         <button type="button" className="imsg-back" aria-label={t('chat.close')} onClick={onClose}>
           <FaChevronLeft size={20} />
         </button>
-        <strong className="imsg-title">{t('chat.title')}</strong>
+        <div className="imsg-contact">
+          <span className="imsg-contact__avatar" aria-hidden>
+            <FaEarthAmericas size={30} />
+          </span>
+          <strong className="imsg-contact__name">
+            {t('chat.world')} <FaChevronRight size={9} aria-hidden />
+          </strong>
+        </div>
         <span className="imsg-header__spacer" />
       </div>
 
@@ -330,7 +338,7 @@ const ChatPanel: React.FC<{ onClose: () => void; style?: React.CSSProperties }> 
       ) : (
         <>
           <div className="imsg-list" ref={listRef}>
-            <p className="imsg-note">iMessage · {t('chat.subtitle')}</p>
+            <p className="imsg-note">{t('chat.subtitle')}</p>
             {loading && <p className="chat-empty">{t('chat.loading')}</p>}
             {!loading && messages.length === 0 && <p className="chat-empty">{t('chat.empty')}</p>}
             {messages.map((m, i) => {
@@ -418,7 +426,7 @@ const ChatPanel: React.FC<{ onClose: () => void; style?: React.CSSProperties }> 
                   maxLength={MAX_LENGTH}
                   onChange={(e) => setText(e.target.value)}
                   onFocus={() => setGifOpen(false)}
-                  placeholder="iMessage"
+                  placeholder={t('chat.placeholder')}
                   aria-label={t('chat.placeholder')}
                 />
                 {text.trim() && (
