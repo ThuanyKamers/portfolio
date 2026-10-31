@@ -162,7 +162,7 @@ const Globe = ({ size = 600, onMarkerClick, labels }: GlobeProps) => {
     let velX = 0;
     let velY = 0;
     let lastInteraction = -Infinity;
-    const AUTO_SPEED = 0.0012;
+    const AUTO_SPEED = 0.0006;
 
     const canvas = renderer.domElement;
     const onPointerDown = (e: PointerEvent) => {
