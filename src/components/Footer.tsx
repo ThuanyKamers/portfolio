@@ -16,7 +16,6 @@ const Footer: React.FC = () => {
         <SocialLinks size={36} />
       </div>
       <VisitCounter />
-      <p className="text-sm" style={{ color: 'var(--text-muted)' }}>© 2026 Thuany Paula Kamers. All rights reserved.</p>
     </footer>
   );
 };
