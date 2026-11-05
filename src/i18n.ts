@@ -91,6 +91,14 @@ i18n
               cover: "images/projects/capaVerifyIt-v2.webp"
             },
             {
+              title: "TryHackMe Studies",
+              description: "Writeups of the TryHackMe rooms I complete while learning cybersecurity, focused on SOC and Blue Team: alert triage, phishing analysis in a SIEM, Linux and threat intelligence. Each one records what I did, where I got stuck and what I learned.",
+              tech: ["SOC", "SIEM", "Splunk", "Linux", "Phishing Analysis"],
+              link: "https://github.com/ThuanyKamers/TryHackMe-Studies",
+              image: "images/projects/capaTryHackMe.webp",
+              cover: "images/projects/capaTryHackMe.webp"
+            },
+            {
               title: "Dress Up E-commerce",
               description: "T-shirt store built as a team project, with product pages, a shopping cart and a simulated checkout.",
               tech: ["HTML", "CSS", "JavaScript"],
@@ -265,6 +273,14 @@ i18n
               link: "https://thuanykamers.github.io/verify-it/",
               image: "images/projects/capaVerifyIt-v2.webp",
               cover: "images/projects/capaVerifyIt-v2.webp"
+            },
+            {
+              title: "TryHackMe Studies",
+              description: "Writeups das salas do TryHackMe que concluo enquanto estudo cibersegurança, com foco em SOC e Blue Team: triagem de alertas, análise de phishing em SIEM, Linux e threat intelligence. Cada um registra o que fiz, onde travei e o que aprendi.",
+              tech: ["SOC", "SIEM", "Splunk", "Linux", "Phishing Analysis"],
+              link: "https://github.com/ThuanyKamers/TryHackMe-Studies",
+              image: "images/projects/capaTryHackMe.webp",
+              cover: "images/projects/capaTryHackMe.webp"
             },
             {
               title: "Dress Up E-commerce",
@@ -443,6 +459,14 @@ i18n
               cover: "images/projects/capaVerifyIt-v2.webp"
             },
             {
+              title: "TryHackMe Studies",
+              description: "Writeups de las salas de TryHackMe que completo mientras estudio ciberseguridad, con foco en SOC y Blue Team: triaje de alertas, análisis de phishing en un SIEM, Linux y threat intelligence. Cada uno registra lo que hice, dónde me trabé y lo que aprendí.",
+              tech: ["SOC", "SIEM", "Splunk", "Linux", "Phishing Analysis"],
+              link: "https://github.com/ThuanyKamers/TryHackMe-Studies",
+              image: "images/projects/capaTryHackMe.webp",
+              cover: "images/projects/capaTryHackMe.webp"
+            },
+            {
               title: "Dress Up E-commerce",
               description: "Tienda de camisetas desarrollada en equipo, con páginas de productos, carrito de compras y checkout simulado.",
               tech: ["HTML", "CSS", "JavaScript"],
@@ -619,6 +643,14 @@ i18n
               cover: "images/projects/capaVerifyIt-v2.webp"
             },
             {
+              title: "TryHackMe Studies",
+              description: "Writeups der TryHackMe-Räume, die ich beim Lernen von Cybersecurity abschließe, mit Fokus auf SOC und Blue Team: Alert-Triage, Phishing-Analyse im SIEM, Linux und Threat Intelligence. Jeder hält fest, was ich gemacht habe, wo ich hängen blieb und was ich gelernt habe.",
+              tech: ["SOC", "SIEM", "Splunk", "Linux", "Phishing Analysis"],
+              link: "https://github.com/ThuanyKamers/TryHackMe-Studies",
+              image: "images/projects/capaTryHackMe.webp",
+              cover: "images/projects/capaTryHackMe.webp"
+            },
+            {
               title: "Dress Up E-Commerce",
               description: "Im Team entwickelter T-Shirt-Shop mit Produktseiten, Warenkorb und simuliertem Checkout.",
               tech: ["HTML", "CSS", "JavaScript"],
@@ -793,6 +825,14 @@ i18n
               link: "https://thuanykamers.github.io/verify-it/",
               image: "images/projects/capaVerifyIt-v2.webp",
               cover: "images/projects/capaVerifyIt-v2.webp"
+            },
+            {
+              title: "TryHackMe Studies",
+              description: "Writeups des salles TryHackMe que je termine en apprenant la cybersécurité, axés sur le SOC et la Blue Team : tri des alertes, analyse de phishing dans un SIEM, Linux et threat intelligence. Chacun raconte ce que j'ai fait, où j'ai bloqué et ce que j'ai appris.",
+              tech: ["SOC", "SIEM", "Splunk", "Linux", "Phishing Analysis"],
+              link: "https://github.com/ThuanyKamers/TryHackMe-Studies",
+              image: "images/projects/capaTryHackMe.webp",
+              cover: "images/projects/capaTryHackMe.webp"
             },
             {
               title: "Dress Up E-commerce",
