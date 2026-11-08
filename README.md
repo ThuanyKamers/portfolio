@@ -34,7 +34,7 @@ Requirements: Node.js 20 or newer.
 
 ```bash
 npm install
-cp .env.example .env   # then fill in your EmailJS values
+cp .env.example .env   # then fill in your EmailJS, Supabase and GIPHY values
 npm run dev
 ```
 
@@ -47,8 +47,11 @@ Other scripts: `npm run build`, `npm run preview`, `npm run lint`.
 | `VITE_EMAILJS_PUBLIC_KEY` | EmailJS public key |
 | `VITE_EMAILJS_SERVICE_ID` | EmailJS service |
 | `VITE_EMAILJS_TEMPLATE_CONTACT` | Template for the contact message |
+| `VITE_SUPABASE_URL` | Supabase project for the visitor chat |
+| `VITE_SUPABASE_ANON_KEY` | Public Supabase key (access is limited by row-level security) |
+| `VITE_GIPHY_API_KEY` | GIF search in the chat |
 
-For the deployed site, the same four values are stored as repository secrets and passed to the build in `.github/workflows/deploy.yml`.
+For the deployed site, the three EmailJS values are stored as repository secrets and passed to the build in `.github/workflows/deploy.yml`.
 
 ## Project structure
 
@@ -56,10 +59,14 @@ For the deployed site, the same four values are stored as repository secrets and
 public/images/     images used on the site
 src/
   components/      header, footer, globe, project card and UI components
+    chat/          visitor chat (panel, profile form, GIF picker)
   sections/        page sections (Hero, Experience, Projects, Tech Stack, Achievements, International Experience, Contact)
+  lib/             Supabase client
+  hooks/, utils/   small helpers (mobile detection, asset paths, open animation)
   i18n.ts          translations
   App.tsx          page layout and scroll setup
 .github/workflows/ deploy to GitHub Pages
+supabase/          SQL for the chat table and its security policies
 ```
 
 ## License
