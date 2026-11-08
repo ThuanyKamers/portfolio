@@ -15,6 +15,7 @@ My personal portfolio website, built with React and TypeScript.
 - Three.js
 - GSAP (ScrollTrigger, ScrollSmoother) and Framer Motion
 - EmailJS
+- Supabase (Realtime chat)
 - GitHub Actions + GitHub Pages
 
 ## Features
@@ -23,6 +24,8 @@ My personal portfolio website, built with React and TypeScript.
 - 3D globe built with Three.js that shows my experience by country
 - Scroll and page animations with GSAP and Framer Motion
 - Contact form with EmailJS: the visitor confirms their e-mail with a code before the message is sent
+- Live visitor chat with Supabase Realtime, where each visitor picks a name and a flag
+- Visit counter in the footer
 - Automatic deploy to GitHub Pages on every push to `main`
 
 ## Run locally
