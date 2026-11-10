@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { asset } from '../utils/asset';
 
 const Hero: React.FC = () => {
   const { t } = useTranslation(); // Isso "ativa" as traduções neste componente
@@ -12,6 +13,17 @@ const Hero: React.FC = () => {
     >
       <div className="max-w-4xl w-full text-center">
         
+        {/* Avatar em pixel art */}
+        <div className="flex justify-center" style={{ paddingBottom: '28px' }}>
+          <img
+            src={asset('images/avatar/thuany-pixel.webp')}
+            alt="Thuany Kamers"
+            width={176}
+            height={176}
+            className="hero-avatar"
+          />
+        </div>
+
         {/* Bloco 1: Saudação */}
         <div style={{ paddingBottom: '20px' }}>
           <p className="font-mono text-sm tracking-widest uppercase text-blue-400">
