@@ -933,4 +933,11 @@ i18n
     interpolation: { escapeValue: false }
   });
 
+// Mantém o atributo lang do <html> igual ao idioma escolhido (leitores de tela e tradutores usam ele)
+const syncHtmlLang = (lng: string) => {
+  document.documentElement.lang = lng.slice(0, 2).toLowerCase();
+};
+syncHtmlLang(i18n.language);
+i18n.on('languageChanged', syncHtmlLang);
+
 export default i18n;
