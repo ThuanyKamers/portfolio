@@ -56,7 +56,14 @@ const LanguageDropdown = () => {
   );
 };
 
-const Option = ({ text, langCode, handleSelect, currentLang }: any) => {
+interface OptionProps {
+  text: string;
+  langCode: string;
+  handleSelect: (langCode: string) => void;
+  currentLang: string;
+}
+
+const Option = ({ text, langCode, handleSelect, currentLang }: OptionProps) => {
   const isSelected = currentLang === text;
 
   return (
