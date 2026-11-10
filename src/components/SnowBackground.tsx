@@ -1,19 +1,20 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
+// Gerados uma vez ao carregar o módulo: a renderização continua pura
+const SNOWFLAKES = Array.from({ length: 30 }, (_, i) => ({
+  id: i,
+  size: Math.random() * 0.2 + 0.1,
+  leftIni: (Math.random() - 0.5) * 20,
+  leftEnd: (Math.random() - 0.5) * 20,
+  left: Math.random() * 100,
+  duration: 5 + Math.random() * 10,
+  delay: -Math.random() * 10,
+  blur: i % 6 === 5,
+}));
+
 const SnowBackground: React.FC = () => {
-  const snowflakes = useMemo(() =>
-    Array.from({ length: 30 }, (_, i) => ({
-      id: i,
-      size: Math.random() * 0.2 + 0.1,
-      leftIni: (Math.random() - 0.5) * 20,
-      leftEnd: (Math.random() - 0.5) * 20,
-      left: Math.random() * 100,
-      duration: 5 + Math.random() * 10,
-      delay: -Math.random() * 10,
-      blur: i % 6 === 5,
-    })), []
-  );
+  const snowflakes = SNOWFLAKES;
 
   return (
     <StyledSnowBackground className="snow-bg">
