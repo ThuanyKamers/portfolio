@@ -59,6 +59,11 @@ const StyledSnowBackground = styled.div`
     will-change: transform;
   }
 
+  /* Quem pede menos movimento no sistema não vê a neve caindo */
+  @media (prefers-reduced-motion: reduce) {
+    .snowflake { display: none; }
+  }
+
   @keyframes snowfall {
     0% {
       transform: translate3d(var(--left-ini), 0, 0);
