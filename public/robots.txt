@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://thuanykamers.github.io/portfolio/sitemap.xml
