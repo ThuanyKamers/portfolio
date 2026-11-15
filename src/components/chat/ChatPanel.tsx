@@ -47,7 +47,7 @@ const Avatar: React.FC<{ country: string | null; size?: number }> = ({ country, 
 
 const ProfileForm: React.FC<{ initial: Profile | null; onDone: (p: Profile) => void }> = ({ initial, onDone }) => {
   const { t, i18n } = useTranslation();
-  const [anonymous, setAnonymous] = useState(initial ? !initial.name : false);
+  const [anonymous, setAnonymous] = useState(false);
   const [name, setName] = useState(initial?.name ?? '');
   const [country, setCountry] = useState<string | null>(initial?.country ?? null);
   const [query, setQuery] = useState('');
