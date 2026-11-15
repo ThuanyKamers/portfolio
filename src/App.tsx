@@ -26,7 +26,7 @@ function App() {
 
   // Pista para quem abre o console do navegador
   useEffect(() => {
-    console.info('%cpsst... type "sudo" anywhere on the page.', 'color:#60a5fa;font-family:monospace;font-size:13px');
+    console.info('%cpsst... type "sudo" anywhere on the page.', 'color:#22d3ee;font-family:monospace;font-size:13px');
   }, []);
 
   useEffect(() => {

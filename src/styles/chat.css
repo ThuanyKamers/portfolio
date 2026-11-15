@@ -14,14 +14,14 @@
   justify-content: center;
   width: 52px;
   height: 52px;
-  color: #a5b4fc;
+  color: #a5f3fc;
   cursor: grab;
   touch-action: none;
-  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.55)) drop-shadow(0 0 12px rgba(99, 102, 241, 0.35));
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.55)) drop-shadow(0 0 12px rgba(6, 182, 212, 0.35));
   transition: color 0.2s;
 }
-.chat-fab:hover { color: #c7d2fe; }
-.chat-fab:focus-visible { outline: 2px solid #818cf8; outline-offset: 4px; border-radius: 12px; }
+.chat-fab:hover { color: #cffafe; }
+.chat-fab:focus-visible { outline: 2px solid #22d3ee; outline-offset: 4px; border-radius: 12px; }
 .chat-panel {
   position: fixed;
   right: 20px;

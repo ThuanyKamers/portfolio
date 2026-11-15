@@ -69,72 +69,36 @@ const Hero: React.FC = () => {
   }, []);
 
   return (
-    <section 
-      id="hero" 
-      className="min-h-screen flex flex-col justify-center items-center px-4 pt-16 bg-transparent"
-      style={{ backgroundColor: 'var(--background)' }}
-    >
-      <div className="max-w-4xl w-full text-center">
-        
-        {/* Avatar em pixel art */}
-        <div className="flex justify-center" style={{ paddingBottom: '28px' }}>
-          <div ref={tilt} className="hero-avatar-tilt">
-            <img
-              src={asset('images/avatar/thuany-pixel.webp')}
-              alt="Thuany Kamers"
-              width={176}
-              height={176}
-              className="hero-avatar"
-            />
-          </div>
-        </div>
-
-        {/* Disponibilidade: a primeira coisa que um recrutador procura */}
-        <div className="flex justify-center" style={{ paddingBottom: '22px' }}>
-          <span className="hero-status">
+    <section id="hero" className="hero">
+      <div className="hero__inner">
+        <div className="hero__text">
+          {/* Disponibilidade: a primeira coisa que um recrutador procura */}
+          <p className="hero__status">
             <span className="hero-status__dot" aria-hidden />
             {t('hero.status')}
-          </span>
-        </div>
-
-        {/* Bloco 1: Saudação */}
-        <div style={{ paddingBottom: '20px' }}>
-          <p className="font-mono text-sm tracking-widest uppercase text-blue-400">
-            {t('hero.greeting')} {/* "Hi, my name is" */}
           </p>
-        </div>
 
-        {/* Bloco 2: Nome - Geralmente nome não se traduz */}
-        <div style={{ paddingBottom: '20px' }}>
-          <h1
-            className="text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tight wrap-break-word"
-            style={{ color: 'var(--foreground)' }}
-          >
-            Thuany Paula Kamers
-          </h1>
-        </div>
+          <h1 className="hero__name">Thuany Paula Kamers</h1>
 
-        {/* Bloco 3: Cargo */}
-        <div style={{ paddingBottom: '30px' }}>
-          <h2
-            className="hero-role text-3xl md:text-5xl font-bold"
-            style={{ color: 'var(--text-muted)' }}
-          >
-            {/* A chave reinicia a digitação quando o idioma muda */}
+          {/* Cargo digitando, como num terminal. A chave reinicia a digitação quando o idioma muda */}
+          <h2 className="hero__role">
+            <span className="hero__prompt" aria-hidden>&gt;</span>
             <TypedRoles key={i18n.language} roles={Array.isArray(roles) ? roles : [t('hero.role')]} />
           </h2>
+
+          <p className="hero__desc">{t('hero.description')}</p>
         </div>
 
-        {/* Bloco 4: Descrição */}
-        <div>
-          <p 
-            className="max-w-5xl mx-auto text-lg md:text-xl leading-relaxed text-center"
-            style={{ color: 'var(--text-muted)' }}
-          >
-            {t('hero.description')} {/* "I am a information systems student..." */}
-          </p>
+        {/* Avatar em pixel art dentro de uma mira, inclinando com o mouse */}
+        <div ref={tilt} className="hero-avatar-tilt hero__avatar">
+          <img
+            src={asset('images/avatar/thuany-pixel.webp')}
+            alt="Thuany Kamers"
+            width={240}
+            height={240}
+            className="hero-avatar"
+          />
         </div>
-
       </div>
     </section>
   );

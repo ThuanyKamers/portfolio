@@ -182,8 +182,8 @@ const InternationalExperience: React.FC = () => {
       style={{ backgroundColor: "var(--background)", position: "relative", zIndex: 1 }}
     >
       <div className="text-center px-8" data-reveal>
-        <h2 className="text-4xl font-bold tracking-tighter" style={{ color: "var(--foreground)" }}>
-          {t("intl.title")} <span className="text-blue-400 italic">{t("intl.subtitle")}</span>
+        <h2 data-index="02" className="section-title text-4xl font-bold tracking-tighter" style={{ color: "var(--foreground)" }}>
+          {t("intl.title")} <span className="section-title__accent">{t("intl.subtitle")}</span>
         </h2>
       </div>
 

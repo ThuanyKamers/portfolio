@@ -30,21 +30,21 @@
   transition: border-color 0.2s, background-color 0.2s, transform 0.2s;
 }
 .writeup:hover, .writeup:focus-visible {
-  border-color: rgba(59, 130, 246, 0.6);
+  border-color: rgba(6, 182, 212, 0.6);
   background: rgba(30, 41, 59, 0.7);
   transform: translateY(-2px);
   outline: 0;
 }
 .writeup__number {
-  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-family: var(--font-mono);
   font-size: 13px;
-  color: #60a5fa;
+  color: #22d3ee;
 }
 .writeup__body { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 4px; }
 .writeup__room { color: var(--foreground); font-weight: 700; }
 .writeup__topics { color: var(--text-muted); font-size: 13px; line-height: 1.5; }
 .writeup__arrow { flex-shrink: 0; color: #64748b; transition: color 0.2s, transform 0.2s; }
-.writeup:hover .writeup__arrow { color: #60a5fa; transform: translate(2px, -2px); }
+.writeup:hover .writeup__arrow { color: #22d3ee; transform: translate(2px, -2px); }
 .writeups__all {
   display: inline-flex;
   align-items: center;

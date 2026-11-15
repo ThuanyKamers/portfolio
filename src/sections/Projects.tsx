@@ -42,8 +42,8 @@ const Projects: React.FC = () => {
       style={{ backgroundColor: 'var(--background)' }}
     >
       <div className="text-center px-8" style={{ marginBottom: '24px' }} data-reveal>
-        <h2 className="text-4xl font-bold tracking-tighter" style={{ color: 'var(--foreground)' }}>
-          {t('projects.title')} <span className="text-blue-400 italic">{t('projects.subtitle')}</span>
+        <h2 data-index="04" className="section-title text-4xl font-bold tracking-tighter" style={{ color: 'var(--foreground)' }}>
+          {t('projects.title')} <span className="section-title__accent">{t('projects.subtitle')}</span>
         </h2>
       </div>
 

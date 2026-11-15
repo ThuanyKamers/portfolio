@@ -9,7 +9,6 @@ const ChatPanel = lazy(() => import('./ChatPanel'));
 
 const enabled = Boolean(import.meta.env.VITE_SUPABASE_URL && import.meta.env.VITE_SUPABASE_ANON_KEY);
 
-const POSITION_KEY = 'chat-position';
 const GAP = 12;
 const PANEL_WIDTH = 340;
 const PANEL_MAX_HEIGHT = 660;
@@ -45,7 +44,8 @@ const ChatWidget: React.FC = () => {
     if (button.current) setAnchor(button.current.getBoundingClientRect());
   }, []);
 
-  // Mantém o balão dentro da tela (ao carregar a posição salva e ao redimensionar a janela)
+  // Mantém o balão dentro da tela ao redimensionar a janela.
+  // A posição arrastada vale só até recarregar: o balão sempre nasce no canto inferior direito.
   const clamp = useCallback(() => {
     const el = button.current;
     if (!el) return;
@@ -59,15 +59,6 @@ const ChatWidget: React.FC = () => {
 
   useEffect(() => {
     if (!enabled) return;
-    try {
-      const saved = JSON.parse(localStorage.getItem(POSITION_KEY) ?? 'null');
-      if (saved) {
-        x.set(saved.x);
-        y.set(saved.y);
-      }
-    } catch {
-      /* sem posição salva */
-    }
     clamp();
     window.addEventListener('resize', clamp);
     return () => window.removeEventListener('resize', clamp);
@@ -138,11 +129,6 @@ const ChatWidget: React.FC = () => {
         }}
         onDrag={measure}
         onDragEnd={() => {
-          try {
-            localStorage.setItem(POSITION_KEY, JSON.stringify({ x: x.get(), y: y.get() }));
-          } catch {
-            /* sem persistência */
-          }
           measure();
         }}
         onClick={() => {

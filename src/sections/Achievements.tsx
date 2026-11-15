@@ -87,7 +87,7 @@ const CertCard: React.FC<{ cert: Certificate }> = ({ cert }) => {
         ) : (
           <div
             className="w-full h-full flex items-center justify-center"
-            style={{ background: "linear-gradient(135deg, rgba(59,130,246,0.18), rgba(139,92,246,0.18))" }}
+            style={{ background: "linear-gradient(135deg, rgba(6,182,212,0.18), rgba(16,185,129,0.18))" }}
           >
             <span className="text-3xl font-bold tracking-tight text-white/70">{cert.issuer}</span>
           </div>
@@ -98,7 +98,7 @@ const CertCard: React.FC<{ cert: Certificate }> = ({ cert }) => {
         style={{ padding: "16px" }}
       >
         <p className="text-white font-bold text-sm leading-snug">{cert.name}</p>
-        <p className="text-xs" style={{ color: "#a5b4fc" }}>{cert.issuer}</p>
+        <p className="text-xs" style={{ color: "#a5f3fc" }}>{cert.issuer}</p>
         <p className="text-xs text-white/50">{cert.date}</p>
       </div>
     </Tag>
@@ -133,8 +133,8 @@ const Achievements: React.FC = () => {
     >
       <div className="w-full">
         <div className="text-center px-8" style={{ marginBottom: '24px' }} data-reveal>
-          <h2 className="text-4xl font-bold tracking-tighter" style={{ color: "var(--foreground)" }}>
-            {t("achievements.title")} <span className="text-blue-400 italic">{t("achievements.subtitle")}</span>
+          <h2 data-index="06" className="section-title text-4xl font-bold tracking-tighter" style={{ color: "var(--foreground)" }}>
+            {t("achievements.title")} <span className="section-title__accent">{t("achievements.subtitle")}</span>
           </h2>
         </div>
 

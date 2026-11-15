@@ -13,8 +13,8 @@ const Writeups: React.FC = () => {
   return (
     <section id="writeups" className="w-full flex flex-col items-center" style={{ backgroundColor: 'var(--background)' }}>
       <div className="text-center" style={{ padding: '0 32px', marginBottom: '12px' }} data-reveal>
-        <h2 className="text-4xl font-bold tracking-tighter" style={{ color: 'var(--foreground)' }}>
-          {t('writeups.title')} <span className="text-blue-400 italic">{t('writeups.subtitle')}</span>
+        <h2 data-index="05" className="section-title text-4xl font-bold tracking-tighter" style={{ color: 'var(--foreground)' }}>
+          {t('writeups.title')} <span className="section-title__accent">{t('writeups.subtitle')}</span>
         </h2>
       </div>
       <p className="writeups__intro" data-reveal>{t('writeups.intro')}</p>

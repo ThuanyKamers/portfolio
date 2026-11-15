@@ -48,7 +48,7 @@ const Experience: React.FC = () => {
         title: "2025",
         content: (
           <div className="mb-20 md:mb-40">
-            <h3 className="text-2xl md:text-3xl font-bold text-blue-400 mb-2">
+            <h3 className="text-2xl md:text-3xl font-bold text-cyan-400 mb-2">
               Sistema Pet
             </h3>
             <p className="text-lg font-semibold mb-4" style={{ color: 'var(--foreground)' }}>
@@ -63,7 +63,7 @@ const Experience: React.FC = () => {
               href={t("exp.sp.docUrl")}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 underline underline-offset-4 transition-colors"
+              className="inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 underline underline-offset-4 transition-colors"
               style={{ marginTop: '16px' }}
             >
               {t("exp.sp.doc")} <FaExternalLinkAlt size={12} />
@@ -79,7 +79,7 @@ const Experience: React.FC = () => {
         title: "2024",
         content: (
           <div className="mb-20 md:mb-40">
-            <h3 className="text-2xl md:text-3xl font-bold text-blue-400 mb-2">
+            <h3 className="text-2xl md:text-3xl font-bold text-cyan-400 mb-2">
               NSC Comunicação
             </h3>
             <p className="text-lg font-semibold mb-4" style={{ color: 'var(--foreground)' }}>
@@ -101,7 +101,7 @@ const Experience: React.FC = () => {
         title: "2020",
         content: (
           <div className="mb-20 md:mb-40">
-            <h3 className="text-2xl md:text-3xl font-bold text-blue-400 mb-2">
+            <h3 className="text-2xl md:text-3xl font-bold text-cyan-400 mb-2">
               Flex Contact Center
             </h3>
             <p className="text-lg font-semibold mb-4" style={{ color: 'var(--foreground)' }}>

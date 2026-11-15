@@ -20,7 +20,7 @@ const NAV_KEYS: Record<typeof NAV_IDS[number], string> = {
 };
 
 // Ícone de cada seção no Dock; todos em vidro escuro com leve tom índigo
-const DOCK_GRADIENT = 'linear-gradient(160deg, rgba(129, 140, 248, 0.28) 0%, rgba(79, 70, 229, 0.12) 55%, rgba(15, 23, 42, 0.45) 100%)';
+const DOCK_GRADIENT = 'linear-gradient(160deg, rgba(34, 211, 238, 0.28) 0%, rgba(8, 145, 178, 0.12) 55%, rgba(8, 15, 28, 0.55) 100%)';
 const NAV_ICONS = {
   'experience': FaBriefcase,
   'international': FaGlobeAmericas,
@@ -74,9 +74,8 @@ const Header: React.FC = () => {
           <div />
 
           <div className="site-header__hit" style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center', marginRight: '60px' }}>
-            <button type="button" className="palette-hint" onClick={openPalette} aria-label={t('palette.title')} title={t('palette.title')}>
-              <FiSearch size={16} />
-              <kbd>Ctrl K</kbd>
+            <button type="button" className="sound-toggle" onClick={openPalette} aria-label={t('palette.title')} title={`${t('palette.title')} (Ctrl+K)`}>
+              <FiSearch size={18} />
             </button>
             <SoundToggle />
             <LanguageSwitcher />
