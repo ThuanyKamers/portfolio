@@ -1,4 +1,9 @@
 const fr = {
+  "tech.groups.languages": "Langages",
+  "tech.groups.frameworks": "Frameworks et bibliothèques",
+  "tech.groups.data": "Bases de données et outils",
+  "tech.groups.systems": "Systèmes",
+  "tech.groups.security": "Sécurité (en apprentissage)",
   "hero.status": "Ouverte à de nouvelles opportunités",
   "a11y.skip": "Aller au contenu",
   "nav.writeups": "Writeups",

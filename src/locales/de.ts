@@ -1,4 +1,9 @@
 const de = {
+  "tech.groups.languages": "Sprachen",
+  "tech.groups.frameworks": "Frameworks & Bibliotheken",
+  "tech.groups.data": "Datenbanken & Tools",
+  "tech.groups.systems": "Systeme",
+  "tech.groups.security": "Sicherheit (im Lernen)",
   "hero.status": "Offen für neue Möglichkeiten",
   "a11y.skip": "Zum Inhalt springen",
   "nav.writeups": "Writeups",
