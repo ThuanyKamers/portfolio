@@ -38,7 +38,7 @@
   border-radius: 54px;
   border: 11px solid #0b0b0c;
   /* Tela quase opaca: o que está atrás do celular não aparece por baixo do texto */
-  background: rgba(6, 8, 12, 0.96);
+  background: #06080c;
   box-shadow: 0 0 0 2px #4a4a4f, 0 0 0 3px #1c1c1e, 0 30px 70px -20px rgba(0, 0, 0, 0.85);
   backdrop-filter: blur(24px) saturate(160%);
   -webkit-backdrop-filter: blur(24px) saturate(160%);
@@ -450,3 +450,13 @@
 }
 .chat-primary:hover { opacity: 0.9; }
 .chat-primary:disabled { opacity: 0.4; cursor: default; }
+
+/* Cabeçalho compacto da conversa: voltar, ícone e nome numa linha só */
+.imsg-header { grid-template-columns: 36px 1fr 36px; align-items: center; padding: 0 10px 8px; }
+.imsg-back { width: 30px; height: 30px; margin-top: 0; }
+.imsg-back svg { width: 15px; height: 15px; }
+.imsg-contact { flex-direction: row; justify-content: center; gap: 8px; }
+.imsg-contact__avatar { width: 30px; height: 30px; }
+.imsg-contact__avatar svg { width: 18px; height: 18px; }
+.imsg-contact__name { margin-top: 0; padding: 0; background: none; font-size: 15px; }
+.imsg-header__spacer { width: 36px; }
