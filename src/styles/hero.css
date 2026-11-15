@@ -1,0 +1,43 @@
+/* Avatar em pixel art no topo, flutuando de leve */
+.hero-avatar {
+  border-radius: 50%;
+  filter: drop-shadow(0 0 24px rgba(59, 130, 246, 0.45));
+  animation: hero-float 4s ease-in-out infinite;
+}
+@keyframes hero-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-avatar { animation: none; }
+}
+
+/* O avatar inclina seguindo o mouse; as variáveis vêm do Hero.tsx */
+.hero-avatar-tilt .hero-avatar {
+  display: block;
+}
+.hero-avatar-tilt {
+  transform: perspective(600px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+  transition: transform 0.25s ease-out;
+  will-change: transform;
+}
+
+/* Cargo digitando: reserva a altura de uma linha para o texto de baixo não pular */
+.hero-role { min-height: 1.25em; line-height: 1.25; }
+.hero-caret {
+  display: inline-block;
+  width: 3px;
+  height: 0.9em;
+  margin-left: 4px;
+  vertical-align: -0.08em;
+  background: #60a5fa;
+  animation: hero-caret 1s steps(1) infinite;
+}
+@keyframes hero-caret {
+  50% { opacity: 0; }
+}
+
+/* Telas baixas (celulares pequenos): afasta o avatar da barra do topo */
+@media (max-height: 700px) {
+  #hero { padding-top: 96px; }
+}

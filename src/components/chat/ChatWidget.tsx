@@ -2,6 +2,7 @@ import React, { Suspense, lazy, useCallback, useEffect, useRef, useState } from 
 import { useTranslation } from 'react-i18next';
 import { AnimatePresence, motion, useMotionValue } from 'framer-motion';
 import { FaCommentDots, FaTimes } from 'react-icons/fa';
+import { play } from '../../utils/sound';
 
 // O painel (com o cliente do Supabase e as bandeiras) só é baixado no primeiro clique
 const ChatPanel = lazy(() => import('./ChatPanel'));
@@ -87,6 +88,13 @@ const ChatWidget: React.FC = () => {
       window.removeEventListener('keydown', onKey);
       document.removeEventListener('pointerdown', onPointerDown);
     };
+  }, [open]);
+
+  // Som de abrir e fechar o celular (inclusive ao fechar com Esc ou clicando fora)
+  const wasOpen = useRef(false);
+  useEffect(() => {
+    if (open !== wasOpen.current) play(open ? 'open' : 'close');
+    wasOpen.current = open;
   }, [open]);
 
   if (!enabled) return null;

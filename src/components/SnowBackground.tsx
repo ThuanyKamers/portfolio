@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import styled from 'styled-components';
 
 // Gerados uma vez ao carregar o módulo: a renderização continua pura
@@ -15,24 +15,47 @@ const SNOWFLAKES = Array.from({ length: 30 }, (_, i) => ({
 
 const SnowBackground: React.FC = () => {
   const snowflakes = SNOWFLAKES;
+  const layer = useRef<HTMLDivElement>(null);
+
+  // Parallax: a neve desliza de leve no sentido contrário ao do mouse (só em telas com mouse)
+  useEffect(() => {
+    const el = layer.current;
+    const mq = (q: string) => window.matchMedia(q).matches;
+    if (!el || !mq('(hover: hover)') || mq('(prefers-reduced-motion: reduce)')) return;
+    let frame = 0;
+    const onMove = (e: MouseEvent) => {
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(() => {
+        el.style.setProperty('--px', `${(0.5 - e.clientX / window.innerWidth) * 28}px`);
+        el.style.setProperty('--py', `${(0.5 - e.clientY / window.innerHeight) * 28}px`);
+      });
+    };
+    window.addEventListener('mousemove', onMove, { passive: true });
+    return () => {
+      cancelAnimationFrame(frame);
+      window.removeEventListener('mousemove', onMove);
+    };
+  }, []);
 
   return (
     <StyledSnowBackground className="snow-bg">
-      {snowflakes.map((flake) => (
-        <div
-          key={flake.id}
-          className="snowflake"
-          style={{
-            '--size': `${flake.size}vw`,
-            '--left-ini': `${flake.leftIni}vw`,
-            '--left-end': `${flake.leftEnd}vw`,
-            left: `${flake.left}vw`,
-            animationDuration: `${flake.duration}s`,
-            animationDelay: `${flake.delay}s`,
-            filter: flake.blur ? 'blur(1px)' : 'none',
-          } as React.CSSProperties}
-        />
-      ))}
+      <div ref={layer} className="snow-layer">
+        {snowflakes.map((flake) => (
+          <div
+            key={flake.id}
+            className="snowflake"
+            style={{
+              '--size': `${flake.size}vw`,
+              '--left-ini': `${flake.leftIni}vw`,
+              '--left-end': `${flake.leftEnd}vw`,
+              left: `${flake.left}vw`,
+              animationDuration: `${flake.duration}s`,
+              animationDelay: `${flake.delay}s`,
+              filter: flake.blur ? 'blur(1px)' : 'none',
+            } as React.CSSProperties}
+          />
+        ))}
+      </div>
     </StyledSnowBackground>
   );
 };
@@ -47,6 +70,13 @@ const StyledSnowBackground = styled.div`
   overflow: hidden;
   pointer-events: none;
   z-index: 0;
+
+  .snow-layer {
+    position: absolute;
+    inset: 0;
+    transform: translate3d(var(--px, 0px), var(--py, 0px), 0);
+    transition: transform 0.6s ease-out;
+  }
 
   .snowflake {
     width: var(--size);

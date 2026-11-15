@@ -1,5 +1,6 @@
 import React, { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { play } from '../../utils/sound';
 import { motion } from 'framer-motion';
 import { FaArrowUp, FaChevronLeft, FaChevronRight, FaPlus, FaUser, FaUserPlus } from 'react-icons/fa';
 import { FaEarthAmericas } from 'react-icons/fa6';
@@ -198,6 +199,12 @@ const ChatPanel: React.FC<{ style?: React.CSSProperties; origin?: { x: number; y
   const [gifOpen, setGifOpen] = useState(false);
   const [mine, setMine] = useState<number[]>(() => load<number[]>(MINE_KEY, []));
   const lastSent = useRef(0);
+  // Usados para não tocar o som de "mensagem recebida" nas mensagens do próprio visitante
+  const sendingRef = useRef(false);
+  const mineRef = useRef(mine);
+  useEffect(() => {
+    mineRef.current = mine;
+  }, [mine]);
   const listRef = useRef<HTMLDivElement>(null);
   const panelRef = useRef<HTMLDivElement>(null);
 
@@ -229,6 +236,7 @@ const ChatPanel: React.FC<{ style?: React.CSSProperties; origin?: { x: number; y
       .channel('portfolio-chat')
       .on('postgres_changes', { event: 'INSERT', schema: 'public', table: 'messages' }, (payload) => {
         const msg = payload.new as ChatMessage;
+        if (!sendingRef.current && !mineRef.current.includes(msg.id)) play('receive');
         setMessages((prev) => (prev.some((m) => m.id === msg.id) ? prev : [...prev, msg]));
       })
       .on('postgres_changes', { event: 'DELETE', schema: 'public', table: 'messages' }, (payload) => {
@@ -261,9 +269,11 @@ const ChatPanel: React.FC<{ style?: React.CSSProperties; origin?: { x: number; y
     if (!supabase || !profile || sending) return false;
     if (Date.now() - lastSent.current < COOLDOWN_MS) {
       setError(t('chat.wait'));
+      play('error');
       return false;
     }
     setSending(true);
+    sendingRef.current = true;
     setError(null);
     const { data, error: err } = await supabase
       .from('messages')
@@ -272,11 +282,16 @@ const ChatPanel: React.FC<{ style?: React.CSSProperties; origin?: { x: number; y
       .single();
     setSending(false);
     if (err || !data) {
+      sendingRef.current = false;
       setError(t('chat.sendError'));
+      play('error');
       return false;
     }
     lastSent.current = Date.now();
     const msg = data as ChatMessage;
+    mineRef.current = [...mineRef.current, msg.id];
+    sendingRef.current = false;
+    play('send');
     setMessages((prev) => (prev.some((m) => m.id === msg.id) ? prev : [...prev, msg]));
     setMine((prev) => {
       const next = [...prev, msg.id].slice(-200);

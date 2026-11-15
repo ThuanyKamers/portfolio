@@ -2,6 +2,7 @@ import React, { useCallback, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { FaBriefcase, FaCode, FaEnvelope, FaGlobeAmericas, FaRocket, FaTrophy } from 'react-icons/fa';
 import { LanguageSwitcher } from './ui/LanguageSwitcher';
+import { SoundToggle } from './ui/SoundToggle';
 import DockNav from './DockNav';
 import { LINKS } from './SocialLinks';
 
@@ -72,6 +73,7 @@ const Header: React.FC = () => {
           <div />
 
           <div className="site-header__hit" style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center', marginRight: '60px' }}>
+            <SoundToggle />
             <LanguageSwitcher />
           </div>
         </div>
@@ -80,6 +82,7 @@ const Header: React.FC = () => {
         <div className="flex md:hidden items-center justify-end h-16">
 
           <div className="flex items-center gap-4">
+            <SoundToggle />
             <LanguageSwitcher />
             <button
               className="flex flex-col justify-center items-center w-8 h-8 gap-1.5"

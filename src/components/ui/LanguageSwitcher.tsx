@@ -3,6 +3,7 @@ import { useState } from "react";
 import { FiChevronDown } from "react-icons/fi";
 import { MdTranslate } from "react-icons/md";
 import { useTranslation } from 'react-i18next';
+import { play } from '../../utils/sound';
 
 const langNames: { [key: string]: string } = {
   EN: "English",
@@ -22,6 +23,7 @@ const LanguageDropdown = () => {
   const handleSelectLang = (langCode: string) => {
     setCurrentLang(langNames[langCode]);
     setOpen(false);
+    play('tap');
     i18n.changeLanguage(langCode);
   };
 
