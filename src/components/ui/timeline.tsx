@@ -64,8 +64,8 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
     >
       {/* Título */}
       <div className="max-w-7xl mx-auto pt-20 px-4 md:px-8 lg:px-10 text-center" style={{ marginBottom: '40px' }} data-reveal>
-        <h2 className="text-4xl font-bold tracking-tighter" style={{ color: 'var(--foreground)' }}>
-          {t("exp.title")} <span className="text-blue-400 italic">{t("exp.subtitle")}</span>
+        <h2 data-index="01" className="section-title text-4xl font-bold tracking-tighter" style={{ color: 'var(--foreground)' }}>
+          {t("exp.title")} <span className="section-title__accent">{t("exp.subtitle")}</span>
         </h2>
       </div>
 
@@ -115,7 +115,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
         <div
           ref={lineRef}
           style={{ left: "19px" }}
-          className="absolute top-0 h-full w-0.5 bg-linear-to-t from-purple-500 via-blue-500 to-transparent rounded-full"
+          className="absolute top-0 h-full w-0.5 bg-linear-to-t from-emerald-500 via-cyan-500 to-transparent rounded-full"
         />
       </div>
     </div>

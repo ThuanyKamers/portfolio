@@ -1,0 +1,124 @@
+/* Hero: texto à esquerda e avatar à direita no desktop; empilhado e centralizado no celular */
+.hero {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 96px 24px 48px;
+}
+.hero__inner {
+  width: min(1080px, 100%);
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  gap: 36px;
+  text-align: center;
+}
+.hero__text { display: flex; flex-direction: column; align-items: center; gap: 18px; min-width: 0; }
+@media (min-width: 900px) {
+  .hero { padding: 96px 48px 48px 140px; }
+  .hero__inner { flex-direction: row; justify-content: space-between; gap: 64px; text-align: left; }
+  .hero__text { align-items: flex-start; }
+}
+
+/* Linha de status no lugar da saudação: ponto verde pulsando + texto em mono */
+.hero__status {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #6ee7b7;
+}
+.hero-status__dot {
+  position: relative;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #34d399;
+  flex-shrink: 0;
+}
+.hero-status__dot::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: #34d399;
+  animation: hero-status-ping 1.8s ease-out infinite;
+}
+@keyframes hero-status-ping {
+  to { transform: scale(3.2); opacity: 0; }
+}
+
+.hero__name {
+  font-size: clamp(2.5rem, 6.4vw, 4.75rem);
+  font-weight: 700;
+  line-height: 1.02;
+  letter-spacing: -0.035em;
+  color: var(--foreground);
+  overflow-wrap: break-word;
+}
+
+/* Cargo digitando: altura reservada para o texto de baixo não pular */
+.hero__role {
+  min-height: 1.4em;
+  font-family: var(--font-mono);
+  font-size: clamp(1.05rem, 2.4vw, 1.5rem);
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: 0;
+  color: #cbd5e1;
+}
+.hero__prompt { color: var(--accent); margin-right: 0.6em; }
+.hero-caret {
+  display: inline-block;
+  width: 0.55em;
+  height: 1.05em;
+  margin-left: 3px;
+  vertical-align: -0.18em;
+  background: var(--accent);
+  animation: hero-caret 1s steps(1) infinite;
+}
+@keyframes hero-caret {
+  50% { opacity: 0; }
+}
+.hero__desc { color: var(--text-muted); font-size: 1.05rem; line-height: 1.6; }
+
+/* Avatar: flutua de leve e inclina seguindo o mouse (variáveis vêm do Hero.tsx) */
+.hero__avatar {
+  position: relative;
+  flex-shrink: 0;
+  padding: 18px;
+  transform: perspective(600px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+  transition: transform 0.25s ease-out;
+  will-change: transform;
+}
+/* Cantos de mira em volta do avatar */
+.hero__avatar::before, .hero__avatar::after {
+  content: "";
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  border: 2px solid var(--accent);
+  opacity: 0.8;
+}
+.hero__avatar::before { top: 0; left: 0; border-right: 0; border-bottom: 0; }
+.hero__avatar::after { bottom: 0; right: 0; border-left: 0; border-top: 0; }
+.hero-avatar {
+  display: block;
+  width: clamp(150px, 22vw, 240px);
+  height: auto;
+  border-radius: 50%;
+  filter: drop-shadow(0 0 28px rgba(6, 182, 212, 0.4));
+  animation: hero-float 4s ease-in-out infinite;
+}
+@keyframes hero-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-avatar, .hero-status__dot::after { animation: none; }
+}

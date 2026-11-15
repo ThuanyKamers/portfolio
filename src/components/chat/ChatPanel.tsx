@@ -1,8 +1,8 @@
 import React, { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { play } from '../../utils/sound';
 import { motion } from 'framer-motion';
-import { FaArrowUp, FaChevronLeft, FaChevronRight, FaPlus, FaUser, FaUserPlus } from 'react-icons/fa';
-import { FaEarthAmericas } from 'react-icons/fa6';
+import { FaArrowUp, FaChevronLeft, FaPlus, FaSearch, FaUser, FaUserPlus } from 'react-icons/fa';
 import { countries } from 'country-flag-icons';
 import * as Flags from 'country-flag-icons/react/1x1';
 import { supabase, type ChatMessage } from '../../lib/supabase';
@@ -46,7 +46,7 @@ const Avatar: React.FC<{ country: string | null; size?: number }> = ({ country, 
 
 const ProfileForm: React.FC<{ initial: Profile | null; onDone: (p: Profile) => void }> = ({ initial, onDone }) => {
   const { t, i18n } = useTranslation();
-  const [anonymous, setAnonymous] = useState(initial ? !initial.name : false);
+  const [anonymous, setAnonymous] = useState(false);
   const [name, setName] = useState(initial?.name ?? '');
   const [country, setCountry] = useState<string | null>(initial?.country ?? null);
   const [query, setQuery] = useState('');
@@ -65,75 +65,87 @@ const ProfileForm: React.FC<{ initial: Profile | null; onDone: (p: Profile) => v
   const q = query.trim().toLowerCase();
   const filtered = q ? list.filter((c) => c.label.toLowerCase().includes(q)) : list;
   const trimmed = name.trim();
-  const canSubmit = anonymous || trimmed.length > 0;
 
   return (
     <form
       className="chat-profile"
       onSubmit={(e) => {
         e.preventDefault();
-        if (canSubmit) onDone({ name: anonymous ? null : trimmed.slice(0, 30), country });
+        // Sem nome preenchido a pessoa entra como anônima
+        onDone({ name: anonymous || !trimmed ? null : trimmed.slice(0, 30), country });
       }}
     >
-      <div className="chat-profile__top">
-        <span />
-        <strong>{t('chat.profileTitle')}</strong>
-        <span />
-      </div>
+      {/* Cartão de contato: avatar grande com o nome embaixo, como no iPhone */}
       <div className="chat-profile__preview">
-        <Avatar country={country} size={56} />
-        <span>{anonymous || !trimmed ? t('chat.anonName') : trimmed}</span>
+        <Avatar country={country} size={72} />
+        <strong>{anonymous || !trimmed ? t('chat.anonName') : trimmed}</strong>
       </div>
 
-      <label className="chat-label">
-        {t('chat.name')}
+      {/* Grupo de ajustes no estilo iOS: nome em cima, chave de anônimo embaixo */}
+      <div className="chat-group">
         <input
-          className="chat-input"
+          className="chat-group__input"
           value={name}
           maxLength={30}
           disabled={anonymous}
           onChange={(e) => setName(e.target.value)}
           placeholder={t('chat.namePlaceholder')}
+          aria-label={t('chat.name')}
         />
-      </label>
-      <label className="chat-check">
-        <input type="checkbox" checked={anonymous} onChange={(e) => setAnonymous(e.target.checked)} />
-        {t('chat.anon')}
-      </label>
+        <label className="chat-group__row">
+          {t('chat.anon')}
+          <input
+            type="checkbox"
+            role="switch"
+            className="chat-switch"
+            checked={anonymous}
+            onChange={(e) => setAnonymous(e.target.checked)}
+          />
+        </label>
+      </div>
 
-      <span className="chat-label">{t('chat.flag')}</span>
-      <input
-        className="chat-input"
-        value={query}
-        onChange={(e) => setQuery(e.target.value)}
-        placeholder={t('chat.search')}
-        aria-label={t('chat.search')}
-      />
-      <div className="chat-flags" role="listbox" aria-label={t('chat.flag')}>
-        <button
-          type="button"
-          role="option"
-          aria-selected={country === null}
-          className={`chat-flag${country === null ? ' is-active' : ''}`}
-          onClick={() => setCountry(null)}
-        >
-          <Avatar country={null} size={22} /> {t('chat.noFlag')}
-        </button>
+      <div className="chat-search">
+        <FaSearch size={12} aria-hidden />
+        <input
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          placeholder={t('chat.search')}
+          aria-label={t('chat.search')}
+        />
+      </div>
+      {/* Bandeiras em grade: cabem muito mais na tela do que numa lista */}
+      <div className="chat-flags no-scrollbar" role="listbox" aria-label={t('chat.flag')}>
+        {!q && (
+          <button
+            type="button"
+            role="option"
+            aria-selected={country === null}
+            aria-label={t('chat.noFlag')}
+            title={t('chat.noFlag')}
+            className={`chat-flag${country === null ? ' is-active' : ''}`}
+            onClick={() => setCountry(null)}
+          >
+            <Avatar country={null} size={34} />
+          </button>
+        )}
         {filtered.map((c) => (
           <button
             type="button"
             role="option"
             key={c.code}
             aria-selected={country === c.code}
+            aria-label={c.label}
+            title={c.label}
             className={`chat-flag${country === c.code ? ' is-active' : ''}`}
             onClick={() => setCountry(c.code)}
           >
-            <Avatar country={c.code} size={22} /> {c.label}
+            <Avatar country={c.code} size={34} />
           </button>
         ))}
+        {filtered.length === 0 && <p className="chat-flags__empty">{t('palette.empty')}</p>}
       </div>
 
-      <button type="submit" className="chat-primary" disabled={!canSubmit}>
+      <button type="submit" className="chat-primary">
         {t('chat.start')}
       </button>
     </form>
@@ -198,6 +210,12 @@ const ChatPanel: React.FC<{ style?: React.CSSProperties; origin?: { x: number; y
   const [gifOpen, setGifOpen] = useState(false);
   const [mine, setMine] = useState<number[]>(() => load<number[]>(MINE_KEY, []));
   const lastSent = useRef(0);
+  // Usados para não tocar o som de "mensagem recebida" nas mensagens do próprio visitante
+  const sendingRef = useRef(false);
+  const mineRef = useRef(mine);
+  useEffect(() => {
+    mineRef.current = mine;
+  }, [mine]);
   const listRef = useRef<HTMLDivElement>(null);
   const panelRef = useRef<HTMLDivElement>(null);
 
@@ -229,6 +247,7 @@ const ChatPanel: React.FC<{ style?: React.CSSProperties; origin?: { x: number; y
       .channel('portfolio-chat')
       .on('postgres_changes', { event: 'INSERT', schema: 'public', table: 'messages' }, (payload) => {
         const msg = payload.new as ChatMessage;
+        if (!sendingRef.current && !mineRef.current.includes(msg.id)) play('receive');
         setMessages((prev) => (prev.some((m) => m.id === msg.id) ? prev : [...prev, msg]));
       })
       .on('postgres_changes', { event: 'DELETE', schema: 'public', table: 'messages' }, (payload) => {
@@ -261,9 +280,11 @@ const ChatPanel: React.FC<{ style?: React.CSSProperties; origin?: { x: number; y
     if (!supabase || !profile || sending) return false;
     if (Date.now() - lastSent.current < COOLDOWN_MS) {
       setError(t('chat.wait'));
+      play('error');
       return false;
     }
     setSending(true);
+    sendingRef.current = true;
     setError(null);
     const { data, error: err } = await supabase
       .from('messages')
@@ -272,11 +293,16 @@ const ChatPanel: React.FC<{ style?: React.CSSProperties; origin?: { x: number; y
       .single();
     setSending(false);
     if (err || !data) {
+      sendingRef.current = false;
       setError(t('chat.sendError'));
+      play('error');
       return false;
     }
     lastSent.current = Date.now();
     const msg = data as ChatMessage;
+    mineRef.current = [...mineRef.current, msg.id];
+    sendingRef.current = false;
+    play('send');
     setMessages((prev) => (prev.some((m) => m.id === msg.id) ? prev : [...prev, msg]));
     setMine((prev) => {
       const next = [...prev, msg.id].slice(-200);
@@ -311,25 +337,19 @@ const ChatPanel: React.FC<{ style?: React.CSSProperties; origin?: { x: number; y
       exit={{ opacity: 0, scale: 0.06, transition: { duration: 0.28, ease: [0.4, 0, 0.7, 0.2] } }}
     >
       <StatusBar />
-      <div className="imsg-header">
-        {/* A seta volta para a escolha de nome e bandeira; quem fecha o chat é o X do botão flutuante */}
-        {showForm ? (
-          <span className="imsg-header__spacer" />
-        ) : (
+      {showForm ? (
+        // Na tela de entrada o cabeçalho é só o título, para sobrar espaço para as bandeiras
+        <div className="imsg-header imsg-header--title">
+          <strong>{t('chat.profileTitle')}</strong>
+        </div>
+      ) : (
+        <div className="imsg-header">
+          {/* A seta volta para a escolha de nome e bandeira; quem fecha o chat é o X do botão flutuante */}
           <button type="button" className="imsg-back" aria-label={t('chat.editProfile')} onClick={() => setEditing(true)}>
             <FaChevronLeft size={20} />
           </button>
-        )}
-        <div className="imsg-contact">
-          <span className="imsg-contact__avatar" aria-hidden>
-            <FaEarthAmericas size={30} />
-          </span>
-          <strong className="imsg-contact__name">
-            {t('chat.world')} <FaChevronRight size={9} aria-hidden />
-          </strong>
         </div>
-        <span className="imsg-header__spacer" />
-      </div>
+      )}
 
       {showForm ? (
         <ProfileForm

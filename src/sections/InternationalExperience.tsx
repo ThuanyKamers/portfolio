@@ -1,9 +1,12 @@
-import React, { useState, useEffect, useCallback, useLayoutEffect, useMemo, useRef } from "react";
+import React, { Suspense, lazy, useState, useEffect, useCallback, useLayoutEffect, useMemo, useRef } from "react";
 import { lastClick, zoomIn, zoomOut, type ZoomSource } from "../utils/macZoom";
 import { createPortal } from "react-dom";
 import { useTranslation } from "react-i18next";
-import Globe from "../components/Globe";
 import { asset } from "../utils/asset";
+import { play } from "../utils/sound";
+
+// O globo (three.js) é a parte mais pesada do site: só é baixado quando a seção se aproxima da tela
+const Globe = lazy(() => import("../components/Globe"));
 
 interface JobData {
   period: string;
@@ -101,6 +104,21 @@ const InternationalExperience: React.FC = () => {
     [active, t]
   );
 
+  const globeSlot = useRef<HTMLDivElement>(null);
+  const [globeNear, setGlobeNear] = useState(false);
+  useEffect(() => {
+    const el = globeSlot.current;
+    if (!el) return;
+    const io = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        setGlobeNear(true);
+        io.disconnect();
+      }
+    }, { rootMargin: "1200px 0px" });
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+
   const modalRef = useRef<HTMLDivElement>(null);
   const cardRef = useRef<HTMLDivElement>(null);
   const source = useRef<ZoomSource>(null);
@@ -109,6 +127,7 @@ const InternationalExperience: React.FC = () => {
   const handleMarkerClick = useCallback((id: string) => {
     // O painel cresce a partir do ponto clicado no globo, como uma janela do macOS
     source.current = lastClick();
+    play('pop');
     setActiveCountry(id);
     setSlideIndex(0);
   }, []);
@@ -121,6 +140,7 @@ const InternationalExperience: React.FC = () => {
   const closeModal = useCallback(() => {
     if (closing.current) return;
     closing.current = true;
+    play('close');
     zoomOut(cardRef.current, source.current, modalRef.current).then(() => {
       closing.current = false;
       setActiveCountry(null);
@@ -162,13 +182,20 @@ const InternationalExperience: React.FC = () => {
       style={{ backgroundColor: "var(--background)", position: "relative", zIndex: 1 }}
     >
       <div className="text-center px-8" data-reveal>
-        <h2 className="text-4xl font-bold tracking-tighter" style={{ color: "var(--foreground)" }}>
-          {t("intl.title")} <span className="text-blue-400 italic">{t("intl.subtitle")}</span>
+        <h2 data-index="02" className="section-title text-4xl font-bold tracking-tighter" style={{ color: "var(--foreground)" }}>
+          {t("intl.title")} <span className="section-title__accent">{t("intl.subtitle")}</span>
         </h2>
       </div>
 
       <div className="flex justify-center px-4" data-reveal>
-        <Globe size={globeSize} onMarkerClick={handleMarkerClick} labels={globeLabels} />
+        {/* O espaço fica reservado desde o início, então a página não pula quando o globo chega */}
+        <div ref={globeSlot} style={{ width: globeSize, height: globeSize }}>
+          {globeNear && (
+            <Suspense fallback={null}>
+              <Globe size={globeSize} onMarkerClick={handleMarkerClick} labels={globeLabels} />
+            </Suspense>
+          )}
+        </div>
       </div>
 
       {/* Painel do país: fotos em formato stories + experiências em cards */}

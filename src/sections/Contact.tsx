@@ -74,8 +74,8 @@ const Contact: React.FC = () => {
     <section id="contact" className="w-full flex flex-col items-center" style={{ backgroundColor: 'var(--background)', padding: '96px 0' }}>
       <div className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20" style={{ padding: '0 32px' }}>
         <div data-reveal className="flex flex-col justify-center gap-6">
-          <p className="text-sm font-bold tracking-tight text-blue-400">
-            {t('contact.title')} {t('contact.subtitle')}
+          <p className="section-kicker">
+            [ 07 ] {t('contact.title')} {t('contact.subtitle')}
           </p>
           <h2 className="text-5xl md:text-6xl font-bold tracking-tighter leading-tight" style={{ color: 'var(--foreground)' }}>
             {t('contact.heading')}
@@ -135,8 +135,7 @@ const Contact: React.FC = () => {
             <button
               type="submit"
               disabled={status === 'sending'}
-              className="cursor-pointer rounded-full text-sm font-semibold transition-colors hover:bg-white/10 disabled:opacity-50 disabled:cursor-wait"
-              style={{ border: '1px solid rgba(255,255,255,0.2)', color: 'var(--foreground)', padding: '12px 28px' }}
+              className="btn-primary"
             >
               {status === 'sending' ? t('contact.sending') : `${t('contact.send')} →`}
             </button>

@@ -2,13 +2,13 @@ import React, { Suspense, lazy, useCallback, useEffect, useRef, useState } from 
 import { useTranslation } from 'react-i18next';
 import { AnimatePresence, motion, useMotionValue } from 'framer-motion';
 import { FaCommentDots, FaTimes } from 'react-icons/fa';
+import { play } from '../../utils/sound';
 
 // O painel (com o cliente do Supabase e as bandeiras) só é baixado no primeiro clique
 const ChatPanel = lazy(() => import('./ChatPanel'));
 
 const enabled = Boolean(import.meta.env.VITE_SUPABASE_URL && import.meta.env.VITE_SUPABASE_ANON_KEY);
 
-const POSITION_KEY = 'chat-position';
 const GAP = 12;
 const PANEL_WIDTH = 340;
 const PANEL_MAX_HEIGHT = 660;
@@ -44,7 +44,8 @@ const ChatWidget: React.FC = () => {
     if (button.current) setAnchor(button.current.getBoundingClientRect());
   }, []);
 
-  // Mantém o balão dentro da tela (ao carregar a posição salva e ao redimensionar a janela)
+  // Mantém o balão dentro da tela ao redimensionar a janela.
+  // A posição arrastada vale só até recarregar: o balão sempre nasce no canto inferior direito.
   const clamp = useCallback(() => {
     const el = button.current;
     if (!el) return;
@@ -58,15 +59,6 @@ const ChatWidget: React.FC = () => {
 
   useEffect(() => {
     if (!enabled) return;
-    try {
-      const saved = JSON.parse(localStorage.getItem(POSITION_KEY) ?? 'null');
-      if (saved) {
-        x.set(saved.x);
-        y.set(saved.y);
-      }
-    } catch {
-      /* sem posição salva */
-    }
     clamp();
     window.addEventListener('resize', clamp);
     return () => window.removeEventListener('resize', clamp);
@@ -78,7 +70,7 @@ const ChatWidget: React.FC = () => {
     // Clicar em qualquer lugar fora do celular (e fora do balão) fecha o chat
     const onPointerDown = (e: PointerEvent) => {
       const target = e.target as Element | null;
-      if (target?.closest('.chat-panel') || button.current?.contains(target)) return;
+      if (target?.closest('.chat-panel') || target?.closest('.palette') || button.current?.contains(target)) return;
       setOpen(false);
     };
     window.addEventListener('keydown', onKey);
@@ -87,6 +79,23 @@ const ChatWidget: React.FC = () => {
       window.removeEventListener('keydown', onKey);
       document.removeEventListener('pointerdown', onPointerDown);
     };
+  }, [open]);
+
+  // O menu de comandos (Ctrl+K) também pode abrir o chat
+  useEffect(() => {
+    const onOpen = () => {
+      measure();
+      setOpen(true);
+    };
+    window.addEventListener('chat:open', onOpen);
+    return () => window.removeEventListener('chat:open', onOpen);
+  }, [measure]);
+
+  // Som de abrir e fechar o celular (inclusive ao fechar com Esc ou clicando fora)
+  const wasOpen = useRef(false);
+  useEffect(() => {
+    if (open !== wasOpen.current) play(open ? 'open' : 'close');
+    wasOpen.current = open;
   }, [open]);
 
   if (!enabled) return null;
@@ -120,11 +129,6 @@ const ChatWidget: React.FC = () => {
         }}
         onDrag={measure}
         onDragEnd={() => {
-          try {
-            localStorage.setItem(POSITION_KEY, JSON.stringify({ x: x.get(), y: y.get() }));
-          } catch {
-            /* sem persistência */
-          }
           measure();
         }}
         onClick={() => {

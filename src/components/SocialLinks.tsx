@@ -22,7 +22,7 @@ const SocialLinks: React.FC<SocialLinksProps> = ({ size = 28, className = '' }) 
         rel="noopener noreferrer"
         aria-label={label}
         title={label}
-        className="transition-transform duration-300 hover:scale-110 hover:text-blue-400"
+        className="transition-transform duration-300 hover:scale-110 hover:text-cyan-400"
         style={{ color: 'var(--text-muted)' }}
       >
         <Icon size={size} />
