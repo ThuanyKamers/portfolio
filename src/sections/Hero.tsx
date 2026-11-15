@@ -89,6 +89,14 @@ const Hero: React.FC = () => {
           </div>
         </div>
 
+        {/* Disponibilidade: a primeira coisa que um recrutador procura */}
+        <div className="flex justify-center" style={{ paddingBottom: '22px' }}>
+          <span className="hero-status">
+            <span className="hero-status__dot" aria-hidden />
+            {t('hero.status')}
+          </span>
+        </div>
+
         {/* Bloco 1: Saudação */}
         <div style={{ paddingBottom: '20px' }}>
           <p className="font-mono text-sm tracking-widest uppercase text-blue-400">

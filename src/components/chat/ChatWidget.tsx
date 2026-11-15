@@ -79,7 +79,7 @@ const ChatWidget: React.FC = () => {
     // Clicar em qualquer lugar fora do celular (e fora do balão) fecha o chat
     const onPointerDown = (e: PointerEvent) => {
       const target = e.target as Element | null;
-      if (target?.closest('.chat-panel') || button.current?.contains(target)) return;
+      if (target?.closest('.chat-panel') || target?.closest('.palette') || button.current?.contains(target)) return;
       setOpen(false);
     };
     window.addEventListener('keydown', onKey);
@@ -89,6 +89,16 @@ const ChatWidget: React.FC = () => {
       document.removeEventListener('pointerdown', onPointerDown);
     };
   }, [open]);
+
+  // O menu de comandos (Ctrl+K) também pode abrir o chat
+  useEffect(() => {
+    const onOpen = () => {
+      measure();
+      setOpen(true);
+    };
+    window.addEventListener('chat:open', onOpen);
+    return () => window.removeEventListener('chat:open', onOpen);
+  }, [measure]);
 
   // Som de abrir e fechar o celular (inclusive ao fechar com Esc ou clicando fora)
   const wasOpen = useRef(false);

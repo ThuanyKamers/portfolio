@@ -1,0 +1,23 @@
+// Writeups do repositório TryHackMe-Studies, do mais antigo ao mais novo.
+// Para adicionar um: copie uma linha e preencha sala, assuntos e nome do arquivo.
+export const WRITEUPS_REPO = 'https://github.com/ThuanyKamers/TryHackMe-Studies';
+
+export interface Writeup {
+  room: string;
+  topics: string[];
+  file: string;
+}
+
+export const WRITEUPS: Writeup[] = [
+  { room: "Offensive Security Intro", topics: ["Broken access control", "directory enumeration"], file: "tryhackme-offensive-security-intro.md" },
+  { room: "Defensive Security Intro", topics: ["SOC monitoring", "threat intelligence", "incident response"], file: "tryhackme-defensive-security-intro.md" },
+  { room: "Search Skills", topics: ["OSINT tools", "Shodan-like scanners", "VirusTotal", "CVE research", "GitHub"], file: "tryhackme-search-skills.md" },
+  { room: "Linux Fundamentals (Pt 1)", topics: ["Linux terminal basics", "navigation", "grep", "shell operators"], file: "tryhackme-linux-fundamentals-pt1.md" },
+  { room: "Computer Fundamentals: Inside a Computer", topics: ["PC hardware components", "assembly", "boot process"], file: "tryhackme-computer-fundamentals-inside-a-computer.md" },
+  { room: "Junior Security Analyst Intro", topics: ["SOC roles", "SIEM dashboard", "IP reputation", "escalation", "firewall blocking"], file: "tryhackme-junior-security-analyst-intro.md" },
+  { room: "SOC Role in Blue Team", topics: ["Security hierarchy", "SOC vs CIRT vs specialized roles", "internal SOC vs MSSP"], file: "tryhackme-soc-role-in-blue-team.md" },
+  { room: "SOC Simulator", topics: ["Phishing alert triage", "SIEM investigation", "TryDetectThis", "case reporting", "escalation"], file: "tryhackme-soc-simulator.md" },
+  { room: "SOC Simulator: Introduction to Phishing", topics: ["Phishing triage methodology", "5 Ws", "false vs true positives", "escalation templates"], file: "tryhackme-soc-simulator-intro-to-phishing.md" },
+  { room: "SOC L1 Alert Triage", topics: ["Alert anatomy", "prioritisation rules", "triage cycle", "false vs true positive verdicts"], file: "tryhackme-soc-l1-alert-triage.md" },
+  { room: "SOC L1 Alert Reporting", topics: ["Five Ws reporting", "escalation guide", "requesting L2 support", "crisis communication"], file: "tryhackme-soc-l1-alert-reporting.md" },
+];

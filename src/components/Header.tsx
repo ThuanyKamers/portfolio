@@ -1,17 +1,20 @@
 import React, { useCallback, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { FaBriefcase, FaCode, FaEnvelope, FaGlobeAmericas, FaRocket, FaTrophy } from 'react-icons/fa';
+import { FaBriefcase, FaCode, FaEnvelope, FaGlobeAmericas, FaRocket, FaShieldAlt, FaTrophy } from 'react-icons/fa';
+import { FiSearch } from 'react-icons/fi';
 import { LanguageSwitcher } from './ui/LanguageSwitcher';
 import { SoundToggle } from './ui/SoundToggle';
 import DockNav from './DockNav';
+import { scrollToSection as jumpTo } from '../utils/scrollToSection';
 import { LINKS } from './SocialLinks';
 
-const NAV_IDS = ['experience', 'international', 'tech-stack', 'projects', 'achievements', 'contact'] as const;
+const NAV_IDS = ['experience', 'international', 'tech-stack', 'projects', 'writeups', 'achievements', 'contact'] as const;
 const NAV_KEYS: Record<typeof NAV_IDS[number], string> = {
   'experience': 'nav.experience',
   'international': 'nav.international',
   'tech-stack': 'nav.techStack',
   'projects': 'nav.projects',
+  'writeups': 'nav.writeups',
   'achievements': 'nav.achievements',
   'contact': 'nav.contact',
 };
@@ -23,6 +26,7 @@ const NAV_ICONS = {
   'international': FaGlobeAmericas,
   'tech-stack': FaCode,
   'projects': FaRocket,
+  'writeups': FaShieldAlt,
   'achievements': FaTrophy,
   'contact': FaEnvelope,
 } as const;
@@ -42,14 +46,11 @@ const Header: React.FC = () => {
     []
   );
 
+  const openPalette = useCallback(() => window.dispatchEvent(new Event('palette:open')), []);
+
   const scrollToSection = useCallback((sectionId: string) => {
     setMenuOpen(false);
-    const element = document.getElementById(sectionId);
-    if (element) {
-      const headerHeight = window.innerWidth < 768 ? 64 : 80;
-      const top = element.getBoundingClientRect().top + window.scrollY - headerHeight;
-      window.scrollTo({ top, behavior: 'smooth' });
-    }
+    jumpTo(sectionId);
   }, []);
 
   return (
@@ -73,6 +74,10 @@ const Header: React.FC = () => {
           <div />
 
           <div className="site-header__hit" style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center', marginRight: '60px' }}>
+            <button type="button" className="palette-hint" onClick={openPalette} aria-label={t('palette.title')} title={t('palette.title')}>
+              <FiSearch size={16} />
+              <kbd>Ctrl K</kbd>
+            </button>
             <SoundToggle />
             <LanguageSwitcher />
           </div>
@@ -82,6 +87,9 @@ const Header: React.FC = () => {
         <div className="flex md:hidden items-center justify-end h-16">
 
           <div className="flex items-center gap-4">
+            <button type="button" className="sound-toggle" onClick={openPalette} aria-label={t('palette.title')} title={t('palette.title')}>
+              <FiSearch size={18} />
+            </button>
             <SoundToggle />
             <LanguageSwitcher />
             <button
@@ -125,7 +133,7 @@ const Header: React.FC = () => {
       <div
         className="md:hidden overflow-hidden transition-all duration-300"
         style={{
-          maxHeight: menuOpen ? '400px' : '0',
+          maxHeight: menuOpen ? '460px' : '0',
           backgroundColor: 'var(--background)',
         }}
       >

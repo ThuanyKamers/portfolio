@@ -99,3 +99,45 @@
 }
 .sound-toggle:hover { color: #fff; background-color: rgba(255, 255, 255, 0.08); }
 .sound-toggle:focus-visible { outline: 2px solid #60a5fa; outline-offset: 2px; }
+
+/* Link "pular para o conteúdo": só aparece ao navegar com Tab */
+.skip-link {
+  position: fixed;
+  top: 12px;
+  left: 50%;
+  z-index: 100000;
+  padding: 10px 18px;
+  border-radius: 10px;
+  background: #2563eb;
+  color: #fff;
+  font-weight: 600;
+  font-size: 14px;
+  transform: translate(-50%, -200%);
+  transition: transform 0.2s;
+}
+.skip-link:focus { transform: translate(-50%, 0); outline: 2px solid #fff; outline-offset: 2px; }
+
+/* Atalho do menu de comandos no topo */
+.palette-hint {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 36px;
+  padding: 0 12px;
+  margin-right: 6px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: #cbd5e1;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s, background-color 0.2s;
+}
+.palette-hint:hover { color: #fff; border-color: rgba(255, 255, 255, 0.3); background-color: rgba(255, 255, 255, 0.06); }
+.palette-hint:focus-visible { outline: 2px solid #60a5fa; outline-offset: 2px; }
+.palette-hint kbd, .palette__search kbd {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 11px;
+  padding: 2px 6px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #cbd5e1;
+}
