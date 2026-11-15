@@ -460,3 +460,7 @@
 .imsg-contact__avatar svg { width: 18px; height: 18px; }
 .imsg-contact__name { margin-top: 0; padding: 0; background: none; font-size: 15px; }
 .imsg-header__spacer { width: 36px; }
+
+/* Cabeçalho sem faixa: só a seta de voltar, já dentro da área da tela */
+.imsg-header { display: flex; padding: 8px 12px 4px; background: none; border-bottom: 0; }
+.imsg-header--title { display: block; padding: 10px 16px 12px; }

@@ -2,8 +2,7 @@ import React, { useEffect, useLayoutEffect, useMemo, useRef, useState } from 're
 import { useTranslation } from 'react-i18next';
 import { play } from '../../utils/sound';
 import { motion } from 'framer-motion';
-import { FaArrowUp, FaChevronLeft, FaChevronRight, FaPlus, FaSearch, FaUser, FaUserPlus } from 'react-icons/fa';
-import { FaEarthAmericas } from 'react-icons/fa6';
+import { FaArrowUp, FaChevronLeft, FaPlus, FaSearch, FaUser, FaUserPlus } from 'react-icons/fa';
 import { countries } from 'country-flag-icons';
 import * as Flags from 'country-flag-icons/react/1x1';
 import { supabase, type ChatMessage } from '../../lib/supabase';
@@ -349,15 +348,6 @@ const ChatPanel: React.FC<{ style?: React.CSSProperties; origin?: { x: number; y
           <button type="button" className="imsg-back" aria-label={t('chat.editProfile')} onClick={() => setEditing(true)}>
             <FaChevronLeft size={20} />
           </button>
-          <div className="imsg-contact">
-            <span className="imsg-contact__avatar" aria-hidden>
-              <FaEarthAmericas size={30} />
-            </span>
-            <strong className="imsg-contact__name">
-              {t('chat.world')} <FaChevronRight size={9} aria-hidden />
-            </strong>
-          </div>
-          <span className="imsg-header__spacer" />
         </div>
       )}
 
