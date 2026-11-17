@@ -45,7 +45,7 @@ cp .env.example .env   # then fill in your EmailJS, Supabase and GIPHY values
 npm run dev
 ```
 
-Other scripts: `npm run build` and `npm run lint`.
+Other scripts: `npm run build`, `npm run preview` (serves the build at http://localhost:4173/portfolio/) and `npm run lint`.
 
 ### Environment variables
 
