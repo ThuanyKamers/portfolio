@@ -2,7 +2,7 @@ const pt = {
   "tech.groups.languages": "Linguagens",
   "tech.groups.frameworks": "Frameworks e bibliotecas",
   "tech.groups.data": "Bancos de dados e ferramentas",
-  "tech.groups.systems": "Sistemas",
+  "tech.groups.systems": "Sistemas e ferramentas de TI",
   "tech.groups.security": "Segurança (em estudo)",
   "hero.status": "Aberta a novas oportunidades",
   "a11y.skip": "Pular para o conteúdo",

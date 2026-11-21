@@ -1,6 +1,9 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { FiShield } from 'react-icons/fi';
+import type { IconType } from 'react-icons';
+import { FaMicrosoft, FaTicketAlt, FaUsersCog } from 'react-icons/fa';
+import { SiConfluence, SiGoogle, SiOracle } from 'react-icons/si';
 import { asset } from '../utils/asset';
 
 const TECHS = [
@@ -28,15 +31,26 @@ const TECHS = [
   { name: "Linux", color: "#FCC624", iconUrl: "images/tech/linux.svg" },
 ] as const;
 
-type Tech = typeof TECHS[number];
-const byName = (names: string[]) => names.map((n) => TECHS.find((t) => t.name === n)).filter(Boolean) as Tech[];
+// Ferramentas de TI e empresa: sem SVG próprio em public/, usam ícones do react-icons
+const TOOLS: { name: string; color: string; Icon: IconType }[] = [
+  { name: "ServiceNow", color: "#62D84E", Icon: FaTicketAlt },
+  { name: "SharePoint", color: "#0F9D9A", Icon: FaMicrosoft },
+  { name: "Confluence", color: "#2684FF", Icon: SiConfluence },
+  { name: "Google Admin", color: "#4285F4", Icon: SiGoogle },
+  { name: "Active Directory", color: "#0078D6", Icon: FaUsersCog },
+  { name: "JD Edwards", color: "#F80000", Icon: SiOracle },
+];
+
+type Tech = { name: string; color: string; iconUrl?: string; Icon?: IconType };
+const ALL: Tech[] = [...TECHS, ...TOOLS];
+const byName = (names: string[]) => names.map((n) => ALL.find((t) => t.name === n)).filter(Boolean) as Tech[];
 
 // Cada grupo vira um painel; a chave é o nome da "pasta" e a tradução fica em tech.groups.*
 const GROUPS = [
   { key: 'languages', items: byName(['HTML', 'CSS', 'JavaScript', 'TypeScript', 'Python', 'PHP', 'Dart', 'Lua']) },
   { key: 'frameworks', items: byName(['React', 'Flutter', 'Tailwind CSS', 'Node.js', 'Express', 'Vite', 'GSAP']) },
   { key: 'data', items: byName(['MySQL', 'PostgreSQL', 'Git & GitHub', 'Docker', 'XAMPP']) },
-  { key: 'systems', items: byName(['Windows', 'Linux']) },
+  { key: 'systems', items: byName(['Windows', 'Linux', 'Active Directory', 'Google Admin', 'ServiceNow', 'SharePoint', 'Confluence', 'JD Edwards']) },
 ];
 
 // Assuntos de segurança praticados nos writeups do TryHackMe (sem logo, só texto)
@@ -64,7 +78,11 @@ const TechStack: React.FC = () => {
               <ul className="tech-panel__list">
                 {g.items.map((tech) => (
                   <li key={tech.name} className="tech-chip" style={{ '--chip': tech.color } as React.CSSProperties}>
-                    <img src={asset(tech.iconUrl)} alt="" width={20} height={20} loading="lazy" />
+                    {tech.Icon ? (
+                      <tech.Icon aria-hidden size={18} style={{ color: tech.color }} />
+                    ) : (
+                      <img src={asset(tech.iconUrl!)} alt="" width={20} height={20} loading="lazy" />
+                    )}
                     {tech.name}
                   </li>
                 ))}
