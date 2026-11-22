@@ -113,7 +113,7 @@ const es = {
       cover: "images/projects/capaVerifyIt-v2.webp"
     },
     {
-      title: "TryHackMe Studies",
+      title: "TryHackMe Writeups",
       category: "security",
       description: "Writeups de las salas de TryHackMe que completo mientras estudio ciberseguridad, con foco en SOC y Blue Team: triaje de alertas, análisis de phishing en un SIEM, Linux y threat intelligence. Cada uno registra lo que hice, dónde me trabé y lo que aprendí.",
       tech: ["SOC", "SIEM", "Splunk", "Linux", "Phishing Analysis"],
