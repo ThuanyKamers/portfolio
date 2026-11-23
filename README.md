@@ -32,6 +32,8 @@ My personal portfolio website, built with React and TypeScript.
 - Contact form with EmailJS: the visitor confirms their e-mail with a code before the message is sent
 - Live visitor chat with Supabase Realtime, styled like a phone, where each visitor picks a name and a flag or stays anonymous
 - Installable as an app (web manifest and service worker)
+- Custom 404 page in the same console style, with a 3D cube made in pure CSS
+- Search-friendly: Open Graph preview image, structured data (schema.org Person), canonical URL and sitemap
 - Visit counter in the footer
 - Lint and build checks on every pull request, and automatic deploy to GitHub Pages on every push to `main`
 
@@ -63,7 +65,7 @@ For the deployed site, the three EmailJS values are stored as repository secrets
 ## Project structure
 
 ```
-public/            images, icons, web manifest and service worker
+public/            images, icons, web manifest, service worker and 404 page
 src/
   components/      header, footer, globe, project card, command menu, hidden terminal and UI components
     chat/          visitor chat (panel, profile form, GIF picker)
