@@ -67,6 +67,8 @@ const rangeOf = (e: Entry, sep: string) => {
   return a === b ? a : `${a}${sep}${b}`;
 };
 
+const isMobile = () => typeof window !== "undefined" && window.matchMedia("(max-width: 860px)").matches;
+
 const rolesOf = (e: Entry) => [...new Set(e.positions.map((p) => p.role))].join(" · ");
 
 const list = (v: unknown) => (Array.isArray(v) ? (v as string[]) : []);
@@ -327,20 +329,20 @@ const WorkExperience: React.FC = () => {
                   <li key={e.id}>
                     <button
                       type="button"
-                      className={`work__row${isActive ? " is-active" : ""}`}
+                      className={`work__row${isActive ? " is-active" : ""}${selected === e.id ? " is-open" : ""}`}
                       aria-expanded={isActive}
-                      onClick={() => { setSelected(e.id); play("pop"); }}
+                      onClick={() => { setSelected(selected === e.id && isMobile() ? null : e.id); play("pop"); }}
                     >
                       <span className="work__years">{rangeOf(e, "-")}</span>
                       <span className="work__name">
                         <span className="work__company">{e.company}</span>
-                        <span className="work__role"> · {rolesOf(e)}</span>
+                        <span className="work__sep"> · </span><span className="work__role">{rolesOf(e)}</span>
                       </span>
                       <span className={`work__tag${e.it ? " is-it" : ""}`}>
                         {e.it ? `${t("work.filter.it")} · ` : ""}{CODES[e.country]}
                       </span>
                     </button>
-                    {isActive && <div className="work__inline">{detail(e)}</div>}
+                    {selected === e.id && <div className="work__inline">{detail(e)}</div>}
                   </li>
                 );
               })}

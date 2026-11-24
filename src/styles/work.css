@@ -92,13 +92,13 @@
   cursor: pointer;
   transition: background-color 0.15s, border-color 0.15s;
 }
-.work__row:hover { background: rgba(148, 163, 184, 0.07); }
+@media (hover: hover) { .work__row:hover { background: rgba(148, 163, 184, 0.07); } }
 .work__row:focus-visible { outline: 2px solid #22d3ee; outline-offset: 1px; }
 .work__row.is-active { background: rgba(34, 211, 238, 0.1); border-color: rgba(34, 211, 238, 0.35); }
 .work__years { color: #64748b; }
 .work__name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .work__company { color: var(--foreground); }
-.work__role { color: var(--text-muted); }
+.work__role, .work__sep { color: var(--text-muted); }
 .work__tag { font-size: 12px; color: #a78bfa; }
 .work__tag.is-it { color: #22d3ee; }
 
@@ -160,13 +160,45 @@
 
 @media (max-width: 860px) {
   .work { padding-top: 96px; }
+  .work__filters {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    width: 100%;
+    overflow-x: auto;
+    scrollbar-width: none;
+    margin: 4px 0 20px;
+    padding: 2px 16px;
+    gap: 8px;
+  }
+  .work__filters::-webkit-scrollbar { display: none; }
+  .work__chip { flex-shrink: 0; padding: 7px 12px; font-size: 12px; }
+  .work__term { width: calc(100% - 24px); }
+  .work__bar { padding: 10px 14px; font-size: 12px; }
   .work__panes { grid-template-columns: minmax(0, 1fr); }
-  .work__list-pane { padding: 14px 10px 16px; border-right: 0; }
+  .work__list-pane { padding: 12px 8px 14px; border-right: 0; }
+  .work__cmd { margin: 0 0 8px 6px; font-size: 12px; }
+  .work__cmd--end { margin-top: 10px; }
   .work__detail-pane { display: none; }
-  .work__inline { display: block; padding: 14px 10px 18px; }
-  .work__row { grid-template-columns: 74px minmax(0, 1fr) auto; gap: 10px; padding: 10px 8px; font-size: 13px; }
-  .work__role { display: none; }
-  .work__photos { grid-template-rows: 96px 96px; }
+  .work__row {
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas: "years tag" "name name";
+    gap: 2px 10px;
+    padding: 10px;
+    font-size: 12px;
+  }
+  .work__row.is-active:not(.is-open) { background: none; border-color: transparent; }
+  .work__years { grid-area: years; }
+  .work__tag { grid-area: tag; font-size: 11px; }
+  .work__name { grid-area: name; display: flex; flex-direction: column; white-space: normal; overflow: visible; }
+  .work__company { font: 600 15px var(--font-display); }
+  .work__role { font-family: var(--font-sans, inherit); font-size: 13px; }
+  .work__sep { display: none; }
+  .work__inline { display: block; padding: 6px 10px 16px; }
+  .work__photos { grid-template-rows: 84px 84px; margin-bottom: 12px; }
+  .work__title { display: none; }
+  .work__country { margin: 0; }
+  .work__subrole { font-size: 12px; }
+  .work__bullets { font-size: 13px; line-height: 1.55; }
 }
 
 /* Visualizador de fotos */
