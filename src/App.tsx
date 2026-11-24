@@ -15,6 +15,7 @@ import ChatWidget from './components/chat/ChatWidget';
 import Writeups from './sections/Writeups';
 import CommandPalette from './components/CommandPalette';
 import SecretTerminal from './components/SecretTerminal';
+import WriteupReader from './components/WriteupReader';
 import { useTranslation } from 'react-i18next';
 import { scrollToSection } from './utils/scrollToSection';
 
@@ -80,6 +81,7 @@ function App() {
       <ChatWidget />
       <CommandPalette />
       <SecretTerminal />
+      <WriteupReader />
       <div id="smooth-wrapper">
         <div id="smooth-content">
           <main id="content" tabIndex={-1} className="w-full flex flex-col items-center relative overflow-x-hidden" style={{ zIndex: 1 }}>
