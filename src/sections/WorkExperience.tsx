@@ -69,6 +69,7 @@ const PinIcon = () => (
 const WorkExperience: React.FC = () => {
   const { t } = useTranslation();
   const [filter, setFilter] = useState<Filter>("all");
+  const [open, setOpen] = useState<string | null>(null);
   const [globeOpen, setGlobeOpen] = useState(false);
   const [globeSize, setGlobeSize] = useState(() =>
     typeof window !== "undefined" && window.innerWidth < 640 ? 300 : 460
@@ -259,54 +260,76 @@ const WorkExperience: React.FC = () => {
           const last = e.positions[e.positions.length - 1];
           const [start] = last.period.split(" - ");
           const end = first.period.split(" - ").pop();
+          const range = start === end ? start : `${start} - ${end}`;
+          const roles = [...new Set(e.positions.map((p) => p.role))].join(" · ");
           const extra = e.photos.length - 3;
+          const isOpen = open === e.id;
           return (
-            <li key={e.id} className={`work__item${e.it ? " is-it" : ""}`}>
-              <div className="work__date">
-                <span>{end}</span>
-                {start !== end && <span>{start}</span>}
-              </div>
+            <li key={e.id} className={`work__item${e.it ? " is-it" : ""}${isOpen ? " is-open" : ""}`}>
               <span className="work__dot" aria-hidden />
-              <article className={`work__card${e.photos.length ? "" : " no-photos"}`}>
-                <div className="work__body">
-                  <div className="work__top">
-                    <h3 className="work__company">{e.company}</h3>
-                    {e.it && <span className="work__tag">{t("work.filter.it")}</span>}
-                    <span className="work__country"><Flag className="work__flag" /> {t(`intl.${e.country}`)}</span>
-                  </div>
-                  {e.positions.map((p, i) => (
-                    <div key={i} className="work__position">
-                      <p className="work__role">
-                        {p.role}
-                        {p.place && <span className="work__place"><PinIcon /> {p.place}</span>}
-                      </p>
-                      <p className="work__period">{p.period}</p>
-                      <ul className="work__bullets">
-                        {p.bullets.map((b, j) => <li key={j}>{b}</li>)}
-                      </ul>
+              <article className="work__card">
+                <div className="work__head">
+                  <button
+                    type="button"
+                    className="work__toggle"
+                    aria-expanded={isOpen}
+                    aria-controls={`work-${e.id}`}
+                    onClick={() => setOpen(isOpen ? null : e.id)}
+                  >
+                    <span className="work__summary">
+                      <span className="work__top">
+                        <span className="work__company">{e.company}</span>
+                        {e.it && <span className="work__tag">{t("work.filter.it")}</span>}
+                      </span>
+                      <span className="work__role">{roles}</span>
+                      <span className="work__meta">
+                        <span className="work__range">{range}</span>
+                        <span className="work__country"><Flag className="work__flag" /> {t(`intl.${e.country}`)}</span>
+                      </span>
+                    </span>
+                    <svg className="work__chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                      <path d="m6 9 6 6 6-6" />
+                    </svg>
+                  </button>
+
+                  {e.photos.length > 0 && (
+                    <div className="work__thumbs">
+                      {e.photos.slice(0, 3).map((p, i) => (
+                        <button
+                          key={p.src}
+                          type="button"
+                          className="work__thumb"
+                          onClick={() => openViewer(e, i)}
+                          aria-label={`${e.company}: ${p.caption || t("work.photo", { n: i + 1 })}`}
+                        >
+                          <img src={p.src} alt="" loading="lazy" decoding="async" draggable={false} />
+                          {i === 2 && extra > 0 && <span className="work__more">+{extra}</span>}
+                        </button>
+                      ))}
                     </div>
-                  ))}
-                  {e.doc && (
-                    <a className="work__doc" href={e.doc.url} target="_blank" rel="noopener noreferrer">
-                      {e.doc.label} <FaExternalLinkAlt size={11} />
-                    </a>
                   )}
                 </div>
 
-                {e.photos.length > 0 && (
-                  <div className={`work__photos n${Math.min(e.photos.length, 3)}`}>
-                    {e.photos.slice(0, 3).map((p, i) => (
-                      <button
-                        key={p.src}
-                        type="button"
-                        className="work__photo"
-                        onClick={() => openViewer(e, i)}
-                        aria-label={`${e.company}: ${p.caption || t("work.photo", { n: i + 1 })}`}
-                      >
-                        <img src={p.src} alt="" loading="lazy" decoding="async" draggable={false} />
-                        {i === 2 && extra > 0 && <span className="work__more">+{extra}</span>}
-                      </button>
+                {isOpen && (
+                  <div id={`work-${e.id}`} className="work__details">
+                    {e.positions.map((p, i) => (
+                      <div key={i} className="work__position">
+                        {(e.positions.length > 1 || p.place) && (
+                          <p className="work__subrole">
+                            {e.positions.length > 1 && <span>{p.role} · {p.period}</span>}
+                            {p.place && <span className="work__place"><PinIcon /> {p.place}</span>}
+                          </p>
+                        )}
+                        <ul className="work__bullets">
+                          {p.bullets.map((b, j) => <li key={j}>{b}</li>)}
+                        </ul>
+                      </div>
                     ))}
+                    {e.doc && (
+                      <a className="work__doc" href={e.doc.url} target="_blank" rel="noopener noreferrer">
+                        {e.doc.label} <FaExternalLinkAlt size={11} />
+                      </a>
+                    )}
                   </div>
                 )}
               </article>
