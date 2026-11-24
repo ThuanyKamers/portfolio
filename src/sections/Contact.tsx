@@ -75,7 +75,7 @@ const Contact: React.FC = () => {
       <div className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20" style={{ padding: '0 32px' }}>
         <div data-reveal className="flex flex-col justify-center gap-6">
           <p className="section-kicker">
-            [ 07 ] {t('contact.title')} {t('contact.subtitle')}
+            [ 06 ] {t('contact.title')} {t('contact.subtitle')}
           </p>
           <h2 className="text-5xl md:text-6xl font-bold tracking-tighter leading-tight" style={{ color: 'var(--foreground)' }}>
             {t('contact.heading')}

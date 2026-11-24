@@ -16,7 +16,6 @@ interface Command {
 
 const SECTIONS = [
   ['experience', 'nav.experience'],
-  ['international', 'nav.international'],
   ['tech-stack', 'nav.techStack'],
   ['projects', 'nav.projects'],
   ['writeups', 'nav.writeups'],

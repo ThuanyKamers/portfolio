@@ -5,11 +5,10 @@ import { ScrollSmoother } from 'gsap/ScrollSmoother';
 import Header from './components/Header';
 import Hero from './sections/Hero';
 import Contact from './sections/Contact';
-import Experience from './sections/Experience';
+import WorkExperience from './sections/WorkExperience';
 import Projects from './sections/Projects';
 import TechStack from './sections/TechStack';
 import Achievements from './sections/Achievements';
-import InternationalExperience from './sections/InternationalExperience';
 import Footer from './components/Footer';
 import SnowBackground from './components/SnowBackground';
 import ChatWidget from './components/chat/ChatWidget';
@@ -86,9 +85,7 @@ function App() {
           <main id="content" tabIndex={-1} className="w-full flex flex-col items-center relative overflow-x-hidden" style={{ zIndex: 1 }}>
             <Hero />
             <div className="h-20 md:h-32" />
-            <Experience />
-            <div className="h-20 md:h-32" />
-            <InternationalExperience />
+            <WorkExperience />
             <div className="h-20 md:h-32" />
             <TechStack />
             <div className="h-20 md:h-32" />

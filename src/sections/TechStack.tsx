@@ -63,7 +63,7 @@ const TechStack: React.FC = () => {
     <section id="tech-stack" className="w-full flex flex-col items-center bg-transparent relative" style={{ padding: '96px 0' }}>
       <div className="tech">
         <div className="text-center" style={{ marginBottom: '40px' }} data-reveal>
-          <h2 data-index="03" className="section-title text-4xl font-bold tracking-tighter" style={{ color: 'var(--foreground)' }}>
+          <h2 data-index="02" className="section-title text-4xl font-bold tracking-tighter" style={{ color: 'var(--foreground)' }}>
             {t('tech.title')} <span className="section-title__accent">{t('tech.subtitle')}</span>
           </h2>
         </div>
