@@ -17,3 +17,6 @@ dist/
 .DS_Store
 Thumbs.db
 .claude/
+
+# writeups gerados na build (scripts/fetch-writeups.mjs)
+public/writeups/

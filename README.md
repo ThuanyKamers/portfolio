@@ -23,7 +23,7 @@ My personal portfolio website, built with React and TypeScript.
 - Five languages (English, Portuguese, Spanish, German and French) with i18next. English ships with the page and the others load on demand
 - Security-console look: dark grid background, cyan accents and self-hosted Inter, Space Grotesk and JetBrains Mono fonts
 - 3D globe built with Three.js that shows my experience by country, loaded only when its section gets close
-- Writeups section with my latest TryHackMe notes
+- Writeups section with my latest TryHackMe notes, each one readable as a page inside the site (pulled from the TryHackMe-Studies repo at build time)
 - Project filter (development, security, community)
 - Command menu with Ctrl/⌘ + K to jump to a section, open the chat, switch language or mute sounds
 - Interface sounds made with the Web Audio API, with a mute button in the header
@@ -69,7 +69,7 @@ public/            images, icons, web manifest, service worker and 404 page
 src/
   components/      header, footer, globe, project card, command menu, hidden terminal and UI components
     chat/          visitor chat (panel, profile form, GIF picker)
-  sections/        page sections (Hero, Experience, Projects, Writeups, Tech Stack, Achievements, International Experience, Contact)
+  sections/        page sections (Hero, Work Experience, Tech Stack, Projects, Writeups, Achievements, Contact)
   locales/         translations, one file per language
   data/            list of writeups
   styles/          global styles and design tokens, one file per section

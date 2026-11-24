@@ -1,12 +1,13 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { FiArrowUpRight } from 'react-icons/fi';
-import { WRITEUPS, WRITEUPS_REPO } from '../data/writeups';
+import { FiArrowRight, FiArrowUpRight } from 'react-icons/fi';
+import { play } from '../utils/sound';
+import { WRITEUPS, WRITEUPS_REPO, writeupHref } from '../data/writeups';
 import thm from '../data/tryhackme.json';
 
 const SHOWN = 6;
 
-// Os writeups mais recentes do TryHackMe, direto do repositório de estudos
+// Os writeups mais recentes do TryHackMe; cada um abre como página dentro do site
 const Writeups: React.FC = () => {
   const { t } = useTranslation();
   const latest = [...WRITEUPS].reverse().slice(0, SHOWN);
@@ -35,13 +36,13 @@ const Writeups: React.FC = () => {
       <ul className="writeups">
         {latest.map((w, i) => (
           <li key={w.file} data-reveal>
-            <a className="writeup" href={`${WRITEUPS_REPO}/blob/main/${w.file}`} target="_blank" rel="noopener noreferrer">
+            <a className="writeup" href={writeupHref(w.file)} onClick={() => play('pop')}>
               <span className="writeup__number">{String(WRITEUPS.length - i).padStart(2, '0')}</span>
               <span className="writeup__body">
                 <span className="writeup__room">{w.room}</span>
                 <span className="writeup__topics">{w.topics.join(' · ')}</span>
               </span>
-              <FiArrowUpRight className="writeup__arrow" aria-hidden />
+              <FiArrowRight className="writeup__arrow" aria-hidden />
             </a>
           </li>
         ))}
