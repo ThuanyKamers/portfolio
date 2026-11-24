@@ -133,7 +133,7 @@ const Achievements: React.FC = () => {
     >
       <div className="w-full">
         <div className="text-center px-8" style={{ marginBottom: '24px' }} data-reveal>
-          <h2 data-index="06" className="section-title text-4xl font-bold tracking-tighter" style={{ color: "var(--foreground)" }}>
+          <h2 data-index="05" className="section-title text-4xl font-bold tracking-tighter" style={{ color: "var(--foreground)" }}>
             {t("achievements.title")} <span className="section-title__accent">{t("achievements.subtitle")}</span>
           </h2>
         </div>

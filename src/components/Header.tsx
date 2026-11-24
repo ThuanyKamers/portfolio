@@ -1,6 +1,6 @@
 import React, { useCallback, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { FaBriefcase, FaCode, FaEnvelope, FaGlobeAmericas, FaRocket, FaShieldAlt, FaTrophy } from 'react-icons/fa';
+import { FaBriefcase, FaCode, FaEnvelope, FaRocket, FaShieldAlt, FaTrophy } from 'react-icons/fa';
 import { FiSearch } from 'react-icons/fi';
 import { LanguageSwitcher } from './ui/LanguageSwitcher';
 import { SoundToggle } from './ui/SoundToggle';
@@ -8,10 +8,9 @@ import DockNav from './DockNav';
 import { scrollToSection as jumpTo } from '../utils/scrollToSection';
 import { LINKS } from './SocialLinks';
 
-const NAV_IDS = ['experience', 'international', 'tech-stack', 'projects', 'writeups', 'achievements', 'contact'] as const;
+const NAV_IDS = ['experience', 'tech-stack', 'projects', 'writeups', 'achievements', 'contact'] as const;
 const NAV_KEYS: Record<typeof NAV_IDS[number], string> = {
   'experience': 'nav.experience',
-  'international': 'nav.international',
   'tech-stack': 'nav.techStack',
   'projects': 'nav.projects',
   'writeups': 'nav.writeups',
@@ -23,7 +22,6 @@ const NAV_KEYS: Record<typeof NAV_IDS[number], string> = {
 const DOCK_GRADIENT = 'linear-gradient(160deg, rgba(34, 211, 238, 0.28) 0%, rgba(8, 145, 178, 0.12) 55%, rgba(8, 15, 28, 0.55) 100%)';
 const NAV_ICONS = {
   'experience': FaBriefcase,
-  'international': FaGlobeAmericas,
   'tech-stack': FaCode,
   'projects': FaRocket,
   'writeups': FaShieldAlt,
