@@ -29,6 +29,8 @@ interface JobData { period: string; role: string; company?: string; description?
 
 const FLAGS: Record<Country, React.ComponentType<{ className?: string; title?: string }>> = { germany: DE, portugal: PT, brazil: BR };
 const COUNTRY_IDS: Country[] = ["germany", "portugal", "brazil"];
+const CODES: Record<Country, string> = { germany: "DE", portugal: "PT", brazil: "BR" };
+const CMD_FLAGS: Record<Filter, string> = { all: "", it: " | grep IT", germany: " | grep DE", portugal: " | grep PT", brazil: " | grep BR" };
 
 const img = (path: string) => asset(`images/${path}`);
 const PHOTOS = {
@@ -57,6 +59,16 @@ const fullPeriod = (period: string) => {
 const toBullets = (text = "") =>
   text.split(". ").filter(Boolean).map((s) => (s.endsWith(".") ? s : `${s}.`));
 
+const rangeOf = (e: Entry, sep: string) => {
+  const [start] = e.positions[e.positions.length - 1].period.split(" - ");
+  const end = e.positions[0].period.split(" - ").pop();
+  const a = start.replace(/^\D+/, "");
+  const b = (end ?? "").replace(/^\D+/, "");
+  return a === b ? a : `${a}${sep}${b}`;
+};
+
+const rolesOf = (e: Entry) => [...new Set(e.positions.map((p) => p.role))].join(" · ");
+
 const list = (v: unknown) => (Array.isArray(v) ? (v as string[]) : []);
 
 const PinIcon = () => (
@@ -69,7 +81,7 @@ const PinIcon = () => (
 const WorkExperience: React.FC = () => {
   const { t } = useTranslation();
   const [filter, setFilter] = useState<Filter>("all");
-  const [open, setOpen] = useState<string | null>(null);
+  const [selected, setSelected] = useState<string | null>(null);
   const [globeOpen, setGlobeOpen] = useState(false);
   const [globeSize, setGlobeSize] = useState(() =>
     typeof window !== "undefined" && window.innerWidth < 640 ? 300 : 460
@@ -132,7 +144,7 @@ const WorkExperience: React.FC = () => {
 
   const visible = entries.filter((e) => filter === "all" || (filter === "it" ? e.it : e.country === filter));
 
-  const listRef = useRef<HTMLOListElement>(null);
+  const listRef = useRef<HTMLDivElement>(null);
   const pickCountry = useCallback((id: string) => {
     if (!COUNTRY_IDS.includes(id as Country)) return;
     play("pop");
@@ -196,6 +208,51 @@ const WorkExperience: React.FC = () => {
     };
   }, [isOpen, closeViewer, step]);
 
+  const active = visible.find((e) => e.id === selected) ?? visible[0];
+
+  const detail = (e: Entry) => {
+    const Flag = FLAGS[e.country];
+    const extra = e.photos.length - 3;
+    return (
+      <div key={e.id} className="work__detail">
+        {e.photos.length > 0 && (
+          <div className={`work__photos n${Math.min(e.photos.length, 3)}`}>
+            {e.photos.slice(0, 3).map((p, i) => (
+              <button
+                key={p.src}
+                type="button"
+                className="work__photo"
+                onClick={() => openViewer(e, i)}
+                aria-label={`${e.company}: ${p.caption || t("work.photo", { n: i + 1 })}`}
+              >
+                <img src={p.src} alt="" loading="lazy" decoding="async" draggable={false} />
+                {i === 2 && extra > 0 && <span className="work__more">+{extra}</span>}
+              </button>
+            ))}
+          </div>
+        )}
+        <h3 className="work__title">{e.company}</h3>
+        <p className="work__country"><Flag className="work__flag" /> {t(`intl.${e.country}`)}</p>
+        {e.positions.map((p, i) => (
+          <div key={i} className="work__position">
+            <p className="work__subrole">
+              {p.role} · {p.period}
+              {p.place && <span className="work__place"><PinIcon /> {p.place}</span>}
+            </p>
+            <ul className="work__bullets">
+              {p.bullets.map((b, j) => <li key={j}>{b}</li>)}
+            </ul>
+          </div>
+        ))}
+        {e.doc && (
+          <a className="work__doc" href={e.doc.url} target="_blank" rel="noopener noreferrer">
+            {e.doc.label} <FaExternalLinkAlt size={11} />
+          </a>
+        )}
+      </div>
+    );
+  };
+
   const chips: { id: Filter; label: string; flag?: Country }[] = [
     { id: "all", label: t("work.filter.all") },
     { id: "it", label: t("work.filter.it") },
@@ -253,90 +310,50 @@ const WorkExperience: React.FC = () => {
         </div>
       )}
 
-      <ol ref={listRef} className="work__list">
-        {visible.map((e) => {
-          const Flag = FLAGS[e.country];
-          const first = e.positions[0];
-          const last = e.positions[e.positions.length - 1];
-          const [start] = last.period.split(" - ");
-          const end = first.period.split(" - ").pop();
-          const range = start === end ? start : `${start} - ${end}`;
-          const roles = [...new Set(e.positions.map((p) => p.role))].join(" · ");
-          const extra = e.photos.length - 3;
-          const isOpen = open === e.id;
-          return (
-            <li key={e.id} className={`work__item${e.it ? " is-it" : ""}${isOpen ? " is-open" : ""}`}>
-              <span className="work__dot" aria-hidden />
-              <article className="work__card">
-                <div className="work__head">
-                  <button
-                    type="button"
-                    className="work__toggle"
-                    aria-expanded={isOpen}
-                    aria-controls={`work-${e.id}`}
-                    onClick={() => setOpen(isOpen ? null : e.id)}
-                  >
-                    <span className="work__summary">
-                      <span className="work__top">
+      <div ref={listRef} className="work__term" data-reveal>
+        <div className="work__bar" aria-hidden>
+          <span className="work__light" /><span className="work__light" /><span className="work__light" />
+          <span className="work__path">~/thuany/career</span>
+        </div>
+        <div className="work__panes">
+          <div className="work__list-pane">
+            <p className="work__cmd" aria-hidden>
+              <span className="work__prompt">visitor@portfolio:~$</span> ls -lt jobs/{CMD_FLAGS[filter]}
+            </p>
+            <ul className="work__list" role="list">
+              {visible.map((e) => {
+                const isActive = e.id === active?.id;
+                return (
+                  <li key={e.id}>
+                    <button
+                      type="button"
+                      className={`work__row${isActive ? " is-active" : ""}`}
+                      aria-expanded={isActive}
+                      onClick={() => { setSelected(e.id); play("pop"); }}
+                    >
+                      <span className="work__years">{rangeOf(e, "-")}</span>
+                      <span className="work__name">
                         <span className="work__company">{e.company}</span>
-                        {e.it && <span className="work__tag">{t("work.filter.it")}</span>}
+                        <span className="work__role"> · {rolesOf(e)}</span>
                       </span>
-                      <span className="work__role">{roles}</span>
-                      <span className="work__meta">
-                        <span className="work__range">{range}</span>
-                        <span className="work__country"><Flag className="work__flag" /> {t(`intl.${e.country}`)}</span>
+                      <span className={`work__tag${e.it ? " is-it" : ""}`}>
+                        {e.it ? `${t("work.filter.it")} · ` : ""}{CODES[e.country]}
                       </span>
-                    </span>
-                    <svg className="work__chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-                      <path d="m6 9 6 6 6-6" />
-                    </svg>
-                  </button>
-
-                  {e.photos.length > 0 && (
-                    <div className="work__thumbs">
-                      {e.photos.slice(0, 3).map((p, i) => (
-                        <button
-                          key={p.src}
-                          type="button"
-                          className="work__thumb"
-                          onClick={() => openViewer(e, i)}
-                          aria-label={`${e.company}: ${p.caption || t("work.photo", { n: i + 1 })}`}
-                        >
-                          <img src={p.src} alt="" loading="lazy" decoding="async" draggable={false} />
-                          {i === 2 && extra > 0 && <span className="work__more">+{extra}</span>}
-                        </button>
-                      ))}
-                    </div>
-                  )}
-                </div>
-
-                {isOpen && (
-                  <div id={`work-${e.id}`} className="work__details">
-                    {e.positions.map((p, i) => (
-                      <div key={i} className="work__position">
-                        {(e.positions.length > 1 || p.place) && (
-                          <p className="work__subrole">
-                            {e.positions.length > 1 && <span>{p.role} · {p.period}</span>}
-                            {p.place && <span className="work__place"><PinIcon /> {p.place}</span>}
-                          </p>
-                        )}
-                        <ul className="work__bullets">
-                          {p.bullets.map((b, j) => <li key={j}>{b}</li>)}
-                        </ul>
-                      </div>
-                    ))}
-                    {e.doc && (
-                      <a className="work__doc" href={e.doc.url} target="_blank" rel="noopener noreferrer">
-                        {e.doc.label} <FaExternalLinkAlt size={11} />
-                      </a>
-                    )}
-                  </div>
-                )}
-              </article>
-            </li>
-          );
-        })}
-      </ol>
+                    </button>
+                    {isActive && <div className="work__inline">{detail(e)}</div>}
+                  </li>
+                );
+              })}
+            </ul>
+            <p className="work__cmd work__cmd--end" aria-hidden>
+              <span className="work__prompt">visitor@portfolio:~$</span><span className="work__cursor" />
+            </p>
+          </div>
+          <div className="work__detail-pane no-scrollbar" aria-live="polite">
+            {active && detail(active)}
+          </div>
+        </div>
+      </div>
 
       {viewer && current && createPortal(
         <div ref={backdropRef} className="work-viewer" onClick={closeViewer} role="dialog" aria-modal="true" aria-label={viewer.entry.company}>
