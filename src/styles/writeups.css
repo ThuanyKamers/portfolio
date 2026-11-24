@@ -59,3 +59,25 @@
   transition: background-color 0.2s;
 }
 .writeups__all:hover { background-color: rgba(255, 255, 255, 0.1); }
+
+/* Barra com os números do perfil do TryHackMe */
+.thm {
+  width: min(1052px, calc(100% - 48px));
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px 24px;
+  margin-bottom: 22px;
+  padding: 14px 20px;
+  border-radius: 14px;
+  border: 1px solid rgba(52, 211, 153, 0.3);
+  background: rgba(8, 20, 18, 0.6);
+  transition: border-color 0.2s, background-color 0.2s;
+}
+.thm:hover, .thm:focus-visible { border-color: rgba(52, 211, 153, 0.7); background: rgba(10, 28, 24, 0.75); outline: 0; }
+.thm__path { font-family: var(--font-mono); font-size: 13px; color: var(--ok); }
+.thm__stats { flex: 1; display: flex; flex-wrap: wrap; gap: 8px 22px; }
+.thm__stat { display: inline-flex; align-items: baseline; gap: 6px; font-size: 13px; color: var(--text-muted); }
+.thm__stat strong { font-family: var(--font-display); font-size: 18px; color: var(--foreground); }
+.thm__arrow { color: #64748b; transition: color 0.2s, transform 0.2s; }
+.thm:hover .thm__arrow { color: var(--ok); transform: translate(2px, -2px); }

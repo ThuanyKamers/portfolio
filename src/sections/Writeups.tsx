@@ -2,6 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { FiArrowUpRight } from 'react-icons/fi';
 import { WRITEUPS, WRITEUPS_REPO } from '../data/writeups';
+import thm from '../data/tryhackme.json';
 
 const SHOWN = 6;
 
@@ -18,6 +19,18 @@ const Writeups: React.FC = () => {
         </h2>
       </div>
       <p className="writeups__intro" data-reveal>{t('writeups.intro')}</p>
+
+      {/* Números do perfil do TryHackMe, atualizados a cada publicação do site */}
+      <a className="thm" href={`https://tryhackme.com/p/${thm.username}`} target="_blank" rel="noopener noreferrer" data-reveal>
+        <span className="thm__path">~/tryhackme/{thm.username}</span>
+        <span className="thm__stats">
+          <span className="thm__stat"><strong>{thm.rank}</strong>{t('writeups.thm.rank')}</span>
+          <span className="thm__stat"><strong>{thm.rooms}</strong>{t('writeups.thm.rooms')}</span>
+          <span className="thm__stat"><strong>{thm.badges}</strong>{t('writeups.thm.badges')}</span>
+          <span className="thm__stat">{t('writeups.thm.level')}<strong>{thm.level}</strong></span>
+        </span>
+        <FiArrowUpRight className="thm__arrow" aria-hidden />
+      </a>
 
       <ul className="writeups">
         {latest.map((w, i) => (
