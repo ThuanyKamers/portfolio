@@ -96,6 +96,15 @@ const de = {
   "projects.soon": "Bald mehr",
   "projects.list": [
     {
+      title: "SecOps Desktop",
+      category: "security",
+      description: "Cybersecurity-Trainingsspiel im Browser. Wähle einen Windows-, macOS- oder Linux-Arbeitsplatz und bearbeite einen echten SOC-Fall: Alarm einordnen, im SIEM untersuchen, Threat Intel prüfen, den Angriff eindämmen und einen bewerteten 5-W-Bericht schreiben. Missionen sind Daten, und der Code wird bei jeder Änderung mit CodeQL und Tests geprüft.",
+      tech: ["React", "TypeScript", "Vite", "Zustand", "CodeQL", "SIEM"],
+      link: "https://thuanykamers.github.io/secops-desktop/",
+      image: "images/projects/capaSecOps.webp",
+      cover: "images/projects/capaSecOps.webp"
+    },
+    {
       title: "Rubble Tracker",
       category: "dev",
       description: "Mobile App für Android und iOS, mit der Bürger illegal abgeladenen Bauschutt mit Fotos und genauem GPS melden. Mitarbeiter der Stadt sehen die Meldungen auf einer Karte und markieren sie als abgeholt. Mit präziser Duplikaterkennung und Sperre gegen gefälschtes GPS. Entwickelt als Vorschlag für die Stadt Palhoça.",
@@ -121,15 +130,6 @@ const de = {
       link: "https://thuanykamers.github.io/verify-it/",
       image: "images/projects/capaVerifyIt-v2.webp",
       cover: "images/projects/capaVerifyIt-v2.webp"
-    },
-    {
-      title: "SecOps Desktop",
-      category: "security",
-      description: "Cybersecurity-Trainingsspiel im Browser. Wähle einen Windows-, macOS- oder Linux-Arbeitsplatz und bearbeite einen echten SOC-Fall: Alarm einordnen, im SIEM untersuchen, Threat Intel prüfen, den Angriff eindämmen und einen bewerteten 5-W-Bericht schreiben. Missionen sind Daten, und der Code wird bei jeder Änderung mit CodeQL und Tests geprüft.",
-      tech: ["React", "TypeScript", "Vite", "Zustand", "CodeQL", "SIEM"],
-      link: "https://thuanykamers.github.io/secops-desktop/",
-      image: "images/projects/capaSecOps.webp",
-      cover: "images/projects/capaSecOps.webp"
     },
     {
       title: "TryHackMe Writeups",
