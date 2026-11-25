@@ -96,6 +96,15 @@ const es = {
   "projects.soon": "Más próximamente",
   "projects.list": [
     {
+      title: "SecOps Desktop",
+      category: "security",
+      description: "Juego de entrenamiento en ciberseguridad que corre en el navegador. Elige una estación Windows, macOS o Linux y resuelve un caso real de SOC: triaje de la alerta, investigación en un SIEM, threat intel, contención del ataque y un informe 5 Ws calificado. Las misiones son datos, y el código pasa por CodeQL y pruebas en cada cambio.",
+      tech: ["React", "TypeScript", "Vite", "Zustand", "CodeQL", "SIEM"],
+      link: "https://thuanykamers.github.io/secops-desktop/",
+      image: "images/projects/capaSecOps.webp",
+      cover: "images/projects/capaSecOps.webp"
+    },
+    {
       title: "Rubble Tracker",
       category: "dev",
       description: "App para Android e iOS donde los ciudadanos reportan escombros abandonados con fotos y GPS exacto, y los funcionarios municipales los ven en un mapa y los marcan como recogidos. Incluye detección precisa de duplicados y bloqueo de GPS falso. Creada como propuesta para la ciudad de Palhoça.",
@@ -121,15 +130,6 @@ const es = {
       link: "https://thuanykamers.github.io/verify-it/",
       image: "images/projects/capaVerifyIt-v2.webp",
       cover: "images/projects/capaVerifyIt-v2.webp"
-    },
-    {
-      title: "SecOps Desktop",
-      category: "security",
-      description: "Juego de entrenamiento en ciberseguridad que corre en el navegador. Elige una estación Windows, macOS o Linux y resuelve un caso real de SOC: triaje de la alerta, investigación en un SIEM, threat intel, contención del ataque y un informe 5 Ws calificado. Las misiones son datos, y el código pasa por CodeQL y pruebas en cada cambio.",
-      tech: ["React", "TypeScript", "Vite", "Zustand", "CodeQL", "SIEM"],
-      link: "https://thuanykamers.github.io/secops-desktop/",
-      image: "images/projects/capaSecOps.webp",
-      cover: "images/projects/capaSecOps.webp"
     },
     {
       title: "TryHackMe Writeups",

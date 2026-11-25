@@ -96,6 +96,15 @@ const fr = {
   "projects.soon": "Bientôt plus",
   "projects.list": [
     {
+      title: "SecOps Desktop",
+      category: "security",
+      description: "Jeu d'entraînement en cybersécurité dans le navigateur. Choisissez un poste Windows, macOS ou Linux et traitez un vrai cas SOC : tri de l'alerte, enquête dans un SIEM, threat intel, confinement de l'attaque et rapport 5 W noté. Les missions sont des données, et le code passe par CodeQL et des tests à chaque modification.",
+      tech: ["React", "TypeScript", "Vite", "Zustand", "CodeQL", "SIEM"],
+      link: "https://thuanykamers.github.io/secops-desktop/",
+      image: "images/projects/capaSecOps.webp",
+      cover: "images/projects/capaSecOps.webp"
+    },
+    {
       title: "Rubble Tracker",
       category: "dev",
       description: "Application Android et iOS où les citoyens signalent des gravats abandonnés avec photos et GPS précis, et les agents municipaux les voient sur une carte et les marquent comme ramassés. Avec détection précise des doublons et blocage du faux GPS. Conçue comme proposition pour la ville de Palhoça.",
@@ -121,15 +130,6 @@ const fr = {
       link: "https://thuanykamers.github.io/verify-it/",
       image: "images/projects/capaVerifyIt-v2.webp",
       cover: "images/projects/capaVerifyIt-v2.webp"
-    },
-    {
-      title: "SecOps Desktop",
-      category: "security",
-      description: "Jeu d'entraînement en cybersécurité dans le navigateur. Choisissez un poste Windows, macOS ou Linux et traitez un vrai cas SOC : tri de l'alerte, enquête dans un SIEM, threat intel, confinement de l'attaque et rapport 5 W noté. Les missions sont des données, et le code passe par CodeQL et des tests à chaque modification.",
-      tech: ["React", "TypeScript", "Vite", "Zustand", "CodeQL", "SIEM"],
-      link: "https://thuanykamers.github.io/secops-desktop/",
-      image: "images/projects/capaSecOps.webp",
-      cover: "images/projects/capaSecOps.webp"
     },
     {
       title: "TryHackMe Writeups",
