@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { FiChevronDown } from "react-icons/fi";
 import { MdTranslate } from "react-icons/md";
 import { useTranslation } from 'react-i18next';
@@ -16,6 +16,22 @@ const langNames: { [key: string]: string } = {
 const LanguageDropdown = () => {
   const { i18n } = useTranslation();
   const [open, setOpen] = useState(false);
+  const rootRef = useRef<HTMLDivElement>(null);
+
+  // Fecha o menu ao clicar ou tocar fora dele, ou ao apertar Esc
+  useEffect(() => {
+    if (!open) return;
+    const onPointer = (e: PointerEvent) => {
+      if (!rootRef.current?.contains(e.target as Node)) setOpen(false);
+    };
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpen(false);
+    document.addEventListener("pointerdown", onPointer);
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.removeEventListener("pointerdown", onPointer);
+      document.removeEventListener("keydown", onKey);
+    };
+  }, [open]);
 
   const initialLang = i18n.language.toUpperCase() || "EN";
   const [currentLang, setCurrentLang] = useState(langNames[initialLang] || "Português");
@@ -28,7 +44,7 @@ const LanguageDropdown = () => {
   };
 
   return (
-    <div className="flex items-center justify-center font-mono">
+    <div ref={rootRef} className="flex items-center justify-center font-mono">
       <motion.div animate={open ? "open" : "closed"} className="relative">
 
         <motion.button
