@@ -123,6 +123,15 @@ const es = {
       cover: "images/projects/capaVerifyIt-v2.webp"
     },
     {
+      title: "SecOps Desktop",
+      category: "security",
+      description: "Juego de entrenamiento en ciberseguridad que corre en el navegador. Elige una estación Windows, macOS o Linux y resuelve un caso real de SOC: triaje de la alerta, investigación en un SIEM, threat intel, contención del ataque y un informe 5 Ws calificado. Las misiones son datos, y el código pasa por CodeQL y pruebas en cada cambio.",
+      tech: ["React", "TypeScript", "Vite", "Zustand", "CodeQL", "SIEM"],
+      link: "https://thuanykamers.github.io/secops-desktop/",
+      image: "images/projects/capaSecOps.webp",
+      cover: "images/projects/capaSecOps.webp"
+    },
+    {
       title: "TryHackMe Writeups",
       category: "security",
       description: "Writeups de las salas de TryHackMe que completo mientras estudio ciberseguridad, con foco en SOC y Blue Team: triaje de alertas, análisis de phishing en un SIEM, Linux y threat intelligence. Cada uno registra lo que hice, dónde me trabé y lo que aprendí.",
