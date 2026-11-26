@@ -34,12 +34,12 @@ const CMD_FLAGS: Record<Filter, string> = { all: "", it: " | grep IT", germany: 
 
 const img = (path: string) => asset(`images/${path}`);
 const PHOTOS = {
-  amazon: ["international/amzfoto.jpg"],
+  amazon: ["international/amzfoto.webp"],
   sp: ["experience/sp.webp", "experience/sp2.webp", "experience/sp3.webp"],
   nsc: ["experience/nsc.webp", "experience/nsc1.webp", "experience/nsc2.webp", "experience/nsc3.webp", "experience/nsc4.webp", "experience/nsc5.webp", "experience/nsc6.webp"],
-  hanon: ["international/hanon1.jpg", "international/hanon2.jpg", "international/hanon3.jpg", "international/hanon4.webp"],
-  talenter: ["international/talenter1.jpg", "international/talenter2.jpg", "international/talenter3.jpg", "international/talenter4.jpg"],
-  cacau: ["international/cacaushow.jpg", "international/chocolate.jpg", "international/shopping.jpg"],
+  hanon: ["international/hanon1.webp", "international/hanon2.webp", "international/hanon3.webp", "international/hanon4.webp"],
+  talenter: ["international/talenter1.webp", "international/talenter2.webp", "international/talenter3.webp", "international/talenter4.webp"],
+  cacau: ["international/cacaushow.webp", "international/chocolate.webp", "international/shopping.webp"],
   flex: ["experience/flex.webp", "experience/flex2.webp", "experience/flex3.webp"],
 };
 
