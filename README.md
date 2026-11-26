@@ -83,4 +83,4 @@ supabase/          SQL for the chat table, its security policies and rate limit
 
 ## License
 
-[MIT](LICENSE)
+This project is licensed under the [MIT License](LICENSE).
