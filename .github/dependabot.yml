@@ -5,6 +5,15 @@ updates:
     schedule:
       interval: weekly
     open-pull-requests-limit: 5
+    ignore:
+      # i18next 27 with react-i18next 18 left every text as its key on the built site
+      - dependency-name: i18next
+        update-types: ["version-update:semver-major"]
+      - dependency-name: react-i18next
+        update-types: ["version-update:semver-major"]
+      # typescript-eslint does not support TypeScript 7 yet
+      - dependency-name: typescript
+        update-types: ["version-update:semver-major"]
   - package-ecosystem: github-actions
     directory: /
     schedule:
